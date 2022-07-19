@@ -1,5 +1,5 @@
 import React from "react";
-import {Carousel, Col} from "react-bootstrap";
+import {Carousel} from "react-bootstrap";
 import HomeBG1 from '../../assets/images/home_image_gallery/HomeBg1.jpg'
 import HomeBG2 from '../../assets/images/home_image_gallery/HomeBg2.jpg'
 import HomeBG3 from '../../assets/images/home_image_gallery/HomeBg3.jpg'
