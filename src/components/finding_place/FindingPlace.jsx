@@ -13,7 +13,6 @@ function FindingPlace() {
                 <SearchPlace/>
             </Col>
         </Row>
-
     );
 }
 

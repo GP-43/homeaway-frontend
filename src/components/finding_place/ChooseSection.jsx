@@ -9,7 +9,8 @@ function ChooseSection() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    return (<Row>
+    return (
+        <Row>
             <Col className='px-0'>
                 <Button variant="primary" onClick={handleShow}>
                     Launch demo modal
@@ -20,7 +21,6 @@ function ChooseSection() {
                 />
             </Col>
         </Row>
-
     );
 }
 

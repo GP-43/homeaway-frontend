@@ -31,6 +31,15 @@
   }
 }
 
-.modal-content {
-  background-color: #EBEBEB;
+.modal-dialog {
+  border-radius: 1rem;
+
+  .modal-content {
+    background-color: #EBEBEB;
+    border-radius: 1rem;
+
+    .modal-header {
+      border-radius: 1rem;
+    }
+  }
 }
