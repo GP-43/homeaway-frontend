@@ -1,0 +1,32 @@
+.shedule-card{
+    width: 20rem;
+    height: 4rem;
+    background-color: #fff;;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    margin-left: 0px;
+    text-align: center;
+
+    .shedule-card-body{
+        background-color: white;
+        margin: auto;
+        padding: 5px;
+        border-radius: 10px;
+        padding-left: 25px;
+    }
+
+    .card-place{
+        background-color: #fff;
+        
+    }
+
+
+}
+
+.shedule-section{
+    margin-left: 25px;
+}
+
+
