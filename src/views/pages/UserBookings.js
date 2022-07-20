@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Row} from "react-bootstrap";
 import UserCalendar from '../../components/calendar/UserCalendar.jsx';
 
-function UserHome() {
+function UserBookings() {
     return (
         <Container>
             <Row className='mx-0 mt-2'>
@@ -12,4 +12,4 @@ function UserHome() {
     );
 }
 
-export default UserHome;
+export default UserBookings;
