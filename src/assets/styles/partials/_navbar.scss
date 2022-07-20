@@ -1,0 +1,36 @@
+.navbar{
+    padding: none;
+    float: left;
+    .logo{
+        height: 40px;
+    }
+    .nav{
+        float: left;
+        align-items: left;
+        //border: solid;
+        right: 500%;
+        .biuser-circle{
+            height: 30px;
+            width: 30px;
+        }
+        
+        .dropdown-toggle::after {
+            display: none;
+            
+        }
+        .dropdown-menu{
+            --bs-dropdown-min-width: 8rem;
+            
+        }
+        .dropdown-menu.show{
+            left: -257%;
+
+
+        }
+        
+        
+    }
+}
+.menu{
+
+}
