@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row} from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import FindingPlace from '../../components/finding_place/FindingPlace.jsx';
 import NavBar from '../../components/navbar/NavBar.jsx'
 
@@ -10,7 +10,9 @@ function UserHome() {
                 <NavBar/>
             </Row>
             <Row className='mx-0 mt-2'>
-                <FindingPlace/>
+                <Col>
+                    <FindingPlace/>
+                </Col>
             </Row>
         </Container>
     );
