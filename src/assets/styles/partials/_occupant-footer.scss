@@ -1,12 +1,14 @@
-.occu-footer{
-    
+.occupent-footer{
     width:100%;
+    border-radius: 0rem;
+
+    .footer-icon{
+        height: 37px;
+        width: 45px;
+    }
+
     .button{
         width:6rem;
         border-radius: 0.9rem;
     }
-}
-.footer-icon{
-    height: 37px;
-    width: 45px;
 }
