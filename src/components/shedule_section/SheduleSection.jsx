@@ -4,7 +4,7 @@ import SheduleCard from "./SheduleCard";
 function SheduleSection () {
     return (
         <div className="shedule-section">
-            <h2>Schedule</h2>
+            <h3 className="schedule-section-title">Schedule</h3>
             <SheduleCard/>
             <SheduleCard/>
         </div>
