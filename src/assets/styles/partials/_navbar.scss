@@ -1,35 +1,33 @@
 .navbar{
     padding: none;
     float: left;
-    .logo{
-        height: 40px;
-    }
+    margin-left: none;
+    
     .nav{
-        float: left;
-        align-items: left;
-        //border: solid;
-        right: 500%;
-        .biuser-circle{
-            height: 30px;
-            width: 30px;
-        }
-        
-        .dropdown-toggle::after {
-            display: none;
-            
-        }
-        .dropdown-menu{
-            --bs-dropdown-min-width: 8rem;
-            
-        }
-        .dropdown-menu.show{
-            left: -257%;
-
-
-        }
-        
-        
+        color: rgb(5, 4, 4);
     }
+    
+    .logo{
+        height: 50px;
+
+    }
+    .biuser-circle{
+        height: 30px;
+        width: 30px;
+        }
+        
+    .dropdown-toggle::after {
+        display: none;
+            
+    }
+    .dropdown-menu{
+        --bs-dropdown-min-width: 8rem;
+            
+    }
+    .dropdown-menu.show{
+        left: -177%;
+    }
+        
 }
 .menu{
 

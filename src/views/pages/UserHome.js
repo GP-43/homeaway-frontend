@@ -6,7 +6,7 @@ import NavBar from '../../components/navbar/NavBar.jsx'
 function UserHome() {
     return (
         <Container>
-            <Row className='mx-0 mt-2'>
+            <Row className='mx-0 px-0'>
                 <NavBar/>
             </Row>
             <Row className='mx-0 mt-2'>

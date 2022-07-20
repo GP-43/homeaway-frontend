@@ -8,15 +8,16 @@ import { BiUserCircle } from "react-icons/bi";
 
 function NavBar() {
   return (
-    <Navbar bg="light" expand="lg" className="navbar py-0">
-      <Container className="con">
-        <Navbar.Brand href="#home">
-          <img className="logo " src={logo} alt="First slide" />
-        </Navbar.Brand>
+    <Navbar bg="light" expand="lg" className="navbar my-0 px-0 py-0">
+      <Container className="con px-0">
         <Navbar>
-          <Nav className="me-auto nav">
-            <Nav.Link className="menu" href="#home">Home</Nav.Link>
-            <Nav.Link className="menu" href="#link">Bookings</Nav.Link>
+          <img className="logo px-0" src={logo} alt="First slide" />
+        </Navbar>
+        <Navbar>
+          <Nav.Link className="nav me-auto mb-1" href="#home">Home</Nav.Link>
+          <Nav className="me-0 mt-0 nav">
+            
+            <Nav.Link className="menu px-0" href="#link">Bookings</Nav.Link>
             <NavDropdown title={<BiUserCircle className="biuser-circle"/>}>
               <NavDropdown.Item className="mb-2" href="#action/3.1">Profile</NavDropdown.Item>
               <NavDropdown.Item className="mb-2" href="#action/3.2">
