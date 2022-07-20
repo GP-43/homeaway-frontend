@@ -13,3 +13,24 @@
     }
   }
 }
+
+@media (max-width: 820px) {
+  .home-gallery {
+    height: auto;
+
+    .gallery-carousal {
+      height: auto;
+
+      .gallery-image {
+        height: auto;
+        width: 100%;
+      }
+
+
+    }
+  }
+}
+
+.modal-content {
+  background-color: #EBEBEB;
+}

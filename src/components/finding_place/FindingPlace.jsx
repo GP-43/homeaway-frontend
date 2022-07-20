@@ -1,12 +1,19 @@
 import React from "react";
-import {Col} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 import HomeGallery from "./HomeGallery";
+import SearchPlace from "./SearchPlace";
 
 function FindingPlace() {
     return (
-        <Col className='px-0'>
-            <HomeGallery/>
-        </Col>
+        <Row>
+            <Col className='px-0' xs={12}>
+                <HomeGallery/>
+            </Col>
+            <Col>
+                <SearchPlace/>
+            </Col>
+        </Row>
+
     );
 }
 
