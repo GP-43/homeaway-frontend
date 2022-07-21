@@ -9,7 +9,7 @@ import { FaHeart } from "react-icons/fa";
 function PlaceCard() {
 
   const [show, setShow] = useState(true);
-
+  
   return (
     <Card className="card">
       <img
