@@ -1,7 +1,6 @@
-* {
-  background-color: #ffffff;
+.place-card-cover {
 
-  .card {
+  .place-card {
     width: 12rem;
     height: 15rem;
     position: relative;
@@ -59,12 +58,12 @@
     font-size: 11px;
   }
 
-  .people-icon{
+  .people-icon {
     height: 10px;
     background: none;
   }
 
-  .quantity-box{
+  .quantity-box {
     display: flex;
     background: none;
     align-items: center;
@@ -72,7 +71,7 @@
     padding: 0;
   }
 
-  .last-row{
+  .last-row {
     display: flex;
     background: none;
     align-items: center;
@@ -80,7 +79,7 @@
     padding: 0;
   }
 
-  .rating-box{
+  .rating-box {
     display: flex;
     background: none;
     align-items: center;
@@ -89,16 +88,16 @@
     padding-right: 10px;
   }
 
-  .rating-icon{
+  .rating-icon {
     height: 10px;
     background: none;
   }
 
-  .heart-icon{
+  .heart-icon {
     background: none;
   }
 
-  .button{
+  .button {
     position: absolute;
     margin-left: 150px;
     margin-top: 9px;
@@ -106,4 +105,5 @@
     background: none;
     border: none;
   }
+
 }
