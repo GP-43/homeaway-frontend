@@ -1,0 +1,109 @@
+* {
+  background-color: #ffffff;
+
+  .card {
+    width: 12rem;
+    height: 15rem;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    border-radius: 13px;
+
+    .card-title {
+      background: none;
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .card-text {
+      background: none;
+    }
+  }
+
+  .text-box {
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+  }
+
+  .place-image {
+    object-fit: cover;
+    width: 100%;
+    height: inherit;
+  }
+
+  .text {
+    background: none;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    text-align: left;
+  }
+
+
+  .city,
+  .price,
+  .quantity,
+  .rating {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 11px;
+  }
+
+  .people-icon{
+    height: 10px;
+    background: none;
+  }
+
+  .quantity-box{
+    display: flex;
+    background: none;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .last-row{
+    display: flex;
+    background: none;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .rating-box{
+    display: flex;
+    background: none;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    padding-right: 10px;
+  }
+
+  .rating-icon{
+    height: 10px;
+    background: none;
+  }
+
+  .heart-icon{
+    background: none;
+  }
+
+  .button{
+    position: absolute;
+    margin-left: 150px;
+    margin-top: 9px;
+    color: white;
+    background: none;
+    border: none;
+  }
+}
