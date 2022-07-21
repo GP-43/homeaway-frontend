@@ -1,17 +1,18 @@
 .card{
-    width: auto;
-    margin:0 auto;//10px 0 10px 970px
-    height:0 auto;
-    background-color: none;
-    border:none;
+  width: auto;
+  margin:0 auto;//10px 0 10px 970px
+  height:0 auto;
+  background-color: none;
+  border:none;
+  margin-left: 970px;
 
-    .app {
-        text-align: center; 
-        width: 50%;
-        margin:5px;
-        padding:11px;
-        color:#000000;
-    }
+  .app {
+    text-align: center; 
+    width: 50%;
+    margin:5px;
+    padding:11px;
+    color:#000000;
+  }
   
   .selected-date {
     margin: 0 auto;
@@ -23,7 +24,6 @@
     color: #000000;
     margin-top: 5px;
   }
-  
   
   .App-logo {
     height: 40vmin;
@@ -50,12 +50,8 @@
   .App-link {
     color: #7ab5c6;
   }
-  
-  
-  
+
   /* react calendar */
-  
-  
   .react-calendar { 
     width: 700px;
     max-width: 100%;
@@ -65,16 +61,16 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.125em;
-   }
+  }
   
-   .react-calendar__navigation button {
+  .react-calendar__navigation button {
     color: #000000;
     min-width: 44px;
     background:none;
     font-size: 16px;
     margin-top: 8px;
     background-color: #ffffff;
-   }
+  }
   
   .react-calendar--doubleView {
     width: 700px;
