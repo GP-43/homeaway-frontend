@@ -11,7 +11,8 @@ function PlaceCard() {
   const [show, setShow] = useState(true);
   
   return (
-    <Card className="card">
+    <div className="place-card-cover">
+    <Card className="place-card">
       <img
         className="d-block gallery-image place-image"
         src={place}
@@ -45,6 +46,7 @@ function PlaceCard() {
         </Card.Body>
       </Card.Body>
     </Card>
+    </div>
   );
 }
 
