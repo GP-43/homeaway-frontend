@@ -7,6 +7,7 @@ function SheduleSection () {
             <h3 className="schedule-section-title">Schedule</h3>
             <SheduleCard/>
             <SheduleCard/>
+            <SheduleCard/>
         </div>
     );
 }
