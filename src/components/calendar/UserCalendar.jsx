@@ -1,14 +1,14 @@
 import 'react-calendar/dist/Calendar.css'
 import Calendar from 'react-calendar'
 import React, { useState } from 'react';
-import Card from 'react-bootstrap/Card';
+//import Card from 'react-bootstrap/Card';
 import '../../assets/styles/partials/_calendar.scss';
 
 function UserCalendar() {
  const [date, setDate] = useState(new Date())
 
   return (
-    <Card className="card">
+    <div className="card">
       <div className="app">
     
         <div className="calendar-container">
@@ -18,7 +18,7 @@ function UserCalendar() {
           Selected date: {date.toDateString()}
         </div>
       </div>
-    </Card>
+    </div>
   );
 
 }

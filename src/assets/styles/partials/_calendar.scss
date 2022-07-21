@@ -1,14 +1,16 @@
 .card{
-    width:30%;
-    margin:10px 0 10px 970px;
+    width: auto;
+    margin:0 auto;//10px 0 10px 970px
+    height:0 auto;
+    background-color: none;
+    border:none;
 
     .app {
         text-align: center; 
-        width: 100%;
+        width: 50%;
         margin:5px;
-        padding:12px;
+        padding:11px;
         color:#000000;
-        background-color: #ffffff;
     }
   
   .selected-date {
