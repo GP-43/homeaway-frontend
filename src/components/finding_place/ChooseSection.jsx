@@ -32,7 +32,7 @@ function ChooseSection() {
                             placeholder='Only me'
                         />
                         <button className='add-guests m-0 p-0' onClick={handleShow} disabled={false}>
-                           + Add guests
+                            + Add guests
                         </button>
                         <GuestsPopup
                             show={show}

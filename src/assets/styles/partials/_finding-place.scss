@@ -67,6 +67,7 @@
         }
       }
     }
+
     .province {
       font-size: 0.8rem;
       color: #000000;
@@ -77,29 +78,35 @@
 .drop-down-menu {
   background-color: #ffffff;
 }
+
 .choose-section-guests {
   .guests-selecting-card {
     height: 5.2rem;
     outline: solid 1px;
+
     .guests-count {
       background: none;
       border: none;
       padding: 0;
       font-size: 1.1rem;
     }
+
     .guests-count:focus {
-      -webkit-appearance:none;
+      -webkit-appearance: none;
       box-shadow: none !important;
     }
-    .guests-count::placeholder{
+
+    .guests-count::placeholder {
       color: #000000;
 
     }
+
     .add-guests {
       font-size: 0.8rem !important;
       color: #000000;
       border: none;
       background: none;
+
       span {
         font-weight: bold;
         color: #000000;
@@ -110,9 +117,11 @@
 
 .choose-section-date {
   border-radius: 0 1rem 1rem 0;
+
   .date-selecting-card {
     height: 5.2rem;
     outline: solid 1px;
+
     .check {
       font-size: 0.8rem !important;
       color: #000000;
