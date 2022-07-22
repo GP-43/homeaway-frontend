@@ -1,14 +1,21 @@
 import React from "react";
-import {Col, Row} from "react-bootstrap";
+import {Col, Row, Tab, Tabs} from "react-bootstrap";
 import ChooseSection from "./ChooseSection";
 
 function SearchPlace() {
     return (
-        <Row>
-            <Col className='px-0'>
-                <ChooseSection/>
-            </Col>
-        </Row>
+                <Tabs
+                    defaultActiveKey="profile"
+                    id="uncontrolled-tab-example"
+                    className="mb-0"
+                >
+                    <Tab eventKey="home" title="Choose">
+                        <ChooseSection/>
+                    </Tab>
+                    <Tab eventKey="profile" title="Filters" className='filter-button'>
+                        <h1>FilterSection goes here</h1>
+                    </Tab>
+                </Tabs>
     );
 }
 
