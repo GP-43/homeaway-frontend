@@ -1,0 +1,34 @@
+.navbar{
+    padding: none;
+    float: left;
+    margin-left: none;
+    
+    .nav{
+        color: rgb(5, 4, 4);
+    }
+    
+    .logo{
+        height: 50px;
+
+    }
+    .biuser-circle{
+        height: 30px;
+        width: 30px;
+        }
+        
+    .dropdown-toggle::after {
+        display: none;
+            
+    }
+    .dropdown-menu{
+        --bs-dropdown-min-width: 8rem;
+            
+    }
+    .dropdown-menu.show{
+        left: -177%;
+    }
+        
+}
+.menu{
+
+}

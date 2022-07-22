@@ -31,6 +31,104 @@
   }
 }
 
+.search-place {
+  margin: auto;
+}
+
+.nav {
+  .nav-item {
+    button {
+      width: 10rem !important;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 1.2rem;
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
+      border: 0;
+    }
+  }
+}
+
+.choose-section-city {
+  border-radius: 0 0 0 1rem;
+
+  .city-selecting-card {
+    height: 5.2rem;
+    outline: solid 1px;
+    border-radius: 0.5rem;
+
+    .dropdown {
+      a:first-child {
+        text-decoration: none;
+        color: #000000;
+        //font-size: 0rem;
+        span {
+          font-size: 1.2rem !important;
+        }
+      }
+    }
+
+    .province {
+      font-size: 0.8rem;
+      color: #000000;
+    }
+  }
+}
+
+.drop-down-menu {
+  background-color: #ffffff;
+}
+
+.choose-section-guests {
+  .guests-selecting-card {
+    height: 5.2rem;
+    outline: solid 1px;
+
+    .guests-count {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    .guests-count:focus {
+      -webkit-appearance: none;
+      box-shadow: none !important;
+    }
+
+    .guests-count::placeholder {
+      color: #000000;
+
+    }
+
+    .add-guests {
+      font-size: 0.8rem !important;
+      color: #000000;
+      border: none;
+      background: none;
+
+      span {
+        font-weight: bold;
+        color: #000000;
+      }
+    }
+  }
+}
+
+.choose-section-date {
+  border-radius: 0 1rem 1rem 0;
+
+  .date-selecting-card {
+    height: 5.2rem;
+    outline: solid 1px;
+
+    .check {
+      font-size: 0.8rem !important;
+      color: #000000;
+    }
+  }
+}
+
 .modal-dialog {
   border-radius: 1rem;
 
