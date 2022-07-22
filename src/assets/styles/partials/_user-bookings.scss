@@ -38,11 +38,26 @@
     }
 }
 
+
+.my-booking-shedule{
+    display: flex;
+}
+
+
+
+.my-bookings-dropdown{
+    --bs-dropdown-min-width: 0px;
+}
+
 @media only screen and (max-width: 412px) {
 
     .shedule-section{ 
-      margin-left: 45px;
+      margin-left: 10px;
     } 
+
+    .my-booking-shedule {
+        display: block;
+    }
 }
 
 
@@ -59,6 +74,11 @@
 
     .shedule-card{
         margin-left: 37px !important;
+    }
+
+
+    .my-booking-shedule {
+        display: block;
     }
 
 

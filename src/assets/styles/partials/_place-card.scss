@@ -122,6 +122,11 @@
   .sort-icon {
     color: black;
   }
+
+  .dropdown-toggle::after {
+    display: none;       
+}
+
 }
 
 .place-card-set {
