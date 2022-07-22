@@ -1,4 +1,6 @@
 .place-card-cover {
+  flex-basis: 25%;
+  margin-bottom: 30px;
 
   .place-card {
     width: 12rem;
@@ -7,6 +9,7 @@
     overflow: hidden;
     padding: 0;
     border-radius: 13px;
+    flex-basis: 10%;
 
     .card-title {
       background: none;
@@ -47,7 +50,6 @@
     padding-left: 1rem;
     text-align: left;
   }
-
 
   .city,
   .price,
@@ -105,5 +107,64 @@
     background: none;
     border: none;
   }
+}
 
+.place-section-cover {
+  .places-title {
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: flex-end;
+    padding-left: 65px;
+    padding-right: 55px;
+  }
+
+  .sort-icon {
+    color: black;
+  }
+}
+
+.place-card-set {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+  padding-left: 65px;
+}
+
+@media only screen and (max-width: 820px) {
+  .place-card-cover {
+    margin-left: 10px;
+  }
+
+  .place-card-set {
+    padding-left: 25px;
+  }
+
+}
+
+@media only screen and (max-width: 412px) {
+  .place-card-set {
+    padding-left: 70px;
+  }
+}
+
+.sort-drop-down-btn {
+  --bs-btn-active-color: none;
+
+  .btn-success {
+    --bs-btn-color: #000;
+    --bs-btn-bg: none;
+    --bs-btn-border-color: none;
+    --bs-btn-hover-color: none;
+    --bs-btn-hover-bg: none;
+    --bs-btn-hover-border-color: none;
+    --bs-btn-focus-shadow-rgb: none;
+    --bs-btn-active-color: none;
+    --bs-btn-active-bg: none;
+    --bs-btn-active-border-color: none;
+    --bs-btn-disabled-color: none;
+    --bs-btn-disabled-bg: none;
+    --bs-btn-disabled-border-color: none;
+  }
 }
