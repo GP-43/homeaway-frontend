@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
-import place from "../../assets/images/places_image_gallery/place1.jpg";
 import { FaUserFriends } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";

@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row, Section } from "react-bootstrap";
 import PlaceCard from "./PlaceCard.jsx";
 import { FaExchangeAlt, FaRestroom } from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -93,7 +92,7 @@ function PlaceSection() {
               />
             </Dropdown.Toggle>
 
-            <Dropdown.Menu>
+            <Dropdown.Menu className="my-bookings-dropdown">
               <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
               <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
               <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
