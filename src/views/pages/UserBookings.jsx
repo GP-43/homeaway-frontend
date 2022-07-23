@@ -90,8 +90,9 @@ function UserBookings() {
             <MyBookingSection data={My_Bookings}/>
 
             <div>
-            <UserCalendar/>
+            
             <SheduleSection data={schedule_data} />
+            <UserCalendar/>
             </div>
         </div>
     );
