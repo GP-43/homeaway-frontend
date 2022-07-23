@@ -26,7 +26,7 @@ function MyBookingSection(props) {
                     </Dropdown>
                 </div>
             </div>
-            <div className="place-card-set">
+            <div className="place-card-set-my-booking">
                 {props.data &&
                     props.data.map((i) => (
                         <PlaceCard
