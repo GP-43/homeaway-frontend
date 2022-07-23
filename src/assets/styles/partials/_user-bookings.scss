@@ -39,6 +39,7 @@
 
 .my-booking-shedule {
   display: flex;
+  justify-content: space-between;
 }
 
 .my-bookings-dropdown {
@@ -50,8 +51,16 @@
   margin-top: 20px;
   margin-bottom: 20px;
   align-items: flex-end;
-  padding-left: 40px;
-  padding-right: 159px;
+  padding-left: 91px;
+  padding-right: 209px; 
+}
+
+.place-card-set-my-booking{
+  padding-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
 }
 
 @media only screen and (max-width: 412px) {
@@ -66,6 +75,10 @@
   .places-title-my-booking {
     padding-left: 112px;
     padding-right: 101px;
+  }
+
+  .place-card-set-my-booking {
+    padding-left: 98px;
   }
 }
 
@@ -88,7 +101,11 @@
   }
 
   .places-title-my-booking {
-    padding-left: 82px;
+    padding-left: 101px;
     padding-right: 90px;
+  }
+
+  .place-card-set-my-booking {
+    padding-left: 90px;
   }
 }
