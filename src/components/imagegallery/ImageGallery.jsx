@@ -1,39 +1,58 @@
-import React, {useState} from 'react';
-import LargeImage from './LargeImage';
+import React, { useState } from "react";
 import SingleImage from "./SingleImage";
-
+import place11 from "../../assets/images/places_image_gallery/place11.jpg";
+import place12 from "../../assets/images/places_image_gallery/place12.jpg";
+import place13 from "../../assets/images/places_image_gallery/place13.jpg";
+import place14 from "../../assets/images/places_image_gallery/place14.jpg";
+import place15 from "../../assets/images/places_image_gallery/place15.jpg";
+import place16 from "../../assets/images/places_image_gallery/place16.jpg";
+import place17 from "../../assets/images/places_image_gallery/place17.jpg";
+import place18 from "../../assets/images/places_image_gallery/place18.jpg";
 
 function ImageGallery() {
-  const [isShown, setIsShown] = useState(false);
-
-  const handleClick = event => {
-    //  toggle shown state
-    setIsShown(current => !current);
-
-    //  or simply set it to true
-    // setIsShown(true);
-  };
+  const Place_Data = [
+    {
+      Src: place11,
+    },
+    {
+      Src: place12,
+    },
+    {
+      Src: place13,
+    },
+    {
+      Src: place14,
+    },
+    {
+      Src: place15,
+    },
+    {
+      Src: place16,
+    },
+    {
+      Src: place17,
+    },
+    {
+      Src: place18,
+    },
+  ];
   return (
-    <div className='d-flex'>
+    <div className="gallery-container">
       <div className="image-scroll-box">
-        <button onClick={handleClick}><SingleImage/></button>
-        <button onClick={handleClick}><SingleImage/></button>
-        <button onClick={handleClick}><SingleImage/></button>
-        <button onClick={handleClick}><SingleImage/></button>
-        <button onClick={handleClick}><SingleImage/></button>
-        <button onClick={handleClick}><SingleImage/></button>
-        
+        {Place_Data &&
+          Place_Data.map((i) => (
+            <SingleImage
+              Src={i.Src}
+            />
+          ))}
       </div>
-      {isShown && 
+      {/* {isShown && (
         <div>
-          <LargeImage/>
-        </div> 
-
-      }
-      
-      
+          <LargeImage />
+        </div>
+      )} */}
     </div>
-  )
+  );
 }
 
-export default ImageGallery
+export default ImageGallery;
