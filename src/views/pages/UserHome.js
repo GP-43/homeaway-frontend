@@ -2,7 +2,6 @@ import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import FindingPlace from '../../components/finding_place/FindingPlace.jsx';
 import PlaceSection from "../../components/places_section/PlaceSection";
-import UserCalendar from '../../components/calendar/UserCalendar.jsx';
 
 function UserHome() {
     return (
@@ -17,7 +16,7 @@ function UserHome() {
                     <PlaceSection/>
                 </Col>
             </Row>
-            <Row><UserCalendar/></Row>
+            
         </Container>
     );
 }
