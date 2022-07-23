@@ -8,7 +8,7 @@ function MyBookingSection(props) {
 
     return (
         <div className="place-section-cover">
-            <div className="places-title d-flex mb-8">
+            <div className="places-title-my-booking d-flex mb-8">
                 <h5>My Bookings</h5>
                 <div className="sort-drop-down-btn">
                     <Dropdown>
