@@ -64,8 +64,8 @@ function ChooseSection() {
     }
 
     return (
-        <Row className='mx-0 '>
-            <Col lg={4} md={6} className='bg-white py-2 choose-section-city'>
+        <Row className='mx-0'>
+            <Col lg={4} md={6} className='bg-white pb-2 pt-3 choose-section-city'>
                 <Card className='city-selecting-card mb-2'>
                     <Card.Body className='py-2'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
@@ -75,7 +75,7 @@ function ChooseSection() {
                     </Card.Body>
                 </Card>
             </Col>
-            <Col lg={4} md={6} className='bg-white py-2 choose-section-guests'>
+            <Col lg={4} md={6} className='bg-white pb-2 pt-3 choose-section-guests'>
                 <Card className='guests-selecting-card mb-2'>
                     <Card.Body className='py-2'>
                         <Card.Subtitle className="mb-0 text-muted">GUESTS</Card.Subtitle>
@@ -100,7 +100,7 @@ function ChooseSection() {
                 </Card>
 
             </Col>
-            <Col lg={4} className='bg-white py-2 choose-section-date'>
+            <Col lg={4} className='bg-white pb-2 pt-3 choose-section-date'>
                 <Card className='date-selecting-card mb-2'>
                     <Card.Body className='py-2'>
                         <Card.Subtitle className="mb-0 text-muted">DATE</Card.Subtitle>
