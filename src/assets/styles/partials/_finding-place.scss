@@ -141,3 +141,34 @@
     }
   }
 }
+
+.filter-section{
+  color:#000000;
+  height:auto;
+
+  .text-filter{
+    font-size: 1.1rem;
+  }
+  .filter-card{
+    border:none;
+  }
+  .filter-card-body{
+    margin: 5px;
+    border-radius:1rem;
+    border:#000000;
+    outline: solid 1px;
+  }
+  .radio-button-section{
+    font-size: 0.9rem;
+    padding: 10px;
+    justify-content: center;
+  }
+  .filter-radio-button{
+    margin-left: 20px;
+    cursor:pointer;
+  }
+  .filter-p{
+    margin-top:0px;
+  }
+  
+}

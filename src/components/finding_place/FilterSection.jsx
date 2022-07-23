@@ -2,47 +2,81 @@ import React, {useState} from "react";
 import {Card, Col, Row} from "react-bootstrap";
 
 function FilterSection() {
-    const [foodType, setFoodType] = useState("no-need");
-    const [acType, setAcType] = useState("no-need");
-    const [internetType, setInternetType] = useState("no-need")
-
+    
     return (
-        <Row className='mx-0 bg-info'>
-            <Col className='bg-white '>
-                <Card className="">
-                    <Card.Body className='py-2'>
+        <Row className='mx-0 filter-section'>         
+            <Col className='bg-white'>
+                <Card className="bg-white filter-card">
+                    <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
-                        <Card.Subtitle className="mb-0 text-muted">AC or None AC</Card.Subtitle>
-                            
-                        <Card.Text className=''>
-                            <input type="radio" value={acType} name="acType" /*checked={acType === "need"}*//>Need
-                            <input type="radio" value={acType} name="acType" />No Need
+                        <Card.Subtitle className="mb-0 text-filter">AC or None AC</Card.Subtitle>                           
+                        <Card.Text className='radio-button-section'>
+                                <input 
+                                    type="radio" 
+                                    className="filter-radio-button" 
+                                    id="acNeed" name="acType" 
+                                    value="acNeed"
+                                />
+                                <lable>Need</lable> 
+                                <input 
+                                    type="radio" 
+                                    className="filter-radio-button" 
+                                    id="acNoNeed" 
+                                    name="acType" 
+                                    value="acNoNeed"
+                                />
+                                <lable>No Need</lable>
                         </Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
             <Col className='bg-white'>
-                <Card className="">
-                    <Card.Body className='py-2'>
+                <Card className="bg-white filter-card">
+                    <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
-                        <Card.Subtitle className="mb-0 text-muted">Food and Bevarage</Card.Subtitle>
-                        <Card.Text className='province '>
-                            <input type="radio" value={foodType} name="foodType" />Need
-                            <input type="radio" value={foodType} name="foodType" />No Need
-            
+                        <Card.Subtitle className="mb-0 text-filter">Food and Bevarage</Card.Subtitle>
+                        <Card.Text className='radio-button-section '>
+                            <input 
+                                type="radio" 
+                                className="filter-radio-button" 
+                                id="fdNeed" 
+                                name="foodType" 
+                                value="fdNeed"
+                            />
+                            <lable>Need</lable>
+                            <input 
+                                type="radio" 
+                                className="filter-radio-button" 
+                                id="fdNoNeed" 
+                                name="foodType" 
+                                value="fdNoNeed"
+                            />
+                            <lable>No Need</lable>
                         </Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
             <Col className='bg-white'>
-                <Card className="">
-                    <Card.Body className='py-2'>
+                <Card className="bg-white filter-card">
+                    <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
-                        <Card.Subtitle className="mb-0 text-muted">Internet Sccess</Card.Subtitle>
-                        
-                        <Card.Text className='province '>
-                            <input type="radio" value={internetType} name="internetType" />Need
-                            <input type="radio" value={internetType} name="internetType" />No Need
+                        <Card.Subtitle className="mb-0 text-filter">Internet Access</Card.Subtitle>
+                        <Card.Text className='radio-button-section'>
+                            <input 
+                                type="radio" 
+                                className="filter-radio-button" 
+                                id="iNeed" name="internetType" 
+                                value="iNeed"
+                            />
+                            <lable>Need</lable>
+                            <input 
+                                type="radio" 
+                                className="filter-radio-button" 
+                                id="iNoNeed" 
+                                name="internetType" 
+                                value="iNoNeed"
+                            />
+                            <lable>No Need</lable>
                         </Card.Text>
                     </Card.Body>
                 </Card>
