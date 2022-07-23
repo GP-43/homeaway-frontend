@@ -1,0 +1,119 @@
+.shedule-section-box {
+  display: flex;
+  justify-content: flex-end;
+
+  .shedule-section {
+    height: 10rem;
+    width: 25rem;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+
+    .schedule-section-title {
+      font-size: 1.5rem;
+    }
+
+    .shedule-card {
+      width: 20rem !important;
+      height: 4rem !important;
+      background-color: #fff;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      margin: 1rem;
+      margin-left: 0px;
+      text-align: center;
+
+      .shedule-card-body {
+        background-color: rgb(255, 255, 255);
+        margin: auto;
+        padding: 5px;
+        border-radius: 10px;
+      }
+
+      .card-place {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.my-booking-shedule {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-bookings-dropdown {
+  --bs-dropdown-min-width: 0px;
+}
+
+.places-title-my-booking {
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+  padding-left: 91px;
+  padding-right: 209px; 
+}
+
+.place-card-set-my-booking{
+  padding-left: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 412px) {
+  .shedule-section {
+    margin-left: 10px;
+  }
+
+  .my-booking-shedule {
+    display: block;
+  }
+
+  .places-title-my-booking {
+    padding-left: 112px;
+    padding-right: 101px;
+  }
+
+  .place-card-set-my-booking {
+    padding-left: 98px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .shedule-section-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .schedule-section-title {
+    text-align: center;
+  }
+
+  .shedule-card {
+    margin-left: 37px !important;
+  }
+
+  .my-booking-shedule {
+    display: block;
+  }
+
+  .places-title-my-booking {
+    padding-left: 101px;
+    padding-right: 90px;
+  }
+
+  .place-card-set-my-booking {
+    padding-left: 90px;
+  }
+}
+
+
+@media only screen and (max-width: 1240px) {
+
+  .places-title-my-booking {
+    padding-right: 86px;
+  }
+}

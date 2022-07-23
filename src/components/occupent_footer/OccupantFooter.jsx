@@ -10,7 +10,7 @@ function OccupantFooter() {
         <Card className="bg-dark text-center text-light occupent-footer w-100 mx-0">
             <Card.Header as="h3" className="bg-dark mt-2 mb-0 pt-4 py-0 pb-0">HomeAway</Card.Header>
             <Card.Body className="bg-dark">
-                <Card.Title as="h6" className="bg-dark mb-4 mt-0 pt-0">HomeAWay is a website where you can find a place with
+                <Card.Title as="h6" className="bg-dark mb-4 mt-0 pt-0">HomeAway is a website where you can find a place with
                  facilities to gather and work.</Card.Title>
                 <Card.Text className="bg-dark mb-4 mx-3">
                     <FiTwitter className="bg-dark footer-icon mx-1"/>
