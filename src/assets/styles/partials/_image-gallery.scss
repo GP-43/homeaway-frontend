@@ -1,0 +1,40 @@
+.image-scroll-box {
+    height: 15rem;
+    width: 10rem;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    
+    
+
+    .single-image{
+        height: 5rem;
+        width: 8rem;
+        padding-top: 1rem;
+    }
+
+}
+.image-gallery-container{
+    .row > * {
+        padding-left: 0;
+    }
+
+}
+
+.image-scroll-box::-webkit-scrollbar {
+    display: none;
+  }
+
+@media only screen and (max-width: 412px) {
+    .image-section {
+        margin-left: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 820px) {
+    .image-scroll-box {
+        display: flex;
+        justify-content: center;
+    }
+
+}
