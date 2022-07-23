@@ -1,6 +1,7 @@
 .place-card-cover {
   flex-basis: 25%;
   margin-bottom: 30px;
+  padding-left: 40px;
 
   .place-card {
     width: 12rem;
@@ -115,8 +116,8 @@
     margin-top: 20px;
     margin-bottom: 20px;
     align-items: flex-end;
-    padding-left: 65px;
-    padding-right: 55px;
+    padding-left: 40px;
+    padding-right: 32px;
   }
 
   .sort-icon {
@@ -124,9 +125,8 @@
   }
 
   .dropdown-toggle::after {
-    display: none;       
-}
-
+    display: none;
+  }
 }
 
 .place-card-set {
@@ -134,23 +134,33 @@
   flex-wrap: wrap;
   flex: 1;
   flex-direction: row;
-  padding-left: 65px;
 }
 
 @media only screen and (max-width: 820px) {
   .place-card-cover {
     margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 0;
   }
 
   .place-card-set {
-    padding-left: 25px;
+    justify-content: center;
   }
 
+  .place-section-cover {
+    .places-title {
+      padding-left: 30px;
+      padding-right: 17px;
+    }
+  }
 }
 
 @media only screen and (max-width: 412px) {
-  .place-card-set {
-    padding-left: 70px;
+  .place-section-cover {
+    .places-title {
+      padding-left: 73px;
+      padding-right: 49px;
+    }
   }
 }
 
