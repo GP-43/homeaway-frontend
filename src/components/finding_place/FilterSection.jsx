@@ -9,7 +9,7 @@ function FilterSection() {
                 <Card className="bg-white filter-card">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
-                        <Card.Subtitle className="mb-0 text-filter">AC or None AC</Card.Subtitle>                           
+                        <Card.Subtitle className="mb-0 text-filter">AC</Card.Subtitle>                           
                         <Card.Text className='radio-button-section'>
                                 <input 
                                     type="radio" 
