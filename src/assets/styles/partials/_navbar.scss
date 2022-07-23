@@ -1,34 +1,37 @@
-.navbar{
-    padding: none;
-    float: left;
-    margin-left: none;
-    
-    .nav{
-        color: rgb(5, 4, 4);
-    }
-    
-    .logo{
+.navbar {
+    color: #B9B9B9;
+
+    .logo {
         height: 50px;
 
     }
-    .biuser-circle{
+
+    .nav {
+        color: rgb(5, 4, 4);
+        height: 46px;
+
+    }
+    .biuser-circle {
         height: 30px;
         width: 30px;
-        }
-        
+        margin-right: none;
+       
+    }
+
     .dropdown-toggle::after {
         display: none;
-            
+
     }
-    .dropdown-menu{
+    
+
+    .dropdown-menu {
         --bs-dropdown-min-width: 8rem;
-            
     }
-    .dropdown-menu.show{
+
+    .dropdown-menu.show {
         left: -177%;
     }
-        
-}
-.menu{
-
+    .dropdown-toggle-nav-link{
+        padding: none;
+    }
 }

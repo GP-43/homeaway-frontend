@@ -8,7 +8,7 @@ function MyBookingSection(props) {
 
     return (
         <div className="place-section-cover">
-            <div className="places-title d-flex mb-8">
+            <div className="places-title-my-booking d-flex mb-8">
                 <h5>My Bookings</h5>
                 <div className="sort-drop-down-btn">
                     <Dropdown>
@@ -26,7 +26,7 @@ function MyBookingSection(props) {
                     </Dropdown>
                 </div>
             </div>
-            <div className="place-card-set">
+            <div className="place-card-set-my-booking">
                 {props.data &&
                     props.data.map((i) => (
                         <PlaceCard
