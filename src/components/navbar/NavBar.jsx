@@ -16,7 +16,7 @@ function NavBar() {
         <Navbar>
           <Nav.Link className="nav me-auto" href="#home">Home</Nav.Link>
           <Nav className="me-0 mt-0">
-            <Nav.Link className="menu px-0" href="#link">Bookings</Nav.Link>
+            <Nav.Link className="menu px-0" href="../views/pages/UserBookings">Bookings</Nav.Link>
             <NavDropdown title={<BiUserCircle className="biuser-circle" />}>
               <NavDropdown.Item className="mb-2" href="#action/3.1">Profile</NavDropdown.Item>
               <NavDropdown.Item className="mb-2" href="#action/3.2">
