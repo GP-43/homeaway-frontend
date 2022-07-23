@@ -6,12 +6,20 @@ import CitySelecting from "./CitySelecting";
 
 function ChooseSection() {
     const [show, setShow] = useState(false);
+    const [isAdGuestButtonDisable, setIsAdGuestButtonDisable] = useState(true);
+    const [guestCount, setGuestCount] = useState(0)
+
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleOnGuestCountChange = (event) => {
+        setIsAdGuestButtonDisable(false);
+        setGuestCount(event.target.value);
+    }
 
     return (
         <Row className='mx-0 '>
-            <Col lg={4} className='bg-white py-2 choose-section-city'>
+            <Col lg={4} md={6} className='bg-white py-2 choose-section-city'>
                 <Card className='city-selecting-card mb-2'>
                     <Card.Body className='py-2'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
@@ -21,7 +29,7 @@ function ChooseSection() {
                     </Card.Body>
                 </Card>
             </Col>
-            <Col lg={4} className='bg-white py-2 choose-section-guests'>
+            <Col lg={4} md={6} className='bg-white py-2 choose-section-guests'>
                 <Card className='guests-selecting-card mb-2'>
                     <Card.Body className='py-2'>
                         <Card.Subtitle className="mb-0 text-muted">GUESTS</Card.Subtitle>
@@ -30,13 +38,16 @@ function ChooseSection() {
                             id="guestsCount"
                             className='guests-count'
                             placeholder='Only me'
+                            min='2'
+                            onChange={handleOnGuestCountChange}
                         />
-                        <button className='add-guests m-0 p-0' onClick={handleShow} disabled={false}>
+                        <button className='add-guests m-0 p-0' onClick={handleShow} disabled={isAdGuestButtonDisable}>
                             + Add guests
                         </button>
                         <GuestsPopup
                             show={show}
                             handleClose={handleClose}
+                            guestCount={guestCount}
                         />
 
                     </Card.Body>

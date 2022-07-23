@@ -5,11 +5,11 @@ import PopupForm from "./PopupForm";
 
 function GuestsPopup(props) {
 
-    const guestsCount = 5;
+    const guestsCount = props.guestCount;
     const guestsNumbers = [];
 
-    for (let i = 0; i < guestsCount; i++) {
-        guestsNumbers.push(i + 1);
+    for (let i = 1; i < guestsCount; i++) {
+        guestsNumbers.push(i);
     }
 
     const guests = guestsNumbers.map((guestsNumbers) => <PopupForm key={guestsNumbers.toString()}

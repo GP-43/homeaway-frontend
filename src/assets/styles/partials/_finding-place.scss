@@ -129,6 +129,29 @@
   }
 }
 
+@media (max-width: 820px) {
+  .choose-section-city {
+    border-radius: 0;
+  }
+  .choose-section-guests {
+    border-radius: 0 1rem 0 0;
+  }
+  .choose-section-date {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+@media (max-width: 412px) {
+  .choose-section-city {
+    border-radius: 0;
+  }
+  .choose-section-guests {
+    border-radius: 0;
+  }
+  .choose-section-date {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
 .modal-dialog {
   border-radius: 1rem;
 
