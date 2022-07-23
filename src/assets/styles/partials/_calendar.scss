@@ -1,4 +1,4 @@
-.card{
+.card-calendar{
   width: auto;
   margin:0 auto;//10px 0 10px 970px
   height:0 auto;
@@ -136,7 +136,7 @@
     padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
   }
   .react-calendar__month-view__days__day--weekend {
-    /* color: #d10000; */
+    /* color: #d10000; */           
     color: #35333397;
   }
   .react-calendar__month-view__days__day--neighboringMonth {
@@ -161,7 +161,7 @@
     background-color: #e6e6e6;
   }
   .react-calendar__tile--now {
-    /* background: #ffff76; */
+    /* background: #ffff76; */          
     background-color: #171718;
     color:white;
   }

@@ -7,7 +7,7 @@ function UserCalendar() {
  const [date, setDate] = useState(new Date())
 
   return (
-    <div className="card">
+    <div className="card-calendar">
       <div className="app">
         <div className="calendar-container">
           <Calendar className="bg-light" onChange={setDate} value={date}/>
