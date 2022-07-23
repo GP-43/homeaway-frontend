@@ -17,7 +17,7 @@ function FilterSection() {
                                     id="acNeed" name="acType" 
                                     value="acNeed"
                                 />
-                                <lable>Need</lable> 
+                                <lable className="radio-lable">Need</lable> 
                                 <input 
                                     type="radio" 
                                     className="filter-radio-button" 
@@ -25,7 +25,7 @@ function FilterSection() {
                                     name="acType" 
                                     value="acNoNeed"
                                 />
-                                <lable>No Need</lable>
+                                <lable className="radio-lable">No Need</lable>
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -43,7 +43,7 @@ function FilterSection() {
                                 name="foodType" 
                                 value="fdNeed"
                             />
-                            <lable>Need</lable>
+                            <lable className="radio-lable">Need</lable>
                             <input 
                                 type="radio" 
                                 className="filter-radio-button" 
@@ -51,7 +51,7 @@ function FilterSection() {
                                 name="foodType" 
                                 value="fdNoNeed"
                             />
-                            <lable>No Need</lable>
+                            <lable className="radio-lable">No Need</lable>
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -68,7 +68,7 @@ function FilterSection() {
                                 id="iNeed" name="internetType" 
                                 value="iNeed"
                             />
-                            <lable>Need</lable>
+                            <lable className="radio-lable">Need</lable>
                             <input 
                                 type="radio" 
                                 className="filter-radio-button" 
@@ -76,7 +76,7 @@ function FilterSection() {
                                 name="internetType" 
                                 value="iNoNeed"
                             />
-                            <lable>No Need</lable>
+                            <lable className="radio-lable">No Need</lable>
                         </Card.Text>
                     </Card.Body>
                 </Card>
