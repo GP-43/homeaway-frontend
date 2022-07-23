@@ -1,6 +1,7 @@
 import React from "react";
 import SheduleSection from "../../components/shedule_section/SheduleSection";
 import MyBookingSection from "../../components/my_bookings/MyBookingSection";
+import UserCalendar from "../../components/calendar/UserCalendar";
 
 import place1 from "../../assets/images/places_image_gallery/place1.jpg";
 import place2 from "../../assets/images/places_image_gallery/place2.jpg";
@@ -89,7 +90,7 @@ function UserBookings() {
             <MyBookingSection data={My_Bookings}/>
 
             <div>
-            
+            <UserCalendar/>
             <SheduleSection data={schedule_data} />
             </div>
         </div>
