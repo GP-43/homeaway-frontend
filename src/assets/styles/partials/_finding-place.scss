@@ -122,6 +122,17 @@
     height: 5.2rem;
     outline: solid 1px;
 
+    .show-date {
+      font-size: 1.1rem;
+      font-weight: normal;
+    }
+
+    .calendar-icon {
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+    }
+
     .check {
       font-size: 0.8rem !important;
       color: #000000;
@@ -163,4 +174,8 @@
       border-radius: 1rem;
     }
   }
+}
+
+.calendar-popup {
+
 }

@@ -1,10 +1,14 @@
 import React, {useState} from "react";
-import {Card, Col, Form, Row, Tab, Tabs} from "react-bootstrap";
+import {Card, Col, Form, Row} from "react-bootstrap";
 import GuestsPopup from "./GuestsPopup";
-import Button from "react-bootstrap/Button";
 import CitySelecting from "./CitySelecting";
+import {GoCalendar} from 'react-icons/go'
+import CalendarPopup from "./CalendarPopup";
 
 function ChooseSection() {
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
     const [show, setShow] = useState(false);
     const [isAdGuestButtonDisable, setIsAdGuestButtonDisable] = useState(true);
     const [guestCount, setGuestCount] = useState(0)
@@ -15,6 +19,48 @@ function ChooseSection() {
     const handleOnGuestCountChange = (event) => {
         setIsAdGuestButtonDisable(false);
         setGuestCount(event.target.value);
+    }
+
+    const [showCalendar, setShowCalendar] = useState(false);
+    const [findClickedDatePicker, setFindClickedDatePicker] = useState(1);
+    const handleCalendarClose = () => setShowCalendar(false);
+
+    const handleOnFirstCalendarClick = () => {
+        setShowCalendar(true);
+        setFindClickedDatePicker(1)
+    }
+    const handleOnSecondCalendarClick = () => {
+        setShowCalendar(true)
+        setFindClickedDatePicker(2)
+    };
+
+    const [startDay, setStartDay] = useState("Mon");
+    const [startDate, setStartDate] = useState(1);
+    const [startMonth, setStartMonth] = useState("Jan");
+
+    const [endDay, setEndDay] = useState(startDay);
+    const [endDate, setEndDate] = useState(startDate);
+    const [endMonth, setEndMonth] = useState(startMonth);
+
+    const handleOnShowStartDate = (date) => {
+        setStartDay(days[date.getDay()]);
+        setStartDate(date.getDate());
+        setStartMonth(month[date.getMonth()]);
+    }
+    const handleOnShowEndDate = (date) => {
+        setEndDay(days[date.getDay()]);
+        setEndDate(date.getDate());
+        setEndMonth(month[date.getMonth()]);
+    }
+
+    const handleOnShowtDate = (date) => {
+        if (findClickedDatePicker === 1) {
+            handleOnShowStartDate(date);
+            handleOnShowEndDate(date);
+        }
+        if (findClickedDatePicker === 2) {
+            handleOnShowEndDate(date);
+        }
     }
 
     return (
@@ -60,13 +106,34 @@ function ChooseSection() {
                         <Card.Subtitle className="mb-0 text-muted">DATE</Card.Subtitle>
                         <Row>
                             <Col xs={6}>
+                                <span className='row'>
+                                    <Card.Title
+                                        className='col-9 my-1 show-date'>
+                                        {startDay}, {startDate} {startMonth}
+                                    </Card.Title>
+                                <GoCalendar className='col-2 px-0 my-1 calendar-icon'
+                                            onClick={handleOnFirstCalendarClick}
+                                />
+                                </span>
+                                <CalendarPopup show={showCalendar}
+                                               handleCalendarClose={handleCalendarClose}
+                                               showDate={handleOnShowtDate}/>
                                 <Card.Text className='check'>Check in</Card.Text>
                             </Col>
                             <Col xs={6}>
+                                <span className='row'>
+                                    <Card.Title
+                                        className='col-9 my-1 show-date'>{endDay}, {endDate} {endMonth}
+                                    </Card.Title>
+                                <GoCalendar className='col-2 px-0 my-1 calendar-icon'
+                                            onClick={handleOnSecondCalendarClick}/>
+                                </span>
+                                <CalendarPopup show={showCalendar}
+                                               handleCalendarClose={handleCalendarClose}
+                                               showDate={handleOnShowtDate}/>
                                 <Card.Text className='check'>Check out</Card.Text>
                             </Col>
                         </Row>
-                        {/*<Card.Title>Card Title</Card.Title>*/}
                     </Card.Body>
                 </Card>
             </Col>

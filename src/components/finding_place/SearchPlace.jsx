@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Row, Tab, Tabs} from "react-bootstrap";
+import {Tab, Tabs} from "react-bootstrap";
 import ChooseSection from "./ChooseSection";
 
 function SearchPlace() {
