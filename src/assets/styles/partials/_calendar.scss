@@ -6,19 +6,15 @@
   padding-left: 0px;
 
   .app {
-    text-align: center; 
-    width: 50%;
-    margin:5px;
-    padding:11px;
-    color:#000000;
+    text-align: center;
+    color: #000000;
   }
-  
+
   .selected-date {
     margin: 0 auto;
   }
-  
 
-  
+
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
