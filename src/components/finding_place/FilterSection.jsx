@@ -5,7 +5,7 @@ function FilterSection() {
     
     return (
         <Row className='mx-0 filter-section'>         
-            <Col className='bg-white filter-section-ac'>
+            <Col className='bg-white filter-section-ac' lg={4} md={6}>
                 <Card className="bg-white filter-card">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
@@ -30,7 +30,7 @@ function FilterSection() {
                     </Card.Body>
                 </Card>
             </Col>
-            <Col className='bg-white filter-section-food'>
+            <Col className='bg-white filter-section-food' lg={4} md={6}>
                 <Card className="bg-white filter-card">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
@@ -56,7 +56,7 @@ function FilterSection() {
                     </Card.Body>
                 </Card>
             </Col>
-            <Col className='bg-white filter-section-internet'>
+            <Col className='bg-white filter-section-internet' lg={4}>
                 <Card className="bg-white filter-card">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
