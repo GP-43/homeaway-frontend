@@ -6,11 +6,10 @@ import FilterSection from "./FilterSection";
 function SearchPlace() {
     return (
                 <Tabs
-                    defaultActiveKey="profile"
                     id="uncontrolled-tab-example"
-                    className="mb-0"
+                    className="mb-0 bg-muted"
                 >
-                    <Tab eventKey="home" title="Choose">
+                    <Tab eventKey="home" title="Choose" defaultActiveKey="profile">
                         <ChooseSection/>
                     </Tab>
                     <Tab eventKey="profile" title="Filters" className='filter-button'>

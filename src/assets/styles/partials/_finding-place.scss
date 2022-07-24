@@ -26,7 +26,11 @@
 }
 
 .search-place {
-    margin: auto;
+    margin:500px 50px 0 50px;
+    //margin: 0 auto;
+    position:absolute;
+    width:1200px;
+    background-color:transparent;
 }
 
 .nav {
@@ -40,7 +44,9 @@
             padding-bottom: 0.2rem;
             border: 0;
         }
+        
     }
+    
 }
 
 .choose-section-city {
