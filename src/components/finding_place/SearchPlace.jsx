@@ -1,6 +1,7 @@
 import React from "react";
 import {Col, Row, Tab, Tabs} from "react-bootstrap";
 import ChooseSection from "./ChooseSection";
+import FilterSection from "./FilterSection";
 
 function SearchPlace() {
     return (
@@ -13,7 +14,7 @@ function SearchPlace() {
                         <ChooseSection/>
                     </Tab>
                     <Tab eventKey="profile" title="Filters" className='filter-button'>
-                        <h1>FilterSection goes here</h1>
+                        <FilterSection/>
                     </Tab>
                 </Tabs>
     );
