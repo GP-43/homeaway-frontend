@@ -145,33 +145,48 @@
 .filter-section{
   color:#000000;
   justify-content: center;
+  .filter-section-ac {
+    border-radius: 0 0 0 1rem;
+  }
+  .filter-section-food {
+    border-radius: 0;
+  }
+  .filter-section-internet {
+    border-radius: 0 1rem 1rem 0;
+  }
 
-  .text-filter{
-    font-size: 1.1rem;
-  }
-  .filter-card{
-    border:none;
-    max-width:450px;
-  }
-  .filter-card-body{
-    margin: 15px;
-    border-radius:1rem;
-    outline:#000000;
-    outline: solid 1px;
-  }
-  .radio-button-section{
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-  .filter-radio-button{
-    margin-left: 20px;
-    cursor:pointer;
-  }
-  .radio-lable{
-    font-size: 1rem;
-    margin:0 0 0 5px;
-  }
-  .filter-p{
-    margin-top:0px;
-  }
+    .text-filter {
+      font-size: 1.1rem;
+    }
+
+    .filter-card {
+      border: none;
+      max-width: 450px;
+    }
+
+    .filter-card-body {
+      margin: 15px;
+      border-radius: 1rem;
+      outline: #000000;
+      outline: solid 1px;
+    }
+
+    .radio-button-section {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+
+    .filter-radio-button {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .radio-lable {
+      font-size: 1rem;
+      margin: 0 0 0 5px;
+    }
+
+    .filter-p {
+      margin-top: 0px;
+    }
 }
