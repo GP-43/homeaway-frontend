@@ -1,181 +1,220 @@
 .home-gallery {
-  height: 76vh;
-
-  .gallery-carousal {
     height: 76vh;
-
-    .gallery-image {
-      height: 75vh;
-      width: 100%;
-      margin: auto;
-      border-radius: 2rem;
-      box-shadow: 0px 5px 5px #B9B9B9;
+    .gallery-carousal {
+        height: 76vh;
+        .gallery-image {
+            height: 75vh;
+            width: 100%;
+            margin: auto;
+            border-radius: 2rem;
+            box-shadow: 0px 5px 5px #B9B9B9;
+        }
     }
-  }
 }
 
 @media (max-width: 820px) {
-  .home-gallery {
-    height: auto;
-
-    .gallery-carousal {
-      height: auto;
-
-      .gallery-image {
+    .home-gallery {
         height: auto;
-        width: 100%;
-      }
-
-
+        .gallery-carousal {
+            height: auto;
+            .gallery-image {
+                height: auto;
+                width: 100%;
+            }
+        }
     }
-  }
 }
 
 .search-place {
-  margin: auto;
+    margin: auto;
 }
 
 .nav {
-  .nav-item {
-    button {
-      width: 10rem !important;
-      background-color: #000000;
-      color: #ffffff;
-      font-size: 1.2rem;
-      padding-top: 0.2rem;
-      padding-bottom: 0.2rem;
-      border: 0;
+    .nav-item {
+        button {
+            width: 10rem !important;
+            background-color: #000000;
+            color: #ffffff;
+            font-size: 1.2rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+            border: 0;
+        }
     }
-  }
 }
 
 .choose-section-city {
-  border-radius: 0 0 0 1rem;
-
-  .city-selecting-card {
-    height: 5.2rem;
-    outline: solid 1px;
-    border-radius: 0.5rem;
-
-    .dropdown {
-      a:first-child {
-        text-decoration: none;
-        color: #000000;
-        //font-size: 0rem;
-        span {
-          font-size: 1.2rem !important;
+    border-radius: 0 0 0 1rem;
+    .city-selecting-card {
+        height: 5.2rem;
+        outline: solid 1px;
+        border-radius: 0.5rem;
+        .dropdown {
+            a:first-child {
+                text-decoration: none;
+                color: #000000;
+                //font-size: 0rem;
+                span {
+                    font-size: 1.2rem !important;
+                }
+            }
         }
-      }
+        .province {
+            font-size: 0.8rem;
+            color: #000000;
+        }
     }
-
-    .province {
-      font-size: 0.8rem;
-      color: #000000;
-    }
-  }
 }
 
 .drop-down-menu {
-  background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .choose-section-guests {
-  .guests-selecting-card {
-    height: 5.2rem;
-    outline: solid 1px;
-
-    .guests-count {
-      background: none;
-      border: none;
-      padding: 0;
-      font-size: 1.1rem;
+    .guests-selecting-card {
+        height: 5.2rem;
+        outline: solid 1px;
+        .guests-count {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+        .guests-count:focus {
+            -webkit-appearance: none;
+            box-shadow: none !important;
+        }
+        .guests-count::placeholder {
+            color: #000000;
+        }
+        .add-guests {
+            font-size: 0.8rem !important;
+            color: #000000;
+            border: none;
+            background: none;
+            span {
+                font-weight: bold;
+                color: #000000;
+            }
+        }
     }
-
-    .guests-count:focus {
-      -webkit-appearance: none;
-      box-shadow: none !important;
-    }
-
-    .guests-count::placeholder {
-      color: #000000;
-
-    }
-
-    .add-guests {
-      font-size: 0.8rem !important;
-      color: #000000;
-      border: none;
-      background: none;
-
-      span {
-        font-weight: bold;
-        color: #000000;
-      }
-    }
-  }
 }
 
 .choose-section-date {
-  border-radius: 0 1rem 1rem 0;
-
-  .date-selecting-card {
-    height: 5.2rem;
-    outline: solid 1px;
-
-    .show-date {
-      font-size: 1.1rem;
-      font-weight: normal;
+    border-radius: 0 1rem 1rem 0;
+    .date-selecting-card {
+        height: 5.2rem;
+        outline: solid 1px;
+        .show-date {
+            font-size: 1.1rem;
+            font-weight: normal;
+        }
+        .calendar-icon {
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+        }
+        .check {
+            font-size: 0.8rem !important;
+            color: #000000;
+        }
     }
-
-    .calendar-icon {
-      cursor: pointer;
-      height: 20px;
-      width: 20px;
-    }
-
-    .check {
-      font-size: 0.8rem !important;
-      color: #000000;
-    }
-  }
 }
 
 @media (max-width: 820px) {
-  .choose-section-city {
-    border-radius: 0;
-  }
-  .choose-section-guests {
-    border-radius: 0 1rem 0 0;
-  }
-  .choose-section-date {
-    border-radius: 0 0 1rem 1rem;
-  }
+    .choose-section-city {
+        border-radius: 0;
+    }
+    .choose-section-guests {
+        border-radius: 0 1rem 0 0;
+    }
+    .choose-section-date {
+        border-radius: 0 0 1rem 1rem;
+    }
 }
+
 @media (max-width: 412px) {
-  .choose-section-city {
-    border-radius: 0;
-  }
-  .choose-section-guests {
-    border-radius: 0;
-  }
-  .choose-section-date {
-    border-radius: 0 0 1rem 1rem;
-  }
+    .choose-section-city {
+        border-radius: 0;
+    }
+    .choose-section-guests {
+        border-radius: 0;
+    }
+    .choose-section-date {
+        border-radius: 0 0 1rem 1rem;
+    }
 }
 
 .modal-dialog {
-  border-radius: 1rem;
-
-  .modal-content {
-    background-color: #EBEBEB;
     border-radius: 1rem;
-
-    .modal-header {
-      border-radius: 1rem;
+    .modal-content {
+        background-color: #EBEBEB;
+        border-radius: 1rem;
+        .modal-header {
+            border-radius: 1rem;
+        }
     }
-  }
 }
 
-.calendar-popup {
-
+.filter-section {
+    color: #000000;
+    justify-content: center;
+    .filter-section-ac {
+        border-radius: 0 0 0 1rem;
+    }
+    .filter-section-food {
+        border-radius: 0;
+    }
+    .filter-section-internet {
+        border-radius: 0 1rem 1rem 0;
+    }
+    @media (max-width: 820px) {
+        .filter-section-ac {
+            border-radius: 0;
+        }
+        .filter-section-food {
+            border-radius: 0 1rem 0 0;
+        }
+        .filter-section-internet {
+            border-radius: 0 0 1rem 1rem;
+        }
+    }
+    @media (max-width: 412px) {
+        .filter-section-ac {
+            border-radius: 0;
+        }
+        .filter-section-food {
+            border-radius: 0;
+        }
+        .filter-section-internet {
+            border-radius: 0 0 1rem 1rem;
+        }
+    }
+    .text-filter {
+        font-size: 1.1rem;
+    }
+    .filter-card {
+        border: none;
+    }
+    .filter-card-body {
+        margin: 15px;
+        border-radius: 1rem;
+        outline: #000000;
+        outline: solid 1px;
+    }
+    .radio-button-section {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .filter-radio-button {
+        margin-left: 20px;
+        cursor: pointer;
+    }
+    .radio-lable {
+        font-size: 1rem;
+        margin: 0 0 0 5px;
+    }
+    .filter-p {
+        margin-top: 0px;
+    }
 }
