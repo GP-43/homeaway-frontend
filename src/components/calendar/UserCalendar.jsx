@@ -1,23 +1,26 @@
 import 'react-calendar/dist/Calendar.css'
 import Calendar from 'react-calendar'
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import '../../assets/styles/partials/_calendar.scss';
 
-function UserCalendar() {
- const [date, setDate] = useState(new Date())
+function UserCalendar(props) {
+    const [date, setDate] = useState(new Date())
 
-  return (
-    <div className="card-calendar">
-      <div className="app">
-        <div className="calendar-container">
-          <Calendar className="bg-light" onChange={setDate} value={date}/>
+    useEffect(() => {
+        props.showDate(date);
+    }, [date])
+
+    return (
+        <div className="card-calendar w-100">
+            <div className="app px-0">
+                <div className="calendar-container">
+                    <Calendar className="bg-light" onChange={setDate} value={date}/>
+                </div>
+                <div className="text-center">
+                </div>
+            </div>
         </div>
-        <div className="text-center">
-          {/*Selected date: {date.toDateString()}*/}
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default UserCalendar;
