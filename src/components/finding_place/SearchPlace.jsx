@@ -7,7 +7,7 @@ function SearchPlace() {
     return (
                 <Tabs
                     id="uncontrolled-tab-example"
-                    className="mb-0 bg-muted"
+                    className="mb-0"
                 >
                     <Tab eventKey="home" title="Choose" defaultActiveKey="profile">
                         <ChooseSection/>

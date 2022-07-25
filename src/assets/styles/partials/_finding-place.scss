@@ -33,14 +33,14 @@
     left:10%;
     right:10%;
     width:auto;
-    background-color:transparent;  
+    background:transparent;  
 }
 
 .nav {
     
     background-color:transparent;
     .nav-item {
-        
+        border-radius: 20px;
         button {
             width: 10rem !important;
             background-color: #000000;
@@ -48,7 +48,7 @@
             font-size: 1.2rem;
             padding-top: 0.2rem;
             padding-bottom: 0.2rem;
-            border:0;
+            border:0;      
         }
     }
     

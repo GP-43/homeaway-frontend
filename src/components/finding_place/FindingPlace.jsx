@@ -11,7 +11,7 @@ function FindingPlace() {
                 <HomeGallery/>
             </Col>
             <Col xs={11} className="search-place">
-                <SearchPlace/>
+                <SearchPlace />
                 <SearchButton/>
             </Col>
         </Row>
