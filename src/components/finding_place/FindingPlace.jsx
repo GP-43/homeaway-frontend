@@ -2,6 +2,7 @@ import React from "react";
 import {Col, Row} from "react-bootstrap";
 import HomeGallery from "./HomeGallery";
 import SearchPlace from "./SearchPlace";
+import SearchButton from "./SearchButton";
 
 function FindingPlace() {
     return (
@@ -11,6 +12,7 @@ function FindingPlace() {
             </Col>
             <Col xs={11} className="search-place">
                 <SearchPlace/>
+                <SearchButton />
             </Col>
         </Row>
     );
