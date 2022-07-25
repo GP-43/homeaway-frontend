@@ -34,6 +34,12 @@
     right:10%;
     width:auto;
     background:transparent;  
+    @media (max-width: 820px) {
+        top:350px;
+    }
+    @media (max-width: 412px) {
+        top:200px;
+    }
 }
 
 .nav {
@@ -235,5 +241,13 @@
     justify-content: right; 
     background: transparent;
     right: 11px;
-    top:140px;
+    top:137px;
+
+    @media (max-width: 820px) {
+        top:255px;
+    }
+    @media (max-width: 412px) {
+        top:150px;
+    }
+       
 }
