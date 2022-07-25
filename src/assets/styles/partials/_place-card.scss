@@ -1,5 +1,5 @@
 .place-card-cover {
-  flex-basis: 25%;
+  // flex-basis: 25%;
 
   .place-card {
     width: 12rem;
@@ -142,7 +142,7 @@
   }
 
   .place-card-set {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .place-section-cover {
@@ -160,6 +160,12 @@
       padding-right: 49px;
     }
   }
+
+  .place-card-set {
+    flex-direction: column;
+    padding-left: 3rem
+  }
+
 }
 
 .sort-drop-down-btn {
