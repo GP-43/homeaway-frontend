@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import {FiTwitter,FiPhoneCall} from "react-icons/fi";
 import { AiOutlineFacebook,AiOutlineLinkedin } from "react-icons/ai";
 import { GrMail } from "react-icons/gr";
+import {Link} from "react-router-dom";
 
 function OccupantFooter() {
     return (
@@ -19,9 +20,9 @@ function OccupantFooter() {
                     <FiPhoneCall className="bg-dark footer-icon mx-1"/>
                     <GrMail className="bg-dark footer-icon mx-1"/>
                 </Card.Text>
-                <Button variant="outline-light dark button mx-1">Home</Button>
-                <Button variant="outline-light dark button mx-1">Booking</Button>
-                <Button variant="outline-light dark button mx-1">Terms</Button>
+                <Button variant="outline-light dark button mx-1" as={Link} to='/'>Home</Button>
+                <Button variant="outline-light dark button mx-1" as={Link} to='userbookings'>Booking</Button>
+                <Button variant="outline-light dark button mx-1" as={Link} to='/'>Terms</Button>
             </Card.Body>
             <Card.Footer className="pb-4">&copy; {' '} {new Date().getFullYear()} HomeAway HomeAway - All Right Reserved.</Card.Footer>
         </Card>
