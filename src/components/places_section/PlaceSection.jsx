@@ -82,12 +82,12 @@ function PlaceSection() {
   ];
 
   return (
-    <Container>
+    <Container className="place-section-title">
       <Row  className= "pt-3 pb-3">
-        <Col className = "ms-4 ">
+        <Col >
           <h5>Explore more places</h5>
         </Col>
-        <Col  className="d-flex justify-content-end me-3">
+        <Col  className="d-flex justify-content-end sort-btn">
             <Dropdown className="sort-drop-down-btn">
               <Dropdown.Toggle variant="success" id="dropdown-basic">
                 <FaExchangeAlt
@@ -105,7 +105,7 @@ function PlaceSection() {
         </Col>
 
       </Row>
-      <Row xs={4} className="place-card-set ms-4 pe-3">
+      <Row xs={4} className="place-card-set  pe-3">
         
           {Place_Data &&
             Place_Data.map((i) => (
