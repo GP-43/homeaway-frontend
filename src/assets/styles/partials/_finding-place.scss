@@ -26,11 +26,16 @@
 }
 
 .search-place {
-    margin:500px 50px 0 50px;
-    //margin: 0 auto;
+    //margin:500px 50px 0 50px;
+   // margin: 0 auto;
+
     position:absolute;
-    width:1200px;
+    top:75%;
+    left:10%;
+    right:10%;
+    width:auto;
     background-color:transparent;
+    
 }
 
 .nav {

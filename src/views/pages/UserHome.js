@@ -11,7 +11,7 @@ function UserHome() {
                     <FindingPlace/>
                 </Col>
             </Row>
-            <Row className='mx-0 mt-2'>
+            <Row className='mx-0 mt-5 pt-2'>
                 <Col>
                     <PlaceSection/>
                 </Col>
