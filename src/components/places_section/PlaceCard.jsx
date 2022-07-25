@@ -10,7 +10,7 @@ function PlaceCard(props) {
 
   return (
     <div className="place-card-cover">
-      <Card className="place-card">
+      <Card className="place-card mb-3">
         <img
           className="d-block gallery-image place-image"
           src={props.Src}
