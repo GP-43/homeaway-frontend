@@ -12,7 +12,7 @@ function FindingPlace() {
             </Col>
             <Col xs={11} className="search-place">
                 <SearchPlace/>
-                <SearchButton />
+                <SearchButton/>
             </Col>
         </Row>
     );

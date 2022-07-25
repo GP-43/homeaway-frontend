@@ -28,7 +28,6 @@
 .search-place {
     //margin:500px 50px 0 50px;
    // margin: 0 auto;
-
     position:absolute;
     top:75%;
     left:10%;
@@ -38,7 +37,10 @@
 }
 
 .nav {
+    
+    background-color:transparent;
     .nav-item {
+        
         button {
             width: 10rem !important;
             background-color: #000000;
@@ -46,9 +48,8 @@
             font-size: 1.2rem;
             padding-top: 0.2rem;
             padding-bottom: 0.2rem;
-            border: 0;
+            border:0;
         }
-        
     }
     
 }
@@ -229,5 +230,10 @@
     }
 }
 .search-button{
-    
+    position: absolute;
+    width:auto;
+    justify-content: right; 
+    background: transparent;
+    right: 11px;
+    top:140px;
 }
