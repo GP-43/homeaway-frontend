@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import UserHome from './views/pages/UserHome';
-import UserBookings from "./views/pages/UserBookings";
+import UserBookings from "./views/pages/UserBookings"
 import HomeAwayApp from './views/HomeAwayApp';
 
 function App() {
