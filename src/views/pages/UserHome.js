@@ -16,7 +16,6 @@ function UserHome() {
                     <PlaceSection/>
                 </Col>
             </Row>
-            
         </Container>
     );
 }
