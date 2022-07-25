@@ -125,17 +125,6 @@
   .dropdown-toggle::after {
     display: none;
   }
-
-
-
-}
-
-.place-section-title{
-  margin-left: 2.2rem !important;
-
-  .sort-btn{
-    margin-right: 4rem;
-  }
 }
 
 .place-card-set {
@@ -144,8 +133,6 @@
   flex: 1;
   flex-direction: row;
 }
-
-
 
 @media only screen and (max-width: 820px) {
   .place-card-cover {
@@ -164,20 +151,6 @@
       padding-right: 17px;
     }
   }
-
-
-
-
-  // tharindu edited
-
-  .place-section-title{
-    margin-left: -0.3rem !important;
-  
-    .sort-btn{
-      margin-right: -1.4rem; 
-    }
-  }
-
 }
 
 @media only screen and (max-width: 412px) {
@@ -190,7 +163,7 @@
 
   .place-card-set {
     flex-direction: column;
-    padding-left: 4.8rem;
+    padding-left: 3rem
   }
 
 }
