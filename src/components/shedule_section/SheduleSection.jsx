@@ -16,7 +16,7 @@ function SheduleSection() {
         <Container className="mt-1">
             <div className="schedule-section-box">
                 <div className="schedule-section">
-                    <h3 className="schedule-section-title">Schedule</h3>
+                    <h5 className="schedule-section-title">Schedule</h5>
                     {schedule_data && schedule_data.map(i => <SheduleCard Title={i.title} Place={i.place} From={i.from} To={i.to} />)}
                 </div>
             </div>

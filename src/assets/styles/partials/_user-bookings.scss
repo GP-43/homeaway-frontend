@@ -2,10 +2,16 @@
 //    display: flex;
 //    justify-content: space-between;
 //  }
-
+.sort-drop-down-btn{
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
  .my-bookings-dropdown {
-   --bs-dropdown-min-width: 0px;
+   --bs-dropdown-min-width: 0px; 
  }
+
+
 
 //  .places-title-my-booking {
 //    justify-content: space-between;
@@ -77,4 +83,10 @@
   .schedule-section-title {
     font-size: 1.5rem;
   }
+
+
+}
+
+.schedule-section::-webkit-scrollbar {
+  display: none;
 }
