@@ -1,0 +1,36 @@
+.place-description-right{
+    align-items: right;
+}
+.time-selection{
+    width:40px;
+    height:40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color:rgb(98, 11, 185) ;
+}
+.time-grid-container {
+    display: grid;
+    column-gap: 0px;
+    grid-template-columns: auto auto auto;
+    padding: 2px;
+    width:220px;
+    height:60px;
+    
+}
+.time-grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px;
+    font-size: 30px;
+    text-align: center;
+    width:60px;
+    height:60px;
+    border: 2px #000000;
+    .time-grid-item-2{
+        width:10px;
+    }
+}
+.time-button{
+    width:30px;
+    height:30px;
+    font-size: 9px;
+    text-align: center;
+}
