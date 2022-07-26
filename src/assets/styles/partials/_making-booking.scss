@@ -3,6 +3,7 @@
         padding:2px;
         height:70px;
         margin-left: 5px;
+        border-radius: 5px;
 }
 
 .time-grid-item{
@@ -46,6 +47,7 @@
     height:40px;
     background-color: rgba(255, 255, 255, 0.8);
     border-color:rgb(98, 11, 185) ;
+    text-align: center;
 }
 .time-button {
     height:20px;
@@ -53,9 +55,15 @@
     border-radius: 0%;
     border-color:#dadce0 ;
     color:#6200ee;
-    background-color: #f2e7fe;
+    background-color: #ffffff;
     text-align: center;
     font-size: 9px;
+    transition-duration: 0.4s;
+
+    .time-button :hover{
+        background-color: #dadce0;
+        color: white;
+    }
 }
 .button-am{
     margin-top:-10px;

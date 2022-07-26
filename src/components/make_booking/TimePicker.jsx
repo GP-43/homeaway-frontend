@@ -8,14 +8,14 @@ function TimePicker() {
             <Form className="">
                 <Row className="bg-white time-grid-container">
                     <div className="bg-white time-grid-item item1">
-                        <input type="text" id="hours" className="time-selection"></input>
+                        <input type="text" id="hours" className="time-selection" placeholder="00"></input>
                     </div>
                     
                     <div className="bg-white time-grid-item item1">
-                        <input type="text" id="minutes" className="time-selection"></input>
+                        <input type="text" id="minutes" className="time-selection" placeholder="00"></input>
                     </div>
                     <div className="bg-white time-grid-item item2 pe-0">
-                        <Button className="time-button button-am me-1">AM</Button>
+                        <Button variant="secondary" className="time-button button-am me-1" active>AM</Button>
                         <Button className="time-button button-pm me-1">PM</Button>
                     </div>    
                 
@@ -27,7 +27,6 @@ function TimePicker() {
                     </div>
                 </Row>
             </Form>
-            
         </Container>
     );
 }
