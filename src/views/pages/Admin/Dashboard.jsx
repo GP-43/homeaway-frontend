@@ -1,12 +1,13 @@
 import React from "react";
 import {Row, Col, Container} from "react-bootstrap";
+import HeaderCard from "../../../components/admin/HeaderCard";
 
 function Dashboard() {
     return (
         <Container>
             <Row className="mx-0">
                 <Col className="px-0">
-                    dashboard components
+                    <HeaderCard/>
                 </Col>
             </Row>
         </Container>
