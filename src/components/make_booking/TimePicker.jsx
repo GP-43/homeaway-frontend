@@ -3,26 +3,31 @@ import {Row, Col, Container, Form, Button} from "react-bootstrap";
 
 function TimePicker() {
     return (
-        <Container className="bg-white">
-            <Col className="mx-0 bg-white">
-                <Form>
-                <Row className="time-grid-container bg-white">
-                    <div className="time-grid-item">
-                        <input type="text" id="hours" className="time-selection"></input> : 
+        <Container className="bg-white time-picker-container">
+            
+            <Form className="">
+                <Row className="bg-white time-grid-container">
+                    <div className="bg-white time-grid-item item1">
+                        <input type="text" id="hours" className="time-selection"></input>
                     </div>
                     
-                    <div className="time-grid-item">
+                    <div className="bg-white time-grid-item item1">
                         <input type="text" id="minutes" className="time-selection"></input>
                     </div>
-                    <div className="time-grid-item">
-                        <Button className="time-button">AM</Button>
-                        <Button className="time-button">PM</Button>
+                    <div className="bg-white time-grid-item item2">
+                        <Button className="time-button button-am pe-1 me-2">AM</Button>
+                        <Button className="time-button button-pm pe-1 me-2">PM</Button>
                     </div>    
+                
+                    <div className="bg-white time-grid-item item3 item3-h6">
+                        Hours 
+                    </div>
+                    <div className="bg-white time-grid-item item3 item3-h6">
+                        Minutes
+                    </div>
                 </Row>
-                <h6>Minutes</h6>
-                    <h6>Hours</h6>
-                </Form>
-            </Col>
+            </Form>
+            
         </Container>
     );
 }
