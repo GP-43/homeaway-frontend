@@ -14,9 +14,9 @@ function TimePicker() {
                     <div className="bg-white time-grid-item item1">
                         <input type="text" id="minutes" className="time-selection"></input>
                     </div>
-                    <div className="bg-white time-grid-item item2">
-                        <Button className="time-button button-am pe-1 me-2">AM</Button>
-                        <Button className="time-button button-pm pe-1 me-2">PM</Button>
+                    <div className="bg-white time-grid-item item2 pe-0">
+                        <Button className="time-button button-am me-1">AM</Button>
+                        <Button className="time-button button-pm me-1">PM</Button>
                     </div>    
                 
                     <div className="bg-white time-grid-item item3 item3-h6">

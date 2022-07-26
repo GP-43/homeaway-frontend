@@ -1,84 +1,5 @@
-// .place-description-right{
-//     align-items: right;
-// }
-// .time-picker-container{
-//     width:170px;
-//     padding:2px;
-//     height:70px;
-//     margin-left: 5px;
-// }
-
-// .time-selection{
-//     width:40px;
-//     height:40px;
-//     background-color: rgba(255, 255, 255, 0.8);
-//     border-color:rgb(98, 11, 185) ;
-// }
-// .time-grid-container {
-//     display: grid;
-//     column-gap: 0px;
-//     grid-template-columns: auto auto auto;
-//     padding: 2px 10px 2px 2px;
-//     width:145px;
-//     height:60px;
-//     margin-left: -20px;
-    
-// }
-// .time-grid-item {
-//     background-color: rgba(255, 255, 255, 0.8);
-//     padding: 2px;
-//     font-size: 25px;
-    
-//     width:52px;
-//     height:55px;
-    
-    
-//     //border: 1px solid rgba(0, 0, 0, 0.8);
-//     /*.time-grid-item-2{
-//         width:10px;
-//     }*/
-    
-// }
-// .am-pm{
-//     width: 30px;
-//     text-align: center;
-// }
-// .time-button{
-//     width:20px;
-//     height:20px;
-//     font-size: 9px;
-//     text-align: center;
-//     margin-top: -25px;
-//     margin-left: 5px;
-//     border-radius: 0%;
-//     border-color:#dadce0 ;
-//     color:#6200ee;
-//     background-color: #f2e7fe;
-// }
-// .time-button-2{
-//     width:20px;
-//     height:20px;
-//     font-size: 9px;
-//     text-align: left; 
-//     margin-left: -26px;  
-//     margin-top: 15px; 
-//     border-radius: 0%;
-//     border-color:#dadce0 ;
-//     color:#6200ee;
-//     background-color: #ffffff;
-// }
-// .Row-2{
-//     font-size: 9px;
-//     margin-top: -10px;
-//     height: 10px;
-
-//     .row-2-p{
-//         background-color: #ffffff;
-//         color:#6200ee;
-//     }
-// }
 .time-picker-container{
-        width:175px;
+        width:172px;
         padding:2px;
         height:70px;
         margin-left: 5px;
@@ -92,18 +13,17 @@
         justify-content: left;
     }
     .item2{
-        width:45px;
+        width:40px;
         height: 55px;
         text-align: center;
-        padding-left: 0px;
+        padding-left: 3px;
         margin-left:-20px;
         margin-top: -20px;
     }
     .item3{
         width:52px;
         height: 55px;
-    }
-    
+    }  
 }
 .item2-h3{
     background-color: #ffffff;
@@ -111,13 +31,12 @@
 .item3-h6{
     font-size: 9px;
     margin-top:-10px;
-
 }
 .time-grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
     padding-top:5px;
-    width:175px;
+    width:170px;
     height:60px;
     text-align: left;
     margin-left:0px;    
@@ -137,11 +56,14 @@
     background-color: #f2e7fe;
     text-align: center;
     font-size: 9px;
-    .button-am{
-        margin-top:-30px;
-    }
-    .button-pm{
-        margin-top: -20px;
-    }
-
+}
+.button-am{
+    margin-top:-10px;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+.button-pm{
+    margin-top: -20px;
+    padding-top: 3px;
+    padding-left: 3px;
 }
