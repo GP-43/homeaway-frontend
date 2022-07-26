@@ -26,7 +26,7 @@
     .renter-rating {
       background-color: #d9d9d9;
       color: white;
-      font-size:0.7rem;
+      font-size: 0.7rem;
 
       .rating-icon {
         background-color: #d9d9d9;
@@ -50,5 +50,32 @@
     color: white;
     padding: 8px;
     border-radius: 7px;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .renter-card {
+    width: 56%;
+    height: 18vh;
+    .renter-name {
+      font-size: 1rem !important;
+      font-weight: 700;
+    }
+
+    .renter-rating {
+      font-size: 1rem !important;
+    }
+
+    .renter-no {
+      height: 4vh;
+      margin-bottom: 45px;
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .renter-card {
+    width:340px;
+    height:193px;
   }
 }
