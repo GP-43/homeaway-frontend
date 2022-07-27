@@ -1,13 +1,17 @@
-import React from 'react';
-import singleimg1 from '../../assets/images/sample_places/sample-place1.jpg';
+import React from "react";
+import { Col } from "react-bootstrap";
 
-function singleimage (props){
+function singleimage(props) {
   return (
-    <div>
-        <img className="single-image thumbnail" src={props.Src} height="100" width="100" />
-    </div>
-    
-  )
+    <Col>
+      <img
+        className="single-image thumbnail"
+        src={props.Src}
+        height="100"
+        width="100"
+      />
+    </Col>
+  );
 }
 
-export default singleimage
+export default singleimage;
