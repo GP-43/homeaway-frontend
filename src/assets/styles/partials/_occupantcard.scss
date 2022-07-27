@@ -1,0 +1,95 @@
+.big-con {
+    background-color: black !important;
+    border-radius: 5%;
+    color: white;
+
+
+
+    .renter-user-list {
+        //border: solid;
+        border-radius: 15px;
+        background-color: black;
+        margin-left: -7rem;
+
+
+        .list-heading {
+            background-color: black;
+            text-align: center;
+            font-size: larger;
+
+        }
+        
+    }
+
+    .occupant-user-list {
+        //border: solid;
+        border-radius: 15px;
+        background-color: black;
+
+        .list-heading {
+            background-color: black;
+            text-align: center;
+            font-size: larger;
+
+        }
+    }
+
+}
+
+.user-card {
+    //border: solid;
+    background-color: black;
+
+    .user-row{
+        background-color: black;
+
+        .user-col{
+            background-color: black;
+
+            .profile-image {
+                object-fit: cover;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50px;
+                
+            }
+            
+            
+        }
+        .text-col{
+            margin-left: -2rem;
+
+            .user-name{
+                background-color: black;
+                font-size: medium;
+    
+            }
+            .user-location{
+                background-color: black;
+                font-size: small;
+            }
+
+        }
+        
+        
+    }
+
+    
+    
+
+
+}
+
+@media only screen and (max-width: 412px) {
+    .renter-user-list {
+        margin-left: 0rem !important;
+
+    }
+
+    .user-list {
+        justify-content: flex-end;
+
+    }
+
+
+}
