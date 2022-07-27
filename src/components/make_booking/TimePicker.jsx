@@ -5,7 +5,7 @@ function TimePicker() {
     return (
         <Container className="bg-white time-picker-container">
             
-            <Form className="">
+            <Form className="bg-white">
                 <Row className="bg-white time-grid-container">
                     <div className="bg-white time-grid-item item1">
                         <input type="text" id="hours" className="time-selection" placeholder="00"></input>

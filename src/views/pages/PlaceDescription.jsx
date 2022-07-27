@@ -8,10 +8,10 @@ function PlaceDescription(){
   return (
     <Container >
         <Row className='mx-0 mt-2'>
-            <Col className='image-gallery-container bg-dark'>
+            <Col className='image-gallery-container'>
                 <ImageGallery/>
             </Col>
-            <Col className='place-description-right ms-5 bg-info'>
+            <Col className='place-description-right ms-5'>
                 <Row>Owner Details</Row>
                 <Row className='mx-0 mt-2'>
                     <TimePicker/>
