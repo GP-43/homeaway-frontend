@@ -20,12 +20,16 @@
     text-align: center;
     border-color:rgb(67, 6, 153);
 }
+.time-input:focus{
+    border-color:rgb(0, 0, 0);
+}
 .time-input-span{
     width:40px;
     height: 15px;
-    text-align: center;
+    text-align: left;
     margin-top: 60px;
     margin-left: -55px;
+    color:#5035c6;
 }
 .time-input-span-text{
     font-size: 9px;
@@ -52,6 +56,14 @@
         background-color: #ffffff;
     }
     .time-button:hover{
+        background-color: #5035c6;
+        color:#ffffff;
+    }
+    .time-button:active{
+        background-color: #5035c6;
+        color:#ffffff;
+    }
+    .time-button:focus{
         background-color: #5035c6;
         color:#ffffff;
     }
