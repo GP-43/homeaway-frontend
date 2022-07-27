@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ImageGallery from '../../components/imagegallery/ImageGallery';
-import TimePicker from '../../components/make_booking/TimePicker';
+import TimePickers from '../../components/make_booking/TimePickers';
 //import DateSelection from '../../components/make_booking/DateSelection';
 
 function PlaceDescription(){
@@ -14,7 +14,7 @@ function PlaceDescription(){
             <Col className='place-description-right ms-5'>
                 <Row>Owner Details</Row>
                 <Row className='mx-0 mt-2'>
-                    <TimePicker/>
+                    <TimePickers/>
                 </Row>
             </Col>
         </Row>

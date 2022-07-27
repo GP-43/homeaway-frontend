@@ -1,77 +1,70 @@
-.time-picker-container{
-        width:172px;
-        padding:2px;
-        height:70px;
-        margin-left: 5px;
-        border-radius: 5px;
+.time-picker {
+    width: 240px;
+    border-radius: 10px;
 }
-
-.time-grid-item{
-    text-align: center;
-    .item1{
-        width:52px;
-        height: 55px;
-        justify-content: left;
-    }
-    .item2{
-        width:40px;
-        height: 55px;
-        text-align: center;
-        padding-left: 3px;
-        margin-left:-20px;
-        margin-top: -20px;
-    }
-    .item3{
-        width:52px;
-        height: 55px;
-    }  
+.time-base{
+    width: 220px;
+    display: flex;
 }
-.item2-h3{
+.time-base > div{
     background-color: #ffffff;
 }
-.item3-h6{
-    font-size: 9px;
-    margin-top:-10px;
+.time-box-1 {
+    width:54px;
+    height:57px;
 }
-.time-grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding-top:5px;
-    width:170px;
-    height:60px;
-    text-align: left;
-    margin-left:0px;    
+.time-input{
+    width:52px;
+    height: 55px;
+    font-size: 36px;
+    text-align: center;
+    border-color:rgb(67, 6, 153);
 }
-.time-selection {
+.time-input-span{
     width:40px;
-    height:40px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-color:rgb(98, 11, 185) ;
+    height: 15px;
     text-align: center;
+    margin-top: 60px;
+    margin-left: -55px;
 }
-.time-button {
-    height:20px;
-    width:20px;
-    border-radius: 0%;
-    border-color:#dadce0 ;
-    color:#6200ee;
-    background-color: #ffffff;
-    text-align: center;
+.time-input-span-text{
     font-size: 9px;
-    transition-duration: 0.4s;
+    width:52px;
+}
+.time-dots{
+    width:10px;
+}
+.time-dots-h4{
+    width:8px;
+    font-size: 28px;
+}
+.time-button-div{
+    width: 40px;
 
-    .time-button :hover{
-        background-color: #dadce0;
-        color: white;
+    .time-button{
+        width:24px;
+        height: 20px;
+        font-size: 8px;
+        text-align: center;
+        color:#000000;
+        border-radius: 3px;
+        border-color: blueviolet;
+        background-color: #ffffff;
     }
-}
-.button-am{
-    margin-top:-10px;
-    padding-top: 3px;
-    padding-left: 3px;
-}
-.button-pm{
-    margin-top: -20px;
-    padding-top: 3px;
-    padding-left: 3px;
+    .time-button:hover{
+        background-color: #5035c6;
+        color:#ffffff;
+    }
+    .am{
+        margin-bottom:-5px;
+        text-align: center;
+    }
+    .pm{
+        margin-top:-5px;
+    }
+    .button-name{
+        margin-left:-6px;
+        margin-top: -4px;
+        background-color: transparent;  
+    }
 }
