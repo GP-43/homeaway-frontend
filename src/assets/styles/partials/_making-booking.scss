@@ -23,6 +23,7 @@
     font-size: 36px;
     text-align: center;
     border-color:rgb(67, 6, 153);
+    border-radius: 10px;
 }
 .time-input:focus{
     border-color:rgb(0, 0, 0);
@@ -114,6 +115,7 @@
             width:130px;
             border-radius: 10px;
             text-align: center;
+            border-color: #5035c6;
         }
     }
     .react-datepicker__input-container{
@@ -143,6 +145,7 @@
     }
     .text-rent-fee{
         font-size: 20px;
+        margin-left:5px;
     }
     .date-component {
         width:220px;

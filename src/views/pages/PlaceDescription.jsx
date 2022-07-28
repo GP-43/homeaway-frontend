@@ -14,7 +14,7 @@ function PlaceDescription(){
             <Col className='place-description-right ms-5'>
                 <Row>Owner Details section</Row>
                 <Row className='make-booking-card1 mx-0 mt-2 bg-primary d-flex'>
-                    <Col className="booking-col">
+                    <Col className="booking-col" xs lg="2">
                         <div className='d-flex m-1 pb-1'>
                             <b className='text'>Date:</b>
                             <DatePickers className="date-component"/>
@@ -27,7 +27,7 @@ function PlaceDescription(){
                             <h1 className='text-rent-fee'><b>LKR 12,500</b></h1>
                         </div>
                     </Col>
-                    <Col className="booking-col">
+                    <Col className="booking-col" xs lg="2">
                         <div className='d-flex m-1 pb-1'>
                             <b className='text'>to:</b>
                             <DatePickers className="date-component"/>
