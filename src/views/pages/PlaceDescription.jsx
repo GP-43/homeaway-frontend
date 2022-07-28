@@ -44,7 +44,7 @@ function PlaceDescription(){
             </Col>
         </Row>
     </Container>
-  )
+  );
 }
 
 export default PlaceDescription
