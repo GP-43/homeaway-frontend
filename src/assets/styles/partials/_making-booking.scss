@@ -1,14 +1,17 @@
 //------------Time picker----------//
 .time-picker {
-    width: 240px;
+    width: 225px;
     border-radius: 10px;
+    height:85px;
 }
 .time-base{
-    width: 220px;
+    width: 206px;
     display: flex;
+    border-radius: 10px;
 }
 .time-base > div{
     background-color: #ffffff;
+    border-radius: 10px;
 }
 .time-box-1 {
     width:54px;
@@ -44,7 +47,8 @@
     font-size: 28px;
 }
 .time-button-div{
-    width: 40px;
+    width: 30px;
+    border-radius: 10px;
 
     .time-button{
         width:24px;
@@ -82,7 +86,7 @@
     }
 }
 
-/**------------booking component----------*/
+/**------------date picking component----------*/
 .date-card{
     width:220px;
     height:55px;
@@ -104,6 +108,7 @@
 
     .date-datepicker-col{
         width:150px;
+        outline:none;
     
         .datePicker{
             width:130px;
@@ -113,5 +118,37 @@
     }
     .react-datepicker__input-container{
         background-color: #ffffff;
+        outline:none;
+    }
+}
+/*----------------my booking-----------------*/
+.make-booking-card1{
+    width:600px;
+    height:300px;
+
+    .booking-col{
+        width:300px;
+        height:300px;
+    }
+
+    .text{
+        font-size: medium;
+        margin-right: 30px;
+        margin-top: 15px;
+    }
+    .text-time{
+        font-size: medium;
+        margin-right: 16px;
+        margin-top: 25px;
+    }
+    .text-rent-fee{
+        font-size: 20px;
+    }
+    .date-component {
+        width:220px;
+    }
+    .button-pay-now {
+        width:100px;
+        margin-left: 70px;
     }
 }
