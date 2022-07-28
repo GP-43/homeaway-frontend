@@ -14,17 +14,14 @@ function Dashboard() {
                 </Col>
             </Row>
             <Row className="mx-0">
-                <Col className="px-0">
-                    <DailyTransactions/>
-                </Col>
-            </Row>
-
-            <Row className="mx-0">
                 <Col className="px-0 mx-0">
                     <OccupantCard />
                 </Col>
                 <Col className="px-0 mx-0">
                     <RenterCard />
+                </Col>
+                <Col className="px-0 mx-0">
+                    <DailyTransactions/>
                 </Col>
             </Row>
 
