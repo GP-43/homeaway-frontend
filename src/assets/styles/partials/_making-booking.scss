@@ -86,6 +86,76 @@
         background-color: transparent;  
     }
 }
+@media (max-width:412px) {
+    .time-picker{
+        width: 130px;
+        border-radius: 5px;
+        height:58px;
+        padding:0px;
+        margin: 0px;
+    }
+    .time-base{
+        width: 120px;
+        display: flex;
+        margin:0px;
+    }
+    .time-box-1 {
+        width:34px;
+        height:34px;
+    }
+    .time-input{
+        width:34px;
+        height: 34px;
+        font-size: 16px;
+        text-align: center;
+        border-color:rgb(67, 6, 153);
+    }
+    .time-input-span{
+        width:40px;
+        height: 15px;
+        text-align: left;
+        margin-top: 35px;
+        margin-left: -35px;
+        color:#5035c6;
+    }
+    .time-input-span-text{
+        font-size: 9px;
+        width:32px;
+    }
+    .time-dots{
+        width:5px;
+        padding-left: 0px !important;
+        margin-left: 0px !important;
+        margin-right:0px !important;
+        padding-right:0px !important;
+        //padding-right:15px;
+    }
+    .time-dots-h4{
+        width:4px;
+        margin-top: -5px;
+        font-size: 24px;
+    }
+
+    .time-button-div{
+        width:20px;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+
+        .time-button{
+            width:12px;
+            height: 10px;
+            font-size: 6px;
+            margin-left: 5px;
+        }
+        .am{
+            margin-bottom:7px;
+            text-align: center;
+        }
+        .pm{
+            margin-top:-29px;
+        }
+    }
+}
 
 /**------------date picking component----------*/
 .date-card{
