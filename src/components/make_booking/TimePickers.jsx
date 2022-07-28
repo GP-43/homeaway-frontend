@@ -5,8 +5,7 @@ import {Row, Col, Container, Form, Button} from "react-bootstrap";
 
 function TimePickers() {
     
-    return (
-        
+    return (       
             <Form className="bg-white time-picker">
                 <Row className="bg-white time-base m-2 d-flex">
                     <div className="time-box-1 m-0 p-0">
@@ -24,11 +23,9 @@ function TimePickers() {
                     <div className="time-button-div px-3 mx-3">
                         <Button className="time-button am" id="am" active><p className="button-name">AM</p></Button>
                         <Button className="time-button pm" id="pm"><p className="button-name">PM</p></Button>
-                    </div>
-                   
+                    </div>                 
                 </Row>
-            </Form>         
-
+            </Form> 
     );
 }
 
