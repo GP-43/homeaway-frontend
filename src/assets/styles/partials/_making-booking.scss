@@ -1,3 +1,4 @@
+//------------Time picker----------//
 .time-picker {
     width: 240px;
     border-radius: 10px;
@@ -78,5 +79,39 @@
         margin-left:-6px;
         margin-top: -4px;
         background-color: transparent;  
+    }
+}
+
+/**------------booking component----------*/
+.date-card{
+    width:220px;
+    height:55px;
+    display: flex;
+    border-radius: 10px;
+
+    .date-icon-col{
+        width:10px;
+        height:40px;
+        margin-right: 50px;
+
+        .date-icon{
+            height:30px;
+            width:30px;
+        }
+        
+    }
+
+
+    .date-datepicker-col{
+        width:150px;
+    
+        .datePicker{
+            width:130px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    }
+    .react-datepicker__input-container{
+        background-color: #ffffff;
     }
 }
