@@ -42,7 +42,7 @@ function Dashboard() {
         </Col>
         <Col>
           <Row className="mx-0">
-            <Col className="px-0 mx-0">
+            <Col className="px-0 mx-0 daily-transaction-box">
               <DailyTransactions />
             </Col>
           </Row>
