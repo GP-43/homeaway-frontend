@@ -7,7 +7,7 @@ import RenterDetails from "../../components/renter/RenterDetails";
 function PlaceDescription() {
   return (
     <Container>
-      <Row>
+      <Row className="renter-gallery-and-details">
         <Col><ImageGallery/></Col>
         <Col><RenterDetails /></Col>
       </Row>

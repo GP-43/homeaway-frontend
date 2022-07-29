@@ -1,3 +1,8 @@
+.renter-gallery-and-details {
+  display: flex;
+  align-items: center;
+}
+
 .renter-card {
   width: 395px;
   height: 180px;
@@ -54,9 +59,13 @@
 }
 
 @media only screen and (max-width: 820px) {
+  .renter-gallery-and-details {
+    margin-bottom: 22px;
+  }
   .renter-card {
     width: 359px;
     height: 203px;
+    margin-left: 0;
 
     .renter-name {
       font-size: 1rem !important;
@@ -80,6 +89,10 @@
 }
 
 @media only screen and (max-width: 412px) {
+  .renter-gallery-and-details {
+    margin-bottom: 23px;
+  }
+
   .renter-card {
     width: 340px;
     height: 193px;
