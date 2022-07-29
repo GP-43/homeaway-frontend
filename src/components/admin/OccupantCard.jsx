@@ -47,7 +47,7 @@ function OccupantCard() {
     return (
         <Container className='my-4 big-con mx-0'>
             <Row className='user-list'>
-                <Col xs={8} className="occupant-user-list me-2 p-2" >
+                <Col xs={11} className="occupant-user-list me-2 p-2" >
                     <h6 className='list-heading py-3'> New Occupants</h6>
                     <Col>
                         {Profile_Data &&
