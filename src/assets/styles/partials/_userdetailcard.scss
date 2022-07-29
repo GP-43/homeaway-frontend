@@ -1,0 +1,100 @@
+.detail-card{
+    margin-top: -2rem;
+    z-index: -1 !important;
+
+}
+.card-container{
+
+    .testing-card {
+        border: solid;
+        border-radius: 15px;
+        //color: white;
+        background-color: black;
+    
+        .card-icon-bg{
+            border-radius: 15px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-right: 1rem;
+            position: relative;
+            
+            .card-icon{
+                height: 30px;
+                width: 30px;
+                margin-right: none;
+                background-color: none !important;
+                color: white;
+            
+            }
+        }
+        .renter-icon{
+            background-color: #6955F5;
+            color: #6955F5;
+            margin-top: -5rem;
+        
+        }
+        .booking-icon{
+            background-color: #E93B77;
+            color: #E93B77;
+            margin-top: -5rem;
+        
+        }
+        .occupant-icon{
+            background-color: #63B967;
+            color: #63B967;
+            margin-top: -5rem;
+        
+        }
+    }
+    
+    .card-top {
+        border-bottom: solid;
+        border-width: 1px;
+    
+        .card-left {
+            background-color: black;        
+        }
+    
+        .card-right {
+            background-color: black;
+    
+            .card-name {
+                font-size: small;
+                background-color: black;
+                color: #7B809A;
+                justify-content: end;
+            }
+    
+            .card-total {
+                font-size: larger;
+                font-weight: 700;
+                background-color: black;
+                color: #344767;
+                justify-content: end;
+            }
+        }
+    }
+
+}
+
+.card-bottom {
+    background-color: black;
+
+    .card-bottom-left{
+        background-color: black;
+        font-size: small;
+        color: #4CAF50;
+        justify-content: end;
+    }
+    .card-bottom-right{
+        background-color: black;
+        font-size: small;
+        color: #7B809A;
+    }
+
+}
+
+
+
+
+
