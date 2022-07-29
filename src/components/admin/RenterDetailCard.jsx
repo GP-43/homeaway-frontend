@@ -9,7 +9,7 @@ function RenterDetailCard() {
             Src: <FaHouseUser />,
             Name: "Rent places",
             Total: 3045,
-            Percentage: "1%",
+            Percentage: "1% ",
             Content: "than yesterday",
         },
 
