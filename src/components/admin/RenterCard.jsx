@@ -46,7 +46,7 @@ function OccupantCard() {
 
     return (
         <Container className='my-4 big-con mx-0'>
-            <Row >
+            <Row className='user-list'>
                 <Col xs={11} className="renter-user-list p-2" >
                     <h6 className='list-heading py-3'> New Renters</h6>
                     <Col>

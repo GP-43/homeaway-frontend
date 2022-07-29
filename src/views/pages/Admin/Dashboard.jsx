@@ -17,25 +17,29 @@ function Dashboard() {
         </Col>
       </Row>
 
-      <Row>
-        <Col xs={8} className="container-new">
-          <Row>
-            <Col>
+      <Row className="testing-2">
+        <Col xs={8}>
+          <Row className="testing-1">
+
+            <Col >
               <OccupantDetailCard />
             </Col>
-            <Col>
+
+            <Col >
               <BookingsDetailCard />
             </Col>
-            <Col>
+
+            <Col >
               <RenterDetailCard />
             </Col>
+
           </Row>
 
           <Row className="mx-0 user-list-card">
             <Col className="ps-4 mx-0 ">
               <OccupantCard />
             </Col>
-            <Col className="ps-4 mx-0">
+            <Col className="ps-3 mx-0">
               <RenterCard />
             </Col>
           </Row>
