@@ -8,6 +8,7 @@ import UserRentings from './views/pages/UserRentings';
 import HomeAwayAdmin from "./views/pages/HomeAwayAdmin";
 import Dashboard from "./views/pages/Admin/Dashboard";
 import RenterDetails from './components/renter/RenterDetails';
+import PlaceDescription from './views/pages/PlaceDescription';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path='/userbookings' element={<UserBookings />} />
                     <Route path='/userrentings' element={<UserRentings />} />
                     <Route path='/renterdetails' element={<RenterDetails />} /> 
+                    <Route path='/placedescription' element={<PlaceDescription />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
