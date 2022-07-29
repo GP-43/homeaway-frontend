@@ -7,6 +7,7 @@ import HomeAwayApp from './views/HomeAwayApp';
 import UserRentings from './views/pages/UserRentings';
 import HomeAwayAdmin from "./views/pages/HomeAwayAdmin";
 import Dashboard from "./views/pages/Admin/Dashboard";
+import RenterDetails from './components/renter/RenterDetails';
 import PlaceDescription from './views/pages/PlaceDescription';
 
 function App() {
