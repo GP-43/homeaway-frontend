@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../assets/images/logo/logo.png';
 import { BiUserCircle } from "react-icons/bi";
+import {Link} from "react-router-dom";
 
 function NavBar() {
   return (
@@ -14,9 +15,9 @@ function NavBar() {
           <img className="logo" src={logo} alt="First slide" />
         </Navbar>
         <Navbar>
-          <Nav.Link className="nav me-auto" href="#home">Home</Nav.Link>
+          <Nav.Link className="nav me-auto" as={Link} to='/' >Home</Nav.Link>
           <Nav className="me-0 mt-0">
-            <Nav.Link className="menu px-0" href="../views/pages/UserBookings">Bookings</Nav.Link>
+            <Nav.Link className="menu px-0" as={Link} to='/userbookings'>Bookings</Nav.Link>
             <NavDropdown title={<BiUserCircle className="biuser-circle" />}>
               <NavDropdown.Item className="mb-2" href="#action/3.1">Profile</NavDropdown.Item>
               <NavDropdown.Item className="mb-2" href="#action/3.2">
