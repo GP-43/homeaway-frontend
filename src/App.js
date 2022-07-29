@@ -5,7 +5,7 @@ import UserHome from './views/pages/UserHome';
 import UserBookings from "./views/pages/UserBookings"
 import HomeAwayApp from './views/HomeAwayApp';
 import UserRentings from './views/pages/UserRentings';
-import HomeAwayAdmin from "./views/pages/HomeAwayAdmin";
+import HomeAwayAdmin from "./views/HomeAwayAdmin";
 import Dashboard from "./views/pages/Admin/Dashboard";
 import PlaceDescription from './views/pages/PlaceDescription';
 
