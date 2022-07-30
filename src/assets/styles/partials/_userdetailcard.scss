@@ -1,3 +1,4 @@
+
 .detail-card{
     margin-top: -2rem;
     z-index: -1 !important;
@@ -13,10 +14,11 @@
     
         .card-icon-bg{
             border-radius: 15px;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-top: 2rem;
+            padding-bottom: 0.4rem;
             padding-right: 1rem;
             position: relative;
+
             
             .card-icon{
                 height: 30px;
@@ -24,25 +26,26 @@
                 margin-right: none;
                 background-color: none !important;
                 color: white;
+                margin-top: -2rem;
             
             }
         }
         .renter-icon{
             background-color: #6955F5;
             color: #6955F5;
-            margin-top: -5rem;
+            //margin-top: -5rem;
         
         }
         .booking-icon{
             background-color: #E93B77;
             color: #E93B77;
-            margin-top: -5rem;
+            //margin-top: -5rem;
         
         }
         .occupant-icon{
             background-color: #63B967;
             color: #63B967;
-            margin-top: -5rem;
+            //margin-top: -5rem;
         
         }
     }
@@ -50,6 +53,7 @@
     .card-top {
         border-bottom: solid;
         border-width: 1px;
+        display: flex;
     
         .card-left {
             background-color: black;        
@@ -84,13 +88,43 @@
         background-color: black;
         font-size: small;
         color: #4CAF50;
+        display: flex;
         justify-content: end;
+
     }
     .card-bottom-right{
         background-color: black;
         font-size: small;
         color: #7B809A;
     }
+
+}
+
+@media only screen and (max-width: 412px) {
+    .testing-1{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .user-list-card{
+        display: flex;
+    }
+    .testing-2{
+        justify-content: center;
+    }
+
+}
+@media only screen and (max-width: 820px) {
+    .card-right{
+        position: relative;
+
+    }
+
+    .card-icon-bg{
+        margin-left: -2rem;
+    }
+
 
 }
 

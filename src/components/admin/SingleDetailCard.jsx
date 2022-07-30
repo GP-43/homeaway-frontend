@@ -18,7 +18,7 @@ function SingleDetailCard(props) {
 
             </Row>
             <Row className='card-bottom'>
-                <Col xs={3} className='card-bottom-left pe-0'>
+                <Col xs={4} className='card-bottom-left pe-1 '>
                     {props.Percentage}
                 </Col>
                 <Col className='card-bottom-right ps-0'>
