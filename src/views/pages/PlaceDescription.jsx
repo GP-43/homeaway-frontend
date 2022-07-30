@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ImageGallery from '../../components/imagegallery/ImageGallery';
 import TimePickers from '../../components/make_booking/TimePickers';
-//import DateSelection from '../../components/make_booking/DateSelection';
 
 function PlaceDescription(){
   return (
@@ -19,7 +18,7 @@ function PlaceDescription(){
             </Col>
         </Row>
     </Container>
-  )
+  );
 }
 
 export default PlaceDescription
