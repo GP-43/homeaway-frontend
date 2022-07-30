@@ -94,18 +94,18 @@
 }
 @media (max-width:412px) {
     .time-picker{
-        width: 150px;
-        border-radius: 2px;
+        width: 133px !important;
+        //border-radius: 2px;
         height:40px;
         padding:0px;
         margin: 0px;
     }
     .time-base{
-        width: 125px;
+        width: 125px !important;
         display: flex;
-        margin-top: 0 !important;
-        height: 40px;
-        border-radius: 5px;
+        //margin-top: 1 !important;
+        height: 40px !important;
+        //border-radius: 5px;
     }
     .time-box-1 {
         width:14px;
@@ -128,7 +128,7 @@
         color:#5035c6;
     }
     .time-input-span-text{
-        font-size: 9px;
+        font-size: 6px;
         width:32px;
     }
     /*.time-dots{
@@ -160,7 +160,7 @@
             margin-left: 5px;
         }
         .am{
-            margin-bottom:7px;
+            margin-bottom:1px;
             text-align: center;
         }
         .pm{
@@ -214,7 +214,18 @@
         margin-left: -65px;
     }
     .time-button-div{
-        height:50px;
+        height:40px;
+        margin-top: -3px;
+    }
+    .time-button{
+        height: 16px !important;
+    }
+    .am{
+        margin-top:-5px;
+        text-align: center;
+    }
+    .pm{
+        margin-top:-18px !important;
     }
 }
 
@@ -223,7 +234,7 @@
     width:220px;
     height:55px;
     display: flex;
-    border-radius: 10px;
+    border-radius: 15px !important;
 
     .date-icon-col{
         width:10px;
@@ -233,12 +244,12 @@
         .date-icon{
             height:30px;
             width:30px;
-        }
-        
+        }  
     }
     .date-datepicker-col{
         width:150px;
         outline:none;
+        border-radius: 15px;
     
         .datePicker{
             width:130px;
@@ -254,24 +265,17 @@
 }
 @media (max-width:412px) {
     .date-card{
-        width:130px;
-        height:30px;
+        width:133px !important;
+        height:35px !important;
+        border-radius: 0px;
 
-        .date-icon-col{
-            width:5px;
-            height:30px;
-            margin:0px !important;
-    
-            .date-icon{
-                height:15px;
-                width:20px;
-
-            }  
-        }
         .date-datepicker-col{
             width:80px;
-            outline:none;
             height:30px;
+           /* outline:none;
+            height:30px;
+            margin-left:-40px !important;
+            margin-right: 40px;*/
         
             .datePicker{
                 width:80px;
@@ -281,7 +285,17 @@
                 margin-left:0px !important;
             }
         }
-    }
+        .date-icon-col{
+            width:15px !important;
+            height:15px;
+            margin:0 !important;
+    
+            .date-icon{
+                height:15px;
+                width:20px;
+            }  
+        }
+    } 
 }
 @media (max-width:820px) {
     .date-card{
@@ -289,7 +303,6 @@
         height:50px;
     }
 }
-
 
 /*----------------my booking-----------------*/
 .make-booking-card1{
@@ -329,23 +342,29 @@
             height:50px;
         }
         .button-pay-now{
-            font-size: 9px;
+            font-size: 10px;
             margin-left: 75px;
             width: 80px;
+        }
+        .booking-col{
+            width:300px;
+            height:200px;
+            margin-left: -20px;
         }
     }
      @media (max-width:412px){
         .make-booking-card1{
-            margin-left: 0 !important;
-            padding-left: 0 !important;
-            margin-left:-100px;
-            width:150px;
-            height:300px;
+            margin-left: 1 !important;
+            padding-left: 1 !important;
+            //margin-left:-80px;
+            width:200px !important;
+            height:200px;
         
             .booking-col{
                 width:100px;
                 height:300px;
                 padding:1 !important;
+                margin-left: 1 !important;
             }
             .text{
                 font-size: 8px;
@@ -372,9 +391,9 @@
 }
 @media (max-width:412px){
     .make-booking-card1{
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-        margin-left:-100px;
+        margin-left: 16px !important;
+        margin-right:0 !important;
+        padding: 0 !important;
         width:350px;
         height:300px;
     
@@ -400,7 +419,7 @@
         }
         .button-pay-now {
             width:60px;
-            margin-left: 1px;
+            margin-left: -5px;
             font-size: 8px;
         }
     }
