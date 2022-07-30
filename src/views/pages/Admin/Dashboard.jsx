@@ -45,6 +45,7 @@ function Dashboard() {
           </Row>
         </Col>
         <Col>
+          <Row className="mx-0">Admin Calendar Here</Row>
           <Row className="mx-0">
             <Col className="px-0 mx-0 daily-transaction-box">
               <DailyTransactions />
