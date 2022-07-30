@@ -102,7 +102,7 @@ function ChooseSection() {
             </Col>
             <Col lg={4} className='bg-white pb-2 pt-3 choose-section-date'>
                 <Card className='date-selecting-card mb-2'>
-                    <Card.Body className='py-2'>
+                    <Card.Body className='py-2 date-selecting-card-body'>
                         <Card.Subtitle className="mb-0 text-muted">DATE</Card.Subtitle>
                         <Row>
                             <Col xs={6}>

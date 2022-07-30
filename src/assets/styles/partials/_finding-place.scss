@@ -25,12 +25,10 @@
     }
 }
 
-.search-place {
-    margin: auto;
-}
-
 .nav {
+    background-color:transparent;
     .nav-item {
+        border-radius: 20px;
         button {
             width: 10rem !important;
             background-color: #000000;
@@ -38,11 +36,18 @@
             font-size: 1.2rem;
             padding-top: 0.2rem;
             padding-bottom: 0.2rem;
-            border: 0;
+            border:0;     
+            border-radius: 17px 15px 0 0; 
         }
     }
+    @media (max-width:412px) {
+        .nav-item{
+            display:flex;
+            width:138px;
+        }
+    } 
 }
-
+/*---------Chose section-------*/
 .choose-section-city {
     border-radius: 0 0 0 1rem;
     .city-selecting-card {
@@ -63,6 +68,23 @@
             font-size: 0.8rem;
             color: #000000;
         }
+    }
+    @media (max-width:412px) {
+        .city-selecting-card {
+            height: 4.9rem;
+        }
+    }
+}
+
+@media (max-width:412px) {
+    .choose-section-city {
+        margin-top: -5px;
+    }
+    .choose-section-guests {
+        margin-top: -15px;
+    }
+    .choose-section-date {
+        margin-top: -15px;
     }
 }
 
@@ -98,10 +120,16 @@
             }
         }
     }
+    @media (max-width:412px) {
+        .guests-selecting-card {
+            height: 4.9rem;
+        }
+    }
 }
 
 .choose-section-date {
     border-radius: 0 1rem 1rem 0;
+    //height:4.7rem;
     .date-selecting-card {
         height: 5.2rem;
         outline: solid 1px;
@@ -119,6 +147,14 @@
             color: #000000;
         }
     }
+    @media (max-width:412px) {
+        .date-selecting-card {
+            height: 5.6rem;
+        }
+        .date-selecting-card-body {
+            height:5.4rem;
+        }
+    }
 }
 
 @media (max-width: 820px) {
@@ -127,6 +163,7 @@
     }
     .choose-section-guests {
         border-radius: 0 1rem 0 0;
+        padding-top: 0px;
     }
     .choose-section-date {
         border-radius: 0 0 1rem 1rem;
@@ -155,7 +192,7 @@
         }
     }
 }
-
+/*---------Filter section -----------------*/
 .filter-section {
     color: #000000;
     justify-content: center;
@@ -182,13 +219,31 @@
     @media (max-width: 412px) {
         .filter-section-ac {
             border-radius: 0;
+            height:103px;
         }
         .filter-section-food {
             border-radius: 0;
+            height:103px;
         }
         .filter-section-internet {
             border-radius: 0 0 1rem 1rem;
+            height:103px;
         }
+        .filter-card{
+            height: 0px;
+            margin-top:-6px;
+        }
+        .filter-card-body{
+            height:80px;
+        }
+        .radio-button-section {
+            font-size: 0.9rem;
+            height:50px;
+            margin-top: -10px;
+        }
+        .filter-p {
+            margin-top: -5px;
+        }   
     }
     .text-filter {
         font-size: 1.1rem;
@@ -216,5 +271,55 @@
     }
     .filter-p {
         margin-top: 0px;
+    }
+}
+
+/*------------whole search section-----------*/
+.search-place {
+    background:transparent; 
+    position: absolute;
+    top:75%;
+    left: 10%;
+    right: 10%;
+    width: auto;
+
+    @media (max-width: 820px) {
+        z-index: 1;
+        top:28%;
+    }
+    @media (max-width: 412px) {
+        width:300px;
+        height: 300px;
+        margin-left:3%;
+    }
+}
+.search-button{
+    position: absolute;
+    z-index: 1;
+    width:auto;
+    justify-content: right; 
+    background: transparent;
+    right: 11px;
+    top:137px;
+    margin-top: 3px;
+
+    @media (max-width: 820px) {
+        top:95%;
+        left: 72.8%;
+        width:60%;
+        height:5%;
+    }
+}
+@media (max-width: 412px) {
+    .search-button{
+        //top:100%;
+        width:75%;
+        height:5%;
+        left:80px;
+        margin-top: 47px;
+        margin-left:41px;
+    }
+    .filter-section{
+        height:190px;
     }
 }
