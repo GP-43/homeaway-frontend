@@ -11,7 +11,7 @@ function TimePickers() {
                     </div>
                     <span className="time-input-span bg-white px-0"><p className="time-input-span-text bg-white">Hours</p></span>
                         
-                    <div className="time-dots px-3 mx-3"><h4 className="time-dots-h4 bg-white py-2 px-0">:</h4></div> 
+                    <div className="time-dots px-3 mx-3"><h4 className="time-dots-h4 bg-white mt-0 px-0">:</h4></div> 
 
                     <div className="time-box-1 mt-1 px-0">
                         <input type="text" id="minutes" className="time-input" placeholder="00"></input>

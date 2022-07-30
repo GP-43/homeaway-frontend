@@ -1,0 +1,33 @@
+.bar-chart-container {
+  height: 224px !important;
+  width: 321px !important;
+}
+
+.daily-transaction-box {
+  font-weight: 500;
+  font-size: medium;
+  text-align: center;
+}
+
+.recharts-surface {
+  background-color: black;
+  padding: 10px;
+}
+
+.chart-title{
+    color: #6e7c90;
+}
+
+@media only screen and (max-width: 412px) {
+  .bar-chart-container {
+    height: 224px !important;
+    width: 321px !important;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .bar-chart-container {
+    height: 224px !important;
+    width: 321px !important;
+  }
+}
