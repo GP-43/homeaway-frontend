@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import {Row, Col, Container, Form, Button} from "react-bootstrap";
-//import TimePicker from 'react-time-picker';
-//import {BsDot} from 'react-icons/bs';
 
 function TimePickers() {
     

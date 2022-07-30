@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Row, Form,Col} from "react-bootstrap";
-//import TimePicker from 'react-time-picker';
 import {BsFillCalendarEventFill} from 'react-icons/bs';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
