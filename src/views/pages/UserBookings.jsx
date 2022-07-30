@@ -1,24 +1,25 @@
 import React from "react";
 import SheduleSection from "../../components/shedule_section/SheduleSection";
 import MyBookingSection from "../../components/my_bookings/MyBookingSection";
-import { Col, Row, Container } from "react-bootstrap";
-import UserCalendar from "../../components/calendar/UserCalendar";
+import { Col, Row, Container} from "react-bootstrap";
+import Calendar from 'react-calendar';
 
-function UserBookings() {
+function UserBookings(props) {
+
     return (
         <Container>
             <Row className='mx-0 mt-2'>
                 <Col lg = {8}>
                     <MyBookingSection  />
+                    
                 </Col>
             
                 <Col lg = {4}>
+                    <Calendar/>
                     <SheduleSection  />
                 </Col>
             </Row>
-
         </Container>
-
     );
 }
 
