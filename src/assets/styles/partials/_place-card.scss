@@ -1,7 +1,5 @@
 .place-card-cover {
-  flex-basis: 25%;
-  margin-bottom: 30px;
-  padding-left: 40px;
+  // flex-basis: 25%;
 
   .place-card {
     width: 12rem;
@@ -134,6 +132,17 @@
   .dropdown-toggle::after {
     display: none;
   }
+
+
+
+}
+
+.place-section-title{
+  margin-left: 2.2rem !important;
+
+  .sort-btn{
+    margin-right: 4rem;
+  }
 }
 
 .place-card-set {
@@ -143,6 +152,8 @@
   flex-direction: row;
 }
 
+
+
 @media only screen and (max-width: 820px) {
   .place-card-cover {
     margin-left: 10px;
@@ -151,7 +162,7 @@
   }
 
   .place-card-set {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   .place-section-cover {
@@ -160,6 +171,20 @@
       padding-right: 17px;
     }
   }
+
+
+
+
+  // tharindu edited
+
+  .place-section-title{
+    margin-left: -0.3rem !important;
+  
+    .sort-btn{
+      margin-right: -1.4rem; 
+    }
+  }
+
 }
 
 @media only screen and (max-width: 412px) {
@@ -169,6 +194,12 @@
       padding-right: 49px;
     }
   }
+
+  .place-card-set {
+    flex-direction: column;
+    padding-left: 4.8rem;
+  }
+
 }
 
 .sort-drop-down-btn {

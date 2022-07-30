@@ -1,0 +1,133 @@
+//  .my-booking-shedule {
+//    display: flex;
+//    justify-content: space-between;
+//  }
+.payment-box{
+  height: 15rem;
+  border-radius: 13px;
+  background-color: white;
+
+  .heading{
+    background-color: white;
+    font-weight: 500;
+    font-size: large;
+    color: #373737;
+
+  }
+
+  .receivedamount{
+    background-color: white;
+    font-size: xx-large;
+    font-weight: 600;
+  }
+
+  .pendingamount{
+    background-color: white;
+    font-size: x-large;
+    font-weight: 600;
+  }
+
+  .sub-heading{
+    background-color: white;
+    font-weight: 500;
+    font-size: large;
+    color: #373737;
+  }
+
+  .sen{
+    color: #373737;
+    background-color: white;
+    font-size: small;
+    font-weight: 500;
+  }
+}
+  
+  
+  
+  //  .places-title-my-booking {
+  //    justify-content: space-between;
+  //    align-items: flex-end;
+  //  }
+  
+  //  .place-card-set-my-booking {
+  //    display: flex;
+  //    flex-wrap: wrap;
+  //    flex: 1;
+  //    flex-direction: row;
+  //  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   @media only screen and (max-width: 412px) {
+    
+     .renting-section{
+      justify-content: center !important;
+      padding-left: 4.5rem; 
+     }
+   }
+  
+  // @media only screen and (max-width: 820px) {
+  //   .schedule-section-box {
+  //     display: flex;
+  //     justify-content: center;
+  //   }
+  
+  //   .schedule-section-title {
+  //     text-align: center;
+  //   }
+  
+  //   .my-booking-shedule {
+  //     display: block;
+  //   }
+  // }
+  
+  
+  
+  
+  
+  
+  // schedule-card css
+  
+  .schedule-card-text {
+    background-color: #fff;
+  }
+  
+  .schedule-card {
+    background-color: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  
+  // Scedule section css
+  
+  .schedule-section {
+    overflow-y: scroll;
+    height: 12rem;
+  
+    .schedule-section-title {
+      font-size: 1.5rem;
+    }
+  
+  
+  }
+  
+  .schedule-section::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media only screen and (max-width: 820px) {
+      .payment-box{
+        margin: auto !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+  
+       }
+      }

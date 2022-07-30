@@ -87,29 +87,12 @@ function MyBookingSection() {
         <Container>
             <Row>
                 <Col>
-                    <h5>My Bookings</h5>
-                </Col>
-
-                <Col className="d-flex justify-content-end me-3 my-booking-sort-btn">
-                    <div className="sort-drop-down-btn">
-                        <Dropdown>
-                            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                <FaSlidersH
-                                    className="sort-icon"
-                                />
-                            </Dropdown.Toggle>
-
-                            <Dropdown.Menu className="my-bookings-dropdown">
-                                <Dropdown.Item href="#/action-1">paid</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">saved</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">completed</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    </div>
+                    <h5>My Rentings</h5>
+                    
                 </Col>
             </Row>
 
-            <Row className="d-flex justify-content-between booking-section">
+            <Row className="d-flex justify-content-between renting-section">
                 {My_Bookings &&
                     My_Bookings.map((i) => (
                         <PlaceCard

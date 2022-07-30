@@ -1,5 +1,6 @@
 import React from "react";
 import PlaceCard from "./PlaceCard.jsx";
+import { Row, Col, Container } from "react-bootstrap";
 import { FaExchangeAlt, FaRestroom } from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import place1 from "../../assets/images/places_image_gallery/place1.jpg";
@@ -10,6 +11,7 @@ import place5 from "../../assets/images/places_image_gallery/place5.jpg";
 import place6 from "../../assets/images/places_image_gallery/place6.jpg";
 import place7 from "../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../assets/images/places_image_gallery/place8.jpg";
+
 
 function PlaceSection() {
   const Place_Data = [
@@ -80,40 +82,79 @@ function PlaceSection() {
   ];
 
   return (
-    <div className="place-section-cover">
-      <div className="places-title d-flex mb-8">
-        <h5>Explore more places</h5>
-        <div className="sort-drop-down-btn">
-          <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <FaExchangeAlt
-                className="sort-icon"
-                style={{ transform: "rotate(90deg)" }}
-              />
-            </Dropdown.Toggle>
+    <Container className="place-section-title">
+      <Row  className= "pt-3 pb-3">
+        <Col >
+          <h5>Explore more places</h5>
+        </Col>
+        <Col  className="d-flex justify-content-end sort-btn">
+            <Dropdown className="sort-drop-down-btn">
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <FaExchangeAlt
+                  className="sort-icon"
+                  style={{ transform: "rotate(90deg)" }}
+                />
+              </Dropdown.Toggle>
 
-            <Dropdown.Menu className="my-bookings-dropdown">
-              <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+              <Dropdown.Menu className="my-bookings-dropdown">
+                <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+        </Col>
+
+      </Row>
+      <Row xs={4} className="place-card-set  pe-3">
+        
+          {Place_Data &&
+            Place_Data.map((i) => (
+              <PlaceCard
+                Title={i.Title}
+                Src={i.Src}
+                City={i.City}
+                Price={i.Price}
+                Quantity={i.Quantity}
+                Rating={i.Rating}
+              />
+            ))}
+        
+      </Row>
+      {/* <div className="place-section-cover">
+        <div className="places-title d-flex mb-8">
+          <h5>Explore more places</h5>
+          <div className="sort-drop-down-btn">
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <FaExchangeAlt
+                  className="sort-icon"
+                  style={{ transform: "rotate(90deg)" }}
+                />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu className="my-bookings-dropdown">
+                <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </div>
         </div>
-      </div>
-      <div className="place-card-set">
-        {Place_Data &&
-          Place_Data.map((i) => (
-            <PlaceCard
-              Title={i.Title}
-              Src={i.Src}
-              City={i.City}
-              Price={i.Price}
-              Quantity={i.Quantity}
-              Rating={i.Rating}
-            />
-          ))}
-      </div>
-    </div>
+        <div className="place-card-set">
+          {Place_Data &&
+            Place_Data.map((i) => (
+              <PlaceCard
+                Title={i.Title}
+                Src={i.Src}
+                City={i.City}
+                Price={i.Price}
+                Quantity={i.Quantity}
+                Rating={i.Rating}
+              />
+            ))}
+        </div>
+      </div> */}
+    </Container>
   );
 }
 

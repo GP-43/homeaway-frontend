@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import { FaUserFriends } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
@@ -9,8 +9,8 @@ function PlaceCard(props) {
   const [show, setShow] = useState(true);
 
   return (
-    <div className="place-card-cover">
-      <Card className="place-card">
+    <Col className="place-card-cover ">
+      <Card className="place-card mb-3">
         <img
           className="d-block gallery-image place-image"
           src={props.Src}
@@ -44,7 +44,7 @@ function PlaceCard(props) {
           </Card.Body>
         </Card.Body>
       </Card>
-    </div>
+    </Col>
   );
 }
 
