@@ -6,9 +6,9 @@ function SearchButton() {
     return (
         <Container className="search-button">
             <Button variant="dark" type="submit">
-                <Row className="bg-dark">
-                    <h6 className="bg-dark">Search Places{' '}<BsArrowRight className="bg-dark"/></h6>
-                </Row>                
+                <Row className="bg-dark py-1">
+                    <h6 className="bg-dark mb-0">Search Places{' '}<BsArrowRight className="bg-dark"/></h6>
+                </Row>
             </Button>
         </Container>
     );
