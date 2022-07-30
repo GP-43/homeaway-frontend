@@ -6,7 +6,7 @@ import TimePickers from "./TimePickers";
 function MakeBooking() {
 
     return (
-        <Row className='make-booking-card1 mx-0 mt-2 bg-primary d-flex'>
+        <Row className='make-booking-card1 mx-5 px-3 mt-2 d-flex'>
         <Col className="booking-col" xs lg="2">
             <div className='d-flex m-1 pb-1'>
                 <b className='text'>Date:</b>
