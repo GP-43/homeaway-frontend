@@ -12,7 +12,7 @@ function NavBar() {
     <Navbar bg="light" expand="lg" className="navbar px-0 py-0">
       <Container className="px-0">
         <Navbar>
-          <img className="logo" src={logo} alt="First slide" />
+          <img className="logo" src={logo} alt="LOGO" />
         </Navbar>
         <Navbar>
           <Nav.Link className="nav me-auto" as={Link} to='/' >Home</Nav.Link>
