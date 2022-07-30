@@ -15,7 +15,7 @@ function UserBookings(props) {
                 </Col>
             
                 <Col lg = {4}>
-                    <Calendar/>
+                    <Calendar className="ms-4 mb-4"/>
                     <SheduleSection  />
                 </Col>
             </Row>
