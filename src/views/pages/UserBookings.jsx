@@ -10,8 +10,7 @@ function UserBookings(props) {
         <Container>
             <Row className='mx-0 mt-2'>
                 <Col lg = {8}>
-                    <MyBookingSection  />
-                    
+                  <MyBookingSection  />                    
                 </Col>
             
                 <Col lg = {4}>
