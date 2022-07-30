@@ -1,10 +1,11 @@
 .time-picker {
-    width: 240px;
+    width: 200px;
     border-radius: 10px;
 }
 .time-base{
-    width: 220px;
+    width: 215px;
     display: flex;
+    border-radius: 10px;
 }
 .time-base > div{
     background-color: #ffffff;
@@ -40,10 +41,13 @@
 }
 .time-dots{
     width:10px;
+    margin-top: 10px;
 }
 .time-dots-h4{
     width:8px;
     font-size: 28px;
+    height:10px;
+    margin-top: 10px;
 }
 .time-button-div{
     width: 40px;
@@ -88,7 +92,7 @@
     .time-picker{
         width: 130px;
         border-radius: 5px;
-        height:58px;
+        height:50px;
         padding:0px;
         margin: 0px;
     }
@@ -132,6 +136,7 @@
         width:4px;
         margin-top: -5px;
         font-size: 24px;
+        margin-left:-2px;
     }
 
     .time-button-div{
@@ -151,6 +156,23 @@
         }
         .pm{
             margin-top:-29px;
+        }
+    }
+    @media (max-width:820px) {
+        .time-dots-h4{
+            width:4px;
+            padding-top: 2 !important;
+            font-size: 24px;
+            margin-left:-2px;
+        }
+        .time-dots{
+            width:5px;
+            padding-left: 0px !important;
+            margin-left: 0px !important;
+            margin-right:0px !important;
+            padding-right:0px !important;
+            margin-top: 1 !important;
+            //padding-right:15px;
         }
     }
 }
