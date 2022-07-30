@@ -22,11 +22,13 @@
     height: 55px;
     font-size: 36px;
     text-align: center;
-    border-color:rgb(67, 6, 153);
-    border-radius: 10px;
+    outline:none;
+    border-style: none;
 }
 .time-input:focus{
-    border-color:rgb(0, 0, 0);
+    border-style:solid;
+    border-color:rgb(67, 6, 153);
+    background-color: #ffffff;
 }
 .time-input-span{
     width:40px;
@@ -55,23 +57,24 @@
         width:24px;
         height: 20px;
         font-size: 8px;
+        font-weight:bold;
         text-align: center;
-        color:#000000;
+        color:#3a3636;
         border-radius: 3px;
-        border-color: blueviolet;
+        border-color: rgb(222, 189, 253);
         background-color: #ffffff;
     }
     .time-button:hover{
-        background-color: #5035c6;
-        color:#ffffff;
+        background-color: #d08cf8;
+        color:#420769;
     }
     .time-button:active{
-        background-color: #5035c6;
-        color:#ffffff;
+        background-color: #d08cf8;
+        color:#420769;
     }
     .time-button:focus{
-        background-color: #5035c6;
-        color:#ffffff;
+        background-color: #d08cf8;
+        color:#420769;
     }
     .am{
         margin-bottom:-5px;
