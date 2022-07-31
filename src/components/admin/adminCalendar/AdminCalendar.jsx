@@ -8,10 +8,10 @@ function AdminCalendar() {
     return (
         <Col>
             
-            <Row>
+            <Row >
                 <Calendar onChange={setDate} value={date}/>
             </Row>
-            <Row className="text-center">
+            <Row className="text-center ms-5 ps-1">
                 Selected date: {date.toDateString()}
             </Row>
         </Col>
