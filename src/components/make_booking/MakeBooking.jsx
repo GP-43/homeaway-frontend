@@ -16,8 +16,8 @@ function MakeBooking() {
                 <b className='text-time'>Time:</b>
                 <TimePickers />
             </div>
-            <div className='mx-5 ps-2'>
-                <h1 className='text-rent-fee'><b>LKR 12,500</b></h1>
+            <div className='mx-5 ps-4'>
+                <h1 className='text-rent-fee'><b>LKR 12,500.00</b></h1>
             </div>
         </Col>
         <Col className="booking-col" xs lg="2">
