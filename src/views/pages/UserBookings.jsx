@@ -3,6 +3,7 @@ import SheduleSection from "../../components/shedule_section/SheduleSection";
 import MyBookingSection from "../../components/my_bookings/MyBookingSection";
 import { Col, Row, Container} from "react-bootstrap";
 import Calendar from 'react-calendar';
+import '../../assets/styles/partials/_calendar.scss';
 
 function UserBookings(props) {
 
