@@ -20,6 +20,7 @@ function PlaceDescription() {
                 <Col lg={6} className='px-0'>
                     <PlaceInformation/>
                 </Col>
+                <Col className='px-2'><TimePickers/></Col>
             </Row>
         </Container>
     );
