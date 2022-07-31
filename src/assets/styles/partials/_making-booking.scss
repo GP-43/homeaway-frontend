@@ -306,9 +306,10 @@
 
 /*----------------my booking-----------------*/
 .make-booking-card1{
-    width:650px;
+    width:640px;
     height:200px;
     outline: none;
+    margin:0 !important;
 
     .booking-col{
         width:300px;
@@ -414,14 +415,14 @@
             margin-top: 20px;
         }
         .text-rent-fee{
-            font-size: 16px;
+            font-size: 12px;
             width:90px;
             margin-left:-30px;
         }
         .button-pay-now {
-            width:60px;
-            margin-left: -5px;
-            font-size: 8px;
+            width:80px;
+            margin-left: -25px;
+            font-size: 9px;
         }
     }
 }

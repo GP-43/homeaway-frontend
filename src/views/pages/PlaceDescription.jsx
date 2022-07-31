@@ -4,6 +4,7 @@ import ImageGallery from '../../components/imagegallery/ImageGallery';
 import PlaceDetails from "../../components/place_description/PlaceDetails";
 import RenterDetails from "../../components/renter/RenterDetails";
 import PlaceInformation from "../../components/place_information/PlaceInformation";
+import MakeBooking from "../../components/make_booking/MakeBooking";
 
 function PlaceDescription() {
     return (
@@ -19,7 +20,7 @@ function PlaceDescription() {
                 <Col lg={6} className='px-0'>
                     <PlaceInformation/>
                 </Col>
-                <Col className='px-2'><TimePickers/></Col>
+                <Col className='px-1'><MakeBooking/></Col>
             </Row>
         </Container>
     );
