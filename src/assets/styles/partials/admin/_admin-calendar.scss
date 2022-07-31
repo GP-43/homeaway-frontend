@@ -93,6 +93,7 @@
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    color: white;
     font-size: 0.75em;
     background-color: #000000;
   }
@@ -104,19 +105,23 @@
   .react-calendar__month-view__weekNumbers .react-calendar__tile {
     display: flex;
     align-items: center;
+    color: white;
     background-color: #000000;
     justify-content: center;
     font-size: 0.75em;
     font-weight: bold;
     padding: calc(0.75em / 0.75) calc(0.5em / 0.75);
   }
+  .react-calendar__month-view__days__day{
+    color: white;
+  }
   .react-calendar__month-view__days__day--weekend {
     /* color: #d10000; */
-    color: white;
+    color: rgb(105, 97, 97);
     background-color: #000000;
   }
   .react-calendar__month-view__days__day--neighboringMonth {
-    color: white;
+    color: rgb(75, 73, 73);
     background-color: #000000;
   }
   .react-calendar__year-view .react-calendar__tile,
@@ -129,9 +134,11 @@
     text-align: center;
     padding: 0.75em 0.5em;
     background-color: #000000;
+    
   }
   .react-calendar__tile:disabled {
     background-color: #f0f0f0;
+    
   }
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
@@ -165,5 +172,5 @@
   }
   abbr{
     background-color: #000000;
-    color: white;
+    
   }
