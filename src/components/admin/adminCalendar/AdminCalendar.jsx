@@ -6,15 +6,15 @@ import '../../../assets/styles/partials/admin/_admin-calendar.scss'
 function AdminCalendar() {
     const [date, setDate] = useState(new Date());
     return (
-        <Row>
+        <Col>
             
-            <div>
+            <Row>
                 <Calendar onChange={setDate} value={date}/>
-            </div>
-            <div className="text-center">
+            </Row>
+            <Row className="text-center">
                 Selected date: {date.toDateString()}
-            </div>
-        </Row>
+            </Row>
+        </Col>
     );
 }
 
