@@ -5,16 +5,16 @@ import FilterSection from "./FilterSection";
 
 function SearchPlace() {
     return (
-                <Tabs
-                    id="uncontrolled-tab-example"
-                >
-                    <Tab eventKey="home" title="Choose" defaultActiveKey="profile">
-                        <ChooseSection/>
-                    </Tab>
-                    <Tab eventKey="profile" title="Filters" className='filter-button'>
-                        <FilterSection/>
-                    </Tab>
-                </Tabs>
+        <Tabs
+            id="uncontrolled-tab-example"
+        >
+            <Tab eventKey="home" title="Choose" defaultActiveKey="profile">
+                <ChooseSection/>
+            </Tab>
+            <Tab eventKey="profile" title="Filters" className='filter-button'>
+                <FilterSection/>
+            </Tab>
+        </Tabs>
     );
 }
 

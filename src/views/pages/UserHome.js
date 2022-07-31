@@ -6,7 +6,7 @@ import PlaceSection from "../../components/places_section/PlaceSection";
 function UserHome() {
     return (
         <Container>
-            <Row className='mx-0 mt-2'>
+            <Row className='mx-0 mt-2 finding-place'>
                 <Col>
                     <FindingPlace/>
                 </Col>
