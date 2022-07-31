@@ -7,6 +7,7 @@ import RenterCard from "../../../components/admin/RenterCard";
 import OccupantDetailCard from "../../../components/admin/OccupantDetailCard";
 import BookingsDetailCard from "../../../components/admin/BookingsDetailCard";
 import RenterDetailCard from "../../../components/admin/RenterDetailCard";
+import AdminCalendar from "../../../components/admin/adminCalendar/AdminCalendar";
 
 function Dashboard() {
   return (
@@ -45,6 +46,7 @@ function Dashboard() {
           </Row>
         </Col>
         <Col>
+          <Row className="mx-0"><AdminCalendar/></Row>
           <Row className="mx-0">
             <Col className="px-0 mx-0 daily-transaction-box">
               <DailyTransactions />
