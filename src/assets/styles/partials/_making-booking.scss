@@ -1,0 +1,178 @@
+.time-picker {
+    width: 200px;
+    border-radius: 10px;
+}
+.time-base{
+    width: 215px;
+    display: flex;
+    border-radius: 10px;
+}
+.time-base > div{
+    background-color: #ffffff;
+}
+.time-box-1 {
+    width:54px;
+    height:57px;
+}
+.time-input{
+    width:52px;
+    height: 55px;
+    font-size: 36px;
+    text-align: center;
+    outline:none;
+    border-style: none;
+}
+.time-input:focus{
+    border-style:solid;
+    border-color:rgb(67, 6, 153);
+    background-color: #ffffff;
+}
+.time-input-span{
+    width:40px;
+    height: 15px;
+    text-align: left;
+    margin-top: 60px;
+    margin-left: -55px;
+    color:#5035c6;
+}
+.time-input-span-text{
+    font-size: 9px;
+    width:52px;
+}
+.time-dots{
+    width:10px;
+    margin-top: 10px;
+}
+.time-dots-h4{
+    width:8px;
+    font-size: 28px;
+    height:10px;
+    margin-top: 10px;
+}
+.time-button-div{
+    width: 40px;
+
+    .time-button{
+        width:24px;
+        height: 20px;
+        font-size: 8px;
+        font-weight:bold;
+        text-align: center;
+        color:#3a3636;
+        border-radius: 3px;
+        border-color: rgb(222, 189, 253);
+        background-color: #ffffff;
+    }
+    .time-button:hover{
+        background-color: #d08cf8;
+        color:#420769;
+    }
+    .time-button:active{
+        background-color: #d08cf8;
+        color:#420769;
+    }
+    .time-button:focus{
+        background-color: #d08cf8;
+        color:#420769;
+    }
+    .am{
+        margin-bottom:-5px;
+        text-align: center;
+    }
+    .pm{
+        margin-top:-5px;
+    }
+    .button-name{
+        margin-left:-6px;
+        margin-top: -4px;
+        background-color: transparent;  
+    }
+}
+@media (max-width:412px) {
+    .time-picker{
+        width: 130px;
+        border-radius: 5px;
+        height:50px;
+        padding:0px;
+        margin: 0px;
+    }
+    .time-base{
+        width: 120px;
+        display: flex;
+        margin:0px;
+    }
+    .time-box-1 {
+        width:34px;
+        height:34px;
+    }
+    .time-input{
+        width:34px;
+        height: 34px;
+        font-size: 16px;
+        text-align: center;
+        border-color:rgb(67, 6, 153);
+    }
+    .time-input-span{
+        width:40px;
+        height: 15px;
+        text-align: left;
+        margin-top: 35px;
+        margin-left: -35px;
+        color:#5035c6;
+    }
+    .time-input-span-text{
+        font-size: 9px;
+        width:32px;
+    }
+    .time-dots{
+        width:5px;
+        padding-left: 0px !important;
+        margin-left: 0px !important;
+        margin-right:0px !important;
+        padding-right:0px !important;
+        //padding-right:15px;
+    }
+    .time-dots-h4{
+        width:4px;
+        margin-top: -5px;
+        font-size: 24px;
+        margin-left:-2px;
+    }
+
+    .time-button-div{
+        width:20px;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+
+        .time-button{
+            width:12px;
+            height: 10px;
+            font-size: 6px;
+            margin-left: 5px;
+        }
+        .am{
+            margin-bottom:7px;
+            text-align: center;
+        }
+        .pm{
+            margin-top:-29px;
+        }
+    }
+    @media (max-width:820px) {
+        .time-dots-h4{
+            width:4px;
+            padding-top: 2 !important;
+            font-size: 24px;
+            margin-left:-2px;
+        }
+        .time-dots{
+            width:5px;
+            padding-left: 0px !important;
+            margin-left: 0px !important;
+            margin-right:0px !important;
+            padding-right:0px !important;
+            margin-top: 1 !important;
+            //padding-right:15px;
+        }
+    }
+}
