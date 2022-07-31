@@ -4,8 +4,8 @@ import {Card, Col, Row} from "react-bootstrap";
 function FilterSection() {
     
     return (
-        <Row className='mx-0 filter-section'>         
-            <Col className='bg-white filter-section-ac' lg={4} md={6}>
+        <Row className='mx-0 filter-section bg-transparent'>
+            <Col className='bg-white filter-section-ac pb-2 pt-3' lg={4} md={6}>
                 <Card className="bg-white filter-card mb-2">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
@@ -30,7 +30,7 @@ function FilterSection() {
                     </Card.Body>
                 </Card>
             </Col>
-            <Col className='bg-white filter-section-food' lg={4} md={6}>
+            <Col className='bg-white filter-section-food pb-2 pt-3' lg={4} md={6}>
                 <Card className="bg-white filter-card mb-2">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
@@ -56,7 +56,7 @@ function FilterSection() {
                     </Card.Body>
                 </Card>
             </Col>
-            <Col className='bg-white filter-section-internet' lg={4}>
+            <Col className='bg-white filter-section-internet pb-2 pt-3' lg={4}>
                 <Card className="bg-white filter-card mb-2">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
