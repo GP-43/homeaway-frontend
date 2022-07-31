@@ -64,7 +64,7 @@ function ChooseSection() {
     }
 
     return (
-        <Row className='mx-0'>
+        <Row className='mx-0 bg-transparent'>
             <Col lg={4} md={6} className='bg-white pb-2 pt-3 choose-section-city'>
                 <Card className='city-selecting-card mb-2'>
                     <Card.Body className='py-2'>
@@ -106,12 +106,12 @@ function ChooseSection() {
                         <Card.Subtitle className="mb-0 text-muted">DATE</Card.Subtitle>
                         <Row>
                             <Col xs={6}>
-                                <span className='row'>
+                                <span className='row my-md-0 my-1'>
                                     <Card.Title
-                                        className='col-9 my-1 show-date'>
+                                        className='col-md-9 col-10 my-1 show-date'>
                                         {startDay}, {startDate} {startMonth}
                                     </Card.Title>
-                                <GoCalendar className='col-2 px-0 my-1 calendar-icon'
+                                <GoCalendar className='col-md-2 col-2 px-0 my-1 calendar-icon'
                                             onClick={handleOnFirstCalendarClick}
                                 />
                                 </span>
@@ -121,11 +121,11 @@ function ChooseSection() {
                                 <Card.Text className='check'>Check in</Card.Text>
                             </Col>
                             <Col xs={6}>
-                                <span className='row'>
+                                <span className='row my-md-0 my-1'>
                                     <Card.Title
-                                        className='col-9 my-1 show-date'>{endDay}, {endDate} {endMonth}
+                                        className='col-md-9 col-10 my-1 show-date'>{endDay}, {endDate} {endMonth}
                                     </Card.Title>
-                                <GoCalendar className='col-2 px-0 my-1 calendar-icon'
+                                <GoCalendar className='col-md-2 col-2 px-0 my-1 calendar-icon'
                                             onClick={handleOnSecondCalendarClick}/>
                                 </span>
                                 <CalendarPopup show={showCalendar}

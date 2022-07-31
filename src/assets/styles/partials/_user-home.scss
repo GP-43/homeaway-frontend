@@ -1,3 +1,9 @@
 .user-home {
   background-color: #EBEBEB;
 }
+
+@media (max-width: 413px) {
+  .finding-place {
+    height: 50vh;
+  }
+}
