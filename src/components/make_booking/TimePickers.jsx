@@ -21,8 +21,7 @@ function TimePickers() {
                     <div className="time-button-div px-3 mx-3 mt-1">
                         <Button className="time-button am" id="am"><p className="button-name">AM</p></Button>
                         <Button className="time-button pm" id="pm"><p className="button-name">PM</p></Button>
-                    </div>
-                   
+                    </div>                 
                 </Row>
             </Form>         
     );
