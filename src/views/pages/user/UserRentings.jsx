@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Row, Container } from "react-bootstrap";
-import MyRentings from '../../components/rentings/MyRentings';
-import SheduleSection from '../../components/shedule_section/SheduleSection';
-import PaymentBox from '../../components/paymentbox/PaymentBox';
+import MyRentings from '../../../components/user/rentings/MyRentings';
+import SheduleSection from '../../../components/user/shedule_section/SheduleSection';
+import PaymentBox from '../../../components/user/paymentbox/PaymentBox';
 
 function UserRentings() {
     return (

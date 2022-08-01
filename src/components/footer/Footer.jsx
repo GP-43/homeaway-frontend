@@ -6,7 +6,7 @@ import { AiOutlineFacebook,AiOutlineLinkedin } from "react-icons/ai";
 import { GrMail } from "react-icons/gr";
 import {Link} from "react-router-dom";
 
-function OccupantFooter() {
+function Footer() {
     return (
         <Card className="bg-dark text-center text-light occupent-footer w-100 mx-0">
             <Card.Header as="h3" className="bg-dark mt-2 mb-0 pt-4 py-0 pb-0">HomeAway</Card.Header>
@@ -20,13 +20,13 @@ function OccupantFooter() {
                     <FiPhoneCall className="bg-dark footer-icon mx-1"/>
                     <GrMail className="bg-dark footer-icon mx-1"/>
                 </Card.Text>
-                <Button variant="outline-light dark button mx-1" as={Link} to='/'>Home</Button>
-                <Button variant="outline-light dark button mx-1" as={Link} to='userbookings'>Booking</Button>
-                <Button variant="outline-light dark button mx-1" as={Link} to='/'>Terms</Button>
+                <Button variant="outline-light dark button mx-1" as={Link} to='/user/'>Home</Button>
+                <Button variant="outline-light dark button mx-1" as={Link} to='/user/userbookings'>Booking</Button>
+                <Button variant="outline-light dark button mx-1" as={Link} to='/user/'>Terms</Button>
             </Card.Body>
             <Card.Footer className="pb-4">&copy; {' '} {new Date().getFullYear()} HomeAway HomeAway - All Right Reserved.</Card.Footer>
         </Card>
     );
 }
 
-export default OccupantFooter;
+export default Footer;
