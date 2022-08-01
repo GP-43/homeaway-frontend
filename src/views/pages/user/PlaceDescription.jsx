@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import ImageGallery from '../../components/imagegallery/ImageGallery';
-import PlaceDetails from "../../components/place_description/PlaceDetails";
-import RenterDetails from "../../components/renter/RenterDetails";
-import PlaceInformation from "../../components/place_information/PlaceInformation";
-import MakeBooking from "../../components/make_booking/MakeBooking";
+import ImageGallery from '../../../components/user/place_card/imagegallery/ImageGallery';
+import PlaceDetails from "../../../components/user/place_description/PlaceDetails";
+import RenterDetails from "../../../components/user/renter/RenterDetails";
+import PlaceInformation from "../../../components/user/place_information/PlaceInformation";
+import MakeBooking from "../../../components/user/place_description/make_booking/MakeBooking";
 
 function PlaceDescription() {
     return (

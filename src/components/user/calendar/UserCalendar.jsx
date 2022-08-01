@@ -1,7 +1,7 @@
 import 'react-calendar/dist/Calendar.css'
 import Calendar from 'react-calendar'
 import React, {useEffect, useState} from 'react';
-import '../../assets/styles/partials/_calendar.scss';
+import '../../../assets/styles/partials/user/_calendar.scss';
 
 function UserCalendar(props) {
     const [date, setDate] = useState(new Date())

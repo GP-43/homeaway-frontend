@@ -1,12 +1,12 @@
 import React from "react";
 import {Carousel} from "react-bootstrap";
-import HomeBG1 from '../../assets/images/home_image_gallery/HomeBg1.jpg'
-import HomeBG2 from '../../assets/images/home_image_gallery/HomeBg2.jpg'
-import HomeBG3 from '../../assets/images/home_image_gallery/HomeBg3.jpg'
-import HomeBG4 from '../../assets/images/home_image_gallery/HomeBg4.jpg'
-import HomeBG5 from '../../assets/images/home_image_gallery/HomeBg5.jpg'
-import HomeBG6 from '../../assets/images/home_image_gallery/HomeBg6.jpg'
-import HomeBG7 from '../../assets/images/home_image_gallery/HomeBg7.jpg'
+import HomeBG1 from '../../../assets/images/home_image_gallery/HomeBg1.jpg'
+import HomeBG2 from '../../../assets/images/home_image_gallery/HomeBg2.jpg'
+import HomeBG3 from '../../../assets/images/home_image_gallery/HomeBg3.jpg'
+import HomeBG4 from '../../../assets/images/home_image_gallery/HomeBg4.jpg'
+import HomeBG5 from '../../../assets/images/home_image_gallery/HomeBg5.jpg'
+import HomeBG6 from '../../../assets/images/home_image_gallery/HomeBg6.jpg'
+import HomeBG7 from '../../../assets/images/home_image_gallery/HomeBg7.jpg'
 
 function HomeGallery() {
     return (

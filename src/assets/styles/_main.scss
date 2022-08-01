@@ -1,19 +1,26 @@
-@import "partials/navbar";
-@import "partials/finding-place";
-@import "partials/user-home";
-@import "partials/user-bookings";
-@import "partials/place-section";
 @import "partials/occupant-footer";
-@import "partials/image-gallery";
-@import "partials/calendar";
-@import "partials/userrentings";
-@import "partials/image-gallery";
-@import "partials/making-booking";
-@import "partials/renter-details";
-@import "partials/place-details";
-@import "partials/admin-dashbord";
+
+//import user sass partials here
+@import "partials/user/navbar";
+@import "partials/user/finding-place";
+@import "partials/user/user-home";
+@import "partials/user/user-bookings";
+@import "partials/user/place-section";
+@import "partials/user/image-gallery";
+@import "partials/user/calendar";
+@import "partials/user/userrentings";
+@import "partials/user/image-gallery";
+@import "partials/user/making-booking";
+@import "partials/user/renter-details";
+@import "partials/user/place-details";
+@import "partials/user/usercard";
+@import "partials/user/userdetailcard";
+@import "partials/user/place-information";
+
+//import admin sass partials here
+@import "partials/admin/admin-dashbord";
 @import "partials/admin/left-navigation";
-@import "partials/daily-transactions";
-@import "partials/usercard";
-@import "partials/userdetailcard";
-@import "partials/place-information";
+@import "partials/admin/admin-calendar";
+@import "partials/admin/daily-transactions";
+
+//import anons sass partials here

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import FindingPlace from '../../components/finding_place/FindingPlace.jsx';
-import PlaceSection from "../../components/places_section/PlaceSection";
+import FindingPlace from '../../../components/user/finding_place/FindingPlace.jsx';
+import PlaceSection from "../../../components/user/places_section/PlaceSection";
 
 function UserHome() {
     return (

@@ -1,10 +1,10 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
-import OccupantFooter from "../components/occupent_footer/OccupantFooter";
+import Footer from "../components/footer/Footer";
 import { Outlet } from 'react-router-dom';
-import NavBar from "../components/navbar/NavBar";
+import NavBar from "../components/user/paymentbox/navbar/NavBar";
 
-function HomeAwayApp() {
+function HomeAwayUser() {
     return (
         <>
             <Container>
@@ -17,11 +17,11 @@ function HomeAwayApp() {
             <Outlet />
             <Row className="mx-0">
                 <Col className="px-0">
-                    <OccupantFooter />
+                    <Footer />
                 </Col>
             </Row>
         </>
     );
 }
 
-export default HomeAwayApp;
+export default HomeAwayUser;

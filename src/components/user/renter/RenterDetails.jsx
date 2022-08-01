@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import girl1 from "../../assets/images/renters/girl1.jpg";
+import girl1 from "../../../assets/images/renters/girl1.jpg";
 import { FaStar } from "react-icons/fa";
 
 function RenterDetails() {
