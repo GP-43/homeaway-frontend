@@ -5,16 +5,14 @@ import LeftNavigation from "../components/admin/navbar/LeftNavigation";
 
 function HomeAwayAdmin() {
     return (
-        <>
-            <Row className="mx-0">
-                <Col className="px-0" lg={2}>
-                    <LeftNavigation/>
-                </Col>
-                <Col className="px-0" lg={10}>
-                    <Outlet/>
-                </Col>
-            </Row>
-        </>
+        <Row className="mx-0">
+            <Col className="px-0" lg={2}>
+                <LeftNavigation/>
+            </Col>
+            <Col className="px-0" lg={10}>
+                <Outlet/>
+            </Col>
+        </Row>
     );
 }
 

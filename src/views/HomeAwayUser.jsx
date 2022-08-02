@@ -6,7 +6,7 @@ import NavBar from "../components/user/paymentbox/navbar/NavBar";
 
 function HomeAwayUser() {
     return (
-        <>
+        <div className='user-home-bg-color'>
             <Container>
                 <Row className="mx-0">
                     <Col className="px-0">
@@ -20,7 +20,7 @@ function HomeAwayUser() {
                     <Footer />
                 </Col>
             </Row>
-        </>
+        </div>
     );
 }
 
