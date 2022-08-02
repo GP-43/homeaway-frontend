@@ -1,6 +1,30 @@
-.place-section {
+.place-section-head {
   margin: auto;
+  height: 7vh;
 }
+
+@media only screen and (min-width: 821px) {
+  .place-section {
+    height: 93vh;
+    overflow-y: auto;
+    overflow-x: unset;
+    //new syntax for scrollbar is in the bellow. it might be helpful in the future. so don't erase it
+    //scrollbar-width: thin;
+    //scrollbar-color: #CECECE #000000;
+  }
+  .place-section::-webkit-scrollbar {
+    width: 10px;
+  }
+  .place-section::-webkit-scrollbar-track {
+    background-color: #CECECE;
+    border-radius: 0.5rem;
+  }
+  .place-section::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+  }
+}
+
 
 .place-card-cover {
   .place-card {
@@ -128,9 +152,11 @@
             font-size: 1rem;
             margin-bottom: 1px;
           }
+
           .card-text {
             background: none;
           }
+
           .city,
           .price,
           .quantity,
@@ -146,10 +172,12 @@
 
 @media only screen and (max-width: 412px) {
   .place-section {
-    padding: 1rem !important;
+    margin: auto;
+
     .place-section-header {
       font-size: 1rem;
     }
+
     .sort-icon {
       width: 15px;
       height: 15px;
@@ -157,11 +185,11 @@
   }
   .place-card-cover {
     .place-card {
-      height: 16rem;
+      height: 18rem;
       margin-bottom: 1rem;
 
       .button {
-        margin-left: 170px;
+        margin-left: 84%;
       }
 
       .text-box {
@@ -170,9 +198,11 @@
             font-size: 1rem;
             margin-bottom: 1px;
           }
+
           .card-text {
             background: none;
           }
+
           .city,
           .price,
           .quantity,
