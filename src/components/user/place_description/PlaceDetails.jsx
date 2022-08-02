@@ -7,7 +7,7 @@ function PlaceDetails() {
     const [show, setShow] = useState(true);
     const place_details = { title: "Meeting Room_01", place: "Gampaha", duration: "per two hour", price: 'LKR: 600' };
     return (
-            <Row xs={3} className="place-details-cover p-1 mb-3">
+            <Row xs={3} className="place-details-cover p-1 mb-3 ">
                 <Col ys={2} xs={4} className="place-details-bacground">
                     <Row className="place-details-bacground"><h5 className="place-details-text">{place_details.price}</h5></Row>
                     <Row className="place-details-bacground"><h6 className="place-details-text">{place_details.duration}</h6></Row>
