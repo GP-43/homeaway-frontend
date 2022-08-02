@@ -52,7 +52,7 @@ function MyBookingSection() {
                     <Col lg={10} xs={8} className='px-0'>
                         <h5>My Bookings</h5>
                     </Col>
-                    <Col lg={2} xs={4} className="d-flex justify-content-end my-booking-sort-btn px-0">
+                    <Col lg={2} xs={4} className="d-flex justify-content-end my-booking-sort-btn pe-lg-5 pe-0">
                         <div className="sort-drop-down-btn">
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
