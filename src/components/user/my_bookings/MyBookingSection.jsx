@@ -1,16 +1,16 @@
 import React from "react";
-import PlaceCard from "../../place_card/PlaceCard";
+import PlaceCard from "../place_card/PlaceCard";
 import {FaSlidersH} from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import {Row, Col} from "react-bootstrap";
-import place1 from "../../../../assets/images/places_image_gallery/place1.jpg";
-import place2 from "../../../../assets/images/places_image_gallery/place2.jpg";
-import place3 from "../../../../assets/images/places_image_gallery/place3.jpg";
-import place4 from "../../../../assets/images/places_image_gallery/place4.jpg";
-import place5 from "../../../../assets/images/places_image_gallery/place5.jpg";
-import place6 from "../../../../assets/images/places_image_gallery/place6.jpg";
-import place7 from "../../../../assets/images/places_image_gallery/place7.jpg";
-import place8 from "../../../../assets/images/places_image_gallery/place8.jpg";
+import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
+import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
+import place3 from "../../../assets/images/places_image_gallery/place3.jpg";
+import place4 from "../../../assets/images/places_image_gallery/place4.jpg";
+import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
+import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
+import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
+import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
 
 function MyBookingSection() {
 
