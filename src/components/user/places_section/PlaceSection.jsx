@@ -14,7 +14,7 @@ import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
 
 
 function PlaceSection() {
-    const Place_Data = [
+    const placeData = [
         {
             Src: place1,
             Title: "Meeting room",
@@ -78,19 +78,49 @@ function PlaceSection() {
             Price: "Rs.5000",
             Quantity: 12,
             Rating: 2.8,
+        },        {
+            Src: place5,
+            Title: "Meeting room",
+            City: "Maho",
+            Price: "Rs.3500",
+            Quantity: 43,
+            Rating: 1.2,
+        },
+        {
+            Src: place6,
+            Title: "Study room",
+            City: "chilaw",
+            Price: "Rs.4000",
+            Quantity: 50,
+            Rating: 4.9,
+        },
+        {
+            Src: place7,
+            Title: "Study room",
+            City: "Mount lavinia",
+            Price: "Rs.2500",
+            Quantity: 20,
+            Rating: 3.0,
+        },
+        {
+            Src: place8,
+            Title: "Meeting room",
+            City: "Rathmalane",
+            Price: "Rs.5000",
+            Quantity: 12,
+            Rating: 2.8,
         },
     ];
 
     return (
         <>
-
             <Row className="py-3 mx-0">
-                <Col md={11} xs={8} className='place-section px-0'>
-                    <Row>
-                        <Col md={11} xs={10}>
+                <Col md={11} xs={8} className='place-section-head px-0 pb-4'>
+                    <Row >
+                        <Col md={11} xs={10} className='px-0'>
                             <h5 className='place-section-header'>Explore more places</h5>
                         </Col>
-                        <Col md={1} xs={2} className='d-flex justify-content-end'>
+                        <Col md={1} xs={2} className='d-flex justify-content-end px-0'>
                             <Dropdown className="sort-drop-down-btn">
                                 <Dropdown.Toggle variant="success" id="dropdown-basic" className='p-md-2 p-0'>
                                     <FaExchangeAlt
@@ -108,25 +138,24 @@ function PlaceSection() {
                         </Col>
                     </Row>
                 </Col>
-                <Col md={12} xs={8} className='place-section px-lg-5'>
+                <Col md={12} xs={8} className='place-section px-md-4 px-0'>
                     <Row>
-                {Place_Data &&
-                    Place_Data.map((i) => (
-                        <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
-                            <PlaceCard
-                                Title={i.Title}
-                                Src={i.Src}
-                                City={i.City}
-                                Price={i.Price}
-                                Quantity={i.Quantity}
-                                Rating={i.Rating}
-                            />
-                        </Col>
-                    ))}
+                        {placeData &&
+                        placeData.map((i) => (
+                            <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
+                                <PlaceCard
+                                    Title={i.Title}
+                                    Src={i.Src}
+                                    City={i.City}
+                                    Price={i.Price}
+                                    Quantity={i.Quantity}
+                                    Rating={i.Rating}
+                                />
+                            </Col>
+                        ))}
                     </Row>
                 </Col>
             </Row>
-
         </>
     );
 }
