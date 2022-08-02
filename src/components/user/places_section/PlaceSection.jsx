@@ -1,7 +1,7 @@
 import React from "react";
 import PlaceCard from "../place_card/PlaceCard.jsx";
-import {Row, Col, Container} from "react-bootstrap";
-import {FaExchangeAlt, FaRestroom} from "react-icons/fa";
+import {Row, Col} from "react-bootstrap";
+import {FaExchangeAlt} from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
 import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
@@ -78,7 +78,7 @@ function PlaceSection() {
             Price: "Rs.5000",
             Quantity: 12,
             Rating: 2.8,
-        },        {
+        }, {
             Src: place5,
             Title: "Meeting room",
             City: "Maho",
@@ -113,34 +113,33 @@ function PlaceSection() {
     ];
 
     return (
-        <>
-            <Row className="py-3 mx-0">
-                <Col md={11} xs={8} className='place-section-head px-0 pb-4'>
-                    <Row >
-                        <Col md={11} xs={10} className='px-0'>
-                            <h5 className='place-section-header'>Explore more places</h5>
-                        </Col>
-                        <Col md={1} xs={2} className='d-flex justify-content-end px-0'>
-                            <Dropdown className="sort-drop-down-btn">
-                                <Dropdown.Toggle variant="success" id="dropdown-basic" className='p-md-2 p-0'>
-                                    <FaExchangeAlt
-                                        className="sort-icon"
-                                        style={{transform: "rotate(90deg)"}}
-                                    />
-                                </Dropdown.Toggle>
+        <Row className="py-3 mx-0">
+            <Col md={11} xs={8} className='place-section-head px-0 pb-4'>
+                <Row>
+                    <Col md={11} xs={10} className='px-0'>
+                        <h5 className='place-section-header'>Explore more places</h5>
+                    </Col>
+                    <Col md={1} xs={2} className='d-flex justify-content-end px-0'>
+                        <Dropdown className="sort-drop-down-btn">
+                            <Dropdown.Toggle variant="success" id="dropdown-basic" className='p-md-2 p-0'>
+                                <FaExchangeAlt
+                                    className="sort-icon"
+                                    style={{transform: "rotate(90deg)"}}
+                                />
+                            </Dropdown.Toggle>
 
-                                <Dropdown.Menu className="my-bookings-dropdown">
-                                    <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col md={12} xs={8} className='place-section px-md-4 px-0'>
-                    <Row>
-                        {placeData &&
+                            <Dropdown.Menu className="my-bookings-dropdown">
+                                <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </Col>
+                </Row>
+            </Col>
+            <Col md={12} xs={8} className='place-section px-md-4 px-0'>
+                <Row>
+                    {placeData &&
                         placeData.map((i) => (
                             <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                                 <PlaceCard
@@ -153,10 +152,9 @@ function PlaceSection() {
                                 />
                             </Col>
                         ))}
-                    </Row>
-                </Col>
-            </Row>
-        </>
+                </Row>
+            </Col>
+        </Row>
     );
 }
 
