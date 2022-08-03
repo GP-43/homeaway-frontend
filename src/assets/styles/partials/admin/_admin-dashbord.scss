@@ -1,22 +1,38 @@
-.Header-card {
+* {
+  background-color: #302d2d;
 
+  .Header-card {
     // background-color: #302c2c;
+    border:none;
 
     .header-card-home-icon {
-        height: 1.5rem;
-        width: 1.5rem;
-        color: rgb(255, 255, 255);
+      height: 1.5rem;
+      width: 1.5rem;
+      color: rgb(255, 255, 255);
     }
 
-    .Header-card-div{
+    .admin-name {
+      color: white;
+    }
+
+    .Header-card-div {
+      // background-color: #302c2c;
+
+      .Header-card-div-text {
+        text-decoration: none;
         // background-color: #302c2c;
-
-        .Header-card-div-text{
-            text-decoration: none;
-            // background-color: #302c2c;
-            color: aliceblue;
-            margin-top: 0.7rem;
-            margin-left: 0.5rem;
-        }
+        color: aliceblue;
+        margin-top: 0.7rem;
+        margin-left: 0.5rem;
+      }
     }
+
+    .user-icon-box {
+      text-align: end;
+      .user-icon {
+        font-size: 2rem;
+        color: black;
+      }
+    }
+  }
 }
