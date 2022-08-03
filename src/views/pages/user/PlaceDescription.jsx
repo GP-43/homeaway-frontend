@@ -9,7 +9,7 @@ import MakeBooking from "../../../components/user/place_description/make_booking
 function PlaceDescription() {
     return (
         <Container>
-            <Row className="renter-gallery-and-details">
+            <Row className="renter-gallery-and-details mx-0 mt-2">
                 <Col>
                     <ImageGallery/>
                     <PlaceDetails/>
