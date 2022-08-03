@@ -8,11 +8,16 @@ import UserRentings from './views/pages/user/UserRentings';
 import HomeAwayAdmin from "./views/HomeAwayAdmin";
 import Dashboard from "./views/pages/Admin/Dashboard";
 import PlaceDescription from './views/pages/user/PlaceDescription';
+import HomeAwayAnons from "./views/HomeAwayAnons";
+import Home from './views/pages/anons/Home'
 
 function App() {
     return (
         <div>
             <Routes>
+                <Route path='/' element={<HomeAwayAnons />}>
+                    <Route path='/' element={<Home />} />
+                </Route>
                 <Route path='/user' element={<HomeAwayUser />}>
                     <Route path='/user/' element={<UserHome />} />
                     <Route path='/user/userbookings' element={<UserBookings />} />
