@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Footer from "../components/footer/Footer";
 import { Outlet } from 'react-router-dom';
-import NavBar from "../components/user/paymentbox/navbar/NavBar";
+import NavBar from "../components/user/navbar/NavBar";
 
 function HomeAwayUser() {
     return (
