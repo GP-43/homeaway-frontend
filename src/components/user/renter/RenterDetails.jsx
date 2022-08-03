@@ -20,7 +20,7 @@ function RenterDetails() {
               </Col>
               <Col className="renter-col text-center">
                 <Col className="renter-no"><p className="renter-no-box bg-white p-2">+94 71 *** *****</p></Col>
-                <Col className="renter-message"><p className="bg-black p-2 renter-message-box">Message owner</p></Col>
+                <Col className="renter-message"><p className="bg-black renter-message-box">Message owner</p></Col>
               </Col>
             </Row>
           </Card.Body>

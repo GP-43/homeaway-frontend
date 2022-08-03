@@ -63,7 +63,8 @@
 
     .renter-message-box {
       border-radius: 8px;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
+      padding: 10px;
     }
   }
 }
@@ -77,15 +78,16 @@
     height: 100%;
     margin-left: 0;
 
-    .renter-message{
-      .renter-message-box{
-        font-size: 1.3rem !important;
+    .renter-message {
+      .renter-message-box {
+        font-size: 1.7rem !important;
+        padding: 13px;
       }
     }
 
-    .renter-no{
-      .renter-no-box{
-        font-size: 1.8rem !important;
+    .renter-no {
+      .renter-no-box {
+        font-size: 1.9rem !important;
       }
     }
 
@@ -114,13 +116,20 @@
     width: 100%;
     height: 100%;
 
-    .renter-no{
-      .renter-no-box{
+    .renter-message {
+      .renter-message-box {
+        font-size: 1.1rem !important;
+        padding: 10px;
+      }
+    }
+
+    .renter-no {
+      .renter-no-box {
         font-size: 1.2rem !important;
       }
     }
 
-    .renter-rating{
+    .renter-rating {
       font-size: 1.1rem !important;
     }
 
@@ -130,7 +139,7 @@
     }
 
     .renter-name {
-      font-size: 1rem !important;;
+      font-size: 1rem !important;
       font-weight: 700;
     }
   }
