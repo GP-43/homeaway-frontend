@@ -17,7 +17,7 @@ function NavBar() {
     }, [location]);
 
     return (
-        <Navbar bg="light" expand="lg" className="navbar px-0 py-0">
+        <Navbar expand="lg" className="navbar px-0 py-0">
             <Container className="px-0">
                 <Navbar>
                     <img className="logo" src={logo} alt="LOGO"/>
