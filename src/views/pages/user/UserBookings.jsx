@@ -15,11 +15,11 @@ function UserBookings(props) {
                 </Col>
 
                 <Col lg={4}>
-                    <Row className='mx-0'>
+                    <Row className='mx-0 py-3'>
                         <Col className='px-0'>
-                            <Calendar className="ms-4 mb-4" lg={12} md={6}/>
+                            <Calendar className="ms-lg-4 ms-md-0 mb-4" lg={12} md={6}/>
                         </Col>
-                        <Col className='px-0' lg={12} md={6}>
+                        <Col className='px-0 ms-lg-0 ps-md-3' lg={12} md={6}>
                             <SheduleSection/>
                         </Col>
                     </Row>
