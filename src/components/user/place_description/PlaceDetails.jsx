@@ -16,7 +16,7 @@ function PlaceDetails() {
                     <Row className="place-details-bacground"><h5 className="place-details-text">{place_details.title}</h5></Row>
                     <Row className="place-details-bacground"><h6 className="place-details-text">{place_details.place}</h6></Row>
                 </Col>
-                <Col ys={1} xs={2} className="d-flex justify-content-end m-auto pe-3 place-details-bacground">
+                <Col ys={1} xs={2} className="d-flex justify-content-end m-auto place-details-bacground pe-0">
                     
                         {show ? (
                             <button className="button place-details-heart-button" onClick={() => setShow(false)}>
