@@ -1,6 +1,6 @@
 import React from "react";
 import SheduleSection from "../../../components/user/shedule_section/SheduleSection";
-import MyBookingSection from "../../../components/user/place_description/my_bookings/MyBookingSection";
+import MyBookingSection from "../../../components/user/my_bookings/MyBookingSection";
 import { Col, Row, Container} from "react-bootstrap";
 import Calendar from 'react-calendar';
 import '../../../assets/styles/partials/user/_calendar.scss';
@@ -10,7 +10,7 @@ function UserBookings(props) {
     return (
         <Container>
             <Row className='mx-0 mt-2'>
-                <Col lg = {8}>
+                <Col lg = {8} className='px-0'>
                   <MyBookingSection  />                    
                 </Col>
             
