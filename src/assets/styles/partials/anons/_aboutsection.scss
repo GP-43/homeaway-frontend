@@ -1,0 +1,28 @@
+.about-section-content{
+    .line-one{
+        font-size: xx-large;
+        font-weight: 700;
+    }
+    .line-two{
+        font-size: xx-large;
+        font-weight: 700;
+        margin-top: -0.7rem;
+        color: #8250D6;
+    }
+    .line-three{
+        font-size: medium;
+    }
+    .line-four{
+        .icon{
+            width: 2.3rem;
+            height: 2.3rem;
+        }
+        .back-icon{
+            margin-left: -2rem; 
+            color: #999999;
+        }
+        .next-icon{
+            color: #8250D6;
+        }
+    }
+}
