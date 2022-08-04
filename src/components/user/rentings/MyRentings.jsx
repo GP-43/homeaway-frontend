@@ -13,9 +13,9 @@ import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
 
 function MyBookingSection() {
 
-    const myBookings = [
+    const myRentings = [
         {
-            Src: place1, Title: "Meeting room", City: "Colombo", Price: "Rs.2500", Quantity: 8, Rating: 4.0,
+            Src: place1, Title: "Meeting room", City: "Colombo", Price: "Rs.2500", Quantity: 8, Rating: 4.5,
         },
         {
             Src: place2, Title: "Study room", City: "Gampaha", Price: "Rs.3000", Quantity: 20, Rating: 4.8,
@@ -44,27 +44,29 @@ function MyBookingSection() {
     ];
 
     return (
-        <Container>
-            <Row>
-                <Col>
-                    <h5>My Rentings</h5>
-                </Col>
-            </Row>
-            <Row className="d-flex justify-content-between renting-section">
-                {myBookings &&
-                    myBookings.map((i) => (
-                        <PlaceCard
-                            Title={i.Title}
-                            Src={i.Src}
-                            City={i.City}
-                            Price={i.Price}
-                            Quantity={i.Quantity}
-                            Rating={i.Rating}
-                        />
-                    ))}
-            </Row>
-        </Container>
-
+        <Row className="py-2 mx-0">
+            <Col className='my-booking-section-head px-0 pb-2'>
+                <h5>My Rentings</h5>
+            </Col>
+            <Col md={12} xs={8} className='my-booking-section'>
+                <Row className="d-flex justify-content-center booking-section px-0">
+                    {myRentings &&
+                        myRentings.map((i) => (
+                            <Col lg={4} md={4}
+                                 className="place-card-set ps-lg-0 pe-lg-5 py-lg-3 px-md-2 py-md-2 px-0">
+                                <PlaceCard
+                                    Title={i.Title}
+                                    Src={i.Src}
+                                    City={i.City}
+                                    Price={i.Price}
+                                    Quantity={i.Quantity}
+                                    Rating={i.Rating}
+                                />
+                            </Col>
+                        ))}
+                </Row>
+            </Col>
+        </Row>
     );
 }
 

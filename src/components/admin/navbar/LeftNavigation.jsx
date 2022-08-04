@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Col, Image} from "react-bootstrap";
 import {Link, useLocation} from "react-router-dom";
 import Logo from "../../../assets/images/logo/logo.png"

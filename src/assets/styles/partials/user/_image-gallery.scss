@@ -1,6 +1,5 @@
 .image-scroll-box {
-  height: 12rem;
-  width: 34.8rem;
+  height: 14rem;
   overflow-y: scroll;
   margin-bottom: 20px;
   display: flex;
@@ -10,8 +9,8 @@
   padding-bottom: 16px;
 
   .single-image {
-    height: 6rem;
-    width: 8rem;
+    height: 11rem;    
+    width: 15rem;
     padding-top: 1rem;
     margin: 10px;
   }
@@ -28,7 +27,7 @@
   }
 
   .thumbnail:hover {
-    transform: scale(2);
+    transform: scale(1.2);
   }
 }
 .image-gallery-container {
