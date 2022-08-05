@@ -1,5 +1,6 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
+import AboutSection from '../../../components/anons/aboutsection/AboutSection';
 
 function Home() {
     return (
@@ -18,7 +19,7 @@ function Home() {
                     Blog section goes here
                 </Col>
                 <Col className='px-0' xs={12}>
-                    People about us section goes here
+                    <AboutSection/>
                 </Col>
             </Row>
         </Container>
