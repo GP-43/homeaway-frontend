@@ -1,19 +1,17 @@
-import React,{ useState } from 'react';
-import {Row,Col} from 'react-bootstrap';
-import Calendar from 'react-calendar';
+import React,{ useState} from 'react';
+import {Col} from 'react-bootstrap';
 import '../../../assets/styles/partials/admin/_admin-calendar.scss'
+import 'react-daypicker/lib/DayPicker.css';
+import DayPicker from 'react-daypicker';
 
 function AdminCalendar() {
     const [date, setDate] = useState(new Date());
     return (
-        <Col>
-            
-            <Row >
-                <Calendar onChange={setDate} value={date}/>
-            </Row>
-            <Row className="text-center ms-5 ps-1">
-                Selected date: {date.toDateString()}
-            </Row>
+        <Col className="px-0 mx-0 pt-1 mb-2">
+            <DayPicker
+                onDayClick={(day) => this.setState({ day })}
+                className="bg-dark"
+            />
         </Col>
     );
 }
