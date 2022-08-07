@@ -2,7 +2,7 @@ import React from "react";
 import {Row, Col, Container} from "react-bootstrap";
 import Footer from "../components/footer/Footer";
 import {Outlet} from 'react-router-dom';
-import AnonsNavBar from "../assets/styles/partials/anons/navbar/AnonsNavBar";
+import AnonsNavBar from "../components/anons/navbar/AnonsNavBar";
 
 
 function HomeAwayAnons() {
