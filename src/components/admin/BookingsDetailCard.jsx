@@ -20,7 +20,7 @@ function BookingsDetailCard() {
                 <Col className='p-2 mt-4 testing-card'>
                     
                     <dev className="booking-icon card-icon-bg">
-                        {<FaChartBar className="ms-3 card-icon" />}
+                        {<FaChartBar className="ms-3 card-icon booking-card" />}
                     </dev>
 
                     {Booking_Data &&
