@@ -1,0 +1,51 @@
+.things-you-need-card {
+    background-color: rgb(49, 49, 48);
+    height: 15rem;
+
+    .image{
+        heigt: 50px;
+        width : 80px;
+    }
+
+    .title{
+        color: aliceblue;
+    }
+
+    .text{
+        color: aliceblue;
+    }
+
+}
+
+
+
+.things-you-need-section-description{
+
+    text-align: center;
+
+    .heading h1 {
+        color: black; 
+      }
+      
+      .heading span {
+        color: #8250D6;
+      }
+
+      .text{
+        font-size: 1.3rem;
+        font-weight: 150;
+      }
+}
+
+
+
+
+@media only screen and (max-width: 820px) {
+    .title{
+        font-size: 1.2rem;
+    }
+
+    .text{
+        font-size: 0.8rem;
+    }
+  }
