@@ -20,7 +20,7 @@ function RenterDetailCard() {
                 <Col className='p-2 mt-4 testing-card'>
 
                     <dev className="renter-icon card-icon-bg">
-                        {<FaHouseUser className="ms-3 card-icon" />}
+                        {<FaHouseUser className="ms-3 card-icon rent-places-card" />}
                     </dev>
 
                     {Renter_Data &&
