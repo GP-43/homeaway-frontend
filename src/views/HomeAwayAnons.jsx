@@ -15,9 +15,7 @@ function HomeAwayAnons() {
                     </Col>
                 </Row>
             </Container>
-            <div className='bg-image'>
-                <Outlet/>
-            </div>
+            <Outlet/>
             <Row className="mx-0">
                 <Col className="px-0">
                     <Footer/>
