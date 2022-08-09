@@ -1,6 +1,7 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import AboutSection from '../../../components/anons/aboutsection/AboutSection';
+import HelloSection from "../../../components/anons/hellosection/HelloSection";
 import VacationPlanSection from "../../../components/anons/vacation_plan_section/VacationPlanSection";
 
 function Home() {
@@ -8,7 +9,7 @@ function Home() {
         <Container>
             <Row className='mx-0' xs={12}>
                 <Col className='px-0'>
-                    Hello section goes here
+                    <HelloSection/>
                 </Col>
                 <Col className='px-0' xs={12}>
                     Things you need section goes here
