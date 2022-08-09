@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row,Card } from 'react-bootstrap';
+import { Row,Carousel } from 'react-bootstrap';
 import profile1 from "../../../assets/images/profileimages/occupants/profile1.jpg";
 import profile2 from "../../../assets/images/profileimages/occupants/profile2.jpg";
 //import SingleUser from "../../admin/SingleUser";
@@ -24,18 +24,20 @@ function ClientCard () {
 
   return (
     <Row>
+      <Carousel>
       {aboutUsMsg &&
           aboutUsMsg.map((i) => (
-      <Card className="msg-card">
-        <Card.Img variant="top"></Card.Img>
-        <Card.Body>
-          <Card.Text>
+      <Carousel.Item className="msg-card">
+        <img src={""} />
+        <Carousel.Body>
+          <Carousel.Text>
             "{i.msg}"
-          </Card.Text>
-          <Card.Title className="mt-3 pt-1">{i.name}</Card.Title>
-          <Card.Subtitle className="mt-2 text-muted">{i.location}</Card.Subtitle>
-        </Card.Body>
-      </Card>))}
+          </Carousel.Text>
+          <Carousel.Title className="mt-3 pt-1">{i.name}</Carousel.Title>
+          <Carousel.Subtitle className="mt-2 text-muted">{i.location}</Carousel.Subtitle>
+        </Carousel.Body>
+      </Carousel.Item>))}
+      </Carousel>
     </Row>
   )
 }
