@@ -1,6 +1,6 @@
 import React from "react";
 import PlaceCard from "../place_card/PlaceCard";
-import {Row, Col, Container} from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
 import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
 import place3 from "../../../assets/images/places_image_gallery/place3.jpg";
@@ -11,7 +11,7 @@ import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
 
 
-function MyBookingSection() {
+function MyRentings() {
 
     const myRentings = [
         {
@@ -44,16 +44,20 @@ function MyBookingSection() {
     ];
 
     return (
-        <Row className="py-2 mx-0">
-            <Col className='my-booking-section-head px-0 pb-2'>
-                <h5>My Rentings</h5>
+        <Row className="py-3 mx-0">
+            <Col md={12} xs={8} className='my-renting-section-head px-0'>
+                <Row className='mx-0'>
+                    <Col md={12} xs={8} className='px-0 pb-2'>
+                        <h5>My Rentings</h5>
+                    </Col>
+                </Row>
             </Col>
-            <Col md={12} xs={8} className='my-booking-section'>
-                <Row className="d-flex justify-content-center booking-section px-0">
+            <Col md={12} xs={8} className='my-renting-section'>
+                <Row className="d-flex justify-content-center renting-section px-0">
                     {myRentings &&
                         myRentings.map((i) => (
                             <Col lg={4} md={4}
-                                 className="place-card-set ps-lg-0 pe-lg-5 py-lg-3 px-md-2 py-md-2 px-0">
+                                className="place-card-set ps-lg-0 pe-lg-5 py-lg-3 px-md-2 py-md-2 px-0">
                                 <PlaceCard
                                     Title={i.Title}
                                     Src={i.Src}
@@ -66,8 +70,9 @@ function MyBookingSection() {
                         ))}
                 </Row>
             </Col>
+
         </Row>
     );
 }
 
-export default MyBookingSection;
+export default MyRentings;
