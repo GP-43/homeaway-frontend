@@ -10,7 +10,7 @@ function Login() {
                 <Col md={7} className='px-0'>
                     <Form className='d-flex align-items-center'>
                         <div className='w-100'>
-                            <h3 className=''>Sign in to Shopping Cart</h3>
+                            <h3>Sign in to HomeAway</h3>
                             <Form.Text className="text-muted">
                                 use your email as username.
                             </Form.Text>
