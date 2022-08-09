@@ -2,6 +2,7 @@ import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import AboutSection from '../../../components/anons/aboutsection/AboutSection';
 import VacationPlanSection from "../../../components/anons/vacation_plan_section/VacationPlanSection";
+import Bestrentingplacessection from "../../../components/anons/best_renting_places/Bestrentingplacessection";
 
 function Home() {
     return (
@@ -14,8 +15,10 @@ function Home() {
                     Things you need section goes here
                 </Col>
                 <Col className='px-0 vh-100' xs={12}>
-                    Vacation plane section goes here
                         <VacationPlanSection/>
+                </Col>
+                <Col className='px-0' xs={12}>
+                    <Bestrentingplacessection />
                 </Col>
                 <Col className='px-0' xs={12}>
                     Blog section goes here
