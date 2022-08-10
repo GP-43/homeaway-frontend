@@ -19,7 +19,7 @@ function ClientCard () {
           aboutUsMsg.map((i) => (
       <Card className="client-msg-card bg-transparent">
       <img src={i.src} className="msg-prof-image" />
-        <Card.Body className="msg-card bg-light">
+        <Card.Body className="msg-card bg-light pt-4 mt-1">
           <Card.Text>
             "{i.msg}"
           </Card.Text>
@@ -27,23 +27,6 @@ function ClientCard () {
           <Card.Subtitle className="mt-2 text-muted">{i.location}</Card.Subtitle>
         </Card.Body>
       </Card>))}
-
-      {/*<Carousel className="client-msg-ard">*/}
-      {/*  {aboutUsMsg &&*/}
-      {/*      aboutUsMsg.map((i) => (*/}
-      {/*          <Carousel.Item className="msg-card bg-transparent" interval={10000000}>*/}
-      {/*            <img*/}
-      {/*                className="msg-prof-image"*/}
-      {/*                src={i.src}*/}
-      {/*            />*/}
-      {/*            <Carousel.Caption className="msg-box-details bg-light">*/}
-      {/*              <p>{i.msg}</p>*/}
-      {/*              <h4>{i.name}</h4>*/}
-      {/*              <h6>{i.location}</h6>*/}
-      {/*            </Carousel.Caption>*/}
-      {/*          </Carousel.Item>*/}
-      {/*      ))}*/}
-      {/*</Carousel>*/}
     </Row>
   )
 }
