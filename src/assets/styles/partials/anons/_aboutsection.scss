@@ -29,6 +29,16 @@
 .client-msg-card{
     width:550px;
     border-style: none;
+
+    @media (max-width: 412px) {
+        margin-top: 50px;
+        width:300px !important;
+        margin-left:0px !important;
+    }
+    @media (max-width: 820px) {
+        margin-top: 55px;
+        margin-left:-60px;
+    }
 }
 .msg-card{
     width:450px;
@@ -36,6 +46,13 @@
     color: #000000;
     border-radius: 5px;
     position: relative;
+    
+    @media (max-width: 412px) {
+        width:280px !important;
+    }
+    @media (max-width: 820px) {
+        width:400px;
+    }
 }
 .msg-prof-image{
     width: 80px;
@@ -45,4 +62,11 @@
     margin-top:-40px;
     position: absolute;
     z-index: 1;
+
+    @media (max-width: 412px) {
+        width: 60px;
+        height:60px;
+        margin-left: -25px;
+        margin-top:-25px;
+    }
 }
