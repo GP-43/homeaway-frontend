@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row,Carousel } from 'react-bootstrap';
+import { Row,Card } from 'react-bootstrap';
 import profile1 from "../../../assets/images/profileimages/occupants/profile1.jpg";
 import profile2 from "../../../assets/images/profileimages/occupants/profile2.jpg";
 //import SingleUser from "../../admin/SingleUser";
@@ -12,32 +12,40 @@ function ClientCard () {
       location:"Kandy",
       msg:"Some quick example text to build on the card title and make up the\n" +
            "            bulk of the card's content.",
-    },
-    {
-      src: profile2,
-      name: "Tharindu Thathsara",
-      location:"Ganemulla",
-      msg:"Some quick example text to build on the card title and make up the\n" +
-          "            bulk of the card's content.",
     }
   ];
 
   return (
     <Row>
-      <Carousel>
       {aboutUsMsg &&
           aboutUsMsg.map((i) => (
-      <Carousel.Item className="msg-card">
-        <img src={""} />
-        <Carousel.Body>
-          <Carousel.Text>
+      <Card className="client-msg-card bg-transparent" style={{zIndex:1}}>
+      <img src="a.png" className="msg-prof-image"/>
+        <Card.Body className="msg-card bg-light">
+          <Card.Text>
             "{i.msg}"
-          </Carousel.Text>
-          <Carousel.Title className="mt-3 pt-1">{i.name}</Carousel.Title>
-          <Carousel.Subtitle className="mt-2 text-muted">{i.location}</Carousel.Subtitle>
-        </Carousel.Body>
-      </Carousel.Item>))}
-      </Carousel>
+          </Card.Text>
+          <Card.Title className="mt-3 pt-1">{i.name}</Card.Title>
+          <Card.Subtitle className="mt-2 text-muted">{i.location}</Card.Subtitle>
+        </Card.Body>
+      </Card>))}
+
+      {/*<Carousel className="client-msg-ard">*/}
+      {/*  {aboutUsMsg &&*/}
+      {/*      aboutUsMsg.map((i) => (*/}
+      {/*          <Carousel.Item className="msg-card bg-transparent" interval={10000000}>*/}
+      {/*            <img*/}
+      {/*                className="msg-prof-image"*/}
+      {/*                src={i.src}*/}
+      {/*            />*/}
+      {/*            <Carousel.Caption className="msg-box-details bg-light">*/}
+      {/*              <p>{i.msg}</p>*/}
+      {/*              <h4>{i.name}</h4>*/}
+      {/*              <h6>{i.location}</h6>*/}
+      {/*            </Carousel.Caption>*/}
+      {/*          </Carousel.Item>*/}
+      {/*      ))}*/}
+      {/*</Carousel>*/}
     </Row>
   )
 }

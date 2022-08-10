@@ -26,7 +26,31 @@
         }
     }
 }
+.client-msg-card{
+    width:550px;
+    border-style: none;
+}
 .msg-card{
     width:450px;
-    height: 180px;
+    height: 160px;
+    color: #000000;
+    border-radius: 5px;
+}
+//.msg-box-details{
+//    width:470px;
+//    color: #000000;
+//    text-align: left;
+//    margin-left: -40px;
+//    border-radius: 5px;
+//    z-index: 1;
+//    p,h4,h6{
+//        margin-left:10px;
+//    }
+//}
+.msg-prof-image{
+    width: 80px;
+    height:80px;
+    border-radius: 100%;
+    padding-top:-20px;
+
 }
