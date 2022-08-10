@@ -1,8 +1,6 @@
 import React from 'react';
 import { Row,Card } from 'react-bootstrap';
 import profile1 from "../../../assets/images/profileimages/occupants/profile1.jpg";
-import profile2 from "../../../assets/images/profileimages/occupants/profile2.jpg";
-//import SingleUser from "../../admin/SingleUser";
 
 function ClientCard () {
   const aboutUsMsg = [
@@ -19,8 +17,8 @@ function ClientCard () {
     <Row>
       {aboutUsMsg &&
           aboutUsMsg.map((i) => (
-      <Card className="client-msg-card bg-transparent" style={{zIndex:1}}>
-      <img src="a.png" className="msg-prof-image"/>
+      <Card className="client-msg-card bg-transparent">
+      <img src={i.src} className="msg-prof-image" />
         <Card.Body className="msg-card bg-light">
           <Card.Text>
             "{i.msg}"
