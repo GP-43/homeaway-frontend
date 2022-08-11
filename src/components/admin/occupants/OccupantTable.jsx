@@ -88,15 +88,21 @@ function OccupantTable() {
                             return val 
                     } 
                 }).map((val, key) => {
-                    return (<Row className='data mx-0 px-0 ' key={key}><OccupantRow Src = {val.Src} firstName = {val.firstName} lastName = {val.lastName} email = {val.email}  joinedDate = {val.joinedDate}  rate = {val.rate} /> </Row>)
+                    return (
+                        <Row className='data mx-0 px-0 ' key={key}>
+                            <OccupantRow
+                                Src = {val.Src}
+                                firstName = {val.firstName}
+                                lastName = {val.lastName}
+                                email = {val.email}
+                                joinedDate = {val.joinedDate}
+                                rate = {val.rate}
+                            />
+                        </Row>
+                    )
                 })}
-                
              </Row> 
         </Col>
-
-
-
-
     )
 }
 
