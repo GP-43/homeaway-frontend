@@ -10,11 +10,11 @@ function DeletePopup(props) {
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
         <Modal.Header closeButton >
           <Modal.Title id="contained-modal-title-vcenter">
-              Do you want delete?
+              Confirm Deletion
           </Modal.Title>
         </Modal.Header>
         <Modal.Body >
-          <p>This action cannot be undone.</p>
+          <p>Do you want delete? This action cannot be undone.</p>
         </Modal.Body>
         <Modal.Footer >
             <Button className='confirm-delete btn-danger'>Delete</Button>
@@ -56,15 +56,13 @@ function OccupantRow(props) {
             </Col>
 
             <Col className='px-0 ' xs = {2}>
-                <button className='delete-btn px-3 pb-0' variant="primary" onClick={() => setModalShow(true)}><p>DELETE</p></button>
+                <button className='delete-btn px-3 pb-0' variant="primary" onClick={() => setModalShow(true)}>
+                    <p>DELETE</p>
+                </button>
                 
                 <DeletePopup show={modalShow} onHide={() => setModalShow(false)} />
             </Col>
         </Row>
-
-
-
-
     )
 }
 
