@@ -14,7 +14,7 @@ function Home() {
                 <Col className='px-0' xs={12}>
                     Things you need section goes here
                 </Col>
-                <Col className='px-0 vh-100' xs={12}>
+                <Col className='px-0' xs={12}>
                         <VacationPlanSection/>
                 </Col>
                 <Col className='px-0' xs={12}>
