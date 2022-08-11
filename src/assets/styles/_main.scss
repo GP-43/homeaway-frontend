@@ -7,7 +7,7 @@
 @import "partials/user/user-bookings";
 @import "partials/user/place-section";
 @import "partials/user/image-gallery";
-@import "partials/user/calendar";
+//@import "partials/user/calendar";
 @import "partials/user/user-rentings";
 @import "partials/user/image-gallery";
 @import "partials/user/making-booking";
@@ -16,12 +16,16 @@
 @import "partials/user/user-card";
 @import "partials/user/user-detail-card";
 @import "partials/user/place-information";
+@import "partials/user/user-renting-page";
 
 //import admin sass partials here
 @import "partials/admin/admin-dashbord";
 @import "partials/admin/left-navigation";
-@import "partials/admin/admin-calendar";
+//@import "partials/admin/admin-calendar";
 @import "partials/admin/daily-transactions";
 
 //import anons sass partials here
 @import "partials/anons/home";
+@import "partials/anons/anons_navbar";
+@import "partials/anons/aboutsection";
+@import "partials/anons/bestrentingsection";
