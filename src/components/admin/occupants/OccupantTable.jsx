@@ -19,10 +19,10 @@ function OccupantTable() {
 
     const details_array = [{Src : p7, firstName : "saman", lastName : "kumara", email : "saman@gmail.com", joinedDate : '2022-07-15', rate : '2'},
                                 {Src : p1, firstName : "namal", lastName : "perera", email : "saman@gmail.com", joinedDate : '2022-08-15', rate : '4'},
-                                {Src : p2, firstName : "amal", lastName : "saman", email : "saman@gmail.com", joinedDate : '2022-08-16', rate : '2'},
+                                {Src : p2, firstName : "amal", lastName : "saman", email : "saman@gmail.com", joinedDate : '2022-08-16', rate : '4'},
                                 {Src : p3, firstName : "ruwan", lastName : "pushpa", email : "saman@gmail.com", joinedDate : '2022-08-17', rate : '3'},
                                 {Src : p4, firstName : "sandum", lastName : "nimal", email : "saman@gmail.com", joinedDate : '2022-08-18', rate : '1'},
-                                {Src : p5, firstName : "pawan", lastName : "pahan", email : "saman@gmail.com", joinedDate : '2022-08-19', rate : '5'},
+                                {Src : p5, firstName : "pawan", lastName : "pahan", email : "saman@gmail.com", joinedDate : '2022-08-19', rate : '4'},
                                 {Src : p6, firstName : "nilantha", lastName : "dasun", email : "saman@gmail.com", joinedDate : '2022-08-18', rate : '6'}]
 
     return (
@@ -36,12 +36,12 @@ function OccupantTable() {
                 </Col>
                 <Col className='px-0 text-right pe-3'>
                     <select className='search-by-name p-2'  onChange={event => {setSearchTerm(event.target.value)}}> 
-                        <option disabled hidden>Search by ratings ...</option>
-                        <option> 1</option>
-                        <option> 2</option>
-                        <option> 3</option>
-                        <option> 4</option>
-                        <option> 4+</option>
+                        <option disabled hidden> Search by ratings ...</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>4+</option>
                     </select>
                 </Col>
                 
@@ -70,9 +70,10 @@ function OccupantTable() {
                     } else if (val.firstName.toLowerCase().includes(searchTerm.toLowerCase()) || 
                         val.lastName.toLowerCase().includes(searchTerm.toLowerCase()) || 
                         val.joinedDate.includes(searchTerm) ||
-                        (val.rate == searchTerm) ) {
-                        return val 
-                    }
+                        val.rate.includes(searchTerm) ||
+                        (searchTerm == '4+' && val.rate > 4) ) {
+                            return val 
+                    } 
                 }).map((val, key) => {
                     return (<Row className='data mx-0 px-0 ' key={key}><OccupantRow Src = {val.Src} firstName = {val.firstName} lastName = {val.lastName} email = {val.email}  joinedDate = {val.joinedDate}  rate = {val.rate} /> </Row>)
                 })}
