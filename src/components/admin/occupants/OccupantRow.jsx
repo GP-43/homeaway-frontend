@@ -5,24 +5,19 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 //popup function
-function MyVerticallyCenteredModal(props) {
+function DeletePopup(props) {
     return (
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
         <Modal.Header closeButton >
           <Modal.Title id="contained-modal-title-vcenter">
-            Sure to delete
+              Do you want delete?
           </Modal.Title>
         </Modal.Header>
         <Modal.Body >
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
+          <p>This action cannot be undone.</p>
         </Modal.Body>
         <Modal.Footer >
-            <Button>Delete</Button>
+            <Button className='confirm-delete btn-danger'>Delete</Button>
           <Button onClick={props.onHide}>Cancel</Button>
         </Modal.Footer>
       </Modal>
@@ -32,7 +27,7 @@ function MyVerticallyCenteredModal(props) {
 
 //data row
 
-function RowTopProducts(props) {
+function OccupantRow(props) {
 
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -63,7 +58,7 @@ function RowTopProducts(props) {
             <Col className='px-0 ' xs = {2}>
                 <button className='delete-btn px-3 pb-0' variant="primary" onClick={() => setModalShow(true)}><p>DELETE</p></button>
                 
-                <MyVerticallyCenteredModal show={modalShow} onHide={() => setModalShow(false)} />
+                <DeletePopup show={modalShow} onHide={() => setModalShow(false)} />
             </Col>
         </Row>
 
@@ -73,4 +68,4 @@ function RowTopProducts(props) {
     )
 }
 
-export default RowTopProducts
+export default OccupantRow

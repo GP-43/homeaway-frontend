@@ -1,11 +1,11 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import TopSellingProducts from "../../../components/admin/occupants/TopSellingProducts";
+import OccupantTable from "../../../components/admin/occupants/OccupantTable";
 
 function Occupants() {
     return (
         <Col className = "px-0 occupants-top-selling-products-part">
-            <TopSellingProducts/>
+            <OccupantTable/>
         </Col>
    
     )
