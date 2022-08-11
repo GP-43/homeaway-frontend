@@ -3,9 +3,11 @@ import LatestPlaceCard from "./LatestPlaceCard";
 
 function CarouselItem(props) {
   return (
-  <Carousel.Item>
-    
-  </Carousel.Item>
+              <LatestPlaceCard
+                  description={props.description}
+                  src={props.src}
+                  date={props.date}
+                />
   );
 }
 
