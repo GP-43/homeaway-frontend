@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import PlaceCard from "../../../components/user/place_card/PlaceCard";
 import { Row, Col, Button } from "react-bootstrap";
-import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaArrowCircleRight } from "react-icons/fa";
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from "react-icons/bs";
+import ReactPaginate from "react-paginate";
 import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
 import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
 import place3 from "../../../assets/images/places_image_gallery/place3.jpg";
@@ -78,83 +81,56 @@ function Bestrentingplacessection() {
       Quantity: 12,
       Rating: 2.8,
     },
-    {
-      Src: place5,
-      Title: "Meeting room",
-      City: "Maho",
-      Price: "Rs.3500",
-      Quantity: 43,
-      Rating: 1.2,
-    },
-    {
-      Src: place6,
-      Title: "Study room",
-      City: "chilaw",
-      Price: "Rs.4000",
-      Quantity: 50,
-      Rating: 4.9,
-    },
-    {
-      Src: place7,
-      Title: "Study room",
-      City: "Mount lavinia",
-      Price: "Rs.2500",
-      Quantity: 20,
-      Rating: 3.0,
-    },
-    {
-      Src: place8,
-      Title: "Meeting room",
-      City: "Rathmalane",
-      Price: "Rs.5000",
-      Quantity: 12,
-      Rating: 2.8,
-    },
   ];
 
-  const handlePrevClick = () => {
-    console.log("Previous");
-  };
+  const [places, setPlaces] = useState(placeData.slice(0, 8));
+  const [currPage, setCurrPage] = useState(0);
 
-  const handleNextClick = () => {
-    console.log("Next");
-    this.setState({
-      page: this.state.page + 1,
-    });
-  };
+  const perPage = 4;
+  const off = perPage * currPage;
 
+  const displayPlaces = places.slice(off, off + perPage).map((i) => {
+    return (
+      <Col
+        lg={3}
+        md={4}
+        className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2"
+      >
+        <PlaceCard
+          Title={i.Title}
+          Src={i.Src}
+          City={i.City}
+          Price={i.Price}
+          Quantity={i.Quantity}
+          Rating={i.Rating}
+        />
+      </Col>
+    );
+  });
+
+  const pageCount = Math.ceil(places.length / perPage);
+
+  function handlePageClick({ selected: selectedPage }) {
+    setCurrPage(selectedPage);
+  }
   return (
     <Row className="py-3 mx-0 best-renting-section">
-      <Col md={1}>
-        <Button disabled={this.state.page <= 1} onClick={this.handlePrevClick}>
-          <FaArrowCircleLeft />
-        </Button>
-      </Col>
-      <Col md={1}>
-        <Button onClick={this.handleNextClick}>
-          <FaArrowCircleRight />
-        </Button>
-      </Col>
       <Col md={12} xs={8} className="place-section px-md-4 px-0">
-        <Row>
-          {placeData &&
-            placeData.map((i) => (
-              <Col
-                lg={3}
-                md={4}
-                className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2"
-              >
-                <PlaceCard
-                  Title={i.Title}
-                  Src={i.Src}
-                  City={i.City}
-                  Price={i.Price}
-                  Quantity={i.Quantity}
-                  Rating={i.Rating}
-                />
-              </Col>
-            ))}
-        </Row>
+        <ReactPaginate
+          previousLabel={
+            <BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon" />
+          }
+          nextLabel={
+            <BsFillArrowRightCircleFill className="ms-5 icon next-icon" />
+          }
+          pageCount={pageCount}
+          onPageChange={handlePageClick}
+          containerClassName={"paginationBttns"}
+          breakLabel="..."
+          pageClassName="page-item-none"
+          breakClassName="page-item-none"
+        />
+        <Row>{displayPlaces}</Row>
       </Col>
     </Row>
   );
