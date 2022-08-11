@@ -4,34 +4,37 @@
 }
 
 .renter-card {
-  width: 395px;
-  height: 180px;
-  margin-left: 76px;
+  width: 100%;
+  height: 100%;
   background-color: #d9d9d9;
 
   .renter-body {
     background-color: #d9d9d9;
+    border-radius: 0.375rem;
   }
 
   .renter-col {
     background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .renter-image {
       border-radius: 100%;
-      width: 63%;
-      height: 74%;
+      width: 78%;
+      height: 84%;
     }
 
     .renter-name {
       background-color: #d9d9d9;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       font-weight: 700;
     }
 
     .renter-rating {
       background-color: #d9d9d9;
       color: white;
-      font-size: 0.7rem;
+      font-size: 1rem;
 
       .rating-icon {
         background-color: #d9d9d9;
@@ -40,21 +43,30 @@
   }
 
   .renter-no {
-    height: 37px;
     border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-    margin-bottom: 37px;
-    margin-top: 9px;
+
+    .renter-no-box {
+      font-size: 1.5rem;
+      font-weight: 600;
+      border-radius: 8px;
+    }
   }
 
   .renter-message {
-    background-color: black;
     color: white;
-    padding: 8px;
     border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .renter-message-box {
+      border-radius: 8px;
+      font-size: 1.3rem;
+      padding: 10px;
+    }
   }
 }
 
@@ -63,27 +75,35 @@
     margin-bottom: 22px;
   }
   .renter-card {
-    width: 359px;
-    height: 203px;
+    width: 100%;
+    height: 100%;
     margin-left: 0;
 
+    .renter-message {
+      .renter-message-box {
+        font-size: 1.7rem !important;
+        padding: 13px;
+      }
+    }
+
+    .renter-no {
+      .renter-no-box {
+        font-size: 1.9rem !important;
+      }
+    }
+
     .renter-name {
-      font-size: 1rem !important;
+      font-size: 1.3rem !important;
       font-weight: 700;
     }
 
     .renter-rating {
-      font-size: 1rem !important;
-    }
-
-    .renter-no {
-      margin-bottom: 54px !important;
-      margin-top: 19px;
+      font-size: 1.4rem !important;
     }
 
     .renter-image {
-      width: 63% !important;
-      height: 61% !important;
+      width: 59% !important;
+      height: 80% !important;
     }
   }
 }
@@ -94,16 +114,33 @@
   }
 
   .renter-card {
-    width: 340px;
-    height: 193px;
-    margin-left: 25px;
+    width: 100%;
+    height: 100%;
+
+    .renter-message {
+      .renter-message-box {
+        font-size: 1.1rem !important;
+        padding: 10px;
+      }
+    }
+
+    .renter-no {
+      .renter-no-box {
+        font-size: 1.2rem !important;
+      }
+    }
+
+    .renter-rating {
+      font-size: 1.1rem !important;
+    }
 
     .renter-image {
-      height: 57% !important;
+      width: 68% !important;
+      height: 62% !important;
     }
 
     .renter-name {
-      font-size: 0.9rem !important;
+      font-size: 1rem !important;
       font-weight: 700;
     }
   }

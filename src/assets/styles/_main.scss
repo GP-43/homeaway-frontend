@@ -16,6 +16,7 @@
 @import "partials/user/user-card";
 @import "partials/user/user-detail-card";
 @import "partials/user/place-information";
+@import "partials/user/user-renting-page";
 
 //import admin sass partials here
 @import "partials/admin/admin-dashbord";
@@ -26,4 +27,5 @@
 //import anons sass partials here
 @import "partials/anons/home";
 @import "partials/anons/anons_navbar";
-@import "partials/anons/aboutsection"
+@import "partials/anons/aboutsection";
+@import "partials/anons/bestrentingsection";

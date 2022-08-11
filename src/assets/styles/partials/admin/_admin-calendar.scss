@@ -10,13 +10,16 @@
     text-decoration: none;
     color:#ffffff;
   }
-
+  table{
+    background-color: #000000;
+  }
   th,
   td {
     padding: 5px;
     text-align: center;
     width: 40px;
     color:#ffffff;
+    background-color: #000000 !important;
   }
 
   .header {
@@ -32,6 +35,7 @@
     padding: 5px;
     user-select: none;
     width: 40px;
+    background-color: #000000 !important;
 
     &:hover {
       color: #000000;
@@ -40,19 +44,21 @@
 
   .next-month {
     text-align: right;
+    background-color: #000000 !important;
   }
 
   .month-year {
     flex: 2;
     font-weight: bold;
     text-align: center;
+    background-color: #000000 !important;
   }
 
   .day {
     cursor: pointer;
 
     &:hover:not(.empty) {
-      background-color: #eee;
+      background-color: #eee !important;
       color:#000000;
     }
 
@@ -62,11 +68,13 @@
 
     &.empty {
       cursor: default;
+      background-color: #000000 !important;
     }
 
     &.today {
       font-weight: bold;
       color:#5035c6;
+      background-color: #7eaafd !important;
     }
   }
 }

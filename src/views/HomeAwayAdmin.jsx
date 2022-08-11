@@ -5,7 +5,7 @@ import LeftNavigation from "../components/admin/navbar/LeftNavigation";
 
 function HomeAwayAdmin() {
     return (
-        <Row className="mx-0">
+        <Row className="mx-0 admin-page">
             <Col className="px-0" lg={2}>
                 <LeftNavigation/>
             </Col>

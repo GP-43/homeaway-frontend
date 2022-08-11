@@ -20,7 +20,7 @@ function OccupantDetailCard() {
                 <Col className='p-2 mt-4 testing-card'>
                     
                     <dev className="occupant-icon card-icon-bg">
-                        {<BiUserCircle className="ms-3 card-icon" />}
+                        {<BiUserCircle className="ms-3 card-icon total-occupant-card" />}
                     </dev>
 
                     {Occupant_Data &&
