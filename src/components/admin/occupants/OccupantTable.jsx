@@ -12,29 +12,37 @@ import p5 from "../../../assets/images/admin/occupant/p5.jpg";
 import p6 from "../../../assets/images/admin/occupant/p6.jpg";
 import p7 from "../../../assets/images/admin/occupant/p7.jpg";
 
-
 function OccupantTable() {
 
     const [searchTerm, setSearchTerm] = useState('')
 
-    const details_array = [{Src : p7, firstName : "saman", lastName : "kumara", email : "saman@gmail.com", joinedDate : '2022-07-15', rate : '2'},
-                                {Src : p1, firstName : "namal", lastName : "perera", email : "saman@gmail.com", joinedDate : '2022-08-15', rate : '4'},
-                                {Src : p2, firstName : "amal", lastName : "saman", email : "saman@gmail.com", joinedDate : '2022-08-16', rate : '4'},
-                                {Src : p3, firstName : "ruwan", lastName : "pushpa", email : "saman@gmail.com", joinedDate : '2022-08-17', rate : '3'},
-                                {Src : p4, firstName : "sandum", lastName : "nimal", email : "saman@gmail.com", joinedDate : '2022-08-18', rate : '1'},
-                                {Src : p5, firstName : "pawan", lastName : "pahan", email : "saman@gmail.com", joinedDate : '2022-08-19', rate : '4'},
-                                {Src : p6, firstName : "nilantha", lastName : "dasun", email : "saman@gmail.com", joinedDate : '2022-08-18', rate : '6'}]
+    const details_array = [
+        {Src : p7, firstName : "saman", lastName : "kumara", email : "saman@gmail.com", joinedDate : '2022-07-15',
+            rate : '2'},
+        {Src : p1, firstName : "namal", lastName : "perera", email : "saman@gmail.com", joinedDate : '2022-08-15',
+            rate : '4'},
+        {Src : p2, firstName : "amal", lastName : "saman", email : "saman@gmail.com", joinedDate : '2022-08-16',
+            rate : '4'},
+        {Src : p3, firstName : "ruwan", lastName : "pushpa", email : "saman@gmail.com", joinedDate : '2022-08-17',
+            rate : '3'},
+        {Src : p4, firstName : "sandum", lastName : "nimal", email : "saman@gmail.com", joinedDate : '2022-08-18',
+            rate : '1'},
+        {Src : p5, firstName : "pawan", lastName : "pahan", email : "saman@gmail.com", joinedDate : '2022-08-19',
+            rate : '4'},
+        {Src : p6, firstName : "nilantha", lastName : "dasun", email : "saman@gmail.com", joinedDate : '2022-08-18',
+            rate : '6'}
+    ]
 
     return (
         <Col className='top-selling-products'>
             <Row className='mx-0 search-part mt-3 pt-3 '>
                 <Col className='px-0 ps-3'>
-                    <input className='search-by-name p-2' type="date" onChange={event => {setSearchTerm(event.target.value)}}/>
+                    <input className='search-by-name p-2' type="text" placeholder='Search...'
+                           onChange={event => {setSearchTerm(event.target.value)}}
+                    />
                 </Col>
-                <Col className='px-0 text-right pe-3'>
-                    <input className='search-by-name p-2' type="text" placeholder='Search...' onChange={event => {setSearchTerm(event.target.value)}}/>
-                </Col>
-                <Col className='px-0 text-right pe-3'>
+
+                <Col className='text-right'>
                     <select className='search-by-name p-2'  onChange={event => {setSearchTerm(event.target.value)}}> 
                         <option disabled hidden> Search by ratings ...</option>
                         <option>1</option>
@@ -44,8 +52,13 @@ function OccupantTable() {
                         <option>4+</option>
                     </select>
                 </Col>
-                
-                
+                <Col className='text-center ps-5 ms-5'>
+                    <input className='search-by-name p-2' type="date"
+                           onChange={event => {setSearchTerm(event.target.value)}}
+                    />
+                </Col>
+                <Col className='text-right'></Col>
+                <Col className='text-right'></Col>
             </Row>
 
             <Row className='mx-0 top-selling-products-titles mt-3'>
