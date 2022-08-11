@@ -44,9 +44,9 @@ function OccupantTable() {
 
                 <Col className='text-right'>
                     <select className='search-by-name p-2'  onChange={event => {setSearchTerm(event.target.value)}}> 
-                        <option disabled hidden> Search by ratings ...</option>
+                        <option> Search by ratings ...</option>
                         <option>1</option>
-                        <option>2</option>
+                        <option>2</option> 
                         <option>3</option>
                         <option>4</option>
                         <option>4+</option>
@@ -83,7 +83,7 @@ function OccupantTable() {
                     } else if (val.firstName.toLowerCase().includes(searchTerm.toLowerCase()) || 
                         val.lastName.toLowerCase().includes(searchTerm.toLowerCase()) || 
                         val.joinedDate.includes(searchTerm) ||
-                        val.rate.includes(searchTerm) ||
+                        val.rate == searchTerm ||
                         (searchTerm == '4+' && val.rate > 4) ) {
                             return val 
                     } 
