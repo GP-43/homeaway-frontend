@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import RowTopProducts from "./RowTopProducts";
 import { useState } from 'react';
 
+//images
 import p1 from "../../../assets/images/admin/occupant/p1.jpg";
 import p2 from "../../../assets/images/admin/occupant/p2.jpg";
 import p3 from "../../../assets/images/admin/occupant/p3.jpg";
