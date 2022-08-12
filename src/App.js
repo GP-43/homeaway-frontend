@@ -10,6 +10,8 @@ import Dashboard from "./views/pages/Admin/Dashboard";
 import PlaceDescription from './views/pages/user/PlaceDescription';
 import HomeAwayAnons from "./views/HomeAwayAnons";
 import Home from './views/pages/anons/Home'
+import Login from "./views/pages/anons/Login";
+import Signup from "./views/pages/anons/Signup";
 
 function App() {
     return (
@@ -17,6 +19,8 @@ function App() {
             <Routes>
                 <Route path='/' element={<HomeAwayAnons />}>
                     <Route path='/' element={<Home />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/signup' element={<Signup />} />
                 </Route>
                 <Route path='/user' element={<HomeAwayUser />}>
                     <Route path='/user/' element={<UserHome />} />
