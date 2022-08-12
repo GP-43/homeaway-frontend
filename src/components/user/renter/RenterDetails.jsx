@@ -12,7 +12,7 @@ function RenterDetails() {
             <Row className="md-2 renter-row">
               <Col className="renter-col text-center">
                 <img className="renter-image" src={girl1} alt="girl1" />
-                <Col className="renter-name">Ms.Senulya Wijewardhane</Col>
+                <Col className="renter-name pt-3">Ms.Senulya Wijewardhane</Col>
                 <Col className="renter-rating">
                   <FaStar className="rating-icon" />
                   &nbsp;4.5
