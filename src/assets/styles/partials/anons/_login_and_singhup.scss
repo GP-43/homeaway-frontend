@@ -85,6 +85,8 @@ $price-color: #1f211c;
           width: 11rem;
           border-radius: 1.25rem;
           font-weight: 500;
+          font-size: 1.1rem;
+          border: solid 2px #ffffff;
         }
 
         button:after {
@@ -128,22 +130,10 @@ $price-color: #1f211c;
       .sign-in-btn {
         border: solid 1px #ffffff;
       }
-      //h3 {
-      //  color: #ffffff;
-      //}
-      //
-      //.forgot-pass-label {
-      //  color: #ffffff;
-      //
-      //}
-      //.text-muted {
-      //  color: #ffffff !important;
-      //}
     }
 
     .animation-shield {
       display: none !important;
-
     }
   }
 
@@ -225,7 +215,9 @@ $price-color: #1f211c;
           height: 2.5rem;
           width: 11rem;
           border-radius: 1.25rem;
+          font-size: 1.1rem;
           font-weight: 500;
+          border: solid 2px #ffffff;
         }
 
         button:after {
