@@ -5,6 +5,7 @@ import profile4 from "../../../assets/images/profileimages/occupants/profile4.jp
 
 export const SliderData =[
     {
+        id:1,
         src: profile1,
         name: "Senath Dewmin",
         location:"Kandy",
@@ -12,6 +13,7 @@ export const SliderData =[
             "            bulk of the card's content.",
     },
     {
+        id:2,
         src: profile2,
         name: "Tharindu Thathsara",
         location:"Ganemulla",
@@ -19,6 +21,7 @@ export const SliderData =[
             "            bulk of the card's content.",
     },
     {
+        id:3,
         src: profile3,
         name: "Awantha Irushan",
         location:"Matale",
@@ -26,6 +29,7 @@ export const SliderData =[
             "            bulk of the card's content.",
     },
     {
+        id:4,
         src: profile4,
         name: "Tharaki Dilshani",
         location:"Meegoda",

@@ -3,10 +3,25 @@ import { Row,Carousel } from 'react-bootstrap';
 import {SliderData} from "./SliderData";
 
 function ClientCard() {
-
+    // let slideIndex = 1;
+    // //showSlides(slideIndex);
+    //
+    // function plusSlides(n) {
+    //     showSlides(slideIndex += n);
+    // };
+    // const showSlides = (n) => {
+    //     let i;
+    //     let slides = document.getElementsByClassName("mySlides");
+    //     if (n > slides.length) {slideIndex = 1}
+    //     if (n < 1) {slideIndex = slides.length}
+    //     for (i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";
+    //     }
+    //     slides[slideIndex-1].style.display = "block";
+    // };
   return (
     <Row>
-        <Carousel className='client-msg-card bg-dark'>
+        <Carousel className='client-msg-card bg-transparent'>
             {SliderData.map((slide,id) => (
             <Carousel.Item className="msg-card bg-light mt-5 ms-5 ps-1">
                 <img src={slide.src} className="msg-prof-image" />
