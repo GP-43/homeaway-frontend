@@ -1,34 +1,25 @@
-import React from 'react';
-import { Row,Card } from 'react-bootstrap';
-import profile1 from "../../../assets/images/profileimages/occupants/profile1.jpg";
+import React,{useState} from 'react';
+import { Row,Carousel } from 'react-bootstrap';
+import {SliderData} from "./SliderData";
 
-function ClientCard () {
-  const aboutUsMsg = [
-    {
-      src: profile1,
-      name: "Senath Dewmin",
-      location:"Kandy",
-      msg:"Some quick example text to build on the card title and make up the\n" +
-           "            bulk of the card's content.",
-    }
-  ];
+function ClientCard() {
 
   return (
     <Row>
-      {aboutUsMsg &&
-          aboutUsMsg.map((i) => (
-      <Card className="client-msg-card bg-transparent">
-      <img src={i.src} className="msg-prof-image" />
-        <Card.Body className="msg-card bg-light pt-4 mt-1">
-          <Card.Text>
-            "{i.msg}"
-          </Card.Text>
-          <Card.Title className="mt-3 pt-1">{i.name}</Card.Title>
-          <Card.Subtitle className="mt-2 text-muted">{i.location}</Card.Subtitle>
-        </Card.Body>
-      </Card>))}
+        <Carousel className='client-msg-card bg-info'>
+            {/*{SliderData.map((slide,id) => (*/}
+            <Carousel.Item className="msg-card bg-dark mt-5 ms-5 ps-1">
+                <img src="a.png" className="msg-prof-image" />
+                {/* {slide.src} {slide.msg} {slide.name} {slide.location}*/}
+                <p className="text right mt-5 me-1 pt-1">"Your msg hereYour msg hereYour msg hereYour msg hereYour msg hereY
+                    our msg hereYour msg hereYour msg here"</p>
+                <h3 className="mt-2 text right">Name</h3>
+                <h6 className="mt-2 text-muted">Location</h6>
+            </Carousel.Item>
+            {/*))}*/}
+        </Carousel>
     </Row>
-  )
+  );
 }
 
-export default ClientCard
+export default ClientCard;

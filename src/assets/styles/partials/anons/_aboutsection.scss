@@ -27,8 +27,10 @@
     }
 }
 .client-msg-card{
-    width:550px;
+    width:620px;
     border-style: none;
+    height:350px;
+    justify-content: center;
 
     @media (max-width: 412px) {
         margin-top: 50px;
@@ -41,8 +43,8 @@
     }
 }
 .msg-card{
-    width:450px;
-    height: 170px;
+    width:500px;
+    height: 250px;
     color: #000000;
     border-radius: 5px;
     position: relative;
@@ -69,4 +71,7 @@
         margin-left: -25px;
         margin-top:-25px;
     }
+}
+.msg-content{
+    margin-top: 25px;
 }

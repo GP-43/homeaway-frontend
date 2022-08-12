@@ -16,10 +16,10 @@ function Content() {
       </Row>
       <Row className='line-four py-2'>
         <Col xs={1} className="">
-            {<BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon" />}
+            {<BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon"  />}
         </Col>
         <Col xs={1}>
-            {<BsFillArrowRightCircleFill className="ms-5 icon next-icon" />}
+            {<BsFillArrowRightCircleFill className="ms-5 icon next-icon"/>}
         </Col>
       </Row>
     </Col>
