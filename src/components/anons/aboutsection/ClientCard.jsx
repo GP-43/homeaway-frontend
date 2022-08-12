@@ -6,9 +6,9 @@ function ClientCard() {
 
   return (
     <Row>
-        <Carousel className='client-msg-card bg-info'>
+        <Carousel className='client-msg-card bg-dark'>
             {/*{SliderData.map((slide,id) => (*/}
-            <Carousel.Item className="msg-card bg-dark mt-5 ms-5 ps-1">
+            <Carousel.Item className="msg-card bg-light mt-5 ms-5 ps-1">
                 <img src="a.png" className="msg-prof-image" />
                 {/* {slide.src} {slide.msg} {slide.name} {slide.location}*/}
                 <p className="text right mt-5 me-1 pt-1">"Your msg hereYour msg hereYour msg hereYour msg hereYour msg hereY

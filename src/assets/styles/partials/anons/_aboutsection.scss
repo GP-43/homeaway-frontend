@@ -33,12 +33,13 @@
     justify-content: center;
 
     @media (max-width: 412px) {
-        margin-top: 50px;
-        width:300px !important;
-        margin-left:0px !important;
+        width:250px !important;
+        height:300px !important;
+        margin-left:-35px !important;
     }
     @media (max-width: 820px) {
-        margin-top: 55px;
+        width:520px !important;
+        margin-top: 5px !important;
         margin-left:-60px;
     }
 }
@@ -50,10 +51,12 @@
     position: relative;
     
     @media (max-width: 412px) {
-        width:280px !important;
+        width:100px !important;
+        margin-left: -10px !important;
     }
     @media (max-width: 820px) {
-        width:400px;
+        width:280px !important;
+        margin-left: 35px !important;
     }
 }
 .msg-prof-image{
