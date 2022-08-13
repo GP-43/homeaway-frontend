@@ -81,3 +81,14 @@
 .msg-content{
     margin-top: 25px;
 }
+.carousel-control-prev-icon {
+    background-image: url(../../../images/landing/back-to.png);
+    margin-right:50px;
+}
+.carousel-control-next-icon {
+    background-image: url(../../../images/landing/next-page.png);
+    margin-left:50px;
+}
+.carousel-indicators{
+    display:none;
+}

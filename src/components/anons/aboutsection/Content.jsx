@@ -16,7 +16,7 @@ function Content() {
       </Row>
       <Row className='line-four py-2'>
         <Col xs={1} className="">
-            {<BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon" onClick="plusSlides(-1)" />}
+            {<BsFillArrowLeftCircleFill className="ms-0 ps-0 icon next-icon" onClick="plusSlides(-1)" />}
         </Col>
         <Col xs={1}>
             {<BsFillArrowRightCircleFill className="ms-5 icon next-icon" onClick="plusSlides(1)"/>}
