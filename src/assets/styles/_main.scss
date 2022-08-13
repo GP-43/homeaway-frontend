@@ -1,5 +1,4 @@
 @import "partials/occupant-footer";
-
 //import user sass partials here
 @import "partials/user/navbar";
 @import "partials/user/finding-place";
@@ -16,15 +15,17 @@
 @import "partials/user/user-card";
 @import "partials/user/user-detail-card";
 @import "partials/user/place-information";
-
+@import "partials/user/user-renting-page";
 //import admin sass partials here
 @import "partials/admin/admin-dashbord";
 @import "partials/admin/left-navigation";
 //@import "partials/admin/admin-calendar";
 @import "partials/admin/daily-transactions";
 @import "partials/admin/occupants";
-
 //import anons sass partials here
 @import "partials/anons/home";
 @import "partials/anons/anons_navbar";
-@import "partials/anons/aboutsection"
+@import "partials/anons/aboutsection";
+@import "partials/anons/login_and_singhup";
+@import "partials/anons/bestrentingsection";
+@import "partials/anons/latest_place";
