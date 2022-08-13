@@ -5,6 +5,7 @@ import ThingsYouNeedSection from "../../../components/anons/things_you_need_sect
 import HelloSection from "../../../components/anons/hellosection/HelloSection";
 import VacationPlanSection from "../../../components/anons/vacation_plan_section/VacationPlanSection";
 import Bestrentingplacessection from "../../../components/anons/best_renting_places/Bestrentingplacessection";
+import LatestPlaces from '../../../components/anons/latest_place_section/LatestPlaces';
 
 
 function Home() {
@@ -24,7 +25,7 @@ function Home() {
                     <Bestrentingplacessection />
                 </Col>
                 <Col className='px-0' xs={12}>
-                    Blog section goes here
+                    <LatestPlaces />
                 </Col>
                 <Col className='px-0' xs={12}>
                     <AboutSection />
