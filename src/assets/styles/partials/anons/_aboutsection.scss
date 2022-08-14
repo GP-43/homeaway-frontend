@@ -44,9 +44,12 @@
     margin-top: -4rem;
 
     @media (max-width: 820px) {
-        width:450px !important;
+        width:350px !important;
         margin-top: 5px !important;
         margin-left:-60px;
+        .carousel-inner{
+            width:320px !important;
+        }
     }
     @media (max-width: 412px) {
         width:250px !important;
@@ -65,12 +68,27 @@
         width:280px !important;
         margin-left: 35px !important;
         height:200px;
+
+
+        a.carousel-control-next{
+            display: none;
+
+        }
+        .carousel-indicators{
+            width:250px;
+        }
+        .carousel-control-next{
+            display: none;
+        }
     }
     @media (max-width: 412px) {
         width:200px !important;
         //margin-left: -10px !important;
         height:200px;
     }
+
+
+
 }
 .msg-prof-image{
     width: 80px;
@@ -97,9 +115,9 @@
 .carousel-control-next-icon {
     display: none;
 }
-.carousel-indicators{
-    display:none;
-}
+//.carousel-indicators{
+//    display:none;
+//}
 .paginationBttns {
     height: 40px;
     list-style: none;
@@ -123,14 +141,7 @@
         margin-top:-350px;
     }
 }
-@media (max-width: 820px) {
-    .carousel-inner{
-        width:420px;
-    }
-    a.carousel-control-next{
-        display: none;
-    }
-}
+
 @media (max-width: 412px) {
     .carousel-inner{
         width:240px;
