@@ -24,8 +24,23 @@ function NavBar() {
                 </Navbar>
                 <Navbar>
                     <Nav className="me-0 mt-0">
-                        <Nav.Link as={Link} to='/user/'><span className={url === '/user/' ? 'nav-bar-item-active' : 'nav-bar-item'}>Home</span></Nav.Link>
-                        <Nav.Link as={Link} to='/user/userbookings'><span className={url === '/user/userbookings' ? 'nav-bar-item-active' : 'nav-bar-item'}>Bookings</span></Nav.Link>
+                        
+                        <Nav.Link as={Link} to='/user/'>
+                            <span className={url === '/user/' ? 'nav-bar-item-active' : 'nav-bar-item'}>Home</span>
+                        </Nav.Link>
+
+                        <Nav.Link as={Link} to='/user/userrentings'>
+                            <span className={url === '/user/userrentings' ? 'nav-bar-item-active' : 'nav-bar-item'}>Rentings</span>
+                        </Nav.Link>
+
+                        <Nav.Link as={Link} to='/user/userbookings'>
+                            <span className={url === '/user/userbookings' ? 'nav-bar-item-active' : 'nav-bar-item'}>Bookings</span>
+                        </Nav.Link>
+
+                        <Nav.Link as={Link} to='/user/newrent'>
+                            <span className={url === '/user/newrent' ? 'nav-bar-item-active' : 'nav-bar-item'}>New Rent</span>
+                        </Nav.Link>
+
                         <NavDropdown title={<BiUserCircle className="user-circle"/>}>
                             <NavDropdown.Item className="mb-2" href="#action/3.1">Profile</NavDropdown.Item>
                             <NavDropdown.Item className="mb-2" href="#action/3.2">
