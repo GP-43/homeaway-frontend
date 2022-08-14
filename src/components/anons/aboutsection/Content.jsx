@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import ClientCard from './ClientCard';
+
 function Content() {
   return (
     <Col className='about-section-content' >
