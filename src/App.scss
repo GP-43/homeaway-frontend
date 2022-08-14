@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+@import "assets/styles/_main.scss";
+
+.user-home-bg-color {
+  background-color: #EBEBEB;
+}
+
+.home-bg-color {
+  background-color: #EBEBEB;
+
+  .bg-image {
+    background-image: url("./assets/images/anons/HomeBG.jpg");
+    background-size: cover;
+  }
+}
