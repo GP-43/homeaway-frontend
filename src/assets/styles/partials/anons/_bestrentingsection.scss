@@ -1,3 +1,6 @@
+.vacation-plan-section {
+  height: 100vh;
+}
 .best-renting-section {
   .place-section {
     overflow-y: unset !important;
@@ -35,21 +38,29 @@
 }
 
 @media only screen and (max-width: 820px) {
-  .place-card-set{
+  .place-card-set {
     width: 25%;
   }
 
-  .paginationBttns{
+  .paginationBttns {
     padding-right: 0 !important;
+  }
+
+  .vacation-plan-section {
+    height: 50vh;
   }
 }
 
 @media only screen and (max-width: 412px) {
-  .place-card-set{
+  .place-card-set {
     width: 100%;
   }
 
-  .paginationBttns{
+  .paginationBttns {
     padding-right: 0 !important;
+  }
+
+  .vacation-plan-section {
+    height: 170vh;
   }
 }
