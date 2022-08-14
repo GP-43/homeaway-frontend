@@ -1,5 +1,4 @@
 import React from 'react';
-import ClientCard from './ClientCard';
 import Content from './Content';
 import { Col, Container, Row } from 'react-bootstrap';
 
@@ -11,7 +10,7 @@ function AboutSection() {
                     <Content />
                 </Col>
                 <Col xs={6} className="ms-5">
-                    <ClientCard />
+                    {/*<SliderData />*/}
                 </Col>
             </Row>
         </Container>

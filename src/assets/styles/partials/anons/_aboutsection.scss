@@ -34,15 +34,15 @@
     height:350px;
     justify-content: center;
 
+    @media (max-width: 820px) {
+        width:450px !important;
+        margin-top: 5px !important;
+        margin-left:-60px;
+    }
     @media (max-width: 412px) {
         width:250px !important;
         height:300px !important;
         margin-left:-35px !important;
-    }
-    @media (max-width: 820px) {
-        width:520px !important;
-        margin-top: 5px !important;
-        margin-left:-60px;
     }
 }
 .msg-card{
@@ -51,15 +51,16 @@
     color: #000000;
     border-radius: 5px;
     position: relative;
-    
-    @media (max-width: 412px) {
-        width:100px !important;
-        margin-left: -10px !important;
-        height:200px;
-    }
+
     @media (max-width: 820px) {
         width:280px !important;
         margin-left: 35px !important;
+        height:200px;
+    }
+    @media (max-width: 412px) {
+        width:200px !important;
+        //margin-left: -10px !important;
+        height:200px;
     }
 }
 .msg-prof-image{
@@ -82,13 +83,53 @@
     margin-top: 25px;
 }
 .carousel-control-prev-icon {
-    background-image: url(../../../images/landing/back-to.png);
-    margin-right:50px;
+    display: none;
 }
 .carousel-control-next-icon {
-    background-image: url(../../../images/landing/next-page.png);
-    margin-left:50px;
+    display: none;
 }
 .carousel-indicators{
     display:none;
+}
+.paginationBttns {
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0.7rem;
+}
+.page-item-none {
+    display: none;
+}
+.msg-display{
+    margin-left: 480px;
+    margin-top:-210px;
+
+    @media (max-width:820px) {
+        margin-left: 340px;
+        margin-top:-300px;
+    }
+    @media (max-width:412px) {
+        margin-left: 130px;
+        margin-top:-350px;
+    }
+}
+@media (max-width: 820px) {
+    .carousel-inner{
+        width:420px;
+    }
+    a.carousel-control-next{
+        display: none;
+    }
+}
+@media (max-width: 412px) {
+    .carousel-inner{
+        width:240px;
+    }
+    a.carousel-control-next{
+        display: none;
+    }
+    .arrow-section{
+        margin-left: 50px;
+    }
 }
