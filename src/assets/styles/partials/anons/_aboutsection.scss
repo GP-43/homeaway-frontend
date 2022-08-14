@@ -1,4 +1,12 @@
+.about-section{
+    display: flex;
+
+    .column-about{
+        padding-left: 7%;
+    }
+}
 .about-section-content{
+    
     .line-one{
         font-size: xx-large;
         font-weight: 700;
