@@ -55,6 +55,9 @@
         width:250px !important;
         height:300px !important;
         margin-left:-35px !important;
+        .carousel-inner{
+            width:240px !important;
+        }
     }
 }
 .msg-card{
@@ -143,9 +146,7 @@
 }
 
 @media (max-width: 412px) {
-    .carousel-inner{
-        width:240px;
-    }
+
     a.carousel-control-next{
         display: none;
     }
