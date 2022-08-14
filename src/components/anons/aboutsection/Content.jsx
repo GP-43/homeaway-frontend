@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
-
+import ClientCard from './ClientCard';
 function Content() {
   return (
     <Col className='about-section-content' >
@@ -15,12 +14,7 @@ function Content() {
         Our Clients send bunch of smiles with our services and we love them.
       </Row>
       <Row className='line-four py-2'>
-        <Col xs={1} className="">
-            {<BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon" />}
-        </Col>
-        <Col xs={1}>
-            {<BsFillArrowRightCircleFill className="ms-5 icon next-icon" />}
-        </Col>
+          <ClientCard/>
       </Row>
     </Col>
   )
