@@ -54,9 +54,9 @@ function ClientCard() {
 
                                 <Carousel.Item className="msg-card bg-light mt-5 ms-5 ps-1">
                                     <img src={i.src} className="msg-prof-image" />
-                                    <p className="text right mt-5 me-1 pt-1">"{i.msg}"</p>
-                                    <h3 className="mt-2 text right">{i.name}</h3>
-                                    <h6 className="mt-2 text-muted">{i.location}</h6>
+                                    <p className="text right mt-5 mx-3 pt-1">"{i.msg}"</p>
+                                    <h3 className="mt-2 mx-3 text right">{i.name}</h3>
+                                    <h6 className="mt-2 mx-3 text-muted">{i.location}</h6>
                                 </Carousel.Item>
 
                         </Carousel>
