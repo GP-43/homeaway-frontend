@@ -17,7 +17,7 @@ function Home() {
                 <Col className='px-0 d-flex things-you-need-section' xs={12}>
                     <ThingsYouNeedSection />
                 </Col>
-                <Col className='px-0 vacation-plan-section' xs={12}>
+                <Col className='px-0 mt-2 vacation-plan-section' xs={12}>
                     <VacationPlanSection />
                 </Col>
                 <Col className='px-0 latest-place-section' xs={12}>

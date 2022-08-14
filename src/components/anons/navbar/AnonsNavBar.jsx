@@ -29,7 +29,7 @@ function AnonsNavBar() {
 
                         <Nav.Link as={Link} to='/login'><span className={url === '/anon/login' ? 'nav-bar-item-active' : 'nav-bar-item login'}>Login</span></Nav.Link>
 
-                        <Nav.Link as={Link} to='/signup'><span className={url === '/anon/signup' ? 'nav-bar-item-active' : 'nav-bar-item signup px-2 pt-1 pb-2'}>Sign up</span></Nav.Link>
+                        <Nav.Link as={Link} to='/signup'><span className={url === '/anon/signup' ? 'nav-bar-item-active' : 'nav-bar-item signup px-3 pt-1 pb-2'}>Sign up</span></Nav.Link>
 
                     </Nav>
                 </Navbar.Collapse>

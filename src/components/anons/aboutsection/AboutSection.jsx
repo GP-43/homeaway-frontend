@@ -9,9 +9,9 @@ function AboutSection() {
                 <Col xs={4} className="ms-3 me-5 column-about">
                     <Content />
                 </Col>
-                <Col xs={6} className="ms-5">
-                    {/*<SliderData />*/}
-                </Col>
+                {/*<Col xs={6} className="ms-5">*/}
+                {/*    /!*<SliderData />*!/*/}
+                {/*</Col>*/}
             </Row>
         </Container>
     )
