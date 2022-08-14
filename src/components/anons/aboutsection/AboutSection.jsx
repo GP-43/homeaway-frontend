@@ -12,7 +12,7 @@ function AboutSection() {
                 {/*<Col xs={6} className="ms-5">*/}
                 {/*    /!*<SliderData />*!/*/}
                 {/*</Col>*/}
-            
+
         </Container>
     )
 }
