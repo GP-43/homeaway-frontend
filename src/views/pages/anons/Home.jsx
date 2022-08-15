@@ -11,7 +11,7 @@ function Home() {
     return (
         <Container>
             <Row className='mx-0' xs={12}>
-                <Col className='px-0 '>
+                <Col className='px-0 mt-5'>
                     <HelloSection />
                 </Col>
                 <Col className='px-0 d-flex things-you-need-section' xs={12}>

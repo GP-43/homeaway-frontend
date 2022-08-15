@@ -15,30 +15,38 @@ function AnonsNavBar() {
     }, [location]);
 
     return (
-        <Navbar collapseOnSelect expand="lg" className="anon-navbar px-0 py-0">
+        <Navbar collapseOnSelect expand="lg" className="anon-navbar px-0 py-0 mt-1 pt-1 position-fixed">
             <Container className="px-0">
             <img className="logo" src={logo} alt="LOGO" />
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse className="navbar-coll" id="responsive-navbar-nav">
+                <Navbar.Collapse className="navbar-coll" id="responsive-navbar-nav text-right">
                     <Nav className="me-0 mt-0">
                         <Nav.Link as={Link} to='/'>
-                            <span className={url === '/anon/' ? 'nav-bar-item-active' : 'nav-bar-item'}>Home</span>
+                            <span className={url === '/anon/' ? 'nav-bar-item-active' : 'nav-bar-item mt-1 text-right'}>Home</span>
                         </Nav.Link>
 
                         <Nav.Link as={Link} to='/about'>
-                            <span className={url === '/anon/about' ? 'nav-bar-item-active' : 'nav-bar-item'}>About</span>
+                            <span className={url === '/anon/about' ? 'nav-bar-item-active' : 'nav-bar-item mt-1'}>
+                                About
+                            </span>
                         </Nav.Link>
 
                         <Nav.Link as={Link} to='/faq'>
-                            <span className={url === '/anon/about' ? 'nav-bar-item-active' : 'nav-bar-item'}>FAQ</span>
+                            <span className={url === '/anon/about' ? 'nav-bar-item-active' : 'nav-bar-item mt-1'}>
+                                FAQ
+                            </span>
                         </Nav.Link>
 
                         <Nav.Link as={Link} to='/login'>
-                            <span className={url === '/anon/login' ? 'nav-bar-item-active' : 'nav-bar-item login'}>Login</span>
+                            <span className={url === '/anon/login' ? 'nav-bar-item-active' : 'nav-bar-item login mt-1'}>
+                                Login
+                            </span>
                         </Nav.Link>
 
                         <Nav.Link as={Link} to='/signup'>
-                            <span className={url === '/anon/signup' ? 'nav-bar-item-active' : 'nav-bar-item signup px-3 pt-1 pb-2'}>Sign up</span>
+                            <span className={url === '/anon/signup' ? 'nav-bar-item-active' : 'nav-bar-item signup px-3 pt-1 pb-2'}>
+                                Sign up
+                            </span>
                         </Nav.Link>
 
                     </Nav>
