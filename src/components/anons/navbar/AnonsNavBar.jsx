@@ -15,14 +15,16 @@ function AnonsNavBar() {
     }, [location]);
 
     return (
-        <Navbar collapseOnSelect expand="lg" className="anon-navbar px-0 py-0 mt-1 pt-1 position-fixed">
+        <Navbar collapseOnSelect expand="lg" className="anon-navbar px-0 py-0">
             <Container className="px-0">
             <img className="logo" src={logo} alt="LOGO" />
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse className="navbar-coll" id="responsive-navbar-nav text-right">
+                <Navbar.Collapse className="navbar-coll text-right" id="responsive-navbar-nav">
                     <Nav className="me-0 mt-0">
                         <Nav.Link as={Link} to='/'>
-                            <span className={url === '/anon/' ? 'nav-bar-item-active' : 'nav-bar-item mt-1 text-right'}>Home</span>
+                            <span className={url === '/anon/' ? 'nav-bar-item-active' : 'nav-bar-item mt-1 text-right'}>
+                                Home
+                            </span>
                         </Nav.Link>
 
                         <Nav.Link as={Link} to='/about'>

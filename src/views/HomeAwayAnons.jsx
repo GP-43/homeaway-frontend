@@ -9,8 +9,8 @@ function HomeAwayAnons() {
     return (
         <div className='home-bg-color'>
             <Container>
-                <Row className="mx-0">
-                    <Col className="px-0">
+                <Row className="mx-0 w-auto">
+                    <Col className="px-0 position-fixed">
                         <AnonsNavBar/>
                     </Col>
                 </Row>
