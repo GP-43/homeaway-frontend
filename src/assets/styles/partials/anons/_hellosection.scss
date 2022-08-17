@@ -1,21 +1,21 @@
-.hello-section{
-  background-image:
-          url("../../../images/landing/landing.png");
+.hello-section {
+  background-image: url("../../../images/landing/landing.png");
   background-size: cover;
-  height: 80vh;
-  background-repeat:no-repeat;
+  height: 88vh;
+  background-repeat: no-repeat;
   width: 84.4vw;
 
-  .first-text{
-    margin-top:20px;
+  .first-text {
+    margin-top: 20px;
     width: 600px;
     font-size: 68px;
     line-height: 4.5rem;
   }
-  .second-text{
+
+  .second-text {
     font-size: 20px;
     width: 450px;
-    margin-top:40px;
+    margin-top: 40px;
   }
 }
 
@@ -27,18 +27,20 @@
     background-repeat: no-repeat;
     width: auto;
 
-    .first-text{
+    .first-text {
       width: 450px;
       font-size: 40px;
       line-height: 3rem;
     }
-    .second-text{
+
+    .second-text {
       font-size: 16px;
       width: 350px;
-      margin-top:20px;
+      margin-top: 20px;
     }
   }
 }
+
 @media (max-width: 412px) {
   .hello-section {
     background-image: url("../../../images/landing/landing412.png");
@@ -48,15 +50,16 @@
     width: auto;
     margin-top: -10px !important;
 
-    .first-text{
+    .first-text {
       width: 350px;
       font-size: 38px;
       line-height: 3rem;
     }
-    .second-text{
+
+    .second-text {
       font-size: 14px;
       width: 200px;
-      margin-top:20px;
+      margin-top: 20px;
     }
   }
 }

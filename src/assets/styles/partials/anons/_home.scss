@@ -1,40 +1,40 @@
-.things-you-need-card {
-  background-color: rgb(49, 49, 48);
-  height: 15rem;
-
-  .image {
-    height: 50px;
-    width: 80px;
-  }
-
-  .title {
-    color: aliceblue;
-  }
-
-  .text {
-    color: aliceblue;
-  }
-}
-
 .things-you-need-section {
-  height: 100vh;
-}
+  height: 88vh;
 
-.things-you-need-section-description,
-.vacation-plan-section-description {
-  text-align: center;
+  .things-you-need-card {
+    background-color: rgb(49, 49, 48);
+    height: 15rem;
 
-  .heading h1 {
-    color: black;
+    .image {
+      height: 50px;
+      width: 80px;
+    }
+
+    .title {
+      color: aliceblue;
+    }
+
+    .text {
+      color: aliceblue;
+    }
   }
 
-  .heading span {
-    color: #8250d6;
-  }
+  .things-you-need-section-description,
+  .vacation-plan-section-description {
+    text-align: center !important;
 
-  .text {
-    font-size: 1.3rem;
-    font-weight: 150;
+    .heading h1 {
+      color: black;
+    }
+
+    .heading span {
+      color: #8250d6;
+    }
+
+    .text {
+      font-size: 1.3rem;
+      font-weight: 150;
+    }
   }
 }
 
@@ -53,7 +53,7 @@
 }
 
 @media only screen and (max-width: 412px) {
-    .things-you-need-section {
-        height: 130vh;
-      }
+  .things-you-need-section {
+    height: 130vh;
+  }
 }

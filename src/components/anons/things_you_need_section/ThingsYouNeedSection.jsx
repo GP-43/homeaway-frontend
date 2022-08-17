@@ -5,7 +5,7 @@ import ThingsYouNeedCardSection from "../../../components/anons/things_you_need_
 
 function ThingsYouNeedSection() {
     return (
-        <Row className='mx-0 m-auto'>
+        <Row className='mx-0 m-auto things-you-need-section'>
             <ThingsYouNeedSectionDescription/>
             <ThingsYouNeedCardSection/>
         </Row>
