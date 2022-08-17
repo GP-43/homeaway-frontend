@@ -16,7 +16,6 @@ function ThingsYouNeedCard(props) {
                 <Row>
                     <Card.Text className="text pt-1">{props.Text}</Card.Text> 
                 </Row>
-                             
             </Card>
         </Row>
     );

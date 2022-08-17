@@ -15,10 +15,10 @@ function AnonsNavBar() {
     }, [location]);
 
     return (
-        <Navbar collapseOnSelect expand="lg" className="anon-navbar px-0 py-0">
+        <Navbar collapseOnSelect expand="lg" className="anon-navbar px-0 py-0 position-fixed">
             <Container className="px-0">
             <img className="logo" src={logo} alt="LOGO" />
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse className="navbar-coll text-right" id="responsive-navbar-nav">
                     <Nav className="me-0 mt-0">
                         <Nav.Link as={Link} to='/'>
