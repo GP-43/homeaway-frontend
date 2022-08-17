@@ -1,0 +1,26 @@
+
+    .span-display-none{
+        display: none;
+    }
+
+    .round-before-click {
+        background-color: white;
+        width: 40px !important;
+        height: 40px !important;
+        padding: 0.2rem;
+        border-radius: 50%;
+        padding-bottom: 0;
+    }
+
+    .round-after-click{
+        background-color: red;
+        width: 40px !important;
+        height: 40px !important;
+        padding: 0.2rem;
+        border-radius: 50%;
+        padding-bottom: 0;
+    }
+
+    .cont-2 {
+        background-color: #fff;
+    }
