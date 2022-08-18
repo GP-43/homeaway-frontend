@@ -10,17 +10,24 @@
         padding: 0.2rem;
         border-radius: 50%;
         padding-bottom: 0;
+        border: 1px solid black;
     }
 
     .round-after-click{
-        background-color: red;
+        background-color: #083387;
         width: 40px !important;
         height: 40px !important;
         padding: 0.2rem;
         border-radius: 50%;
         padding-bottom: 0;
+        border: 1px solid black;
     }
 
-    .cont-2 {
-        background-color: #fff;
+    .line-container{
+        width: 82px; 
+    }
+
+    .line-after-click{
+        width: 82px;
+        font-weight: 2rem;
     }
