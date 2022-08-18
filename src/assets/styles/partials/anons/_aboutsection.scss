@@ -30,8 +30,15 @@
             color: #999999;
             cursor: pointer;
         }
+        .back-icon:active, back-icon:focus {
+            color: #8250d6;
+        }
         .next-icon{
-            color: #8250D6;
+            color: #999999;
+            cursor: pointer;
+        }
+        .next-icon:active{
+            color: #8250d6;
             cursor: pointer;
         }
     }

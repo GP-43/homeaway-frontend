@@ -72,7 +72,7 @@ function ClientCard() {
             <Col md={12} xs={8} className="arrow-section px-md-4 px-0">
                 <ReactPaginate
                     previousLabel={
-                        <BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon" />
+                        <BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon"/>
                     }
                     nextLabel={
                         <BsFillArrowRightCircleFill className="ms-5 icon next-icon" />
