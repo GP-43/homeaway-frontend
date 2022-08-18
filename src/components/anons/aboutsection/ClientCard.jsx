@@ -14,32 +14,32 @@ function ClientCard() {
             src: profile1,
             name: "Senath Dewmin",
             location:"Kandy",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"Application is nice. it is very easy to use.\n" +
+                "            I reccomend this.",
         },
         {
             id:2,
             src: profile2,
             name: "Tharindi Thathsara",
             location:"Ganemulla",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"I get what i want from this. suggested place are very\n" +
+                "            attractive and best ones.",
         },
         {
             id:3,
             src: profile3,
             name: "Awanthi Irushika",
             location:"Matale",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"It can track our location and\n" +
+                "            give us more better place.",
         },
         {
             id:4,
             src: profile4,
             name: "Tharaka Dilshan",
             location:"Meegoda",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"The fee is reasonable for every one.\n" +
+                "            Any one can use this application.",
         },
     ];
     const [messages, setMessages] = useState(sliderData.slice(0, 4));
