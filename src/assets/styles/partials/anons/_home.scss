@@ -19,8 +19,7 @@
     }
   }
 
-  .things-you-need-section-description,
-  .vacation-plan-section-description {
+  .things-you-need-section-description{
     text-align: center !important;
 
     .heading h1 {
@@ -37,6 +36,23 @@
     }
   }
 }
+.vacation-plan-section-description {
+  text-align: center !important;
+
+  .heading h1 {
+    color: black;
+  }
+
+  .heading span {
+    color: #8250d6;
+  }
+
+  .text {
+    font-size: 1.3rem;
+    font-weight: 150;
+  }
+}
+
 
 @media only screen and (max-width: 820px) {
   .title {
