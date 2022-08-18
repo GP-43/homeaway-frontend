@@ -1,26 +1,27 @@
 import React from "react";
-import { Row, Col, Container} from "react-bootstrap";
+import { Row, Col} from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner';
 
 function ProgressBar(props) {
     return(
-            <Row>
+        
+            <Row className="d-flex justify-content-start">   
+                <h3 className="p-0">Add New Rent</h3>            
                 <Col className={props.First ? "round-after-click" : "round-before-click" } xs = {1}>
                     <Spinner animation="border" className={props.First && "span-display-none" } />
                 </Col>
-                <Col className="p-0 m-auto line-container" xs = {1}>
-                    <hr />
+                <Col className="p-0 my-auto" xs = {1}>
+                    <hr className={props.First ? "line-after-click" : "line-before-click"} />
                 </Col>
                 <Col className={(props.First && props.Second) ? "round-after-click" : "round-before-click" } xs = {1}>
                 <Spinner animation="border" className={(! props.First || props.Second) && "span-display-none" } />
                 </Col>
-                <Col className="p-0 m-auto line-container" xs = {1}>
-                    <hr className="line-after-click"/>
+                <Col className="p-0 my-auto" xs = {1}>
+                    <hr className={props.Second ? "line-after-click" : "line-before-click"} />
                 </Col>
                 <Col className={(props.First && props.Second && props.Third) ? "round-after-click" : "round-before-click" } xs = {1}>
                 <Spinner animation="border" className={(! props.Second || props.Third) && "span-display-none" } />
                 </Col>
-                <Col xs = {9}></Col>
             </Row>
         
     )

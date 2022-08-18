@@ -23,11 +23,12 @@
         border: 1px solid black;
     }
 
-    .line-container{
-        width: 82px; 
+    .line-before-click{
+        border: solid 1px rgb(0, 0, 0);
+        opacity: 100;
     }
 
     .line-after-click{
-        width: 82px;
-        font-weight: 2rem;
+        border: solid 2px #083387;
+        opacity: 100;
     }
