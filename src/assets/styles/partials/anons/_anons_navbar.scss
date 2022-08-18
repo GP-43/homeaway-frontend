@@ -47,12 +47,52 @@
   }
 
   @media only screen and (max-width: 412px) {
-    .signup{
-      width: fit-content;
+    .anon-navbar {
+      color: #B9B9B9;
+      background-color: #EBEBEB;
+      max-width: 385px;
+      z-index: 1;
+      height: 7vh !important;
+
+
+      .signup {
+        width: fit-content;
+      }
+
+      .navbar-coll {
+        justify-content: flex-end;
+        margin-right: 0rem;
+      }
+
+      .navbar-toggler collapsed {
+        justify-content: flex-end !important;
+      }
+
+      .navbar-nav {
+        z-index: 1 !important;
+        background-color: #EBEBEB !important;
+      }
     }
   }
 
   @media only screen and (max-width: 820px) {
+    .anon-navbar {
+      height: 7vh !important;
+      width: 695px !important;
+
+      .logo {
+        height: 50px;
+        //margin-left: -285px !important;
+      }
+
+      .navbar-toggler collapsed{
+        justify-content: flex-end !important;
+      }
+      .navbar-nav{
+        z-index: 1 !important;
+        background-color: #EBEBEB !important;
+      }
+    }
     .signup{
       width: fit-content;
     }

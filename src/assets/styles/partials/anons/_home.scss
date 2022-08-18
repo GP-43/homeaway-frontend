@@ -58,18 +58,34 @@
   .title {
     font-size: 1.2rem;
   }
-
-  .text {
-    font-size: 0.8rem;
+  .vacation-plan-section-description {
+    .text {
+      margin-top: 10px;
+    }
   }
-
   .things-you-need-section {
     height: 50vh;
+    .text {
+      margin-top: -20px;
+    }
+    .heading {
+      margin-bottom: 0px !important;
+      height:70px;
+    }
   }
 }
 
 @media only screen and (max-width: 412px) {
   .things-you-need-section {
     height: 130vh;
+
+    .heading{
+      margin-top:10px;
+      height:40px;
+    }
+    .text{
+      height:100px;
+      margin-bottom: 0px !important;
+    }
   }
 }
