@@ -1,8 +1,24 @@
 .about-section{
-    display: flex;
+    //display: flex;
 
     .column-about{
         padding-left: 7%;
+    }
+    .about-section-title{
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        display:flex;
+        span {
+            color: #8250d6;
+        }
+    }
+    .about-section-description{
+        margin-bottom: 100px;
+        justify-content: center;
+        width:900px;
+        margin-left:200px;
+        font-size:1.2rem;
     }
 }
 .about-section-content{
