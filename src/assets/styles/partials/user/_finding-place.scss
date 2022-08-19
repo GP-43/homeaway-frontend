@@ -266,7 +266,7 @@
     justify-content: center;
   }
   .filter-check-box{
-    margin-left: 50px;
+    margin-left: 60px;
     .radio-lable{
       font-size: 1.2rem;
     }
@@ -284,6 +284,9 @@
     }
     .filter-section-internet {
       border-radius: 0 0 1rem 1rem;
+    }
+    .filter-check-box{
+      margin-left: 30px;
     }
   }
   @media (max-width: 412px) {
