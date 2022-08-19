@@ -9,61 +9,68 @@ function FilterSection() {
                 <Card className="bg-white filter-card mb-2">
                     <Card.Body className='py-2 filter-card-body'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
-                        <Card.Subtitle className="mb-0 text-filter">Features</Card.Subtitle>
+                        {/*<Card.Subtitle className="mb-0 text-filter">Features</Card.Subtitle>*/}
                         <Card.Text className='radio-button-section w-70'>
-                            <div className='filter-check-box ms-4'>
-                                <input
+                            <Row className='filter-check-box'>
+                                <Col>
+                                    <input
+                                        type="checkbox"
+                                        //className="filter-radio-button"
+                                        id="internet" name="internet"
+                                        value="internet"
+                                    />
+                                    <lable className="radio-lable">Internet</lable>
+                                </Col>
+                                <Col>
+                                    <input
+                                        type="checkbox"
+                                        className="filter-radio-button"
+                                        id="parking" name="parking"
+                                        value="parking"
+                                    />
+                                    <lable className="radio-lable">Parking</lable>
+                                </Col>
+                                <Col>
+                                    <input
+                                        type="checkbox"
+                                        className="filter-radio-button"
+                                        id="silent_area" name="silent_area"
+                                        value="silent_area"
+                                    />
+                                    <lable className="radio-lable">Silent Area</lable>
+                                </Col>
+                            </Row>
+                            <Row className='filter-check-box'>
+                                <Col>
+                                    <input
                                     type="checkbox"
                                     //className="filter-radio-button"
-                                    id="internet" name="internet"
-                                    value="internet"
-                                />
-                                <lable className="radio-lable">Internet</lable>
-
-                                <input
-                                    type="checkbox"
-                                    // className="filter-radio-button"
-                                    id="acNeed" name="acType"
-                                    value="acNeed"
-                                />
-                                <lable className="radio-lable">AC</lable>
-                            </div>
-                            <div>
-                                <input
-                                    type="checkbox"
-                                    className="filter-radio-button"
                                     id="acNoNeed"
                                     name="acType"
                                     value="acNoNeed"
-                                />
-                                <lable className="radio-lable">No Need</lable>
-
-                                <input
+                                    />
+                                    <lable className="radio-lable">AC</lable>
+                                </Col>
+                                <Col>
+                                    <input
                                     type="checkbox"
                                     className="filter-radio-button"
-                                    id="acNeed" name="acType"
-                                    value="acNeed"
-                                />
-                                <lable className="radio-lable">Can buy food</lable>
-                            </div>
-                            <div>
-                                <input
+                                    id="foodNeed"
+                                    name="foodNeed"
+                                    value="foodNeed"
+                                    />
+                                    <lable className="radio-lable">Can buy food</lable>
+                                </Col>
+                                <Col>
+                                    <input
                                     type="checkbox"
                                     className="filter-radio-button"
-                                    id="acNoNeed"
-                                    name="acType"
-                                    value="acNoNeed"
-                                />
-                                <lable className="radio-lable">No Need</lable>
-
-                                <input
-                                    type="checkbox"
-                                    className="filter-radio-button"
-                                    id="acNeed" name="acType"
-                                    value="acNeed"
-                                />
-                                <lable className="radio-lable">Can buy food</lable>
-                            </div>
+                                    id="washrooms" name="washrooms"
+                                    value="washrooms"
+                                    />
+                                    <lable className="radio-lable">Washrooms</lable>
+                                </Col>
+                            </Row>
                         </Card.Text>
                     </Card.Body>
                 </Card>
