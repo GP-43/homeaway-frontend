@@ -18,7 +18,7 @@ function NavBar() {
 
     return (
         <Navbar expand="lg" className="navbar px-0 py-0">
-            <Container className="px-0">
+            <Container className="px-0 d-flex">
                 <Navbar>
                     <img className="logo" src={logo} alt="LOGO"/>
                 </Navbar>
