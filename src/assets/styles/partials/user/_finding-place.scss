@@ -267,7 +267,7 @@
     //padding-top: 10px;
   }
   .filter-card {
-    margin-top: -10px;
+    margin-top: -7px;
     height:90px;
 
     .filter-card-body{
@@ -286,7 +286,7 @@
   }
   .filter-check-box{
     margin-left: 60px;
-    .radio-lable{
+    .radio-label{
       font-size: 1.2rem;
     }
     input{
@@ -302,7 +302,7 @@
       height:180px !important;
     }
     .filter-section-ac {
-      border-radius: 0;
+      border-radius: 0 1rem 1rem 1rem;
       height:135px !important;
     }
     .filter-section-food {
@@ -313,6 +313,9 @@
     }
     .filter-check-box{
       margin-left: 30px;
+    }
+    .filter-card {
+      margin-top: 5px;
     }
   }
   @media (max-width: 412px) {
@@ -333,7 +336,7 @@
       height: 150px;
       margin-top: 20px;
       margin-left: -3px;
-      width:280px ;
+      width:280px;
     }
     .filter-card-body {
       //height: 180px !important;
@@ -349,14 +352,14 @@
     .filter-p {
       margin-top: -5px;
     }
-    .radio-lable {
+    .radio-label {
       font-size: 0.8rem !important;
       margin: 0 0 0 5px;
     }
     .filter-check-box {
       margin-left: -20px !important;
     }
-    .chechbox-col{
+    .checkbox-col{
       padding-right: 5px;
       padding-left: 5px;
     }
@@ -386,7 +389,7 @@
     cursor: pointer;
   }
 
-  .radio-lable {
+  .radio-label {
     font-size: 1rem;
     margin: 0 0 0 5px;
   }
@@ -410,7 +413,7 @@
     top: 34% !important;
   }
   @media (max-width: 412px) {
-    top: 36% !important;
+    top: 25% !important;
     margin-left: 2%;
   }
 }

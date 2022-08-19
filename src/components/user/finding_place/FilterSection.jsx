@@ -7,42 +7,42 @@ function FilterSection() {
         <Row className='mx-0 filter-section bg-transparent'>
             <Col className='bg-white filter-section-ac pb-1 pt-3 w-100' lg={4} md={6}>
                 <Card className="bg-white filter-card mb-1">
-                    <Card.Body className='py-1 filter-card-body'>
+                    <Card.Body className='filter-card-body py-0'>
                         {/*<Card.Title>Card Title</Card.Title>*/}
                         {/*<Card.Subtitle className="mb-0 text-filter">Features</Card.Subtitle>*/}
                         <Card.Text className='radio-button-section w-70'>
-                            <Row className='filter-check-box'>
-                                <Col className='chechbox-col'>
+                            <Row className='filter-check-box px-3'>
+                                <Col className='checkbox-col py-md-1 py-2' md={4} xs={6} >
                                     <input
                                         type="checkbox"
                                         //className="filter-radio-button"
                                         id="internet" name="internet"
                                         value="internet"
                                     />
-                                    <lable className="radio-lable">Internet</lable>
+                                    <label className="radio-label">Internet</label>
                                 </Col>
-                                <Col className='chechbox-col'>
+                                <Col className='checkbox-col py-md-1 py-2' md={4} xs={6}>
                                     <input
                                         type="checkbox"
                                         className="filter-radio-button"
                                         id="parking" name="parking"
                                         value="parking"
                                     />
-                                    <lable className="radio-lable">Parking</lable>
+                                    <label className="radio-label">Parking</label>
                                 </Col>
-                                <Col>
+                                <Col className='checkbox-col py-md-1 py-2' md={4} xs={6}>
                                     <input
                                         type="checkbox"
                                         className="filter-radio-button"
                                         id="silent_area" name="silent_area"
                                         value="silent_area"
                                     />
-                                    <lable className="radio-lable">Silent Area</lable>
+                                    <label className="radio-label">Silent Area</label>
                                 </Col>
-                            </Row>
-                            <br/>
-                            <Row className='filter-check-box'>
-                                <Col className='chechbox-col'>
+                            {/*</Row>*/}
+
+                            {/*<Row className='filter-check-box'>*/}
+                                <Col className='checkbox-col py-md-1 py-2' md={4} xs={6}>
                                     <input
                                     type="checkbox"
                                     //className="filter-radio-button"
@@ -50,9 +50,9 @@ function FilterSection() {
                                     name="acType"
                                     value="acNoNeed"
                                     />
-                                    <lable className="radio-lable">AC</lable>
+                                    <label className="radio-label">AC</label>
                                 </Col>
-                                <Col className='chechbox-col'>
+                                <Col className='checkbox-col py-md-1 py-2' md={4} xs={6}>
                                     <input
                                     type="checkbox"
                                     className="filter-radio-button"
@@ -60,16 +60,16 @@ function FilterSection() {
                                     name="foodNeed"
                                     value="foodNeed"
                                     />
-                                    <lable className="radio-lable">Can buy food</lable>
+                                    <label className="radio-label">Can buy food</label>
                                 </Col>
-                                <Col className='chechbox-col'>
+                                <Col className='checkbox-col py-md-1 py-2' md={4} xs={6}>
                                     <input
                                     type="checkbox"
                                     className="filter-radio-button"
                                     id="washrooms" name="washrooms"
                                     value="washrooms"
                                     />
-                                    <lable className="radio-lable">Washroom</lable>
+                                    <label className="radio-label">Washroom</label>
                                 </Col>
                             </Row>
                         </Card.Text>
