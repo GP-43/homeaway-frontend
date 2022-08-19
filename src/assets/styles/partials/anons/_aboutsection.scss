@@ -1,7 +1,6 @@
 .about-section{
-    //display: flex;
     height: 80vh;
-
+}
     .column-about{
         padding-left: 7%;
     }
@@ -14,6 +13,9 @@
         span {
             color: #8250d6;
         }
+        @media (max-width: 412px) {
+            margin-bottom: 5px !important;
+        }
     }
     .about-section-description{
         margin-bottom: 100px;
@@ -22,41 +24,57 @@
         margin-left:200px;
         font-size:1.3rem;
         font-weight: 150;
+        @media (max-width: 820px) {
+            margin-left:50px !important;
+            width:600px;
+        }
+        @media (max-width: 412px) {
+            margin-left:30px !important;
+            width:300px;
+            font-size:1rem;
+        }
     }
-}
-.about-section-content{
-    
-    .line-one{
+
+.about-section-content {
+
+    .line-one {
         font-size: xx-large;
         font-weight: 700;
     }
-    .line-two{
+
+    .line-two {
         font-size: xx-large;
         font-weight: 700;
         margin-top: -0.7rem;
         color: #8250D6;
     }
-    .line-three{
+
+    .line-three {
         font-size: medium;
     }
-    .line-four{
-        .icon{
+
+    .line-four {
+        .icon {
             width: 2.3rem;
             height: 2.3rem;
         }
-        .back-icon{
-            margin-left: -2rem; 
+
+        .back-icon {
+            margin-left: -2rem;
             color: #999999;
             cursor: pointer;
         }
+
         .back-icon:active, back-icon:focus {
             color: #8250d6;
         }
-        .next-icon{
+
+        .next-icon {
             color: #999999;
             cursor: pointer;
         }
-        .next-icon:active{
+
+        .next-icon:active {
             color: #8250d6;
             cursor: pointer;
         }
@@ -78,12 +96,12 @@
         }
     }
     @media (max-width: 412px) {
-        width:250px !important;
+        width:230px !important;
         height:300px !important;
         margin-left:-35px !important;
 
         .carousel-inner{
-            width:240px !important;
+            width:220px !important;
         }
     }
 }
@@ -175,6 +193,7 @@
 @media (max-width: 412px) {
     .about-section{
         margin-top:1000px !important;
+        height:95vh !important;
     }
     a.carousel-control-next{
         display: none;
@@ -184,5 +203,10 @@
     }
     .msg-card{
         height:250px;
+    }
+}
+@media (max-width: 820px) {
+    .about-section{
+        height: 60vh;
     }
 }
