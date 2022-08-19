@@ -18,6 +18,10 @@
   .home-gallery {
     height: auto;
 
+    .carousel-inner{
+      width:700px;
+    }
+
     .gallery-carousal {
       height: auto;
 
@@ -25,6 +29,15 @@
         height: auto;
         width: 100%;
       }
+    }
+  }
+}
+@media (max-width: 412px) {
+  .home-gallery {
+    height: auto;
+
+    .carousel-inner {
+      width: 380px;
     }
   }
 }
@@ -378,7 +391,7 @@
 
   @media (max-width: 820px) {
     z-index: 1;
-    top: 32%;
+    top: 38% !important;
   }
   @media (max-width: 412px) {
     top: 26%;
@@ -397,7 +410,7 @@
   margin-top: 4px;
 
   @media (max-width: 820px) {
-    top: 94%;
+    top: 75% !important;
     left: 70.2%;
     height: 5%;
     button {
