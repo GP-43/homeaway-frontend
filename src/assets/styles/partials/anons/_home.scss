@@ -4,7 +4,6 @@
   .things-you-need-card {
     background-color: rgb(49, 49, 48);
     height: 15rem;
-
     .image {
       height: 50px;
       width: 80px;
@@ -21,18 +20,23 @@
 
   .things-you-need-section-description{
     text-align: center !important;
-
-    .heading h1 {
-      color: black;
+    .heading {
+      margin-top: 20px;
+      margin-bottom: 0px;
+      height: 80px;
+      .heading h1 {
+        color: black;
+      }
     }
-
     .heading span {
       color: #8250d6;
     }
-
     .text {
       font-size: 1.3rem;
       font-weight: 150;
+      margin-top: -80px;
+      height: 80px;
+      margin-bottom: -100px;
     }
   }
 }
@@ -50,6 +54,7 @@
   .text {
     font-size: 1.3rem;
     font-weight: 150;
+    margin-top: 15px;
   }
 }
 

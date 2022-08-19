@@ -1,5 +1,6 @@
 .about-section{
     //display: flex;
+    height: 80vh;
 
     .column-about{
         padding-left: 7%;
@@ -9,6 +10,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         display:flex;
+        margin-bottom: 15px;
         span {
             color: #8250d6;
         }
@@ -18,7 +20,8 @@
         justify-content: center;
         width:900px;
         margin-left:200px;
-        font-size:1.2rem;
+        font-size:1.3rem;
+        font-weight: 150;
     }
 }
 .about-section-content{
