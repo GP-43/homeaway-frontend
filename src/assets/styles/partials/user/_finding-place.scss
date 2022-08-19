@@ -37,7 +37,7 @@
     height: auto;
 
     .carousel-inner {
-      width: 380px;
+      width: 385px;
     }
   }
 }
@@ -287,10 +287,11 @@
 
   @media (max-width: 820px) {
     .filter-section {
-      height:125px !important;
+      height:180px !important;
     }
     .filter-section-ac {
       border-radius: 0;
+      height:135px !important;
     }
     .filter-section-food {
       border-radius: 0 1rem 0 0;
@@ -304,8 +305,9 @@
   }
   @media (max-width: 412px) {
     .filter-section-ac {
-      border-radius: 0;
-      height: 150px;
+      border-radius: 0 0 15px 15px;
+      height: 230px !important;
+      //width: 190px !important;
     }
     .filter-section-food {
       border-radius: 0;
@@ -316,8 +318,10 @@
       height: 103px;
     }
     .filter-card {
-      height: 120px;
-      margin-top: -6px;
+      height: 150px;
+      margin-top: 20px;
+      margin-left: -3px;
+      width:280px ;
     }
     .filter-card-body {
       //height: 180px !important;
@@ -391,11 +395,11 @@
 
   @media (max-width: 820px) {
     z-index: 1;
-    top: 38% !important;
+    top: 34% !important;
   }
   @media (max-width: 412px) {
-    top: 26%;
-    margin-left: 3%;
+    top: 36% !important;
+    margin-left: 2%;
   }
 }
 
@@ -410,7 +414,7 @@
   margin-top: 4px;
 
   @media (max-width: 820px) {
-    top: 75% !important;
+    top: 95% !important;
     left: 70.2%;
     height: 5%;
     button {
@@ -421,7 +425,7 @@
 
 @media (max-width: 412px) {
   .search-button {
-    top: 80%;
+    top: 83% !important;
     height: 5%;
     left: 37%;
     margin-top: 47px;

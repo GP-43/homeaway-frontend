@@ -40,6 +40,7 @@ function FilterSection() {
                                     <lable className="radio-lable">Silent Area</lable>
                                 </Col>
                             </Row>
+                            <br/>
                             <Row className='filter-check-box'>
                                 <Col className='chechbox-col'>
                                     <input
