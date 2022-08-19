@@ -263,10 +263,16 @@
 
   .filter-section-ac {
     border-radius: 0 1rem 1rem 1rem;
-    height:118px;
+    height:125px;
+    //padding-top: 10px;
   }
   .filter-card {
-    margin-top: -8px;
+    margin-top: -10px;
+    height:90px;
+
+    .filter-card-body{
+      height:100px;
+    }
   }
   .filter-section-food {
     border-radius: 0;
@@ -410,7 +416,7 @@
   justify-content: right;
   background: transparent;
   right: 11px;
-  top: 137px;
+  top: 140px;
   margin-top: 4px;
 
   @media (max-width: 820px) {
