@@ -8,7 +8,7 @@ function PlaceInfoDescription() {
             <Col xs={12} className='px-0'>
                 <h3>Description</h3>
 
-                <Card className='place-description-details'>
+                <Card className='place-information-description'>
                     <Card.Body>
                         <Card.Title>Card Title</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>

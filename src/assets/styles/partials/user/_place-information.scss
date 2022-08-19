@@ -38,22 +38,22 @@
   }
 }
 
-.place-description-details {
+.place-information-description {
   height: 14rem;
-  overflow-y: auto;
-  overflow-x: unset;
+  overflow-y: scroll;
 }
 
-.place-description::-webkit-scrollbar {
+.place-information-description::-webkit-scrollbar {
   width: 10px;
 }
 
-.place-description::-webkit-scrollbar-track {
+.place-information-description::-webkit-scrollbar-track {
   background-color: #CECECE;
   border-radius: 0.5rem;
 }
 
-.place-description::-webkit-scrollbar-thumb {
+.place-information-description::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
 }
+
