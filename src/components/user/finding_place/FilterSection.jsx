@@ -12,7 +12,7 @@ function FilterSection() {
                         {/*<Card.Subtitle className="mb-0 text-filter">Features</Card.Subtitle>*/}
                         <Card.Text className='radio-button-section w-70'>
                             <Row className='filter-check-box'>
-                                <Col>
+                                <Col className='chechbox-col'>
                                     <input
                                         type="checkbox"
                                         //className="filter-radio-button"
@@ -21,7 +21,7 @@ function FilterSection() {
                                     />
                                     <lable className="radio-lable">Internet</lable>
                                 </Col>
-                                <Col>
+                                <Col className='chechbox-col'>
                                     <input
                                         type="checkbox"
                                         className="filter-radio-button"
@@ -41,7 +41,7 @@ function FilterSection() {
                                 </Col>
                             </Row>
                             <Row className='filter-check-box'>
-                                <Col>
+                                <Col className='chechbox-col'>
                                     <input
                                     type="checkbox"
                                     //className="filter-radio-button"
@@ -51,7 +51,7 @@ function FilterSection() {
                                     />
                                     <lable className="radio-lable">AC</lable>
                                 </Col>
-                                <Col>
+                                <Col className='chechbox-col'>
                                     <input
                                     type="checkbox"
                                     className="filter-radio-button"
@@ -61,14 +61,14 @@ function FilterSection() {
                                     />
                                     <lable className="radio-lable">Can buy food</lable>
                                 </Col>
-                                <Col>
+                                <Col className='chechbox-col'>
                                     <input
                                     type="checkbox"
                                     className="filter-radio-button"
                                     id="washrooms" name="washrooms"
                                     value="washrooms"
                                     />
-                                    <lable className="radio-lable">Washrooms</lable>
+                                    <lable className="radio-lable">Washroom</lable>
                                 </Col>
                             </Row>
                         </Card.Text>
