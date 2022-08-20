@@ -10,9 +10,9 @@ function PlaceInfoTime() {
 
                 <Card className='place-information-description'>
                     <Card.Body>
-                        <Card.Title>
-                            8.00 to 10.30
-                        </Card.Title>
+                        <Card.Text>
+
+                        </Card.Text>
                     </Card.Body>
                 </Card>
             </Col>
