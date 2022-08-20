@@ -10,7 +10,9 @@ function PlaceInfoTime() {
 
                 <Card className='place-information-description'>
                     <Card.Body>
-                        <Card.Title>Thushan Meka Hadanna</Card.Title>
+                        <Card.Title>
+                            8.00 to 10.30
+                        </Card.Title>
                     </Card.Body>
                 </Card>
             </Col>

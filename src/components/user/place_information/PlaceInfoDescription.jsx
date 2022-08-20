@@ -11,10 +11,8 @@ function PlaceInfoDescription() {
                 <Card className='place-information-description'>
                     <Card.Body>
                         <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of the card's content. 
-                            Its purpose is to describe and reveal a particular person, place, or thing.” So,
-                             it can be said that this descriptive text is a text that explains
-                              about whether a person or an object is like, whether its form, its properties, its amount and others.
+                            Silent Area that covered by a wall. Can buy foods infront of the shop. Two vehicles can
+                            park at same time. Safety is 100% sure. Don't make much noise. Book and enjoy the place.
                         </Card.Text>
                     </Card.Body>
                 </Card>
