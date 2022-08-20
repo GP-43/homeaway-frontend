@@ -15,7 +15,7 @@ function UserBookings(props) {
                 </Col>
 
                 <Col lg={4}>
-                    <Row className='mx-0 py-3'>
+                    <Row className='mx-0 py-4'>
                         <Col className='px-0'>
                             <Calendar className="ms-lg-4 ms-md-0 mb-4" lg={12} md={6}/>
                         </Col>

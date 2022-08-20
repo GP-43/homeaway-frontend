@@ -11,10 +11,10 @@ function UserRentings() {
                 <Col lg={8} className='px-0'>
                     <MyRentings />
                 </Col>
-                <Col lg={4}>
+                <Col className='py-2' lg={4}>
                     <Row>
                         <Col className='ps-2'><PaymentBox className='mx-0 px-0' lg={12} md={6}/></Col>
-                        <Col className='pe-2 ms-2'><SheduleSection className='' lg={12} md={6}/></Col>
+                        <Col className='pe-2 ms-2 renting-schedule'><SheduleSection className='' lg={12} md={6}/></Col>
                     </Row>
                 </Col>
             </Row>
