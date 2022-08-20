@@ -1,36 +1,33 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import SingleDetailCard from './SingleSmallCard';
-import { FaChartBar } from "react-icons/fa";
+import SingleSmallCard from './SingleSmallCard';
+import { FaRegBuilding } from "react-icons/fa";
 
 function CancelledBookingSmallCard() {
     const Booking_Data = [
         {
-            Src: <FaChartBar />,
-            Name: "Bookings",
-            Total: 250,
-            Percentage: "3%",
-            Content: "than last week",
+            Name: "No of Cancelled",
+            Name2: "Bookings",
+            Total: 25,
         },
 
     ];
     return (
-        <Container xs={3}>
-            <Row className='card-container'>
+        <Container xs={2}>
+            <Row className='smallcardcontainer'>
                 <Col className='p-2 mt-4 testing-card'>
-                    
-                    <dev className="booking-icon card-icon-bg">
-                        {<FaChartBar className="ms-3 card-icon booking-card" />}
-                    </dev>
+                    <Col>
+                        <dev className="cancelledbookingsmallicon card-icon-bg">
+                            {<FaRegBuilding className="ms-3 card-icon cancelled-booking-card" />}
+                        </dev>
+                    </Col>
 
                     {Booking_Data &&
                         Booking_Data.map((i) => (
-                            <SingleDetailCard
+                            <SingleSmallCard
                                 Name={i.Name}
+                                Name2={i.Name2}
                                 Total={i.Total}
-                                Src={i.Src}
-                                Percentage={i.Percentage}
-                                Content={i.Content}
                             />
                         ))}
                 </Col>

@@ -1,36 +1,33 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import SingleDetailCard from './SingleSmallCard';
-import { BiUserCircle } from "react-icons/bi";
+import SingleSmallCard from './SingleSmallCard';
+import { FaRegBuilding } from "react-icons/fa";
 
 function BookingSmallCard() {
-    const Occupant_Data = [
+    const Booking_Data = [
         {
-            Src: <BiUserCircle />,
-            Name: "Total occupants",
-            Total: 2300,
-            Percentage: "55%",
-            Content: "than last week",
+            Name: "No of",
+            Name2: "Bookings",
+            Total: 250,
         },
 
     ];
     return (
-        <Container xs={3}>
-            <Row className='card-container'>
+        <Container xs={2}>
+            <Row className='smallcardcontainer'>
                 <Col className='p-2 mt-4 testing-card'>
-                    
-                    <dev className="occupant-icon card-icon-bg">
-                        {<BiUserCircle className="ms-3 card-icon total-occupant-card" />}
-                    </dev>
+                    <Col>
+                        <dev className="bookingsmallicon card-icon-bg">
+                            {<FaRegBuilding className="ms-3 card-icon total-booking-card" />}
+                        </dev>
+                    </Col>
 
-                    {Occupant_Data &&
-                        Occupant_Data.map((i) => (
-                            <SingleDetailCard
+                    {Booking_Data &&
+                        Booking_Data.map((i) => (
+                            <SingleSmallCard
                                 Name={i.Name}
+                                Name2={i.Name2}
                                 Total={i.Total}
-                                Src={i.Src}
-                                Percentage={i.Percentage}
-                                Content={i.Content}
                             />
                         ))}
                 </Col>

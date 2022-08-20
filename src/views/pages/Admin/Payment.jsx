@@ -20,21 +20,21 @@ function Payment() {
 
       <Row className="testing-2">
         <Col xs={8}>
-          <Row className="testing-1">
+          <Row className="testing-1 ">
 
-            <Col >
+            <Col xs={6}>
               <AccountCard />
             </Col>
 
-            <Col >
+            <Col xs={2}>
               <BookingCard />
             </Col>
 
-            <Col >
+            <Col xs={2}>
               <CancelledBookingCard />
             </Col>
 
-            <Col >
+            <Col xs={2}>
               <TotalIncomeCard />
             </Col>
           </Row>

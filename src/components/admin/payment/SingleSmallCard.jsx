@@ -3,28 +3,16 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 function SingleSmallCard(props) {
     return (
-        <Container className='detail-card'>
+        <Container className='small-cards '>              
+            <Row className='card-name'>
+                {props.Name}
+            </Row>   
             <Row className='card-top'>
-                <Col className='card-left'>
-                </Col>
-                <Col xs={3} className='card-right'>
-                    <Row className='card-name'>
-                        {props.Name}
-                    </Row>
-                    <Row className='card-total'>
-                        {props.Total}
-                    </Row>
-                </Col>
+                {props.Name2}
+            </Row>       
 
-            </Row>
             <Row className='card-bottom'>
-                <Col xs={4} className='card-bottom-left pe-1 '>
-                    {props.Percentage}
-                </Col>
-                <Col className='card-bottom-right ps-0'>
-                    {props.Content}
-                </Col>
-
+                {props.Total}
             </Row>
         </Container>
     )

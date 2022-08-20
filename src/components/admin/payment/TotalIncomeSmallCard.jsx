@@ -1,36 +1,34 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import SingleDetailCard from './SingleSmallCard';
-import { FaHouseUser } from "react-icons/fa";
+import SingleSmallCard from './SingleSmallCard';
+import { FaMoneyBill } from "react-icons/fa";
 
 function TotalIncomeSmallCard() {
-    const Renter_Data = [
+    const Income_Data = [
         {
-            Src: <FaHouseUser />,
-            Name: "Rent places",
-            Total: 3045,
-            Percentage: "1% ",
-            Content: "than yesterday",
+            Name: "Rent",
+            Name2: "places",
+            Total: "Rs. 9455",
         },
 
     ];
     return (
-        <Container xs={3}>
-            <Row className='card-container'>
+        <Container xs={2}>
+            <Row className='smallcardcontainer'>
                 <Col className='p-2 mt-4 testing-card'>
 
-                    <dev className="renter-icon card-icon-bg">
-                        {<FaHouseUser className="ms-3 card-icon rent-places-card" />}
-                    </dev>
+                    <Col>
+                        <dev className="totalincomesmallicon card-icon-bg">
+                            {<FaMoneyBill className="ms-3 card-icon total-income-card" />}
+                        </dev>
+                    </Col>
 
-                    {Renter_Data &&
-                        Renter_Data.map((i) => (
-                            <SingleDetailCard
+                    {Income_Data &&
+                        Income_Data.map((i) => (
+                            <SingleSmallCard
                                 Name={i.Name}
+                                Name2={i.Name2}
                                 Total={i.Total}
-                                Src={i.Src}
-                                Percentage={i.Percentage}
-                                Content={i.Content}
                             />
                         ))}
                 </Col>
