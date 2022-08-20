@@ -1,0 +1,80 @@
+.add-new-rent-container {
+  border-radius: 1rem;
+}
+.add-new-rent-cancel-btn-box {
+  text-align: right;
+  .add-new-rent-cancel-btn {
+    background-color: white;
+    border: 1px solid;
+    border-radius: 10px;
+  }
+
+  .add-new-rent-next-btn {
+    background-color: #003064;
+    border: 1px solid;
+    border-radius: 10px;
+    color: white;
+  }
+}
+
+.image-upload-box {
+  height: 60vh;
+}
+
+.img-holder {
+  min-height: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  input {
+    display: none;
+  }
+
+  .upload-btn {
+    border: #ebebeb solid;
+    border-radius: 0.5rem;
+    margin-bottom: 5px;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    .image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5px;
+      border: #ebebeb solid;
+      border-radius: 0.5rem;
+
+      button {
+        background-color: white;
+        border: none;
+        .trash {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .image-upload-box {
+    height: 65vh;
+  }
+  .place-card-set {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .place-card-set {
+    width: 36%;
+  }
+}
