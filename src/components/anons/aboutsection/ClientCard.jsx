@@ -14,32 +14,32 @@ function ClientCard() {
             src: profile1,
             name: "Senath Dewmin",
             location:"Kandy",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"Application is nice. it is very easy to use.\n" +
+                "            I reccomend this.",
         },
         {
             id:2,
             src: profile2,
-            name: "Tharindu Thathsara",
+            name: "Tharindi Thathsara",
             location:"Ganemulla",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"I get what i want from this. suggested place are very\n" +
+                "            attractive and best ones.",
         },
         {
             id:3,
             src: profile3,
-            name: "Awantha Irushan",
+            name: "Awanthi Irushika",
             location:"Matale",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"It can track our location and\n" +
+                "            give us more better place.",
         },
         {
             id:4,
             src: profile4,
-            name: "Tharaki Dilshani",
+            name: "Tharaka Dilshan",
             location:"Meegoda",
-            msg:"Some quick example text to build on the card title and make up the\n" +
-                "            bulk of the card's content.",
+            msg:"The fee is reasonable for every one.\n" +
+                "            Any one can use this application.",
         },
     ];
     const [messages, setMessages] = useState(sliderData.slice(0, 4));
@@ -52,14 +52,14 @@ function ClientCard() {
         return (
             <Carousel className='client-msg-card bg-transparent'>
 
-                                <Carousel.Item className="msg-card bg-light mt-5 ms-5 ps-1">
-                                    <img src={i.src} className="msg-prof-image" />
-                                    <p className="text right mt-5 mx-3 pt-1">"{i.msg}"</p>
-                                    <h3 className="mt-2 mx-3 text right">{i.name}</h3>
-                                    <h6 className="mt-2 mx-3 text-muted">{i.location}</h6>
-                                </Carousel.Item>
+                <Carousel.Item className="msg-card bg-light mt-5 ms-5 ps-1">
+                    <img src={i.src} className="msg-prof-image" />
+                    <p className="text right mt-5 mx-3 pt-1">"{i.msg}"</p>
+                    <h3 className="mt-2 mx-3 text right">{i.name}</h3>
+                    <h6 className="mt-2 mx-3 text-muted">{i.location}</h6>
+                </Carousel.Item>
 
-                        </Carousel>
+            </Carousel>
         );
     });
     const pageCount = Math.ceil(messages.length / perPage);
@@ -72,7 +72,7 @@ function ClientCard() {
             <Col md={12} xs={8} className="arrow-section px-md-4 px-0">
                 <ReactPaginate
                     previousLabel={
-                        <BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon" />
+                        <BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon"/>
                     }
                     nextLabel={
                         <BsFillArrowRightCircleFill className="ms-5 icon next-icon" />
