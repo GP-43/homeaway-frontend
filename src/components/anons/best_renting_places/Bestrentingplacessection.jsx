@@ -85,6 +85,11 @@ function Bestrentingplacessection() {
 
   const [places, setPlaces] = useState(placeData.slice(0, 8));
   const [currPage, setCurrPage] = useState(0);
+  // const [bgClr, setBgClr] = useState("white");
+  //
+  // const AnnualHandler = () => {
+  //   setBgClr("yellow");
+  // };
 
   const perPage = 4;
   const off = perPage * currPage;
@@ -118,10 +123,10 @@ function Bestrentingplacessection() {
       <Col md={12} xs={8} className="place-section px-md-4 px-0">
         <ReactPaginate
           previousLabel={
-            <BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon" />
+            <BsFillArrowLeftCircleFill className="ms-0 ps-0 icon back-icon"/>
           }
           nextLabel={
-            <BsFillArrowRightCircleFill className="ms-5 icon next-icon" />
+            <BsFillArrowRightCircleFill className="ms-5 icon next-icon"/>
           }
           pageCount={pageCount}
           onPageChange={handlePageClick}

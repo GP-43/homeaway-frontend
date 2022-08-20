@@ -9,7 +9,7 @@ function HomeAwayAnons() {
     return (
         <div className='home-bg-color'>
             <Container>
-                <Row className="mx-0">
+                <Row className="mx-0 w-auto">
                     <Col className="px-0">
                         <AnonsNavBar/>
                     </Col>
