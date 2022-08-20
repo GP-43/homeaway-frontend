@@ -5,7 +5,7 @@ import Bestrentingplacessection from "../best_renting_places/Bestrentingplacesse
 
 function VacationPlanSection() {
   return (
-    <Row className="mx-0 ">
+    <Row className="mx-0 vacation-plan-section">
       <Col xs={12}>
         <VacationPlanSectionDescription />
       </Col>

@@ -10,7 +10,7 @@ function LatestPlaces() {
         <LatestPlaceTitle />
       </Col>
       <Col xs={12}>
-        <LatestPlacesCardSection />
+        <LatestPlacesCardSection/>
       </Col>
     </Row>
   );
