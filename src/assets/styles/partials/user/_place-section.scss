@@ -33,6 +33,7 @@
     overflow: hidden;
     padding: 0;
     border-radius: 13px;
+    cursor: pointer;
 
     .place-image {
       object-fit: cover;
@@ -131,7 +132,11 @@
         }
       }
     }
-  }
+  } .place-card:hover {
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+      }
 }
 
 @media only screen and (max-width: 820px) {
