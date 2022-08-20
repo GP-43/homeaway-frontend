@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Col, Image} from "react-bootstrap";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import Logo from "../../../assets/images/logo/logo.png"
 import {FiUsers} from "react-icons/fi";
 import { MdDashboard, MdOutlinePayments,MdReport } from "react-icons/md";
@@ -15,12 +15,17 @@ function LeftNavigation() {
         setURL(location.pathname);
     }, [location]);
 
+    const navigate = useNavigate();
+
+    const handleOnLogoClick = () => {
+        navigate('/admin/dashboard');
+    }
 
     return (
         <Col className='left-navigation p-1'>
             <div className='h-100'>
             <div className='px-lg-4 pt-lg-5 w-100 d-flex justify-content-center'>
-                <Image src={Logo} className='logo bg-transparent' alt='LOGO'/>
+                <Image src={Logo} className='logo bg-transparent' alt='LOGO' onClick={handleOnLogoClick}/>
             </div>
             <div className=' d-flex align-items-center h-75'>
                 <ul className='list-unstyled px-2 nav-list bg-transparent w-100'>
