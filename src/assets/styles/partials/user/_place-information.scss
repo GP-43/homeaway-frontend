@@ -53,6 +53,12 @@
 }
 .rating-number{
   margin-top: -10px;
+
+  @media (max-width:412px) {
+    .rating-number-4{
+      margin-left: 8.5px !important;
+    }
+  }
 }
 .place-information-description::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;

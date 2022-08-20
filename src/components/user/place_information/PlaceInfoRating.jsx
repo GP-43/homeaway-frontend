@@ -16,7 +16,7 @@ function PlaceInfoRating() {
             </Row>
             <Row>
                 <Col className='rating-number' xs={2}>
-                    <h5 className='ms-4'>4+</h5>
+                    <h5 className='rating-number-4 ms-md-4'>4+</h5>
                 </Col>
                 <Col>
                     <ProgressBar variant="dark" now={40} />
