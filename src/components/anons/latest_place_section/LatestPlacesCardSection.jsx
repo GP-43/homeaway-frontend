@@ -115,7 +115,6 @@ function LatestPlacesCardSection() {
                     src={i.Src}
                     date={i.Date}
                   />
-                
               ))}
 
               </Col>
@@ -123,7 +122,6 @@ function LatestPlacesCardSection() {
 
 
               {/* second four items */}
-
               <Carousel.Item>
 
               <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">

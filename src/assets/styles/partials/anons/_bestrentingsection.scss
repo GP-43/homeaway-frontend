@@ -1,5 +1,5 @@
 .vacation-plan-section {
-  height: 100vh;
+  height: 88vh;
 }
 .best-renting-section {
   .place-section {
@@ -28,8 +28,11 @@
     margin-left: -2rem;
     color: #999999;
   }
-  .next-icon {
+  .back-icon:active, .next-icon:active{
     color: #8250d6;
+  }
+  .next-icon {
+    color: #999999;
   }
 
   .page-item-none {
@@ -48,6 +51,9 @@
 
   .vacation-plan-section {
     height: 50vh;
+  }
+  .place-section {
+    margin-top:-15px;
   }
 }
 
