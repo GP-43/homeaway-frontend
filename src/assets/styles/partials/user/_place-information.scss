@@ -40,7 +40,7 @@
 
 .place-information-description {
   height: 14rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .place-information-description::-webkit-scrollbar {
@@ -55,5 +55,9 @@
 .place-information-description::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+}
+
+.place-info-features-checkbox-label{
+  
 }
 

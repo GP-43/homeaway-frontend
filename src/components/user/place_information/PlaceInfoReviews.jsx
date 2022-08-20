@@ -2,15 +2,16 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
-function PlaceInfoTime() {
+function PlaceInfoReviews() {
     return (
         <Row>
             <Col xs={12} className='px-0'>
-                <h3>Available times</h3>
+                <h3>Ratings & Comments</h3>
 
                 <Card className='place-information-description'>
                     <Card.Body>
-                        <Card.Title>Thushan Meka Hadanna</Card.Title>
+                        {/* <PlaceInfoRating/>
+                        <PlaceInfoReviews/> */}
                     </Card.Body>
                 </Card>
             </Col>
@@ -19,4 +20,4 @@ function PlaceInfoTime() {
     );
 }
 
-export default PlaceInfoTime;
+export default PlaceInfoReviews;
