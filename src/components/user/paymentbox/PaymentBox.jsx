@@ -4,8 +4,8 @@ import { Container, Col, Row } from 'react-bootstrap';
 function PaymentBox(){
     
   return (
-    <Container>
-        <Col xs={10} className='p-4 mx-4 my-4 payment-box'>
+    <Container className='payment-box-container'>
+        <Col xs={10} className='p-4 mx-2 my-3 payment-box'>
         <Row>
             <h7 xs={10} className="px-2 heading ">Total Received</h7>
             <dev className='px-2 received-amount'>
