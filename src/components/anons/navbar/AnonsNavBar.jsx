@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from '../../../assets/images/logo/logo.png';
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 
 function AnonsNavBar() {
 
@@ -14,10 +14,16 @@ function AnonsNavBar() {
         setURL(location.pathname);
     }, [location]);
 
+    const navigate = useNavigate();
+
+    const handleOnLogoClick = () => {
+        navigate('/');
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" className={url === '/' ? 'anon-navbar px-0 py-0 position-fixed' : 'anon-navbar px-0 py-0 position-static' }>
             <Container className="px-0">
-                <img className="logo" src={logo} alt="LOGO"/>
+                <img className="logo" src={logo} alt="LOGO" onClick={handleOnLogoClick}/>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse className="navbar-coll " id="responsive-navbar-nav">
                     <Nav className="me-0 mt-0">
