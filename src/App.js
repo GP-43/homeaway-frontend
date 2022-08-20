@@ -13,6 +13,7 @@ import Occupant from './views/pages/Admin/Occupants';
 import Home from './views/pages/anons/Home'
 import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
+import AddNewPlace from "./views/pages/user/AddNewPlace"
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                     <Route path='/user/userbookings' element={<UserBookings />} />
                     <Route path='/user/userrentings' element={<UserRentings />} />
                     <Route path='/user/placedescription' element={<PlaceDescription />} />
+                    <Route path='/user/addnewplace' element={<AddNewPlace />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />

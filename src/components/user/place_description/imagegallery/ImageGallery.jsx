@@ -38,7 +38,7 @@ function ImageGallery() {
     },
   ];
   return (
-      <Col className="image-scroll-box">
+      <Col className="image-scroll-box px-0">
         {Place_Data &&
           Place_Data.map((i) => (
             <SingleImage

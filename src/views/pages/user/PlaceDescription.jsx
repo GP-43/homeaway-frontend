@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import ImageGallery from "../../../components/user/place_card/imagegallery/ImageGallery";
+import ImageGallery from "../../../components/user/place_description/imagegallery/ImageGallery";
 import PlaceDetails from "../../../components/user/place_description/PlaceDetails";
 import RenterDetails from "../../../components/user/renter/RenterDetails";
 import PlaceInformation from "../../../components/user/place_information/PlaceInformation";
