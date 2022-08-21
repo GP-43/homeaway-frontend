@@ -7,9 +7,6 @@ import AdminComplaintsTable from "../../../components/admin/complaints/AdminComp
 function Complaints() {
     return (
         <Container>
-
-
-
             <Row className="mx-0">
                 <Col className="px-0">
                     <HeaderCardComplaints />
@@ -17,7 +14,7 @@ function Complaints() {
             </Row>
 
             <Row className="testing-2">
-                <Col xs={8}>
+                <Col xs={10}>
                     <Row className="mx-0 user-list-card">
                         <Col className="px-0 occupants-top-selling-products-part">
                             <AdminComplaintsTable />
