@@ -6,8 +6,8 @@ import { FaMoneyBill } from "react-icons/fa";
 function TotalIncomeSmallCard() {
     const Income_Data = [
         {
-            Name: "Rent",
-            Name2: "places",
+            Name: "Total",
+            Name2: "income",
             Total: "Rs. 9455",
         },
 

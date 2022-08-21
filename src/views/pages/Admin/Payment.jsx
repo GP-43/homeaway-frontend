@@ -7,7 +7,7 @@ import AccountCard from "../../../components/admin/payment/AccountDetails";
 import BookingCard from "../../../components/admin/payment/BookingSmallCard";
 import CancelledBookingCard from "../../../components/admin/payment/CancelledBookingSmallCard";
 import TotalIncomeCard from "../../../components/admin/payment/TotalIncomeSmallCard";
-
+import TransactionHistory from "../../../components/admin/payment/TransactionHistory";
 
 function Payment() {
   return (
@@ -40,13 +40,14 @@ function Payment() {
           </Row>
 
           <Row className="mx-0 user-list-card">
-            {/*<Col className="ps-4 mx-0 ">
-              <OccupantCard />
-  </Col>*/}
+            <Col className="px-0 occupants-top-selling-products-part">
+              <TransactionHistory />
+            </Col>
           </Row>
+
         </Col>
         <Col>
-          <Row className="mx-0"><AdminCalendar/></Row>
+          <Row className="mx-0"><AdminCalendar /></Row>
           <Row className="mx-0">
             <Col className="px-0 mx-0 daily-transaction-box">
               <DailyTransactions />
