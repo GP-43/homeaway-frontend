@@ -48,17 +48,15 @@
   //  width:380px;
   //  //margin-left: 30px !important;
   //}
-.renting-schedule{
-  margin-right:15px;
-}
+  .renting-schedule{
+    margin-right:15px;
+  }
   .schedule-section-box{
-    margin-top: 0px !important;
+    margin-top: 30px !important;
   }
   .payment-box-container{
     margin-top: 0px !important;
-    .payment-box{
-
-    }
+    margin-bottom: 60px !important;
   }
 }
 
@@ -94,11 +92,11 @@
 @media only screen and (max-width: 820px) {
   .payment-box {
     margin: auto !important;
-    //margin-top: 1.5rem !important;
+    margin-top: -45px!important;
     margin-bottom: 1.5rem !important;
   }
   .schedule-section-box{
-    margin-top:-50px;
+    margin-top:-55px !important;
     margin-bottom: 10px;
   }
   .payment-box-container{
