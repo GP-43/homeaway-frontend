@@ -145,7 +145,7 @@
 .transaction {
     color: #F0F2F5;
     background-color: #000000;
-    
+
     .search-part {
         .search-by-date {
             border: 1px solid #7B809A;
@@ -170,14 +170,43 @@
 
         .data {
 
-            height: 5rem !important;
-            border-bottom: 1px solid #F0F2F5;
+            //height: 5rem !important;
         }
     }
 
     .data-part::-webkit-scrollbar {
         display: none;
     }
+}
+.singlerow{
+    border: solid;
+    border-width: thin;
+    border-radius: 17px;
+    border-color: #5EB461;
+    
 
+    .rentername{
+        color: #344767;
+        font-size: larger;
+        font-weight: 500;
+        
 
+    }
+    .bottomrow{
+        
+    }
+    .test-data{
+        margin-left: -2rem;
+        font-size: small;
+        color: #344767;
+
+    }
+    .test-data-top{
+        margin-left: -2rem;
+
+    }
+    .top-data{
+        color: #7B809A;
+        font-size: small;
+    }
 }
