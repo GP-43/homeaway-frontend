@@ -38,7 +38,7 @@ function OccupantRow(props) {
                 <img src={props.Src} className = "row-top-products-img" />
             </Col>
 
-           <Col className='ps-2 pe-0 name' xs = {2}>
+           <Col className='ps-3 pe-0 name' xs = {2}>
                 <Row>
                     {props.firstName} {props.lastName}
                 </Row>
