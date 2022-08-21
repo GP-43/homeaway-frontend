@@ -27,7 +27,7 @@ function DeletePopup(props) {
 
 //data row
 
-function OccupantRow(props) {
+function RenterRow(props) {
 
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -38,7 +38,7 @@ function OccupantRow(props) {
                 <img src={props.Src} className = "row-top-products-img" />
             </Col>
 
-           <Col className='ps-3 pe-0 name' xs = {2}>
+           <Col className='ps-4 pe-0 name' xs = {2}>
                 <Row>
                     {props.firstName} {props.lastName}
                 </Row>
@@ -47,15 +47,19 @@ function OccupantRow(props) {
                 </Row>                
             </Col>
 
-            <Col className='px-0' xs = {3}>
+            <Col className='px-0 ps-1' xs = {3}>
                 {props.email}
             </Col>
 
-            <Col className='px-0' xs = {4}>
+            <Col className='px-0' xs = {2}>
                 {props.joinedDate}
             </Col>
 
-            <Col className='px-0 ' xs = {2}>
+            <Col className='px-4 me-4' xs = {1}>
+                {props.properties}
+            </Col>
+
+            <Col className='px-4 ms-4 ' xs = {1}>
                 <button className='delete-btn px-3 pb-0' variant="primary" onClick={() => setModalShow(true)}>
                     <p>DELETE</p>
                 </button>
@@ -66,4 +70,4 @@ function OccupantRow(props) {
     )
 }
 
-export default OccupantRow
+export default RenterRow

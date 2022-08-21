@@ -1,49 +1,49 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import OccupantRow from "./OccupantRow";
+import RenterRow from "./RenterRow";
 import { useState } from 'react';
 
 //images
-import p1 from "../../../assets/images/admin/occupant/p1.jpg";
-import p2 from "../../../assets/images/admin/occupant/p2.jpg";
-import p3 from "../../../assets/images/admin/occupant/p3.jpg";
-import p4 from "../../../assets/images/admin/occupant/p4.jpg";
-import p5 from "../../../assets/images/admin/occupant/p5.jpg";
-import p6 from "../../../assets/images/admin/occupant/p6.jpg";
-import p7 from "../../../assets/images/admin/occupant/p7.jpg";
+import p1 from "../../../assets/images/admin/renter/p1.jpg";
+import p2 from "../../../assets/images/admin/renter/p2.jpg";
+import p3 from "../../../assets/images/admin/renter/p3.jpg";
+import p4 from "../../../assets/images/admin/renter/p4.jpg";
+import p5 from "../../../assets/images/admin/renter/p5.jpg";
+import p6 from "../../../assets/images/admin/renter/p6.jpg";
+import p7 from "../../../assets/images/admin/renter/p7.jpg";
 
-function OccupantTable() {
+function RenterTable() {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
 
     const details_array = [
         {
-            Src: p7, firstName: "saman", lastName: "kumara", email: "saman@gmail.com", joinedDate: '2022-07-15',
+            Src: p7, firstName: "saman", lastName: "kumara", email: "saman@gmail.com", joinedDate: '2022-07-15', properties: '1',
             rate: '2'
         },
         {
-            Src: p1, firstName: "namal", lastName: "perera", email: "saman@gmail.com", joinedDate: '2022-08-15',
+            Src: p1, firstName: "namal", lastName: "perera", email: "saman@gmail.com", joinedDate: '2022-08-15', properties: '4',
             rate: '4'
         },
         {
-            Src: p2, firstName: "amal", lastName: "saman", email: "saman@gmail.com", joinedDate: '2022-08-16',
+            Src: p2, firstName: "amal", lastName: "saman", email: "saman@gmail.com", joinedDate: '2022-08-16', properties: '2',
             rate: '4'
         },
         {
-            Src: p3, firstName: "ruwan", lastName: "pushpa", email: "saman@gmail.com", joinedDate: '2022-08-17',
+            Src: p3, firstName: "ruwan", lastName: "pushpa", email: "saman@gmail.com", joinedDate: '2022-08-17', properties: '3',
             rate: '3'
         },
         {
-            Src: p4, firstName: "sandum", lastName: "nimal", email: "saman@gmail.com", joinedDate: '2022-08-18',
+            Src: p4, firstName: "sandum", lastName: "nimal", email: "saman@gmail.com", joinedDate: '2022-08-18', properties: '1',
             rate: '1'
         },
         {
-            Src: p5, firstName: "pawan", lastName: "pahan", email: "saman@gmail.com", joinedDate: '2022-08-19',
+            Src: p5, firstName: "pawan", lastName: "pahan", email: "saman@gmail.com", joinedDate: '2022-08-19', properties: '2',
             rate: '4'
         },
         {
-            Src: p6, firstName: "nilantha", lastName: "dasun", email: "saman@gmail.com", joinedDate: '2022-08-18',
+            Src: p6, firstName: "nilantha", lastName: "dasun", email: "saman@gmail.com", joinedDate: '2022-08-18', properties: '1',
             rate: '6'
         }
     ]
@@ -84,12 +84,16 @@ function OccupantTable() {
                     <h6>Name</h6>
                 </Col>
 
-                <Col className='px-0 ' xs={3}>
+                <Col className='px-0 ps-1' xs={3}>
                     <h6>Email</h6>
                 </Col>
 
-                <Col className='px-0 ' xs={6}>
+                <Col className='px-0 ' xs={2}>
                     <h6>Joined Date</h6>
+                </Col>
+
+                <Col className='px-0 ' xs={1}>
+                    <h6>Properties</h6>
                 </Col>
             </Row>
 
@@ -150,12 +154,13 @@ function OccupantTable() {
                 }).map((val, key) => {
                     return (
                         <Row className='data mx-0 px-0 ' key={key}>
-                            <OccupantRow
+                            <RenterRow
                                 Src={val.Src}
                                 firstName={val.firstName}
                                 lastName={val.lastName}
                                 email={val.email}
                                 joinedDate={val.joinedDate}
+                                properties={val.properties}
                                 rate={val.rate}
                             />
                         </Row>
@@ -166,4 +171,4 @@ function OccupantTable() {
     )
 }
 
-export default OccupantTable
+export default RenterTable
