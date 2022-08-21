@@ -7,7 +7,7 @@
   }
 }
 
-@media only screen and (min-width: 821px) {
+@media only screen and (min-width: 820px) {
   .my-booking-section {
     height: 80vh;
     overflow-y: auto;
@@ -25,6 +25,16 @@
   .my-booking-section::-webkit-scrollbar-thumb {
     border-radius: 0.5rem;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+  }
+  .schedule-booking{
+    margin-top:43px;
+  }
+  .schedule-section{
+    margin-top: 3px !important;
+  }
+  .schedule-section-title{
+    height:25px;
+    margin-bottom: 10px;
   }
 }
 
@@ -46,6 +56,16 @@
   }
   .my-booking-section {
     margin: auto;
+  }
+  .schedule-section{
+    margin-top: 0px !important;
+  }
+  .schedule-booking{
+    margin-top:65px;
+  }
+  .schedule-section-title{
+    height:25px;
+    margin-bottom: 0px;
   }
 }
 
