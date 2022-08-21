@@ -38,7 +38,7 @@ function RenterRow(props) {
                 <img src={props.Src} className = "row-top-products-img" />
             </Col>
 
-           <Col className='ps-2 pe-0 name' xs = {2}>
+           <Col className='ps-4 pe-0 name' xs = {2}>
                 <Row>
                     {props.firstName} {props.lastName}
                 </Row>
@@ -47,7 +47,7 @@ function RenterRow(props) {
                 </Row>                
             </Col>
 
-            <Col className='px-0' xs = {3}>
+            <Col className='px-0 ps-1' xs = {3}>
                 {props.email}
             </Col>
 
