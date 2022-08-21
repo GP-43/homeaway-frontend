@@ -1,20 +1,19 @@
 import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
-import OccupantTable from "../../../components/admin/occupants/OccupantTable";
-import HeaderCard from "../../../components/admin/occupants/HeaderCardOccupant";
-import OccupantDetailCard from "../../../components/admin/OccupantDetailCard";
-import NewOccupantDetailCard from "../../../components/admin/occupants/NewOccupantDetailCard";
-import BookingsDetailCard from "../../../components/admin/BookingsDetailCard";
+import RenterTable from "../../../components/admin/renters/RenterTable";
+import HeaderCard from "../../../components/admin/renters/HeaderCardRenter";
+import RenterDetailCard from "../../../components/admin/renters/RenterDetailCard";
+import PlaceDetailCard from "../../../components/admin/renters/PlaceDetailCard";
+import AvailPlaceDetailCard from "../../../components/admin/renters/AvailablePlaceDetailCard";
 import AdminCalendar from "../../../components/admin/adminCalendar/AdminCalendar";
 import DailyTransactions from "../../../components/admin/DailyTransactions";
+//import Places from "../../../components/admin/renters/Places"
 
 
-function Occupants() {
+function Renters() {
     return (
         <Container>
-
-
-
+            
             <Row className="mx-0">
                 <Col className="px-0">
                     <HeaderCard />
@@ -26,24 +25,31 @@ function Occupants() {
                     <Row className="testing-1">
 
                         <Col >
-                            <OccupantDetailCard />
+                            <RenterDetailCard />
                         </Col>
 
                         <Col >
-                            <NewOccupantDetailCard />
+                            <PlaceDetailCard />
                         </Col>
 
                         <Col >
-                            <BookingsDetailCard />
+                            <AvailPlaceDetailCard />
                         </Col>
 
                     </Row>
 
                     <Row className="mx-0 user-list-card">
-                        <Col className="px-0 occupants-top-selling-products-part">
-                            <OccupantTable />
+                        <Col className="px-0 Renters-top-selling-products-part">
+                            <RenterTable />
                         </Col>
                     </Row>
+
+                    {/*<Row className="mx-0 user-list-card">
+                        <Col className="px-0 Renters-top-selling-products-part">
+                            <Places />
+                        </Col>
+    </Row>*/}
+
                 </Col>
                 {/*<Col>
                     <Row className="mx-0"><AdminCalendar /></Row>
@@ -52,10 +58,10 @@ function Occupants() {
                             <DailyTransactions />
                         </Col>
                     </Row>
-    </Col>*/}
+</Col>*/}
             </Row>
         </Container>
     );
 }
 
-export default Occupants
+export default Renters
