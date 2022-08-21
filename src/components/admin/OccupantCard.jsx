@@ -48,7 +48,7 @@ function OccupantCard() {
         <Container className='my-4 big-con mx-0'>
             <Row className='user-list'>
                 <Col xs={11} className="occupant-user-list p-2" >
-                    <h6 className='list-heading py-3'> New Occupants</h6>
+                    <h6 className='list-heading pt-3 pb-4' > New Occupants</h6>
                     <Col>
                         {Profile_Data &&
                             Profile_Data.map((i) => (

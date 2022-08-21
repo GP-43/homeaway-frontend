@@ -65,12 +65,12 @@
 
 @media only screen and (max-width: 820px) {
   .renter-gallery-and-details {
-    margin-bottom: 22px;
+    margin-bottom: 50px;
   }
   .renter-card {
-    width: 359px;
+    width: 400px;
     height: 203px;
-    margin-left: 0;
+    margin-left: 8rem;
 
     .renter-name {
       font-size: 1rem !important;
@@ -95,13 +95,13 @@
 
 @media only screen and (max-width: 412px) {
   .renter-gallery-and-details {
-    margin-bottom: 23px;
+    margin-bottom: 100px;
   }
 
   .renter-card {
     width: 340px;
     height: 193px;
-    margin-left: 25px;
+    margin-left: 15px;
 
     .renter-image {
       height: 57% !important;

@@ -339,7 +339,7 @@
         margin-left: 6px;
     } 
     @media (max-width:820px) {
-        
+        margin-left: 30px !important;
         .date-card{
             width:210px;
             height:50px;
@@ -357,8 +357,8 @@
     }
      @media (max-width:412px){
         .make-booking-card1{
-            margin-left: 1 !important;
-            padding-left: 1 !important;
+            margin-left: 1rem !important;
+            padding-left: 1rem !important;
             //margin-left:-80px;
             width:200px !important;
             height:200px;
@@ -366,8 +366,8 @@
             .booking-col{
                 width:100px;
                 height:300px;
-                padding:1 !important;
-                margin-left: 1 !important;
+                padding:1rem !important;
+                margin-left: 1rem !important;
             }
             .text{
                 font-size: 8px;
@@ -394,7 +394,7 @@
 }
 @media (max-width:412px){
     .make-booking-card1{
-        margin-left: 16px !important;
+        margin-left: 30px !important;
         margin-right:0 !important;
         padding: 0 !important;
         width:350px;

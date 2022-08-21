@@ -2,13 +2,13 @@
   height: 15rem;
   border-radius: 13px;
   background-color: white;
+  width:395px;
 
   .heading {
     background-color: white;
     font-weight: 500;
     font-size: large;
     color: #373737;
-
   }
 
   .received-amount {
@@ -44,6 +44,20 @@
     justify-content: center !important;
     padding-left: 4.5rem;
   }
+  //.schedule-section-box{
+  //  width:380px;
+  //  //margin-left: 30px !important;
+  //}
+  .renting-schedule{
+    margin-right:15px;
+  }
+  .schedule-section-box{
+    margin-top: 30px !important;
+  }
+  .payment-box-container{
+    margin-top: 0px !important;
+    margin-bottom: 60px !important;
+  }
 }
 
 .schedule-card-text {
@@ -59,7 +73,9 @@
 }
 
 // Scedule section css
+.schedule-section-box{
 
+}
 .schedule-section {
   overflow-y: scroll;
   height: 12rem;
@@ -76,7 +92,19 @@
 @media only screen and (max-width: 820px) {
   .payment-box {
     margin: auto !important;
-    margin-top: 1.5rem !important;
+    margin-top: -45px!important;
     margin-bottom: 1.5rem !important;
+  }
+  .schedule-section-box{
+    margin-top:-55px !important;
+    margin-bottom: 10px;
+  }
+  .payment-box-container{
+    width:350px !important;
+    margin-top:-40px;
+    .payment-box{
+      width:300px !important;
+      height:16rem;
+    }
   }
 }
