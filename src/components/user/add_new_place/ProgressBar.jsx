@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col} from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner';
-import AddNewRentFeatureSelection from './AddNewRentFeatureSelection'
 
 function ProgressBar(props) {
     return(
@@ -23,14 +22,7 @@ function ProgressBar(props) {
                 <Col className={(props.First && props.Second && props.Third) ? "round-after-click" : "round-before-click" } lg = {1}  md = {1} xs = {1} >
                 <Spinner animation="border" className={(! props.Second || props.Third) && "span-display-none" } />
                 </Col>
-
-                <Row>
-                    <AddNewRentFeatureSelection />
-                </Row>
             </Row>
-
-            
-        
     )
 }
 
