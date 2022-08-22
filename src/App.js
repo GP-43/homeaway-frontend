@@ -32,7 +32,6 @@ function App() {
                     <Route path='/user/userbookings' element={<UserBookings />} />
                     <Route path='/user/userrentings' element={<UserRentings />} />
                     <Route path='/user/placedescription' element={<PlaceDescription />} />
-                    <Route path='/user/addnewrent' element={<AddNewRent />} />
                     <Route path='/user/addnewplace' element={<AddNewPlace />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
