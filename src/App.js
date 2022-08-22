@@ -15,7 +15,8 @@ import Payment from "./views/pages/Admin/Payment";
 import Home from './views/pages/anons/Home';
 import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
-import AddNewPlace from "./views/pages/user/AddNewPlace"
+import AddNewPlace from "./views/pages/user/AddNewPlace";
+import Complaints from './views/pages/Admin/Complaints';
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
                     <Route path='/admin/dashboard' element={<Dashboard />} />
                     <Route path='/admin/occupants' element={<Occupant />} />
                     <Route path='/admin/renters' element={<Renter />} />
+                    <Route path='/admin/complains' element={<Complaints />} />
                     <Route path='/admin/payment' element={<Payment />} />
                 </Route>
             </Routes>
