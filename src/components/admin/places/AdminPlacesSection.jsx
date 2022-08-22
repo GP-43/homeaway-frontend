@@ -125,10 +125,8 @@ function AdminPlacesSection() {
                     />
                 </Col>
             </Row>
-
-            <Row className='mx-0 px-0 data-part'>
-
-                {placeData.filter((val) => {
+            <Row>       
+            {placeData.filter((val) => {
                     // without searching
                     if (nameSearchTerm == "") {
                         return val
@@ -138,10 +136,8 @@ function AdminPlacesSection() {
                         return val
                     }
 
-                }).map((val, key) => {
+                }).map((val) => {
                     return (
-                        <Col md={12} xs={8} className='place-section px-md-4 px-0'>
-                            <Row className='mx-0 px-0 ' key={key}>
                                 <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                                     <PlaceCard
                                         Title={val.Title}
@@ -152,14 +148,9 @@ function AdminPlacesSection() {
                                         Ratings={val.Ratings}
                                     />
                                 </Col>
-                            </Row>
-                        </Col>
-
-
-
                     )
                 })}
-            </Row >
+            </Row>
         </Col >
     )
 }
