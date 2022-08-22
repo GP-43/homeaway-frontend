@@ -281,12 +281,7 @@ function AddNewRent() {
             </Col>
           </Row>
           <Row className="mb-2 add-new-rent-cancel-btn-box">
-            <Col lg={10} xs={6} md={9}>
-              <button className="pt-2 pb-2 add-new-rent-cancel-btn">
-                CLEAR
-              </button>
-            </Col>
-            <Col lg={2} xs={6} md={3}>
+            <Col lg={12} xs={6} md={3}>
               <button className="pt-2 pb-2 add-new-rent-next-btn">NEXT</button>
             </Col>
           </Row>
