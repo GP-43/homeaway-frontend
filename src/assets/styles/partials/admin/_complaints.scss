@@ -1,5 +1,10 @@
+.admin-complaint-table-container{
+    background-color: black;
+    border-radius: 5px;
+}
 .admin-complaints-table-title{
     color: aliceblue;
+    border-bottom: 1px solid aliceblue;
 }
 
 .admin-complain-table-row{
@@ -17,6 +22,7 @@
 .admin-complaint-table-data{
     height : 12rem;
     overflow-y: auto;
+    margin-top: 1rem;
 }
 
 .admin-complaint-delete-btn{
