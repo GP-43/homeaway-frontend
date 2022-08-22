@@ -13,3 +13,17 @@
 .admin-complain-table-row-title{
     font-size: 13px;
 }
+
+.admin-complaint-table-data{
+    height : 12rem;
+    overflow-y: auto;
+}
+
+.admin-complaint-delete-btn{
+    background-color: #812026;
+    color: #F0F2F5;
+    border: none;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+}

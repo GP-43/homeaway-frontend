@@ -30,7 +30,7 @@ function AdminComplaintsTable() {
                 </Col>
             </Row>
 
-            <Row>
+            <Row className='admin-complaint-table-data'>
                 {complaints_data && complaints_data.map(i => <AdminComplaintsTableRow caseNo = {i.caseNo} subject = {i.subject} senderId = {i.senderId}  senderName = {i.senderName}  senderEmail = {i.senderEmail}  date = {i.date}  time = {i.time}   />)}
             </Row>
 
