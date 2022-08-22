@@ -14,7 +14,7 @@ function UserCalendar(props) {
     return (
         // <Row className="card-calendar w-50 mx-0 px-0">
         //     <Row className="app px-0">
-                <Row className="calendar-container m-1">
+                <Row className="calendar-container bg-transparent m-1">
                     <Calendar className="bg-light my-1 py-1" onChange={setDate} value={date}/>
                     {/*<Calendar className="bg-light" onChange={setDate} value={date}/>*/}
                 </Row>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Container } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import ProgressBar from "../../../components/user/add_new_place/ProgressBar";
+import AddNewRent from "../../../components/user/add_new_rening/AddNewRent";
 
 function AddNewPlace() {
     const [addNewPlaceFormFirst, setaddNewPlaceFormFirst] = useState(false);
@@ -24,6 +25,7 @@ function AddNewPlace() {
             
         <ProgressBar First = {addNewPlaceFormFirst} Second = {addNewPlaceFormSecond} Third = {addNewPlaceFormThird} />
         
+        <AddNewRent />
             <Button variant="warning" onClick={firstClick}>submit</Button> 
             <Button variant="warning" onClick={secondClick}>submit</Button> 
             <Button variant="warning" onClick={thirdClick}>submit</Button> 
