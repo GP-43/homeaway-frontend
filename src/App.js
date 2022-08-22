@@ -16,9 +16,9 @@ import Places from "./views/pages/Admin/Places"
 import Home from './views/pages/anons/Home';
 import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
+import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import AddNewPlace from "./views/pages/user/AddNewPlace";
 import Complaints from './views/pages/Admin/Complaints';
-
 function App() {
     return (
         <div>
