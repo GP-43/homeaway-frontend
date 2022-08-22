@@ -50,7 +50,7 @@ function AddNewPlace() {
             <Row className= {addNewPlaceFormFirstNext && "d-none"} >
                 <AddNewRent />
             </Row>
-            <Row className={addNewPlaceFormSecondNext && "d-none"}>
+            <Row className={(addNewPlaceFormSecondNext || !addNewPlaceFormFirstNext) && "d-none"}>
                 <AddNewRentFeatureSelection />
             </Row>
             <Row className={ addNewPlaceFormFirstNext ? "d-none" : "mb-2 add-new-rent-cancel-btn-box"}>
