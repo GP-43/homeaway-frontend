@@ -12,19 +12,19 @@ function AdminComplaintsTable() {
         <Row className='ms-1'>
             <Row className='admin-complaints-table-title'>
                 <Col xs={1} className="px-0">
-                    <p>Case No</p>
+                    <p className='admin-complain-table-row-title'>Case No</p>
                 </Col>
                 <Col xs={2} className="px-0">
-                    <p>Subject</p>
+                    <p className='admin-complain-table-row-title'>Subject</p>
                 </Col>
+                <Col xs={1} className="px-0">
+                    <p className='admin-complain-table-row-title'>Sender ID</p></Col>
                 <Col xs={2} className="px-0">
-                    <p>Sender ID</p></Col>
+                    <p className='admin-complain-table-row-title'>Sender Name</p></Col>
+                <Col xs={3} className="px-0">
+                    <p className='admin-complain-table-row-title'>Sender Email</p></Col>
                 <Col xs={2} className="px-0">
-                    <p>Sender Name</p></Col>
-                <Col xs={2} className="px-0">
-                    <p>Sender Email</p></Col>
-                <Col xs={2} className="px-0">
-                    <p>Time & Date</p></Col>
+                    <p className='admin-complain-table-row-title'>Time & Date</p></Col>
                 <Col xs={1} className="px-0">
                     
                 </Col>

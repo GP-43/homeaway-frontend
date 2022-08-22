@@ -14,7 +14,7 @@ function Complaints() {
             </Row>
 
             <Row className="testing-2">
-                <Col xs={10}>
+                <Col xs={9}>
                     <Row className="mx-0 user-list-card">
                         <Col className="px-0 occupants-top-selling-products-part">
                             <AdminComplaintsTable />
