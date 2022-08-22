@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { useState } from 'react';
-import PlaceCard from "../../../components/user/place_card/PlaceCard";
+import PlaceCard from "../../user/place_card/PlaceCard";
 
 
 //images
@@ -15,7 +15,7 @@ import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
 
 
-function Places() {
+function AdminPlacesSection() {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
 
     const placeData = [
@@ -140,27 +140,28 @@ function Places() {
 
                 }).map((val, key) => {
                     return (
-
-                        <Row className='mx-0 px-0 ' key={key}>
-                            <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
-                                <PlaceCard
-                                    Title={val.Title}
-                                    Src={val.Src}
-                                    City={val.City}
-                                    Price={val.Price}
-                                    Quantity={val.Quantity}
-                                    Ratings={val.Ratings}
-                                />
-                            </Col>
-                        </Row>
+                        <Col md={12} xs={8} className='place-section px-md-4 px-0'>
+                            <Row className='mx-0 px-0 ' key={key}>
+                                <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
+                                    <PlaceCard
+                                        Title={val.Title}
+                                        Src={val.Src}
+                                        City={val.City}
+                                        Price={val.Price}
+                                        Quantity={val.Quantity}
+                                        Ratings={val.Ratings}
+                                    />
+                                </Col>
+                            </Row>
+                        </Col>
 
 
 
                     )
                 })}
-            </Row>
+            </Row >
         </Col >
     )
 }
 
-export default Places
+export default AdminPlacesSection

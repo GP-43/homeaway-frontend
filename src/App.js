@@ -12,6 +12,7 @@ import HomeAwayAnons from "./views/HomeAwayAnons";
 import Occupant from './views/pages/Admin/Occupants';
 import Renter from './views/pages/Admin/Renters';
 import Payment from "./views/pages/Admin/Payment";
+import Places from "./views/pages/Admin/Places"
 import Home from './views/pages/anons/Home';
 import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
@@ -38,6 +39,7 @@ function App() {
                     <Route path='/admin/occupants' element={<Occupant />} />
                     <Route path='/admin/renters' element={<Renter />} />
                     <Route path='/admin/payment' element={<Payment />} />
+                    <Route path='/admin/places' element={<Places />} />
                 </Route>
             </Routes>
         </div>
