@@ -10,7 +10,6 @@ import { Image } from "react-feather";
 import PlaceCard from "../place_card/PlaceCard.jsx";
 
 function AddNewRent() {
-
   const categoryOptions = [
     { value: "meeting-room", label: "Meetings" },
     { value: "office-room", label: "Office" },
@@ -24,11 +23,11 @@ function AddNewRent() {
   ];
 
   const [productName, setProductName] = useState("Name");
+  const [productCity, setProductCity] = useState("City");
   const [productPrice, setProductPrice] = useState("0");
   const [productQuantity, setProductQuantity] = useState(0);
   const [productContact, setProductContact] = useState("0");
-  const [productCity, setProductCity] = useState("Colombo");
-  const [productRating, setProductRating]= useState(0);
+  const [productRating, setProductRating] = useState(0);
 
   const [image, setImage] = useState("noImage");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
@@ -47,6 +46,10 @@ function AddNewRent() {
   const handleOnProductNameChange = (event) => {
     setProductName(event.target.value);
   };
+
+  const handleOnProductCityChange = (event) => {
+    setProductCity(event.target.value);
+  }
 
   const handleOnProductQuantityChange = (values) => {
     setProductQuantity(values.floatValue);
@@ -82,7 +85,6 @@ function AddNewRent() {
                   type="text"
                   placeholder="Enter the title"
                   required
-                  pattern="[A-Za-z]+"
                   onChange={handleOnProductNameChange}
                 />
               </Form.Group>
@@ -105,6 +107,18 @@ function AddNewRent() {
                   placeholder="Select Category"
                   isClearable={true}
                   // onChange={handleOnPriceTypeChange}
+                />
+              </Form.Group>
+
+              <Form.Group
+                className="mb-2 data-field"
+                controlId="exampleForm.ControlTextarea1"
+              >
+                <Form.Label className="mb-2">ADDRESS</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={4}
+                  placeholder="Enter the address"
                 />
               </Form.Group>
             </Col>
@@ -137,22 +151,33 @@ function AddNewRent() {
                   onValueChange={handleOnProductPriceChange}
                 />
               </Form.Group>
+              <Form.Group
+                className="mb-2 data-field"
+                controlId="exampleForm.ControlTextarea1"
+              >
+                <Form.Label className="mb-2">CITY</Form.Label>
+                <Form.Control
+                  placeholder="Enter the city"
+                  required
+                  type="text"
+                  onChange={handleOnProductCityChange}
+                />
+              </Form.Group>
+              <Form.Group
+                className="mb-2 data-field"
+                controlId="exampleForm.ControlTextarea1"
+              >
+                <Form.Label className="mb-2">POSTAL CODE</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter the postal code"
+                  required
+                  pattern="[0-9]+"
+                  // onChange={handleOnProductCityChange}
+                />
+              </Form.Group>
             </Col>
           </Row>
-
-          <Col lg={12} className="mb-2">
-            <Form.Group
-              className="mb-2 data-field"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label className="mb-2">ADDRESS</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={4}
-                placeholder="Enter the address"
-              />
-            </Form.Group>
-          </Col>
 
           <Col lg={12} className="mb-2">
             <Form.Group
@@ -262,9 +287,7 @@ function AddNewRent() {
               </button>
             </Col>
             <Col lg={2} xs={6} md={3}>
-              <button className="pt-2 pb-2 add-new-rent-next-btn">
-                NEXT
-              </button>
+              <button className="pt-2 pb-2 add-new-rent-next-btn">NEXT</button>
             </Col>
           </Row>
         </Form>
