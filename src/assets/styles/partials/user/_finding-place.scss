@@ -18,6 +18,10 @@
   .home-gallery {
     height: auto;
 
+    .carousel-inner {
+      width: 700px;
+    }
+
     .gallery-carousal {
       height: auto;
 
@@ -25,6 +29,16 @@
         height: auto;
         width: 100%;
       }
+    }
+  }
+}
+
+@media (max-width: 412px) {
+  .home-gallery {
+    height: auto;
+
+    .carousel-inner {
+      width: 385px;
     }
   }
 }
@@ -222,9 +236,10 @@
   }
   .choose-section-date {
     border-radius: 0 0 1rem 1rem;
+
     .show-date {
       font-size: 1rem !important;
-      font-weight:500 !important;
+      font-weight: 500 !important;
     }
 
   }
@@ -243,13 +258,42 @@
   }
 }
 
+.calendar-popup {
+
+  .modal-dialog {
+    border-radius: 1rem;
+
+    .modal-content {
+      background-color: transparent;
+      border-radius: 1rem;
+      border: none;
+
+      .modal-header {
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+
 /*---------Filter section -----------------*/
 .filter-section {
   color: #000000;
   justify-content: center;
 
   .filter-section-ac {
-    border-radius: 0 0 0 1rem;
+    border-radius: 0 1rem 1rem 1rem;
+    height: 125px;
+    //padding-top: 10px;
+  }
+
+  .filter-card {
+    margin-top: -7px;
+    height: 90px;
+
+    .filter-card-body {
+      height: 100px;
+    }
   }
 
   .filter-section-food {
@@ -260,9 +304,32 @@
     border-radius: 0 1rem 1rem 0;
   }
 
+  .radio-button-section {
+    justify-content: center;
+  }
+
+  .filter-check-box {
+    margin-left: 60px;
+
+    .radio-label {
+      font-size: 1.2rem;
+    }
+
+    input {
+      accent-color: rebeccapurple;
+      width: 20px;
+      height: 20px;
+    }
+
+  }
+
   @media (max-width: 820px) {
+    .filter-section {
+      height: 180px !important;
+    }
     .filter-section-ac {
-      border-radius: 0;
+      border-radius: 0 1rem 1rem 1rem;
+      height: 135px !important;
     }
     .filter-section-food {
       border-radius: 0 1rem 0 0;
@@ -270,11 +337,18 @@
     .filter-section-internet {
       border-radius: 0 0 1rem 1rem;
     }
+    .filter-check-box {
+      margin-left: 30px;
+    }
+    .filter-card {
+      margin-top: 5px;
+    }
   }
   @media (max-width: 412px) {
     .filter-section-ac {
-      border-radius: 0;
-      height: 103px;
+      border-radius: 0 0 15px 15px;
+      height: 230px !important;
+      //width: 190px !important;
     }
     .filter-section-food {
       border-radius: 0;
@@ -285,19 +359,35 @@
       height: 103px;
     }
     .filter-card {
-      height: 0px;
-      margin-top: -6px;
+      height: 150px;
+      margin-top: 20px;
+      margin-left: -3px;
+      width: 280px;
     }
     .filter-card-body {
-      height: 80px;
+      //height: 180px !important;
+      padding-right: 6px !important;
+      padding-left: 6px !important;
     }
     .radio-button-section {
-      font-size: 0.9rem;
+      font-size: 1rem;
       height: 50px;
       margin-top: -10px;
+      padding-left: 6px !important;
     }
     .filter-p {
       margin-top: -5px;
+    }
+    .radio-label {
+      font-size: 0.8rem !important;
+      margin: 0 0 0 5px;
+    }
+    .filter-check-box {
+      margin-left: -20px !important;
+    }
+    .checkbox-col {
+      padding-right: 5px;
+      padding-left: 5px;
     }
   }
 
@@ -321,11 +411,11 @@
   }
 
   .filter-radio-button {
-    margin-left: 20px;
+    //margin-left: 180px;
     cursor: pointer;
   }
 
-  .radio-lable {
+  .radio-label {
     font-size: 1rem;
     margin: 0 0 0 5px;
   }
@@ -346,11 +436,11 @@
 
   @media (max-width: 820px) {
     z-index: 1;
-    top: 32%;
+    top: 34% !important;
   }
   @media (max-width: 412px) {
-    top: 26%;
-    margin-left: 3%;
+    top: 25% !important;
+    margin-left: 2%;
   }
 }
 
@@ -361,11 +451,11 @@
   justify-content: right;
   background: transparent;
   right: 11px;
-  top: 137px;
-  margin-top: 3px;
+  top: 140px;
+  margin-top: 4px;
 
   @media (max-width: 820px) {
-    top: 95%;
+    top: 94% !important;
     left: 70.2%;
     height: 5%;
     button {
@@ -376,11 +466,12 @@
 
 @media (max-width: 412px) {
   .search-button {
-    top: 83%;
+    top: 83% !important;
     height: 5%;
     left: 37%;
     margin-top: 47px;
     margin-left: 41px;
+
     button {
       width: 7.8rem;
     }

@@ -7,7 +7,7 @@ function SingleUser(props) {
     return (
         <Container>
             <Row>
-                <Col xs={12} className="user-card">
+                <Col xs={12} className="user-card pb-1">
                     <Row className='user-row'>
                         <Col className='user-col'>
                             <img

@@ -45,14 +45,14 @@ function Occupants() {
                         </Col>
                     </Row>
                 </Col>
-                <Col>
+                {/*<Col>
                     <Row className="mx-0"><AdminCalendar /></Row>
                     <Row className="mx-0">
                         <Col className="px-0 mx-0 daily-transaction-box">
                             <DailyTransactions />
                         </Col>
                     </Row>
-                </Col>
+    </Col>*/}
             </Row>
         </Container>
     );

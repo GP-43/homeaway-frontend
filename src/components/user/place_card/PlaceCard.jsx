@@ -4,13 +4,19 @@ import {FaUserFriends} from "react-icons/fa";
 import {FaStar} from "react-icons/fa";
 import {FaRegHeart} from "react-icons/fa";
 import {FaHeart} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function PlaceCard(props) {
     const [show, setShow] = useState(true);
 
+    const navigate = useNavigate();
+
+    const handleOnCardClick = () => {
+        navigate('/user/placedescription')
+    }
     return (
-        <Col className="place-card-cover ">
-            <Card className="place-card">
+        <Col className="place-card-cover">
+            <Card className="place-card" >
                 <img
                     className="d-block gallery-image place-image"
                     src={props.Src}
@@ -26,7 +32,7 @@ function PlaceCard(props) {
                     </button>
                 )}
 
-                <Card.Body className="text-box">
+                <Card.Body className="text-box" onClick={handleOnCardClick}>
                     <Card.Body className="text">
                         <Card.Title className="title">{props.Title}</Card.Title>
                         <Card.Text className="city">{props.City}</Card.Text>
