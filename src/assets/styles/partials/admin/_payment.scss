@@ -1,0 +1,205 @@
+.card-container-payment {
+    .testing-card {
+        border: solid;
+        border-radius: 15px;
+        //color: white;
+        background-color: rgb(100, 99, 99);
+
+        .wifi-icon {
+            margin-left: -22rem;
+            color: white;
+        }
+
+        .number {
+            font-size: larger;
+            font-weight: 500;
+            color: white;
+
+            .last {
+                padding-right: 8rem;
+
+            }
+
+        }
+
+        .column-parts {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .topic {
+                font-size: small;
+                color: #FFFFFF;
+                font-weight: 100;
+            }
+
+            .content {
+                color: #FFFFFF;
+                font-weight: 500;
+                font-size: large;
+            }
+        }
+
+        .card-logo {
+            padding-top: -50rem;
+        }
+
+    }
+}
+
+.smallcardcontainer {
+    .testing-card {
+        border: solid;
+        border-radius: 15px;
+        //color: white;
+        background-color: black;
+
+        .card-icon-bg {
+            border-radius: 15px;
+            padding-top: 2rem;
+            padding-bottom: 0.4rem;
+            padding-right: 1rem;
+            position: absolute;
+            margin-left: 1rem;
+            margin-top: 1rem;
+
+            .card-icon {
+                height: 30px;
+                width: 30px;
+                margin-right: none;
+                background-color: none !important;
+                color: white;
+                margin-top: -2rem;
+
+            }
+
+            .total-booking-card {
+                background-color: #AADAAC;
+            }
+
+            .cancelled-booking-card {
+                background-color: #E74242;
+            }
+
+            .total-income-card {
+                background-color: #5976DE;
+            }
+        }
+
+        .bookingsmallicon {
+            background-color: #AADAAC;
+            color: #AADAAC;
+            //margin-top: -5rem;
+
+        }
+
+        .cancelledbookingsmallicon {
+            background-color: #E74242;
+            color: #E74242;
+        }
+
+        .totalincomesmallicon {
+            background-color: #5976DE;
+            color: #5976DE;
+        }
+    }
+}
+
+.small-cards {
+    .card-top {
+        border-bottom: solid;
+        border-width: 1px;
+        display: flex;
+        font-size: small;
+        background-color: black;
+        color: white;
+        justify-content: center;
+        padding-bottom: 2rem;
+
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .card-name {
+        border-width: 1px;
+        display: flex;
+        font-size: small;
+        background-color: black;
+        color: white;
+        justify-content: center;
+        margin-top: 6rem;
+        text-align: center;
+    }
+
+    .card-bottom {
+        background-color: black;
+        font-size: larger;
+        color: white;
+        justify-content: center;
+        padding-bottom: 0.7rem;
+        font-weight: 600;
+
+    }
+}
+
+.transaction {
+    color: #F0F2F5;
+    background-color: #000000;
+
+    .search-part {
+        .search-by-date {
+            border: 1px solid #7B809A;
+            background-color: #000000;
+            color: #7B809A;
+            border-radius: 5px;
+        }
+
+        .search-by-name {
+            border: 1px solid #7B809A;
+            background-color: #000000;
+            color: #7B809A;
+            border-radius: 5px;
+        }
+    }
+
+    .data-part {
+
+        height: 70vh;
+        overflow-y: scroll;
+        display: block;
+
+        .data {
+
+            //height: 5rem !important;
+        }
+    }
+
+    .data-part::-webkit-scrollbar {
+        display: none;
+    }
+}
+.singlerow{
+    border: solid;
+    border-width: thin;
+    border-radius: 17px;
+    border-color: #5EB461;
+    
+    .rentername{
+        color: #344767;
+        font-size: larger;
+        font-weight: 500;
+    }
+    .test-data{
+        margin-left: -2rem;
+        font-size: small;
+        color: #344767;
+    }
+    .test-data-top{
+        margin-left: -2rem;
+
+    }
+    .top-data{
+        color: #7B809A;
+        font-size: small;
+    }
+}
