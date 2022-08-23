@@ -22,26 +22,12 @@ function AddNewRent() {
     { value: "week", label: "For a week" },
   ];
 
-  const [productCity, setProductCity] = useState("City");
-  const [productPrice, setProductPrice] = useState("0");
-  const [productContact, setProductContact] = useState("0");
   const [productRating, setProductRating] = useState(0);
 
   const [image, setImage] = useState("noImage");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
 
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setValidated(true);
-  };
-
-  const [formState, setFormState] = useState({ productName: '', productQuantity:'', productCity: ''});
+  const [formState, setFormState] = useState({ productName: '', productQuantity:'', productCity: '', productContact: '', productAddress:'', productPostalcode:'', productDescription:''});
 
   function handleOnChange(e, inputField) {
     // console.log(e.target.value);
@@ -52,21 +38,6 @@ function AddNewRent() {
     });
     // console.log(fromState);
   }
-
-  
-
-  const handleOnProductCityChange = (event) => {
-    setProductCity(event.target.value);
-  }
-
-
-  const handleOnContactChange = (values) => {
-    setProductContact(values.floatValue);
-  };
-
-  const handleOnProductPriceChange = (values) => {
-    setProductPrice(values.floatValue);
-  };
 
   const handleImageChange = (event) => {
     setImage(URL.createObjectURL(event.target.files[0]));
@@ -131,6 +102,10 @@ function AddNewRent() {
                   as="textarea"
                   rows={4}
                   placeholder="Enter the address"
+                  onChange={(e) => {
+                    handleOnChange(e, 'productAddress');
+                  }}
+                  value={formState.productAddress}
                 />
               </Form.Group>
             </Col>
@@ -149,7 +124,11 @@ function AddNewRent() {
                   type="tel"
                   placeholder="ex: 94766923712"
                   required
-                  onChange={handleOnContactChange}
+                  //onChange={handleOnContactChange}
+                  onChange={(e) => {
+                    handleOnChange(e, 'productContact');
+                  }}
+                  value={formState.productContact}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
@@ -160,7 +139,11 @@ function AddNewRent() {
                   thousandSeparator={true}
                   allowNegative={false}
                   required
-                  onValueChange={handleOnProductPriceChange}
+                  // onValueChange={handleOnProductPriceChange}
+                  onChange={(e) => {
+                    handleOnChange(e, 'productPrice');
+                  }}
+                  value={formState.productPrice}
                 />
               </Form.Group>
               <Form.Group
@@ -174,9 +157,9 @@ function AddNewRent() {
                   type="text"
                   // onChange={handleOnProductCityChange}
                   onChange={(e) => {
-                    handleOnChange(e, 'productName');
+                    handleOnChange(e, 'productCity');
                   }}
-                  value={formState.productName}
+                  value={formState.productCity}
                 />
               </Form.Group>
               <Form.Group
@@ -190,6 +173,10 @@ function AddNewRent() {
                   required
                   pattern="[0-9]+"
                   // onChange={handleOnProductCityChange}
+                  onChange={(e) => {
+                    handleOnChange(e, 'productPostalcode');
+                  }}
+                  value={formState.productPostalcode}
                 />
               </Form.Group>
             </Col>
@@ -205,6 +192,10 @@ function AddNewRent() {
                 as="textarea"
                 rows={4}
                 placeholder="Enter the description"
+                onChange={(e) => {
+                  handleOnChange(e, 'productDescription');
+                }}
+                value={formState.productDescription}
               />
             </Form.Group>
           </Col>
@@ -289,7 +280,7 @@ function AddNewRent() {
                   Title={formState.productName}
                   Src={image}
                   City={formState.productCity}
-                  Price={productPrice}
+                  Price={formState.productPrice}
                   Quantity={formState.productQuantity}
                   Rating={productRating}
                 />

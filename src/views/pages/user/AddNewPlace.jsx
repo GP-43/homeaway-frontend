@@ -8,6 +8,7 @@ import AddNewRent from "../../../components/user/add_new_rening/AddNewRent";
 import AddNewRentSheduleSelection from "../../../components/user/add_new_place/AddNewRentSheduleSelection";
 
 function AddNewPlace() {
+    
     const [addNewPlaceFormFirstNext, setaddNewPlaceFormFirstNext] = useState(false);
     const firstNextClick = () => {
         setaddNewPlaceFormFirstNext(!addNewPlaceFormFirstNext);
