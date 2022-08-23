@@ -48,8 +48,7 @@ function Signup() {
                         })}
 
                         onSubmit={(values) => {
-                            axios.post("http://localhost:4000/signup", values).then(() => {
-                                console.log("SUCCESS");
+                            axios.post("http://localhost:4000/auth/signup", values).then(() => {
                             });
                         }}
                     >
