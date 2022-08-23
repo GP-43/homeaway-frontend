@@ -16,12 +16,12 @@ function ProgressBar(props) {
                 <Col className={(props.FirstNext && props.SecondNext) ? "round-after-click" : "round-before-click" } lg = {1}  md = {1} xs = {1} >
                 <Spinner animation="border" className={(! props.FirstNext || props.SecondNext) && "span-display-none" } />
                 </Col>
-                <Col className="p-0 my-auto" lg = {2}  md = {3} xs = {3} >
+                {/* <Col className="p-0 my-auto" lg = {2}  md = {3} xs = {3} >
                     <hr className={props.SecondNext ? "line-after-click" : "line-before-click"} />
                 </Col>
                 <Col className={(props.FirstNext && props.SecondNext && props.ThirdNext) ? "round-after-click" : "round-before-click" } lg = {1}  md = {1} xs = {1} >
                 <Spinner animation="border" className={(! props.SecondNext || props.ThirdNext) && "span-display-none" } />
-                </Col>
+                </Col> */}
             </Row>
     )
 }

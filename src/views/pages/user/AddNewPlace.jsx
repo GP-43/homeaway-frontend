@@ -65,7 +65,7 @@ function AddNewPlace() {
             <Row className= {addNewPlaceFormFirstNext && "d-none"} >
                 <AddNewRent />
             </Row>
-            <Row className={(addNewPlaceFormSecondNext || !addNewPlaceFormFirstNext) && "d-none"}>
+            <Row className={(!addNewPlaceFormFirstNext) && "d-none"}>
                 <AddNewRentFeatureSelection />
             </Row>
             {/* <Row>
@@ -76,22 +76,22 @@ function AddNewPlace() {
                     <button className="pt-2 pb-2 add-new-rent-next-btn" onClick={firstNextClick} >NEXT</button>
                 </Col>
             </Row>
-            <Row className={ (addNewPlaceFormFirstNext && !addNewPlaceFormThirdNext && !addNewPlaceFormSecondNext) ? "mb-2 add-new-rent-cancel-btn-box" : "d-none"}>
+            <Row className={ (addNewPlaceFormFirstNext ) ? "mb-2 add-new-rent-cancel-btn-box" : "d-none"}>
                 <Col >
                     <button className="pt-2 pb-2 add-new-rent-cancel-btn" onClick={firstBackClick} >BACK</button>
                 </Col>
                 <Col >
-                    <button className="pt-2 pb-2 add-new-rent-next-btn" onClick={secondNextClick}>NEXT</button>
+                    <button type="submit" className="pt-2 pb-2 add-new-rent-next-btn" onClick={secondNextClick}>SUBMIT</button>
                 </Col>
             </Row>
-            <Row className={ (addNewPlaceFormFirstNext && addNewPlaceFormSecondNext) ? "mb-2 add-new-rent-cancel-btn-box" : "d-none" }>
+            {/* <Row className={ (addNewPlaceFormFirstNext && addNewPlaceFormSecondNext) ? "mb-2 add-new-rent-cancel-btn-box" : "d-none" }>
                 <Col >
                     <button className="pt-2 pb-2 add-new-rent-cancel-btn" onClick={secondBackClick} >BACK</button>
                 </Col>
                 <Col >
                     <button type="submit" className="pt-2 pb-2 add-new-rent-next-btn" onClick={thirdNextClick}>SUBMIT</button>
                 </Col>
-            </Row>
+            </Row> */}
             </Form>
         </Container>
     )
