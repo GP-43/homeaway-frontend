@@ -19,13 +19,14 @@ function BookingsDetailCard() {
             <Row className='card-container'>
                 <Col className='p-2 mt-4 testing-card'>
                     
-                    <dev className="booking-icon card-icon-bg">
+                    <div className="booking-icon card-icon-bg">
                         {<FaChartBar className="ms-3 card-icon booking-card" />}
-                    </dev>
+                    </div>
 
                     {Booking_Data &&
                         Booking_Data.map((i) => (
                             <SingleDetailCard
+                            key={`{${i.Name}}`}
                                 Name={i.Name}
                                 Total={i.Total}
                                 Src={i.Src}
