@@ -5,8 +5,7 @@ import HeaderCard from "../../../components/admin/occupants/HeaderCardOccupant";
 import OccupantDetailCard from "../../../components/admin/OccupantDetailCard";
 import NewOccupantDetailCard from "../../../components/admin/occupants/NewOccupantDetailCard";
 import BookingsDetailCard from "../../../components/admin/BookingsDetailCard";
-import AdminCalendar from "../../../components/admin/adminCalendar/AdminCalendar";
-import DailyTransactions from "../../../components/admin/DailyTransactions";
+import UserDetails from '../../../components/admin/occupants/UserDetails';
 
 
 function Occupants() {
@@ -45,14 +44,9 @@ function Occupants() {
                         </Col>
                     </Row>
                 </Col>
-                {/*<Col>
-                    <Row className="mx-0"><AdminCalendar /></Row>
-                    <Row className="mx-0">
-                        <Col className="px-0 mx-0 daily-transaction-box">
-                            <DailyTransactions />
-                        </Col>
-                    </Row>
-    </Col>*/}
+                <Col>
+                    <Row className="mx-0"><UserDetails /></Row>
+                </Col>
             </Row>
         </Container>
     );
