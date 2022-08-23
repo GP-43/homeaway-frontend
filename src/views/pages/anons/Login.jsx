@@ -1,14 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {FiLock, FiMail} from "react-icons/fi";
+import axios from "axios";
+import occupants from "../Admin/Occupants";
 
 function Login() {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleOnLogin = (event) => {
+        event.preventDefault();
+        const data = {email: email, password: password};
+        axios.post("http://localhost:4000/auth/login", data).then((response) => {
+            if (response.data.state === 1) {
+                sessionStorage.setItem("accessToken", response.data);
+                if (response.data.data.role == 2) {
+                    window.location.replace("/user");
+                } else if (response.data.data.role == 1) {
+                    window.location.replace("/admin/dashboard");
+                }
+
+            } else {
+
+            }
+        });
+    }
+
     return (
         <Container>
             <Row className='login-page'>
                 <Col md={7} className='px-0'>
-                    <Form className='d-flex align-items-center'>
+                    <Form className='d-flex align-items-center' onSubmit={handleOnLogin}>
                         <div className='w-100'>
                             <h3>Sign in to HomeAway</h3>
                             <Form.Text className="text-muted">
@@ -17,12 +41,20 @@ function Login() {
                             <InputGroup className="my-3 data-field" id="formUserName">
                                 <InputGroup.Text className='data-field-icon'
                                                  id="basic-addon1"><FiMail/></InputGroup.Text>
-                                <Form.Control type="email" placeholder="Email" required/>
+                                <Form.Control type="email" placeholder="Email" required
+                                              onChange={(event) => {
+                                                  setEmail(event.target.value)
+                                              }}
+                                />
                             </InputGroup>
                             <InputGroup className="mb-3 data-field" id="formBasicPassword">
                                 <InputGroup.Text className='data-field-icon'
                                                  id="basic-addon1"><FiLock/></InputGroup.Text>
-                                <Form.Control type="password" placeholder="Password" required/>
+                                <Form.Control type="password" placeholder="Password" required
+                                              onChange={(event) => {
+                                                  setPassword(event.target.value)
+                                              }}
+                                />
                             </InputGroup>
                             <Form.Group className="mb-3 text-center" controlId="forgottenPassword">
                         <span>
@@ -40,7 +72,7 @@ function Login() {
                         <h1 className='mb-2'>Hello, Friend!</h1>
                         <p className='mb-3'>Enter your personal details and <br/>start journey with us</p>
                         <Link to={'/signup'}>
-                            <Button type="button" className="btn btn-outline-light">SIGN UP</Button>
+                            <Button type="sub" className="btn btn-outline-light">SIGN UP</Button>
                         </Link>
                     </div>
                 </Col>
