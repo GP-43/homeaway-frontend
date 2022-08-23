@@ -1,0 +1,35 @@
+.admin-complaint-table-container{
+    background-color: black;
+    border-radius: 5px;
+}
+.admin-complaints-table-title{
+    color: aliceblue;
+    border-bottom: 1px solid aliceblue;
+}
+
+.admin-complain-table-row{
+    color: aliceblue;
+}
+
+.admin-complain-table-row-text{
+    font-size: 12px;
+}
+
+.admin-complain-table-row-title{
+    font-size: 13px;
+}
+
+.admin-complaint-table-data{
+    height : 12rem;
+    overflow-y: auto;
+    margin-top: 1rem;
+}
+
+.admin-complaint-delete-btn{
+    background-color: #812026;
+    color: #F0F2F5;
+    border: none;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+}

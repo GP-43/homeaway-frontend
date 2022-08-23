@@ -18,13 +18,14 @@ function NewOccupantDetailCard() {
             <Row className='card-container'>
                 <Col className='p-2 mt-4 testing-card'>
                     
-                    <dev className="new-occupant-icon card-icon-bg">
+                    <div className="new-occupant-icon card-icon-bg">
                         {<FaUserPlus className="ms-3 card-icon new-occupant-card" />}
-                    </dev>
+                    </div>
 
                     {NewOccupant_Data &&
                         NewOccupant_Data.map((i) => (
                             <SingleDetailCard
+                            key={`{${i.Name}}`}
                                 Name={i.Name}
                                 Total={i.Total}
                                 Src={i.Src}

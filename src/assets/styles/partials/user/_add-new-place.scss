@@ -1,34 +1,58 @@
+.span-display-none {
+    display: none;
+}
 
-    .span-display-none{
-        display: none;
-    }
+.round-before-click {
+    background-color: white;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0.2rem;
+    border-radius: 50%;
+    padding-bottom: 0;
+    border: 1px solid black;
+}
 
-    .round-before-click {
-        background-color: white;
-        width: 40px !important;
-        height: 40px !important;
-        padding: 0.2rem;
-        border-radius: 50%;
-        padding-bottom: 0;
-        border: 1px solid black;
-    }
+.round-after-click {
+    background-color: #083387;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0.2rem;
+    border-radius: 50%;
+    padding-bottom: 0;
+    border: 1px solid black;
+}
 
-    .round-after-click{
-        background-color: #083387;
-        width: 40px !important;
-        height: 40px !important;
-        padding: 0.2rem;
-        border-radius: 50%;
-        padding-bottom: 0;
-        border: 1px solid black;
-    }
+.line-before-click {
+    border: solid 1px rgb(0, 0, 0);
+    opacity: 100;
+}
 
-    .line-before-click{
-        border: solid 1px rgb(0, 0, 0);
-        opacity: 100;
-    }
+.line-after-click {
+    border: solid 2px #083387;
+    opacity: 100;
+}
 
-    .line-after-click{
-        border: solid 2px #083387;
-        opacity: 100;
+.add-new-rent-feature-selection {
+    input[type=checkbox] {
+        accent-color: #1C8120;
     }
+}
+
+.add-new-rent-date-component-div {
+    background-color: red;
+    border-radius: 25px;
+    height: 4rem;
+    width: 3rem;
+}
+
+.add-new-rent-schecule-selection-data-row {
+    width: 50rem;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.add-new-rent-schecule-selection-data-row::-webkit-scrollbar {
+}

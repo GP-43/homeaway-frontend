@@ -5,6 +5,7 @@ import Logo from "../../../assets/images/logo/logo.png"
 import {FiUsers} from "react-icons/fi";
 import { MdDashboard, MdOutlinePayments,MdReport } from "react-icons/md";
 import { FaHouseUser } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 
 function LeftNavigation() {
 
@@ -51,6 +52,12 @@ function LeftNavigation() {
                         <li className='px-lg-3 bg-transparent d-flex align-items-center'>
                             <MdOutlinePayments className='bg-transparent me-3'/>
                             Payment
+                        </li>
+                    </Link>
+                    <Link to='/admin/places' className={url === '/admin/places' ? 'active mb-2' : 'mb-2'}>
+                        <li className='px-lg-3 bg-transparent d-flex align-items-center'>
+                            <FaHome className='bg-transparent me-3'/>
+                            Places
                         </li>
                     </Link>
                     <Link to='/admin/complains' className={url === '/admin/complains' ? 'active mb-2' : 'mb-2'}>

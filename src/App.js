@@ -12,11 +12,13 @@ import HomeAwayAnons from "./views/HomeAwayAnons";
 import Occupant from './views/pages/Admin/Occupants';
 import Renter from './views/pages/Admin/Renters';
 import Payment from "./views/pages/Admin/Payment";
+import Places from "./views/pages/Admin/Places"
 import Home from './views/pages/anons/Home';
 import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
-import AddNewPlace from "./views/pages/user/AddNewPlace"
-
+import AddNewRent from './components/user/add_new_rening/AddNewRent';
+import AddNewPlace from "./views/pages/user/AddNewPlace";
+import Complaints from './views/pages/Admin/Complaints';
 function App() {
     return (
         <div>
@@ -37,7 +39,9 @@ function App() {
                     <Route path='/admin/dashboard' element={<Dashboard />} />
                     <Route path='/admin/occupants' element={<Occupant />} />
                     <Route path='/admin/renters' element={<Renter />} />
+                    <Route path='/admin/complains' element={<Complaints />} />
                     <Route path='/admin/payment' element={<Payment />} />
+                    <Route path='/admin/places' element={<Places />} />
                 </Route>
             </Routes>
         </div>

@@ -35,7 +35,7 @@ function NavBar() {
     }
 
     useEffect(() => {
-        if (url === '/user' | url === '/user/userbookings') {
+        if (url === '/user' | url === '/user/userbookings' | url === '/user/placedescription') {
             setIsRenter(false);
         } else {
             setIsRenter(true);

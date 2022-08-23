@@ -17,9 +17,9 @@ function BookingSmallCard() {
             <Row className='smallcardcontainer'>
                 <Col className='p-2 mt-4 testing-card'>
                     <Col>
-                        <dev className="bookingsmallicon card-icon-bg">
+                        <div className="bookingsmallicon card-icon-bg">
                             {<FaRegBuilding className="ms-3 card-icon total-booking-card" />}
-                        </dev>
+                        </div>
                     </Col>
 
                     {Booking_Data &&
