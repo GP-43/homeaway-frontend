@@ -25,18 +25,19 @@
         justify-content: center;
     }
 
-    .bars {
+    .values {
         display: flex;
         justify-content: center;
 
-        .bar-name{
+        .value-name {
             font-size: medium;
             color: white;
             display: flex;
             justify-content: center;
         }
-        .progress-bar{
-            font-size: small;
+
+        .value {
+            font-size: xx-large;
             color: white;
             display: flex;
             justify-content: center;
@@ -44,28 +45,31 @@
         }
 
     }
-    .details{
+
+    .details {
         display: flex;
         justify-content: center;
 
-        .details-parts{
+        .details-parts {
             display: flex;
             justify-content: center;
             color: white;
 
-            
+
         }
-        .icon{
-            color: white;
-        }
-        .content{
+
+        .icon {
             color: white;
         }
 
-        
+        .content {
+            color: white;
+        }
+
+
     }
 
-    
+
 
 
 

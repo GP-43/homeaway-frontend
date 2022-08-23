@@ -7,7 +7,7 @@ function HeaderCardComplaints() {
   return (
     <Card className="Header-card">
       <Col className="d-flex flex-row  Header-card-div">
-        <a href="" cclassName="Header-card-div-text ms-2 mt-2">
+        <a href="" className="Header-card-div-text ms-2 mt-2">
           <FaHome className="header-card-home-icon " size="lg" />
         </a>
         <h5 cclassName="Header-card-div-text ">/</h5>

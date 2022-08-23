@@ -29,14 +29,14 @@ function UserDetails({ userDetailsObj }) {
                         <Row className='value-name'>Total Bookings</Row>
                     </Col>
                     <Col xs={5}>
-                        <Row className='value'>{userDetailsObj.PaidBookings}</Row>
-                        <Row className='value-name'>Paid Bookings</Row>
+                        <Row className='value'>{userDetailsObj.TotalIncome}</Row>
+                        <Row className='value-name'>Total Income</Row>
                     </Col>
                 </Row>
                 <Row className='py-4 values'>
                     <Col xs={5}>
-                        <Row className='value'>{userDetailsObj.TotalSpend}</Row>
-                        <Row className='value-name'>Total Spend</Row>
+                        <Row className='value'>{userDetailsObj.TotalRecieved}</Row>
+                        <Row className='value-name'>Total Recieved</Row>
                     </Col>
                 </Row>
 
