@@ -3,50 +3,12 @@ import { Row, Col } from 'react-bootstrap';
 import RenterRow from "./RenterRow";
 import { useState } from 'react';
 
-//images
-import p1 from "../../../assets/images/admin/renter/p1.jpg";
-import p2 from "../../../assets/images/admin/renter/p2.jpg";
-import p3 from "../../../assets/images/admin/renter/p3.jpg";
-import p4 from "../../../assets/images/admin/renter/p4.jpg";
-import p5 from "../../../assets/images/admin/renter/p5.jpg";
-import p6 from "../../../assets/images/admin/renter/p6.jpg";
-import p7 from "../../../assets/images/admin/renter/p7.jpg";
-
-function RenterTable() {
+function RenterTable({ details_array, setSelectedUser }) {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
 
-    const details_array = [
-        {
-            Src: p7, firstName: "saman", lastName: "kumara", email: "saman@gmail.com", joinedDate: '2022-07-15', properties: '1',
-            rate: '2'
-        },
-        {
-            Src: p1, firstName: "namal", lastName: "perera", email: "saman@gmail.com", joinedDate: '2022-08-15', properties: '4',
-            rate: '4'
-        },
-        {
-            Src: p2, firstName: "amal", lastName: "saman", email: "saman@gmail.com", joinedDate: '2022-08-16', properties: '2',
-            rate: '4'
-        },
-        {
-            Src: p3, firstName: "ruwan", lastName: "pushpa", email: "saman@gmail.com", joinedDate: '2022-08-17', properties: '3',
-            rate: '3'
-        },
-        {
-            Src: p4, firstName: "sandum", lastName: "nimal", email: "saman@gmail.com", joinedDate: '2022-08-18', properties: '1',
-            rate: '1'
-        },
-        {
-            Src: p5, firstName: "pawan", lastName: "pahan", email: "saman@gmail.com", joinedDate: '2022-08-19', properties: '2',
-            rate: '4'
-        },
-        {
-            Src: p6, firstName: "nilantha", lastName: "dasun", email: "saman@gmail.com", joinedDate: '2022-08-18', properties: '1',
-            rate: '6'
-        }
-    ]
+
 
     return (
         <Col className='top-selling-products'>
@@ -162,6 +124,9 @@ function RenterTable() {
                                 joinedDate={val.joinedDate}
                                 properties={val.properties}
                                 rate={val.rate}
+
+                                rowUserObj={val}
+                                setSelectedUser={setSelectedUser}
                             />
                         </Row>
                     )

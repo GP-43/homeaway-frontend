@@ -18,9 +18,9 @@ function TotalIncomeSmallCard() {
                 <Col className='p-2 mt-4 testing-card'>
 
                     <Col>
-                        <dev className="totalincomesmallicon card-icon-bg">
+                        <div className="totalincomesmallicon card-icon-bg">
                             {<FaMoneyBill className="ms-3 card-icon total-income-card" />}
-                        </dev>
+                        </div>
                     </Col>
 
                     {Income_Data &&
