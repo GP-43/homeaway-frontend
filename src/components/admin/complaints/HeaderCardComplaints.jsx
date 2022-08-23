@@ -7,17 +7,17 @@ function HeaderCardComplaints() {
   return (
     <Card className="Header-card">
       <Col className="d-flex flex-row  Header-card-div">
-        <a href="" class="Header-card-div-text ms-2 mt-2">
+        <a href="" className="Header-card-div-text ms-2 mt-2">
           <FaHome className="header-card-home-icon " size="lg" />
         </a>
-        <h7 class="Header-card-div-text ">/</h7>
-        <a href="" class="Header-card-div-text ">
-          <h7 className="Header-card-div-text ms-0 mt-0">Complaints</h7>
+        <h5 cclassName="Header-card-div-text ">/</h5>
+        <a href="" cclassName="Header-card-div-text ">
+          <h5 className="Header-card-div-text ms-0 mt-0">Complaints</h5>
         </a>
       </Col>
       <Row>
         <Col xs={10} className="Header-card-div">
-          <h4 class="Header-card-div-text ">Complaints</h4>
+          <h4 className="Header-card-div-text ">Complaints</h4>
         </Col>
         <Col xs={1} className="user-icon-box"><FaUserCircle className="user-icon" /></Col>
         <Col xs={1} className="admin-name">Admin</Col>

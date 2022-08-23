@@ -1,0 +1,76 @@
+.image-row {
+    display: flex;
+    justify-content: center;
+
+    .user-image {
+        border-radius: 55rem;
+        height: 14rem;
+        width: 15rem;
+
+    }
+
+}
+
+.detail-container {
+    background-color: black;
+    border-radius: 15px;
+    padding-top: 9rem;
+    margin-top: -8rem;
+
+    .name-row,
+    .rate-row {
+        font-size: large;
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+    .values {
+        display: flex;
+        justify-content: center;
+
+        .value-name {
+            font-size: medium;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .value {
+            font-size: xx-large;
+            color: white;
+            display: flex;
+            justify-content: center;
+
+        }
+
+    }
+
+    .details {
+        display: flex;
+        justify-content: center;
+
+        .details-parts {
+            display: flex;
+            justify-content: center;
+            color: white;
+
+
+        }
+
+        .icon {
+            color: white;
+        }
+
+        .content {
+            color: white;
+        }
+
+
+    }
+
+
+
+
+
+}

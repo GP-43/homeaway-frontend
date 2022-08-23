@@ -19,13 +19,14 @@ function RenterDetailCard() {
             <Row className='card-container'>
                 <Col className='p-2 mt-4 testing-card'>
 
-                    <dev className="renter-icon card-icon-bg">
+                    <div className="renter-icon card-icon-bg">
                         {<FaHouseUser className="ms-3 card-icon rent-places-card" />}
-                    </dev>
+                    </div>
 
                     {Renter_Data &&
                         Renter_Data.map((i) => (
                             <SingleDetailCard
+                                key={`{${i.Name}}`}
                                 Name={i.Name}
                                 Total={i.Total}
                                 Src={i.Src}
