@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import AddNewRentFeatureSelection from "../../../components/user/add_new_place/AddNewRentFeatureSelection";
 import ProgressBar from "../../../components/user/add_new_place/ProgressBar";
 import AddNewRent from "../../../components/user/add_new_rening/AddNewRent";
+import AddNewRentSheduleSelection from "../../../components/user/add_new_place/AddNewRentSheduleSelection";
 
 function AddNewPlace() {
     const [addNewPlaceFormFirstNext, setaddNewPlaceFormFirstNext] = useState(false);
@@ -52,6 +53,9 @@ function AddNewPlace() {
             </Row>
             <Row className={(addNewPlaceFormSecondNext || !addNewPlaceFormFirstNext) && "d-none"}>
                 <AddNewRentFeatureSelection />
+            </Row>
+            <Row>
+                <AddNewRentSheduleSelection/>
             </Row>
             <Row className={ addNewPlaceFormFirstNext ? "d-none" : "mb-2 add-new-rent-cancel-btn-box"}>
                 <Col >
