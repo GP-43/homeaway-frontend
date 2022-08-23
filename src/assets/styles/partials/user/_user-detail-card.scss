@@ -1,121 +1,135 @@
-
-.detail-card{
+.detail-card {
     margin-top: -2rem;
     z-index: -1 !important;
 
 }
-.card-container{
+
+.card-container {
 
     .testing-card {
         border: solid;
         border-radius: 15px;
         //color: white;
         background-color: black;
-    
-        .card-icon-bg{
+
+        .card-icon-bg {
             border-radius: 15px;
             padding-top: 2rem;
             padding-bottom: 0.4rem;
-            padding-right: 1rem;
+            padding-right: 0;
             position: relative;
+            width: 4rem;
+            margin-top: -2rem;
 
-            
-            .card-icon{
+
+            .card-icon {
                 height: 30px;
                 width: 30px;
                 margin-right: none;
                 background-color: none !important;
                 color: white;
                 margin-top: -2rem;
-            
+
             }
 
-            .total-occupant-card{
+            .total-occupant-card {
                 background-color: #6955F5;
             }
-            .total-renter-card{
+
+            .total-renter-card {
                 background-color: #6955F5;
             }
-            .booking-card{
-                background-color: #E93B77;
-            }
-            .availplace-card{
+
+            .booking-card {
                 background-color: #E93B77;
             }
 
-            .rent-places-card{
+            .availplace-card {
+                background-color: #E93B77;
+            }
+
+            .rent-places-card {
                 background-color: #63B967;
             }
-            .new-occupant-card{
+
+            .new-occupant-card {
                 background-color: #439DEE;
             }
-            .place-card{
+
+            .place-card {
                 background-color: #439DEE;
             }
         }
-        .renter-icon{
+
+        .renter-icon {
             background-color: #63B967;
             color: #63B967;
             //margin-top: -5rem;
-        
+
         }
-        .booking-icon{
+
+        .booking-icon {
             background-color: #E93B77;
             color: #E93B77;
             //margin-top: -5rem;
-        
+
         }
-        .availplace-icon{
+
+        .availplace-icon {
             background-color: #E93B77;
             color: #E93B77;
             //margin-top: -5rem;
-        
+
         }
-        .occupant-icon{
+
+        .occupant-icon {
             background-color: #6955F5;
             color: #6955F5;
             //margin-top: -5rem;
-        
+
         }
-        .total-renter-icon{
+
+        .total-renter-icon {
             background-color: #6955F5;
             color: #6955F5;
             //margin-top: -5rem;
-        
+
         }
-        .new-occupant-icon{
+
+        .new-occupant-icon {
             background-color: #439DEE;
             color: #439DEE;
             //margin-top: -5rem;
-        
+
         }
-        .place-icon{
+
+        .place-icon {
             background-color: #439DEE;
             color: #439DEE;
             //margin-top: -5rem;
-        
+
         }
     }
-    
+
     .card-top {
         border-bottom: solid;
         border-width: 1px;
         display: flex;
-    
+
         .card-left {
-            background-color: black;        
+            background-color: black;
         }
-    
+
         .card-right {
             background-color: black;
-    
+
             .card-name {
                 font-size: small;
                 background-color: black;
                 color: #7B809A;
                 justify-content: end;
             }
-    
+
             .card-total {
                 font-size: larger;
                 font-weight: 700;
@@ -131,7 +145,7 @@
 .card-bottom {
     background-color: black;
 
-    .card-bottom-left{
+    .card-bottom-left {
         background-color: black;
         font-size: small;
         color: #4CAF50;
@@ -139,7 +153,8 @@
         justify-content: end;
 
     }
-    .card-bottom-right{
+
+    .card-bottom-right {
         background-color: black;
         font-size: small;
         color: #7B809A;
@@ -148,34 +163,31 @@
 }
 
 @media only screen and (max-width: 412px) {
-    .testing-1{
+    .testing-1 {
         display: flex;
         flex-direction: column;
 
     }
 
-    .user-list-card{
+    .user-list-card {
         display: flex;
     }
-    .testing-2{
+
+    .testing-2 {
         justify-content: center;
     }
 
 }
+
 @media only screen and (max-width: 820px) {
-    .card-right{
+    .card-right {
         position: relative;
 
     }
 
-    .card-icon-bg{
+    .card-icon-bg {
         margin-left: -2rem;
     }
 
 
 }
-
-
-
-
-
