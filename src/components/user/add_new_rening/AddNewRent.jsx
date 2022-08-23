@@ -22,10 +22,8 @@ function AddNewRent() {
     { value: "week", label: "For a week" },
   ];
 
-  const [productName, setProductName] = useState("Name");
   const [productCity, setProductCity] = useState("City");
   const [productPrice, setProductPrice] = useState("0");
-  const [productQuantity, setProductQuantity] = useState(0);
   const [productContact, setProductContact] = useState("0");
   const [productRating, setProductRating] = useState(0);
 
@@ -43,17 +41,24 @@ function AddNewRent() {
     setValidated(true);
   };
 
-  const handleOnProductNameChange = (event) => {
-    setProductName(event.target.value);
-  };
+  const [formState, setFormState] = useState({ productName: '', productQuantity:'', productCity: ''});
+
+  function handleOnChange(e, inputField) {
+    // console.log(e.target.value);
+    setFormState((currentFormState) => {
+      const newFormState = { ...currentFormState };
+      newFormState[inputField] = e.target.value;
+      return newFormState;
+    });
+    // console.log(fromState);
+  }
+
+  
 
   const handleOnProductCityChange = (event) => {
     setProductCity(event.target.value);
   }
 
-  const handleOnProductQuantityChange = (values) => {
-    setProductQuantity(values.floatValue);
-  };
 
   const handleOnContactChange = (values) => {
     setProductContact(values.floatValue);
@@ -76,7 +81,7 @@ function AddNewRent() {
   return (
     <Container className="mb-5 bg-white p-5 add-new-rent-container">
       <Col>
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        
           <Row>
             <Col lg={6}>
               <Form.Group className="mb-3 data-field">
@@ -85,7 +90,10 @@ function AddNewRent() {
                   type="text"
                   placeholder="Enter the title"
                   required
-                  onChange={handleOnProductNameChange}
+                  onChange={(e) => {
+                    handleOnChange(e, 'productName');
+                  }}
+                  value={formState.productName}
                 />
               </Form.Group>
               <Form.Group className="mb-3 data-field">
@@ -97,7 +105,11 @@ function AddNewRent() {
                   as={NumberFormat}
                   allowNegative={false}
                   required
-                  onValueChange={handleOnProductQuantityChange}
+                  // onValueChange={handleOnProductQuantityChange}
+                  onChange={(e) => {
+                    handleOnChange(e, 'productQuantity');
+                  }}
+                  value={formState.productQuantity}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
@@ -160,7 +172,11 @@ function AddNewRent() {
                   placeholder="Enter the city"
                   required
                   type="text"
-                  onChange={handleOnProductCityChange}
+                  // onChange={handleOnProductCityChange}
+                  onChange={(e) => {
+                    handleOnChange(e, 'productName');
+                  }}
+                  value={formState.productName}
                 />
               </Form.Group>
               <Form.Group
@@ -270,11 +286,11 @@ function AddNewRent() {
               </label>
               <Col lg={5}>
                 <PlaceCard
-                  Title={productName}
+                  Title={formState.productName}
                   Src={image}
-                  City={productCity}
+                  City={formState.productCity}
                   Price={productPrice}
-                  Quantity={productQuantity}
+                  Quantity={formState.productQuantity}
                   Rating={productRating}
                 />
               </Col>
@@ -285,7 +301,6 @@ function AddNewRent() {
               <button className="pt-2 pb-2 add-new-rent-next-btn">NEXT</button>
             </Col>
           </Row> */}
-        </Form>
       </Col>
     </Container>
   );
