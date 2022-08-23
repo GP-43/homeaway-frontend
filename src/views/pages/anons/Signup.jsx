@@ -7,32 +7,9 @@ import axios from "axios";
 import * as yup from 'yup';
 import {Formik} from 'formik';
 
-const phoneRegExp = /\+[0-9]{1,4}-[0-9]{9}/;
-
-const schema = yup.object().shape({
-    email: yup.string().email('Invalid email address')
-        .required('Required'),
-    name: yup.string().required()
-        .max(50, 'Must be 50 characters or less')
-        .min(8, 'Must be 8 characters or more')
-        .required('Required'),
-    contact: yup.string().required()
-        .matches(phoneRegExp, 'Phone number format: +{country code}-{number}')
-        .required('Phone number is required'),
-    location: yup.string().required(),
-    password: yup.string().required().max(25, 'Must be 25 characters or less')
-        .min(8, 'Must be 8 characters or more')
-        .required('Required'),
-    // terms: yup.bool().required().oneOf([true], 'terms must be accepted'),
-});
-
 function Signup() {
-    const handleOnSubmit = (data) => {
-        console.log(data)
-            axios.post("http://localhost:4000/signup", data).then(() => {
-                console.log("SUCCESS");
-            });
-    };
+
+    const phoneRegExp = /\+[0-9]{1,4}-[0-9]{9}/;
 
     return (
         <Container>
@@ -48,8 +25,6 @@ function Signup() {
                 </Col>
                 <Col md={7} className='px-0'>
                     <Formik
-                        validationSchema={schema}
-                        onSubmit={handleOnSubmit}
                         initialValues={{
                             email: "",
                             name: "",
@@ -57,15 +32,29 @@ function Signup() {
                             location: "",
                             password: "",
                         }}
+                        validationSchema={yup.object().shape({
+                            email: yup.string().email('Invalid email address')
+                                .required('Required'),
+                            name: yup.string().required()
+                                .max(50, 'Must be 50 characters or less')
+                                .min(8, 'Must be 8 characters or more'),
+                            contact: yup.string().required(),
+                            // .matches(phoneRegExp, 'Phone number format: +{country code}-{number}'),
+                            location: yup.string().required(),
+                            password: yup.string().required()
+                                .max(25, 'Must be 25 characters or less')
+                                .min(8, 'Must be 8 characters or more'),
+                            // terms: yup.bool().required().oneOf([true], 'terms must be accepted'),
+                        })}
+
+                        onSubmit={(values) => {
+                            axios.post("http://localhost:4000/signup", values).then(() => {
+                                console.log("SUCCESS");
+                            });
+                        }}
                     >
-                        {({
-                              handleSubmit,
-                              handleChange,
-                              handleBlur,
-                              values,
-                              errors,
-                          }) => (
-                            <Form className='d-flex align-items-center' noValidate onSubmit={handleSubmit}>
+                        {(formik) => (
+                            <Form className='d-flex align-items-center' noValidate onSubmit={formik.handleSubmit}>
                                 <div className='w-100'>
                                     <h3>Create Account</h3>
                                     <Form.Text className="text-muted">
@@ -78,9 +67,9 @@ function Signup() {
                                                       placeholder="Email"
                                                       aria-describedby="inputGroupPrepend"
                                                       name="email"
-                                                      onChange={handleChange}
-                                                      value={values.email}
-                                                      isInvalid={!!errors.email}
+                                            // onChange={handleChange}
+                                            // value={values.email}
+                                                      {...formik.getFieldProps("email")}
                                         />
                                         {/*<Form.Control.Feedback type="invalid">*/}
                                         {/*    {errors.email}*/}
@@ -93,10 +82,11 @@ function Signup() {
                                                       placeholder="Name"
                                                       aria-describedby="inputGroupPrepend"
                                                       name="name"
-                                                      onChange={handleChange}
-                                                      onBlur={handleBlur}
-                                                      value={values.name}
-                                                      isInvalid={!!errors.name}
+                                            // onChange={handleChange}
+                                            // onBlur={handleBlur}
+                                            // value={values.name}
+                                            // isInvalid={!!errors.name}
+                                                      {...formik.getFieldProps("name")}
                                         />
                                         {/*<Form.Control.Feedback type="invalid">*/}
                                         {/*    {errors.name}*/}
@@ -109,10 +99,11 @@ function Signup() {
                                                       placeholder="Contact No"
                                                       aria-describedby="inputGroupPrepend"
                                                       name="contact"
-                                                      onChange={handleChange}
-                                                      onBlur={handleBlur}
-                                                      value={values.contact}
-                                                      isInvalid={!!errors.contact}
+                                            // onChange={handleChange}
+                                            // onBlur={handleBlur}
+                                            // value={values.contact}
+                                            // isInvalid={!!errors.contact}
+                                                      {...formik.getFieldProps("contact")}
                                         />
                                         {/*<Form.Control.Feedback type="invalid">*/}
                                         {/*    {errors.contact}*/}
@@ -123,12 +114,10 @@ function Signup() {
                                         <InputGroup.Text className='data-field-icon'
                                                          id="basic-addon1"><GrLocation/></InputGroup.Text>
                                         <Form.Control type="text" placeholder="Location"
-                                                      onChange={handleChange}
+                                            // onChange={handleChange}
                                                       aria-describedby="inputGroupPrepend"
                                                       name="location"
-                                                      onBlur={handleBlur}
-                                                      value={values.location}
-                                                      isInvalid={!!errors.location}
+                                                      {...formik.getFieldProps("location")}
 
                                         />
                                         {/*<Form.Control.Feedback type="invalid">*/}
@@ -139,20 +128,18 @@ function Signup() {
                                         <InputGroup.Text className='data-field-icon'
                                                          id="basic-addon1"><FiLock/></InputGroup.Text>
                                         <Form.Control type="password" placeholder="Password" required
-                                                      onChange={handleChange}
-                                                      onBlur={handleBlur}
+                                            // onChange={handleChange}
+                                            // onBlur={handleBlur}
                                                       aria-describedby="inputGroupPrepend"
                                                       name="password"
-                                                      value={values.password}
-                                                      isInvalid={!!errors.password}
+                                                      {...formik.getFieldProps("password")}
                                         />
                                         {/*<Form.Control.Feedback type="invalid">*/}
                                         {/*    {errors.password}*/}
                                         {/*</Form.Control.Feedback>*/}
                                         {/* Minimum eight characters, at least one letter and one number:*/}
                                     </InputGroup>
-                                    <Button className='signup-button mb-3' type="submit"
-                                            onClick={handleOnSubmit}>
+                                    <Button className='signup-button mb-3' type='submit'>
                                         SIGN UP
                                     </Button>
                                 </div>
