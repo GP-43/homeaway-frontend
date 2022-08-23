@@ -23,7 +23,7 @@ function UserDetails({ userDetailsObj }) {
                 <Row className='pb-4 rate-row'>
                     4.3
                 </Row>
-                <Row className='py-4 values'>
+                <Row className='py-2 values'>
                     <Col xs={5}>
                         <Row className='value'>{userDetailsObj.TotalBookings}</Row>
                         <Row className='value-name'>Total Bookings</Row>
@@ -50,10 +50,10 @@ function UserDetails({ userDetailsObj }) {
                         <Col xs={6} className='ps-3 content'>{userDetailsObj.IDno}</Col>
                     </Col>
                 </Row>
-                <Row className='pt-4 pb-5 details'>
+                <Row className='pt-2 pb-5 details'>
                     <Col className='ms-5 details-parts' xs={12}>
                         <Col xs={1}><FaMapMarkerAlt className='icon' /></Col>
-                        <Col xs={10} className='ps-3 content'>{userDetailsObj.Address}</Col>
+                        <Col xs={10} className='content'>{userDetailsObj.Address}</Col>
                     </Col>
                 </Row>
 
