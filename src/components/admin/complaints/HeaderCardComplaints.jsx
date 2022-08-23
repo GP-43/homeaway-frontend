@@ -17,7 +17,7 @@ function HeaderCardComplaints() {
       </Col>
       <Row>
         <Col xs={10} className="Header-card-div">
-          <h4 cclassName="Header-card-div-text ">Complaints</h4>
+          <h4 className="Header-card-div-text ">Complaints</h4>
         </Col>
         <Col xs={1} className="user-icon-box"><FaUserCircle className="user-icon" /></Col>
         <Col xs={1} className="admin-name">Admin</Col>
