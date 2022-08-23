@@ -30,7 +30,8 @@ function NavBar() {
     const navigate = useNavigate();
 
     const handleOnLogoClick = () => {
-        navigate('/user');
+        window.location.replace("/");
+        sessionStorage.removeItem("accessToken");
     }
 
     useEffect(() => {
@@ -84,7 +85,7 @@ function NavBar() {
                                         onClick={handleOnSwitchUserClick}> Switch User</Button>
                             </NavDropdown.Item>
                             <NavDropdown.Divider/>
-                            <NavDropdown.Item className="mb-1" href="#action/3.3">
+                            <NavDropdown.Item className="mb-1" onClick={handleOnLogoClick}>
                                 Logout
                             </NavDropdown.Item>
                         </NavDropdown>

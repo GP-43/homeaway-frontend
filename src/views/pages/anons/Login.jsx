@@ -3,6 +3,7 @@ import {Button, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {FiLock, FiMail} from "react-icons/fi";
 import axios from "axios";
+import occupants from "../Admin/Occupants";
 
 function Login() {
 
@@ -13,7 +14,17 @@ function Login() {
         event.preventDefault();
         const data = {email: email, password: password};
         axios.post("http://localhost:4000/auth/login", data).then((response) => {
-            console.log(response.data);
+            if (response.data.state === 1) {
+                sessionStorage.setItem("accessToken", response.data);
+                if (response.data.data.role == 2) {
+                    window.location.replace("/user");
+                } else if (response.data.data.role == 1) {
+                    window.location.replace("/admin/dashboard");
+                }
+
+            } else {
+
+            }
         });
     }
 

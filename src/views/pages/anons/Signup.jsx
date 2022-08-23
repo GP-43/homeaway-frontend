@@ -49,6 +49,8 @@ function Signup() {
 
                         onSubmit={(values) => {
                             axios.post("http://localhost:4000/auth/signup", values).then(() => {
+                                window.location.href="/login"
+
                             });
                         }}
                     >
