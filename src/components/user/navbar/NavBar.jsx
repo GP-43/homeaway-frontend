@@ -67,7 +67,7 @@ function NavBar() {
                             </span>
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to='/user/newrent' className={isRenter ? 'd-block' : 'd-none'}>
+                        <Nav.Link as={Link} to='/user/addnewrent' className={isRenter ? 'd-block' : 'd-none'}>
                             <span
                                 className={url === '/user/newrent' ? 'nav-bar-item-active' : 'nav-bar-item'}
                             >New Rent
