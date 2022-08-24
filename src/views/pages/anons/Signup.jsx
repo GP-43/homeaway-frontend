@@ -5,7 +5,7 @@ import {FiLock, FiMail, FiPhone, FiUser} from "react-icons/fi";
 import {GrLocation} from "react-icons/gr";
 import axios from "axios";
 import * as yup from 'yup';
-import {Formik} from 'formik';
+import {Formik, ErrorMessage} from 'formik';
 
 function Signup() {
 
@@ -76,6 +76,7 @@ function Signup() {
                                         {/*    {errors.email}*/}
                                         {/*</Form.Control.Feedback>*/}
                                     </InputGroup>
+                                    <ErrorMessage name='email' component='div' className='error-msg' />
                                     <InputGroup className="mb-3 data-field" id="formBasicName">
                                         <InputGroup.Text className='data-field-icon'
                                                          id="basic-addon1"><FiUser/></InputGroup.Text>
@@ -93,6 +94,7 @@ function Signup() {
                                         {/*    {errors.name}*/}
                                         {/*</Form.Control.Feedback>*/}
                                     </InputGroup>
+                                    <ErrorMessage name='name' component='div' className='error-msg' />
                                     <InputGroup className="mb-3 data-field" id="formBasicContact">
                                         <InputGroup.Text className='data-field-icon'
                                                          id="basic-addon1"><FiPhone/></InputGroup.Text>
@@ -110,6 +112,7 @@ function Signup() {
                                         {/*    {errors.contact}*/}
                                         {/*</Form.Control.Feedback>*/}
                                     </InputGroup>
+                                    <ErrorMessage name='contact' component='div' className='error-msg' />
                                     {/*location input need to go here. have to implement*/}
                                     <InputGroup className="mb-3 data-field" id="formBasicLocation">
                                         <InputGroup.Text className='data-field-icon'
@@ -125,6 +128,7 @@ function Signup() {
                                         {/*    {errors.location}*/}
                                         {/*</Form.Control.Feedback>*/}
                                     </InputGroup>
+                                    <ErrorMessage name='location' component='div' className='error-msg' />
                                     <InputGroup className="mb-3 data-field" id="formBasicPassword">
                                         <InputGroup.Text className='data-field-icon'
                                                          id="basic-addon1"><FiLock/></InputGroup.Text>
@@ -140,6 +144,7 @@ function Signup() {
                                         {/*</Form.Control.Feedback>*/}
                                         {/* Minimum eight characters, at least one letter and one number:*/}
                                     </InputGroup>
+                                    <ErrorMessage name='password' component='div' className='error-msg' />
                                     <Button className='signup-button mb-3' type='submit'>
                                         SIGN UP
                                     </Button>
