@@ -7,7 +7,7 @@ import ProgressBar from "../../../components/user/add_new_place/ProgressBar";
 import AddNewRent from "../../../components/user/add_new_rening/AddNewRent";
 import AddNewRentSheduleSelection from "../../../components/user/add_new_place/AddNewRentSheduleSelection";
 import axios from "axios";
-import {Formik} from 'formik';
+import { Formik } from "formik";
 
 function AddNewPlace() {
   const [addNewPlaceFormFirstNext, setaddNewPlaceFormFirstNext] =
@@ -42,17 +42,6 @@ function AddNewPlace() {
     setaddNewPlaceFormSecondNext(!addNewPlaceFormSecondNext);
   };
 
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setValidated(true);
-  };
-
   return (
     <Container className="add-new-rent-container bg-white">
       <ProgressBar
@@ -62,90 +51,81 @@ function AddNewPlace() {
         FirstBack={addNewPlaceFormFirstBack}
         SecondBack={addNewPlaceFormSecondBack}
       />
-      <Formik
-        initialValues={{
-            title: "",
-            quantity: "",
-            price_type: "",
-            address: "",
-            room_category: "",
-            contact_no: "",
-            price:"",
-            city: "",
-            postal_code: "",
-            description: "",
-        }}
-       
-        onSubmit={(values) => {
-          axios
-            .post("http://localhost:4000/auth/addnewplace", values)
-            .then(() => {});
-        }}
+      <Row className={addNewPlaceFormFirstNext && "d-none"}>
+        <AddNewRent />
+        <Col>
+          <button
+            type="submit"
+            className="pt-2 pb-2 add-new-rent-next-btn"
+            onClick={secondNextClick}
+          >
+            SUBMIT
+          </button>
+        </Col>
+      </Row>
+      <Row className={!addNewPlaceFormFirstNext && "d-none"}>
+        <AddNewRentFeatureSelection />
+      </Row>
+      <Row>
+        <AddNewRentSheduleSelection />
+      </Row>
+      <Row
+        className={
+          addNewPlaceFormFirstNext
+            ? "d-none"
+            : "mb-2 add-new-rent-cancel-btn-box"
+        }
       >
-        {(formik) => (
-          <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Row className={addNewPlaceFormFirstNext && "d-none"}>
-              <AddNewRent />
-              <Col>
-                <button
-                  type="submit"
-                  className="pt-2 pb-2 add-new-rent-next-btn"
-                  onClick={secondNextClick}
-                >
-                  SUBMIT
-                </button>
-              </Col>
-            </Row>
-            <Row className={!addNewPlaceFormFirstNext && "d-none"}>
-              <AddNewRentFeatureSelection />
-            </Row>
-            <Row>
-                <AddNewRentSheduleSelection/>
-            </Row>
-            <Row
-              className={
-                addNewPlaceFormFirstNext
-                  ? "d-none"
-                  : "mb-2 add-new-rent-cancel-btn-box"
-              }
-            >
-              <Col>
-                <button
-                  className="pt-2 pb-2 add-new-rent-next-btn"
-                  onClick={firstNextClick}
-                >
-                  NEXT
-                </button>
-              </Col>
-            </Row>
-            <Row
-              className={
-                addNewPlaceFormFirstNext
-                  ? "mb-2 add-new-rent-cancel-btn-box"
-                  : "d-none"
-              }
-            >
-              <Col>
-                <button
-                  className="pt-2 pb-2 add-new-rent-cancel-btn"
-                  onClick={firstBackClick}
-                >
-                  BACK
-                </button>
-              </Col>
-              
-            </Row>
-            <Row className={ (addNewPlaceFormFirstNext && addNewPlaceFormSecondNext) ? "mb-2 add-new-rent-cancel-btn-box" : "d-none" }>
-                <Col >
-                    <button className="pt-2 pb-2 add-new-rent-cancel-btn" onClick={secondBackClick} >BACK</button>
-                </Col>
-                <Col >
-                    <button type="submit" className="pt-2 pb-2 add-new-rent-next-btn" onClick={thirdNextClick}>SUBMIT</button>
-                </Col>
-            </Row>
-          </Form>
-        )}
-      </Formik>
+        <Col>
+          <button
+            className="pt-2 pb-2 add-new-rent-next-btn"
+            onClick={firstNextClick}
+          >
+            NEXT
+          </button>
+        </Col>
+      </Row>
+      <Row
+        className={
+          addNewPlaceFormFirstNext
+            ? "mb-2 add-new-rent-cancel-btn-box"
+            : "d-none"
+        }
+      >
+        <Col>
+          <button
+            className="pt-2 pb-2 add-new-rent-cancel-btn"
+            onClick={firstBackClick}
+          >
+            BACK
+          </button>
+        </Col>
+      </Row>
+      <Row
+        className={
+          addNewPlaceFormFirstNext && addNewPlaceFormSecondNext
+            ? "mb-2 add-new-rent-cancel-btn-box"
+            : "d-none"
+        }
+      >
+        <Col>
+          <button
+            className="pt-2 pb-2 add-new-rent-cancel-btn"
+            onClick={secondBackClick}
+          >
+            BACK
+          </button>
+        </Col>
+        <Col>
+          <button
+            type="submit"
+            className="pt-2 pb-2 add-new-rent-next-btn"
+            onClick={thirdNextClick}
+          >
+            SUBMIT
+          </button>
+        </Col>
+      </Row>
     </Container>
   );
 }
