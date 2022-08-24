@@ -96,13 +96,13 @@ function AddNewPlace() {
                 </button>
               </Col>
             </Row>
-            {/* <Row className={!addNewPlaceFormFirstNext && "d-none"}>
+            <Row className={!addNewPlaceFormFirstNext && "d-none"}>
               <AddNewRentFeatureSelection />
-            </Row> */}
-            {/* <Row>
+            </Row>
+            <Row>
                 <AddNewRentSheduleSelection/>
-            </Row> */}
-            {/* <Row
+            </Row>
+            <Row
               className={
                 addNewPlaceFormFirstNext
                   ? "d-none"
@@ -117,7 +117,7 @@ function AddNewPlace() {
                   NEXT
                 </button>
               </Col>
-            </Row> */}
+            </Row>
             <Row
               className={
                 addNewPlaceFormFirstNext
@@ -125,24 +125,24 @@ function AddNewPlace() {
                   : "d-none"
               }
             >
-              {/* <Col>
+              <Col>
                 <button
                   className="pt-2 pb-2 add-new-rent-cancel-btn"
                   onClick={firstBackClick}
                 >
                   BACK
                 </button>
-              </Col> */}
+              </Col>
               
             </Row>
-            {/* <Row className={ (addNewPlaceFormFirstNext && addNewPlaceFormSecondNext) ? "mb-2 add-new-rent-cancel-btn-box" : "d-none" }>
+            <Row className={ (addNewPlaceFormFirstNext && addNewPlaceFormSecondNext) ? "mb-2 add-new-rent-cancel-btn-box" : "d-none" }>
                 <Col >
                     <button className="pt-2 pb-2 add-new-rent-cancel-btn" onClick={secondBackClick} >BACK</button>
                 </Col>
                 <Col >
                     <button type="submit" className="pt-2 pb-2 add-new-rent-next-btn" onClick={thirdNextClick}>SUBMIT</button>
                 </Col>
-            </Row> */}
+            </Row>
           </Form>
         )}
       </Formik>
