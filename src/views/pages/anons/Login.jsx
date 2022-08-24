@@ -3,7 +3,6 @@ import {Button, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {FiLock, FiMail} from "react-icons/fi";
 import axios from "axios";
-import occupants from "../Admin/Occupants";
 
 function Login() {
 
