@@ -59,6 +59,7 @@ function AddNewRent() {
                 <Form.Label>TITLE</Form.Label>
                 <Form.Control
                   type="text"
+                  name="title"
                   placeholder="Enter the title"
                   required
                   onChange={(e) => {
@@ -72,6 +73,7 @@ function AddNewRent() {
                 <Form.Control
                   type="number"
                   placeholder="Enter a number"
+                  name="quantity"
                   min="0"
                   as={NumberFormat}
                   allowNegative={false}
@@ -88,6 +90,7 @@ function AddNewRent() {
                 <Select
                   options={priceType}
                   placeholder="Select Category"
+                  name="price_type"
                   isClearable={true}
                   // onChange={handleOnPriceTypeChange}
                 />
@@ -101,6 +104,7 @@ function AddNewRent() {
                 <Form.Control
                   as="textarea"
                   rows={4}
+                  name="address"
                   placeholder="Enter the address"
                   onChange={(e) => {
                     handleOnChange(e, 'productAddress');
@@ -115,14 +119,16 @@ function AddNewRent() {
                 <Select
                   options={categoryOptions}
                   placeholder="Select Category"
+                  name="room_category"
                   isClearable={true}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>CONTACT</Form.Label>
                 <Form.Control
-                  type="tel"
+                  type="number"
                   placeholder="ex: 94766923712"
+                  name="contact_no"
                   required
                   //onChange={handleOnContactChange}
                   onChange={(e) => {
@@ -136,6 +142,7 @@ function AddNewRent() {
                 <Form.Control
                   placeholder="Enter the Price"
                   as={NumberFormat}
+                  name="price"
                   thousandSeparator={true}
                   allowNegative={false}
                   required
@@ -155,6 +162,7 @@ function AddNewRent() {
                   placeholder="Enter the city"
                   required
                   type="text"
+                  name="city"
                   // onChange={handleOnProductCityChange}
                   onChange={(e) => {
                     handleOnChange(e, 'productCity');
@@ -168,8 +176,9 @@ function AddNewRent() {
               >
                 <Form.Label className="mb-2">POSTAL CODE</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="number"
                   placeholder="Enter the postal code"
+                  name="postal_code"
                   required
                   pattern="[0-9]+"
                   // onChange={handleOnProductCityChange}
@@ -191,6 +200,7 @@ function AddNewRent() {
               <Form.Control
                 as="textarea"
                 rows={4}
+                name="description"
                 placeholder="Enter the description"
                 onChange={(e) => {
                   handleOnChange(e, 'productDescription');
