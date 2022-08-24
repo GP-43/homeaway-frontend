@@ -63,7 +63,7 @@ function LeftNavigation() {
                     <Link to='/admin/complains' className={url === '/admin/complains' ? 'active mb-2' : 'mb-2'}>
                         <li className='px-lg-3 bg-transparent d-flex align-items-center'>
                             <MdReport className='bg-transparent me-3'/>
-                            Complains
+                            Complaints
                         </li>
                     </Link>
                 </ul>
