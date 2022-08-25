@@ -37,7 +37,7 @@ function Signup() {
                                 .required('Required'),
                             name: yup.string().required()
                                 .max(50, 'Must be 50 characters or less')
-                                .min(8, 'Must be 8 characters or more'),
+                                .min(1, 'Must be 1 characters or more'),
                             contact: yup.string().required(),
                             // .matches(phoneRegExp, 'Phone number format: +{country code}-{number}'),
                             location: yup.string().required(),
