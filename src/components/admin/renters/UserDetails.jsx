@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { FaPhoneAlt } from "react-icons/fa";
-import { FaUserAlt } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 function UserDetails({ userDetailsObj }) {
@@ -41,13 +41,13 @@ function UserDetails({ userDetailsObj }) {
                 </Row>
 
                 <Row className='py-4 details'>
-                    <Col className='details-parts' xs={6}>
+                    <Col className='details-parts' xs={5}>
                         <Col xs={1}><FaPhoneAlt className='icon' /></Col>
                         <Col xs={6} className='ps-3 content'>{userDetailsObj.telenumber}</Col>
                     </Col>
-                    <Col className='details-parts' xs={6}>
-                        <Col xs={1}><FaUserAlt className='icon' /></Col>
-                        <Col xs={6} className='ps-3 content'>{userDetailsObj.IDno}</Col>
+                    <Col className='details-parts' xs={7}>
+                        <Col xs={1}><FaEnvelope className='icon' /></Col>
+                        <Col xs={6} className='ps-3 content'>{userDetailsObj.email}</Col>
                     </Col>
                 </Row>
                 <Row className='pt-4 pb-5 details'>
