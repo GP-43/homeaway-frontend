@@ -68,9 +68,9 @@ function AddNewPlace() {
             <Row className={(!addNewPlaceFormFirstNext) && "d-none"}>
                 <AddNewRentFeatureSelection />
             </Row>
-            {/* <Row>
+            <Row>
                 <AddNewRentSheduleSelection/>
-            </Row> */}
+            </Row>
             <Row className={ addNewPlaceFormFirstNext ? "d-none" : "mb-2 add-new-rent-cancel-btn-box"}>
                 <Col >
                     <button className="pt-2 pb-2 add-new-rent-next-btn" onClick={firstNextClick} >NEXT</button>
