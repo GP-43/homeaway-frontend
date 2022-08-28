@@ -2,11 +2,10 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useState } from 'react';
 import ReactDOM from "react-dom";
-import AddNewRentTimeComponent from "./AddNewRentTimeComponent";
 
 
 
-function AddNewRentSheduleSelection() {
+function AddNewRentTimeComponent() {
     const [serviceList, setServiceList] = useState([{ service: "" }]);
 
     const handleServiceChange = (e, index) => {
@@ -35,7 +34,7 @@ function AddNewRentSheduleSelection() {
               <div className="first-division">
                 <input
                   name="service"
-                  type="date"
+                  type="time"
                   id="service"
                   value={singleService.service}
                   onChange={(e) => handleServiceChange(e, index)}
@@ -51,7 +50,7 @@ function AddNewRentSheduleSelection() {
                   </button>
                 )}
 
-                    <AddNewRentTimeComponent/>
+                    
 
               </div>
               <div className="second-division">
@@ -82,4 +81,4 @@ function AddNewRentSheduleSelection() {
 
 }
 
-export default AddNewRentSheduleSelection
+export default AddNewRentTimeComponent
