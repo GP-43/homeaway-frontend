@@ -7,43 +7,43 @@ import AddNewRentTimeComponent from "./AddNewRentTimeComponent";
 
 
 function AddNewRentSheduleSelection() {
-    const [serviceList, setServiceList] = useState([{ service: "" }]);
+    const [rentingDateList, setrentingDateList] = useState([{ rentingDate: "" }]);
 
-    const handleServiceChange = (e, index) => {
+    const handleRentingDate = (e, index) => {
       const { name, value } = e.target;
-      const list = [...serviceList];
+      const list = [...rentingDateList];
       list[index][name] = value;
-      setServiceList(list);
+      setrentingDateList(list);
     };
   
-    const handleServiceRemove = (index) => {
-      const list = [...serviceList];
+    const handleRentingDateRemove = (index) => {
+      const list = [...rentingDateList];
       list.splice(index, 1);
-      setServiceList(list);
+      setrentingDateList(list);
     };
   
-    const handleServiceAdd = () => {
-      setServiceList([...serviceList, { service: "" }]);
+    const handleRentingDateAdd = () => {
+      setrentingDateList([...rentingDateList, { rentingDate: "" }]);
     };
   
     return (
       <form className="App" autoComplete="off">
         <div>
-          {serviceList.map((singleService, index) => (
+          {rentingDateList.map((singlerentingDate, index) => (
             <div key={index}>
               <div>
                 <input
-                  name="service"
+                  name="rentingDate"
                   type="date"
-                  id="service"
-                  value={singleService.service}
-                  onChange={(e) => handleServiceChange(e, index)}
+                  id="rentingDate"
+                  value={singlerentingDate.rentingDate}
+                  onChange={(e) => handleRentingDate(e, index)}
                   required
                 />
-                {serviceList.length - 1 === index && (
+                {rentingDateList.length - 1 === index && (
                   <button
                     type="button"
-                    onClick={handleServiceAdd}
+                    onClick={handleRentingDateAdd}
                     className="add-btn"
                   >
                     <span>Add a Service</span>
@@ -52,10 +52,10 @@ function AddNewRentSheduleSelection() {
 
               </div>
               <div className="second-division">
-                {serviceList.length !== 1 && (
+                {rentingDateList.length !== 1 && (
                   <button
                     type="button"
-                    onClick={() => handleServiceRemove(index)}
+                    onClick={() => handleRentingDateRemove(index)}
                     className="remove-btn"
                   >
                     <span>Remove</span>
@@ -65,7 +65,7 @@ function AddNewRentSheduleSelection() {
 
               
 
-              <AddNewRentTimeComponent date = {singleService.service}/>
+              <AddNewRentTimeComponent date = {singlerentingDate.rentingDate}/>
               
             </div>
 

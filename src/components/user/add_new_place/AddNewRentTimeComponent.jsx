@@ -5,39 +5,60 @@ import { useState } from 'react';
 
 
 function AddNewRentTimeComponent(props) {
-    const [serviceList, setServiceList] = useState([{ service: "" }]);
+  // From Time
+    const [rentingFromTimeList, setRentingFromTimeList] = useState([{ RentingFromTime: "" }]);
 
-    const handleServiceChange = (e, index) => {
+    const handleRentingFromTimeChange = (e, index) => {
       const { name, value } = e.target;
-      const list = [...serviceList];
+      const list = [...rentingFromTimeList];
       list[index][name] = value;
-      setServiceList(list);
+      setRentingFromTimeList(list);
     };
   
-    const handleServiceRemove = (index) => {
-      const list = [...serviceList];
+    const handleRentingFromTimeRemove = (index) => {
+      const list = [...rentingFromTimeList];
       list.splice(index, 1);
-      setServiceList(list);
+      setRentingFromTimeList(list);
     };
   
-    const handleServiceAdd = () => {
-      setServiceList([...serviceList, { service: "" }]);
+    const handleRentingFromTimeAdd = () => {
+      setRentingFromTimeList([...rentingFromTimeList, { RentingFromTime: "" }]);
+    };
+
+    // To time
+    const [rentingToTimeList, setRentingToTimeList] = useState([{ RentingToTime: "" }]);
+
+    const handleRentingToTimeChange = (e, index) => {
+      const { name, value } = e.target;
+      const list = [...rentingToTimeList];
+      list[index][name] = value;
+      setRentingToTimeList(list);
+    };
+  
+    const handleRentingToTimeRemove = (index) => {
+      const list = [...rentingToTimeList];
+      list.splice(index, 1);
+      setRentingToTimeList(list);
+    };
+  
+    const handleRentingToTimeAdd = () => {
+      setRentingToTimeList([...rentingToTimeList, { RentingToTime: "" }]);
     };
   
     return (
     <>
       
       <div className="form-field">
-          {serviceList.map((singleService, index) => (
+          {rentingFromTimeList.map((singleRentingFromTime, index) => (
             <div key={index} className="services">
               <div className="first-division">
                 <span> From </span>
                 <input
-                  name="service"
+                  name="RentingFromTime"
                   type="time"
-                  id="service"
-                  value={singleService.service}
-                  onChange={(e) => handleServiceChange(e, index)}
+                  id="RentingFromTime"
+                  value={singleRentingFromTime.RentingFromTime}
+                  onChange={(e) => handleRentingFromTimeChange(e, index)}
                   required
                 />
                 <span> To </span>
@@ -45,14 +66,14 @@ function AddNewRentTimeComponent(props) {
                   name="service"
                   type="time"
                   id="service"
-                  value={singleService.service}
-                  onChange={(e) => handleServiceChange(e, index)}
+                  value={singleRentingToTime.RentingToTime}
+                  onChange={(e) => handleRentingToTimeChange(e, index)}
                   required
                 />
-                {serviceList.length - 1 === index && (
+                {rentingFromTimeList.length - 1 === index && (
                   <button
                     type="button"
-                    onClick={handleServiceAdd}
+                    onClick={handleRentingFromTimeAdd}
                     className="add-btn"
                   >
                     <span>Add a Service</span>
@@ -63,10 +84,10 @@ function AddNewRentTimeComponent(props) {
 
               </div>
               <div className="second-division">
-                {serviceList.length !== 1 && (
+                {rentingFromTimeList.length !== 1 && (
                   <button
                     type="button"
-                    onClick={() => handleServiceRemove(index)}
+                    onClick={() => handleRentingFromTimeRemove(index)}
                     className="remove-btn"
                   >
                     <span>Remove</span>
@@ -84,10 +105,10 @@ function AddNewRentTimeComponent(props) {
             </li>
           </ul>
           <h2>Time</h2>
-          {serviceList &&
-            serviceList.map((singleService, index) => (
+          {rentingFromTimeList &&
+            rentingFromTimeList.map((singleRentingFromTime, index) => (
               <ul key={index}>
-                {singleService.service && <li>{singleService.service}</li>}
+                {singleRentingFromTime.RentingFromTime && <li>{singleRentingFromTime.RentingFromTime}</li>}
               </ul>
             ))}
         </div>
