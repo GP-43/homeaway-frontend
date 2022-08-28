@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useState } from 'react';
-import ReactDOM from "react-dom";
 
 
 
@@ -29,11 +28,10 @@ function AddNewRentTimeComponent(props) {
     <>
       
       <div className="form-field">
-          <label htmlFor="service">Service(s)</label>
           {serviceList.map((singleService, index) => (
             <div key={index} className="services">
               <div className="first-division">
-                <span>from</span>
+                <span> From </span>
                 <input
                   name="service"
                   type="time"
@@ -42,7 +40,7 @@ function AddNewRentTimeComponent(props) {
                   onChange={(e) => handleServiceChange(e, index)}
                   required
                 />
-                <span>to</span>
+                <span> To </span>
                 <input
                   name="service"
                   type="time"

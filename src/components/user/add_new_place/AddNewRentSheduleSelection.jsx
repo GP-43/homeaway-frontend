@@ -28,11 +28,10 @@ function AddNewRentSheduleSelection() {
   
     return (
       <form className="App" autoComplete="off">
-        <div className="form-field">
-          <label htmlFor="service">Service(s)</label>
+        <div>
           {serviceList.map((singleService, index) => (
-            <div key={index} className="services">
-              <div className="first-division">
+            <div key={index}>
+              <div>
                 <input
                   name="service"
                   type="date"
