@@ -51,8 +51,6 @@ function AddNewRentSheduleSelection() {
                   </button>
                 )}
 
-                    <AddNewRentTimeComponent/>
-
               </div>
               <div className="second-division">
                 {serviceList.length !== 1 && (
@@ -65,18 +63,25 @@ function AddNewRentSheduleSelection() {
                   </button>
                 )}
               </div>
+
+              
+
+              <AddNewRentTimeComponent date = {singleService.service}/>
+              
             </div>
+
+            
           ))}
         </div>
-        <div className="output">
-          <h2>Output</h2>
+        {/* <div className="output">
+          <h2>Date</h2>
           {serviceList &&
             serviceList.map((singleService, index) => (
               <ul key={index}>
                 {singleService.service && <li>{singleService.service}</li>}
               </ul>
             ))}
-        </div>
+        </div> */}
       </form>
     );
 

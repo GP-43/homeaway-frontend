@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 
 
 
-function AddNewRentTimeComponent() {
+function AddNewRentTimeComponent(props) {
     const [serviceList, setServiceList] = useState([{ service: "" }]);
 
     const handleServiceChange = (e, index) => {
@@ -26,12 +26,23 @@ function AddNewRentTimeComponent() {
     };
   
     return (
-      <form className="App" autoComplete="off">
-        <div className="form-field">
+    <>
+      
+      <div className="form-field">
           <label htmlFor="service">Service(s)</label>
           {serviceList.map((singleService, index) => (
             <div key={index} className="services">
               <div className="first-division">
+                <span>from</span>
+                <input
+                  name="service"
+                  type="time"
+                  id="service"
+                  value={singleService.service}
+                  onChange={(e) => handleServiceChange(e, index)}
+                  required
+                />
+                <span>to</span>
                 <input
                   name="service"
                   type="time"
@@ -68,7 +79,13 @@ function AddNewRentTimeComponent() {
           ))}
         </div>
         <div className="output">
-          <h2>Output</h2>
+          <h2>Date</h2>
+          <ul>
+            <li>
+                  {props.date}
+            </li>
+          </ul>
+          <h2>Time</h2>
           {serviceList &&
             serviceList.map((singleService, index) => (
               <ul key={index}>
@@ -76,7 +93,7 @@ function AddNewRentTimeComponent() {
               </ul>
             ))}
         </div>
-      </form>
+    </>
     );
 
 }
