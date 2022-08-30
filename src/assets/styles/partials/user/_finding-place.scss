@@ -311,7 +311,7 @@
     margin-left: 60px;
 
     .radio-label {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     input {
@@ -340,6 +340,9 @@
     }
     .filter-check-box {
       margin-left: 30px;
+      .radio-label{
+        font-size: 0.9rem;
+      }
     }
     .filter-card {
       margin-top: 5px;
