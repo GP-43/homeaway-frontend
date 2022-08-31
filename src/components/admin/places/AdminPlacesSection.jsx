@@ -15,12 +15,25 @@ import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
 import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
 import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
+import { useEffect } from 'react';
 
 
 function AdminPlacesSection() {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
+    const [places, setPlaces] = useState([])
+
+    useEffect(() => {
+        const fetchPlaces = () => {
+            // localhost:8080/places
+            fetch('https://jsonplaceholder.typicode.com/todos')
+                .then(response => response.json())
+                .then(json => setPlaces(json))
+        }
+
+        fetchPlaces();
+    }, [])
 
     const placeData = [
         {
@@ -176,7 +189,7 @@ function AdminPlacesSection() {
                 </Col>
             </Row>
             <Row>
-                {placeData.filter((val) => {
+                {/* {placeData.filter((val) => {
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
@@ -242,6 +255,19 @@ function AdminPlacesSection() {
                             />
                         </Col>
                     )
+                })} */}
+
+
+                {places && places.map(val => {
+                    return <PlaceCard
+                        Title={val.title}
+                        Src={val.Src}
+                        City={val.City}
+                        Price={val.Price}
+                        Quantity={val.Quantity}
+                        Rating={val.Rating}
+                        CreateDate={val.CreateDate}
+                    />
                 })}
             </Row>
         </Col >
