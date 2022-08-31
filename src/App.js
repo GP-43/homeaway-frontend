@@ -19,6 +19,7 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import AddNewPlace from "./views/pages/user/AddNewPlace";
 import Complaints from './views/pages/Admin/Complaints';
+import PrivateRoute from "./PrivateRoute";
 function App() {
     return (
         <div>
