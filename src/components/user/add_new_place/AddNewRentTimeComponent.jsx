@@ -6,13 +6,14 @@ import { useState } from 'react';
 
 function AddNewRentTimeComponent(props) {
   // From Time
-    const [rentingFromTimeList, setRentingFromTimeList] = useState([{ RentingFromTime: "" }]);
+    const [rentingFromTimeList, setRentingFromTimeList] = useState([{ RentingFromTime: "", RentingToTime: "" }]);
 
     const handleRentingFromTimeChange = (e, index) => {
       const { name, value } = e.target;
       const list = [...rentingFromTimeList];
       list[index][name] = value;
       setRentingFromTimeList(list);
+      console.log(rentingFromTimeList);
     };
   
     const handleRentingFromTimeRemove = (index) => {
@@ -22,27 +23,7 @@ function AddNewRentTimeComponent(props) {
     };
   
     const handleRentingFromTimeAdd = () => {
-      setRentingFromTimeList([...rentingFromTimeList, { RentingFromTime: "" }]);
-    };
-
-    // To time
-    const [rentingToTimeList, setRentingToTimeList] = useState([{ RentingToTime: "" }]);
-
-    const handleRentingToTimeChange = (e, index) => {
-      const { name, value } = e.target;
-      const list = [...rentingToTimeList];
-      list[index][name] = value;
-      setRentingToTimeList(list);
-    };
-  
-    const handleRentingToTimeRemove = (index) => {
-      const list = [...rentingToTimeList];
-      list.splice(index, 1);
-      setRentingToTimeList(list);
-    };
-  
-    const handleRentingToTimeAdd = () => {
-      setRentingToTimeList([...rentingToTimeList, { RentingToTime: "" }]);
+      setRentingFromTimeList([...rentingFromTimeList, { RentingFromTime: "", RentingToTime: ""  }]);
     };
   
     return (
@@ -63,11 +44,11 @@ function AddNewRentTimeComponent(props) {
                 />
                 <span> To </span>
                 <input
-                  name="service"
+                  name="RentingToTime"
                   type="time"
-                  id="service"
-                  value={singleRentingToTime.RentingToTime}
-                  onChange={(e) => handleRentingToTimeChange(e, index)}
+                  id="RentingToTime"
+                  value={singleRentingFromTime.RentingToTime}
+                  onChange={(e) => handleRentingFromTimeChange(e, index)}
                   required
                 />
                 {rentingFromTimeList.length - 1 === index && (
@@ -108,7 +89,7 @@ function AddNewRentTimeComponent(props) {
           {rentingFromTimeList &&
             rentingFromTimeList.map((singleRentingFromTime, index) => (
               <ul key={index}>
-                {singleRentingFromTime.RentingFromTime && <li>{singleRentingFromTime.RentingFromTime}</li>}
+                {singleRentingFromTime.RentingFromTime && <li>{singleRentingFromTime.RentingFromTime} {singleRentingFromTime.RentingToTime}</li>}
               </ul>
             ))}
         </div>

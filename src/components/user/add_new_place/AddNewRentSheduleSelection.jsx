@@ -7,7 +7,7 @@ import AddNewRentTimeComponent from "./AddNewRentTimeComponent";
 
 
 function AddNewRentSheduleSelection() {
-    const [rentingDateList, setrentingDateList] = useState([{ rentingDate: "" }]);
+    const [rentingDateList, setrentingDateList] = useState([{ rentingDate: "" , rentingTimes : [{ RentingFromTime: "", RentingToTime: "" }] }]);
 
     const handleRentingDate = (e, index) => {
       const { name, value } = e.target;
@@ -62,11 +62,7 @@ function AddNewRentSheduleSelection() {
                   </button>
                 )}
               </div>
-
-              
-
               <AddNewRentTimeComponent date = {singlerentingDate.rentingDate}/>
-              
             </div>
 
             
