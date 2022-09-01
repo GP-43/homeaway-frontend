@@ -1,9 +1,10 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PlaceCard from "./PlaceCard";
 import { FaExchangeAlt } from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
+import axios from 'axios';
 
 
 //images
@@ -21,8 +22,46 @@ function AdminPlacesSection() {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
+    const [places, setPlaces] = useState([])
 
-    const placeData = [
+    useEffect(() => {
+        axios.get("http://localhost:4000/places").then((response) => {
+            console.log(response);
+
+        });
+
+
+        // const fetchPlaces = () => {
+        //     fetch('http://localhost:4000/places')
+        //         .then(response => response.json())
+        //         .then(json => setPlaces(json))
+        // }
+
+        //fetchPlaces();
+    }, []);
+
+
+
+    // const handleOnLogin = (event) => {
+    //     event.preventDefault();
+    //     const data = { email: email, password: password };
+    //     axios.post("http://localhost:4000/auth/login", data).then((response) => {
+    //         if (response.data.state === 1) {
+    //             sessionStorage.setItem("accessToken", response.data);
+    //             if (response.data.data.role == 2) {
+    //                 window.location.replace("/user");
+    //             } else if (response.data.data.role == 1) {
+    //                 window.location.replace("/admin/dashboard");
+    //             }
+
+    //         } else {
+
+    //         }
+    //     });
+    // }
+
+
+    /*const placeData = [
         {
             Src: place1,
             Title: "Meeting room",
@@ -130,7 +169,7 @@ function AdminPlacesSection() {
             Rating: 2.8,
             CreateDate: "2022-05-22"
         },
-    ];
+    ];*/
 
     return (
         <Col className='top-selling-products'>
@@ -176,7 +215,7 @@ function AdminPlacesSection() {
                 </Col>
             </Row>
             <Row>
-                {placeData.filter((val) => {
+                {places && places.filter((val) => {
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
@@ -232,7 +271,7 @@ function AdminPlacesSection() {
                     return (
                         <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                             <PlaceCard
-                                Title={val.Title}
+                                Title={val.title}
                                 Src={val.Src}
                                 City={val.City}
                                 Price={val.Price}
