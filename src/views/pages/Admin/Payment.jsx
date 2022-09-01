@@ -22,21 +22,24 @@ function Payment() {
         <Col xs={8}>
           <Row className="testing-1 ">
 
-            <Col xs={6}>
+            <Col xs={5}>
               <AccountCard />
             </Col>
 
-            <Col xs={2}>
-              <BookingCard />
+            <Col xs={6}>
+              <Col xs={4} className="ms-2 me-3">
+                <BookingCard />
+              </Col>
+
+              <Col xs={4} className="mx-3">
+                <CancelledBookingCard />
+              </Col>
+
+              <Col xs={4} className="ms-3">
+                <TotalIncomeCard />
+              </Col>
             </Col>
 
-            <Col xs={2}>
-              <CancelledBookingCard />
-            </Col>
-
-            <Col xs={2}>
-              <TotalIncomeCard />
-            </Col>
           </Row>
 
           <Row className="mx-0 user-list-card">
@@ -46,7 +49,7 @@ function Payment() {
           </Row>
 
         </Col>
-        <Col>
+        <Col className='ms-2'>
           <Row className="mx-0"><AdminCalendar /></Row>
           <Row className="mx-0">
             <Col className="px-0 mx-0 daily-transaction-box">
