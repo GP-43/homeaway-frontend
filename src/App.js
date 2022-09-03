@@ -19,7 +19,7 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import AddNewPlace from "./views/pages/user/AddNewPlace";
 import Complaints from './views/pages/Admin/Complaints';
-import PrivateRoute from "./PrivateRoute";
+import ProtectedRoutes from "./ProtectedRoutes";
 function App() {
     return (
         <div>
@@ -29,13 +29,15 @@ function App() {
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
                 </Route>
-                <Route path='/user' element={<HomeAwayUser />}>
+
+                <Route path='/user' element={<ProtectedRoutes><HomeAwayUser /></ProtectedRoutes>}>
                     <Route path='/user/' element={<UserHome />} />
                     <Route path='/user/userbookings' element={<UserBookings />} />
                     <Route path='/user/userrentings' element={<UserRentings />} />
                     <Route path='/user/placedescription' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
                 </Route>
+
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
                     <Route path='/admin/occupants' element={<Occupant />} />
