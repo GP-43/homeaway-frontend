@@ -29,14 +29,15 @@
 import {Outlet, Navigate} from "react-router";
 import Login from "./views/pages/anons/Login";
 
-const useAuth = () => {
-    const user = { loggedIn: false };
-    return user && user.loggedIn;
-};
 
-const ProtectedRoutes = () => {
-    const isAuth =useAuth();
-    return isAuth ? <Outlet/>: <Navigate to={<Login/>} />;
-};
+    const useAuth = () => {
+        const user = {loggedIn: false};
+        return user && user.loggedIn;
+    };
+
+    const ProtectedRoutes = () => {
+        const isAuth = useAuth();
+        return isAuth ? <Outlet/> : <Navigate to={<Login/>}/>;
+    };
 
 export default ProtectedRoutes;
