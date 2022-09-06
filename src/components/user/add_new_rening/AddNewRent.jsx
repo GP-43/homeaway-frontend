@@ -35,11 +35,18 @@ function AddNewRent() {
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState("noImage");
+  const [uploadImage, setUploadImage] = useState(null);
+  const [wifi, setWifi] = useState(0);
+  const [parking, setParking] = useState(0);
+  const [ac, setAC] = useState(0);
+  const [silent,setSilent] = useState(0);
+  const [food,setFood] = useState(0);
+  const [washroom,setWashroom] = useState(0);
 
-  let addNewFormData = {};
+  var addNewFormData = {};
 
-  useEffect(() => {
-    console.log(roomCategory);
+  function updateForm(){
     addNewFormData = {
       title: title,
       quantity: quantity,
@@ -51,7 +58,19 @@ function AddNewRent() {
       city: city,
       postalCode: postalCode,
       description: description,
+      wifi: wifi,
+      parking: parking,
+      ac: ac,
+      silent: silent,
+      food: food,
+      washroom:washroom,
     };
+  }
+
+  useEffect(() => {
+    // console.log(addNewFormData);
+    updateForm();
+    // console.log(addNewFormData);
   }, [
     title,
     quantity,
@@ -63,11 +82,16 @@ function AddNewRent() {
     city,
     postalCode,
     description,
+    wifi,
+    parking,
+    ac,
+    silent,
+    food,
+    washroom,
   ]);
 
   const [productRating, setProductRating] = useState(0);
 
-  const [image, setImage] = useState("noImage");
   const [isImageUploaded, setIsImageUploaded] = useState(false);
 
   const [formState, setFormState] = useState({
@@ -92,6 +116,7 @@ function AddNewRent() {
 
   const handleImageChange = (event) => {
     setImage(URL.createObjectURL(event.target.files[0]));
+    setUploadImage(event.target.files[0]);
     setIsImageUploaded(true);
   };
 
@@ -122,11 +147,25 @@ function AddNewRent() {
     city: "",
     postalCode: 0,
     description: "",
-  };
+  }; 
 
   const handleOnSubmit = (event) => {
+    updateForm();
+    event.preventDefault(); 
+    const formData = new FormData();
+    formData.append("image", uploadImage);
+    formData.append("addNewFormData", JSON.stringify(addNewFormData));
+
+    for (var key of formData.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+  }
+
     axios
-      .post("http://localhost:4000/addnewrent", addNewFormData)
+      .post("http://localhost:4000/addnewrent", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((response) => {
         console.log("it worked");
       });
@@ -178,7 +217,7 @@ function AddNewRent() {
                   onChange={(event) => {
                     setPriceType(event.value);
                   }}
-                  // value={priceType}
+                  value={priceTypes.label}
                   // onChange={handleOnPriceTypeChange}
                 />
               </Form.Group>
@@ -207,13 +246,14 @@ function AddNewRent() {
                 <Select
                   options={categoryOptions}
                   placeholder="Select Category"
-                  name="roomCategory"
+                  name="priceType"
                   isClearable={true}
                   required
                   onChange={(event) => {
                     setRoomCategory(event.value);
                   }}
-                  // value={roomCategory}
+                  value={categoryOptions.label}
+                  // onChange={handleOnPriceTypeChange}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
@@ -326,13 +366,31 @@ function AddNewRent() {
           <Col className="form-control mb-4">
             <Row>
               <Col className="d-flex">
-                <input type="checkbox" className="add-new-rent-checkbox" />
+                <input
+                  type="checkbox"
+                  className="add-new-rent-checkbox"
+                  value={wifi}
+                  onChange={(event) => {
+                    setWifi(event.target.checked);
+                  }}
+                  id="wifi"
+                  name="wifi"
+                />
                 <label for="feature1" className="ms-2">
-                  Internet
+                  WIFI
                 </label>
               </Col>
               <Col className="d-flex">
-                <input type="checkbox" className="add-new-rent-checkbox" />
+                <input
+                  type="checkbox"
+                  className="add-new-rent-checkbox"
+                  value={parking}
+                  onChange={(event) => {
+                    setParking(event.target.checked);
+                  }}
+                  id="parking"
+                  name="parking"
+                />
                 <label for="feature2" className="ms-2">
                   Parking
                 </label>
@@ -340,13 +398,31 @@ function AddNewRent() {
             </Row>
             <Row>
               <Col className="d-flex">
-                <input type="checkbox" className="add-new-rent-checkbox" />
+                <input
+                  type="checkbox"
+                  className="add-new-rent-checkbox"
+                  value={ac}
+                  onChange={(event) => {
+                    setAC(event.target.checked);
+                  }}
+                  id="ac"
+                  name="ac"
+                />
                 <label for="feature3" className="ms-2">
                   A/C
                 </label>
               </Col>
               <Col className="d-flex">
-                <input type="checkbox" className="add-new-rent-checkbox" />
+                <input
+                  type="checkbox"
+                  className="add-new-rent-checkbox"
+                  value={silent}
+                  onChange={(event) => {
+                    setSilent(event.target.checked);
+                  }}
+                  id="silent"
+                  name="silent"
+                />
                 <label for="feature4" className="ms-2">
                   Silent area
                 </label>
@@ -354,13 +430,31 @@ function AddNewRent() {
             </Row>
             <Row className="mb-4">
               <Col className="d-flex">
-                <input type="checkbox" className="add-new-rent-checkbox" />
+                <input
+                  type="checkbox"
+                  className="add-new-rent-checkbox"
+                  value={food}
+                  onChange={(event) => {
+                    setFood(event.target.checked);
+                  }}
+                  id="food"
+                  name="food"
+                />
                 <label for="feature5" className="ms-2">
-                  Can by food
+                  Food & Beverage
                 </label>
               </Col>
               <Col className="d-flex">
-                <input type="checkbox" className="add-new-rent-checkbox" />
+                <input
+                  type="checkbox"
+                  className="add-new-rent-checkbox"
+                  value={washroom}
+                  onChange={(event) => {
+                    setWashroom(event.target.checked);
+                  }}
+                  id="washroom"
+                  name="washroom"
+                />
                 <label for="feature6" className="ms-2">
                   Washroom
                 </label>
