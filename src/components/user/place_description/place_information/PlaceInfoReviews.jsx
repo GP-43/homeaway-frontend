@@ -3,10 +3,10 @@ import {Row, Col} from 'react-bootstrap';
 import PlaceInfoReviewsItem from './PlaceInfoReviewsItem';
 
 // images
-import p1 from "../../../assets/images/admin/occupant/p1.jpg";
-import p2 from "../../../assets/images/admin/occupant/p2.jpg";
-import p3 from "../../../assets/images/admin/occupant/p3.jpg";
-import p4 from "../../../assets/images/admin/occupant/p4.jpg";
+import p1 from "../../../../assets/images/admin/occupant/p1.jpg";
+import p2 from "../../../../assets/images/admin/occupant/p2.jpg";
+import p3 from "../../../../assets/images/admin/occupant/p3.jpg";
+import p4 from "../../../../assets/images/admin/occupant/p4.jpg";
 
 function PlaceInfoReviews() {
     const review_array = [{image : p1 , fName : "Saman", lName : "Kumara", comment : "it's amaizing"},
