@@ -5,16 +5,19 @@ import { Col, Row, Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const deleteComplain = () =>{
+let fetchComplatints;
+
+const deleteComplain = (complaintId, hideModal) =>{
     
-    var Id = localStorage.getItem("ComplainID");
-    localStorage.removeItem("ComplainID");
-    console.log(Id);
+    var Id = complaintId;
+    console.log("Delete complaint:",Id);
     
     axois
-      .get("http://localhost:4000/admin/delete/complaint/"+Id)
+      .delete("http://localhost:4000/admin/delete/complaint/"+Id)
       .then(() => {
         console.log("Work");
+        fetchComplatints();
+        hideModal();
       })
       .catch((error) => {
         console.log(error);
@@ -35,15 +38,30 @@ function DeletePopup(props) {
           <p>Do you want delete? This action cannot be undone.</p>
         </Modal.Body>
         <Modal.Footer >
-            <Button className='confirm-delete btn-danger' onClick={deleteComplain}>Reject</Button>
+            <Button className='confirm-delete btn-danger' onClick={()=>deleteComplain(props.complaintId, props.onHide)}>Reject</Button>
           <Button onClick={props.onHide}>Cancel</Button>
         </Modal.Footer>
       </Modal>
     );
   }
-
+function acceptComplaint(complaintId){
+  var Id = complaintId;
+  console.log("Accept complaint:",Id);
+  
+  axois
+    .put("http://localhost:4000/admin/delete/complaint/"+Id)
+    .then(() => {
+      console.log("Work");
+      fetchComplatints();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
 function AdminComplaintsTableRow(props) {
+
+  fetchComplatints = props.fetchComplatints;
 
     const Id = props.caseNo;
 
@@ -53,6 +71,9 @@ function AdminComplaintsTableRow(props) {
         <Row className='admin-complain-table-row mx-0 px-0'>
             <Col xs={1} className="px-0">
                 <p className='admin-complain-table-row-text'>{props.caseNo}</p>
+            </Col>
+            <Col xs={1} className="px-0">
+                <p className='admin-complain-table-row-text'>{props.index + 1}</p>
             </Col>
             <Col xs={2} className="px-0">
                 <p className='admin-complain-table-row-text'>{props.subject}</p>
@@ -66,7 +87,7 @@ function AdminComplaintsTableRow(props) {
             <Col xs={2} className="px-0">
                 <p className='admin-complain-table-row-text'>{props.date} <br /> {props.time}</p></Col> */}
             <Col xs={1} className="px-0">
-                <button className='admin-complaint-accept-btn px-3 pb-0' variant="primary">
+                <button className='admin-complaint-accept-btn px-3 pb-0' variant="primary" onClick={()=>acceptComplaint(Id)}>
                     <p>ACCEPT</p>
                 </button>
                 
@@ -74,15 +95,14 @@ function AdminComplaintsTableRow(props) {
             <Col xs={1} className="px-0">
                 <button className='admin-complaint-delete-btn px-3 pb-0' variant="primary" onClick={() =>
                 {
-                    localStorage.setItem("ComplainID", Id);
                     setModalShow(true)
                 }}>
                     <p>REJECT</p>
                 </button>
                 
-                <DeletePopup show={modalShow} onHide={() => setModalShow(false)} />
+                <DeletePopup show={modalShow} onHide={() => setModalShow(false)} complaintId={Id}/>
             </Col>
         </Row>
-    );
+    ); 
 }
 export default AdminComplaintsTableRow

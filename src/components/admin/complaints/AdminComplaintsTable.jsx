@@ -6,7 +6,7 @@ import AdminComplaintsTableRow from "./AdminComplaintsTableRow";
 function AdminComplaintsTable() {
   const [details, setDetails] = useState({});
 
-  useEffect((event) => {
+  function fetchComplatints(){
     axois
       .get("http://localhost:4000/admin/select/complaints")
       .then((data) => {
@@ -17,6 +17,10 @@ function AdminComplaintsTable() {
       .catch((error) => {
         console.log(error);
       });
+  }
+
+  useEffect((event) => {
+    fetchComplatints();
   }, []);
 
   const complaints_data = [
@@ -67,10 +71,12 @@ function AdminComplaintsTable() {
         <Row className="admin-complaint-table-data">
           {Object.keys(details).map((key, index) => (
             <AdminComplaintsTableRow
+              index={index}
               caseNo={details[index].id}
               complainerId={details[index].compliner_id}
               complaineeId={details[index].complainee_id}
               subject={details[index].subject}
+              fetchComplatints={fetchComplatints}
               // Src={i.Src}
             />
           ))}
