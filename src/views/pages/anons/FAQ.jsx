@@ -6,6 +6,7 @@ function FAQ() {
         <Container>
             <Col className='my-lg-5'>
                 <FAQ_question/>
+                <FAQ_question/>
             </Col>
         </Container>
     )
