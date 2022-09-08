@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import girl1 from "../../../assets/images/renters/girl1.jpg";
 import { FaStar } from "react-icons/fa";
 
@@ -19,8 +19,9 @@ function RenterDetails() {
                 </Col>
               </Col>
               <Col className="renter-col text-center">
-                <Col className="renter-no"><p className="renter-no-box bg-white p-2">+94 71 *** *****</p></Col>
-                <Col className="renter-message"><p className="bg-black renter-message-box">Message owner</p></Col>
+                <Col className="renter-no d-flex"><p className="renter-no-box bg-white p-2">+94 71 *** *****</p></Col>
+                <Button className="renter-buttons renter-message mb-2 border-0">Message Place Owner</Button>
+                <Button className="renter-buttons renter-message border-0">Rate The Place</Button>
               </Col>
             </Row>
           </Card.Body>

@@ -2,9 +2,10 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ImageGallery from "../../../components/user/place_description/imagegallery/ImageGallery";
 import PlaceDetails from "../../../components/user/place_description/PlaceDetails";
-import RenterDetails from "../../../components/user/renter/RenterDetails";
-import PlaceInformation from "../../../components/user/place_information/PlaceInformation";
+import RenterDetails from "../../../components/user/place_description/RenterDetails";
+import PlaceInformation from "../../../components/user/place_description/place_information/PlaceInformation";
 import MakeBooking from "../../../components/user/place_description/make_booking/MakeBooking";
+import AddRating from "../../../components/user/place_description/AddRating";
 
 function PlaceDescription() {
   return (
@@ -20,6 +21,7 @@ function PlaceDescription() {
         </Col>
         <Col lg={6}>
           <RenterDetails />
+          {/*<AddRating/>*/}
         </Col>
       </Row>
       <Row className="mx-0 mt-2">

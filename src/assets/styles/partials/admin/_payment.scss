@@ -1,3 +1,7 @@
+.payment-small-card {
+    display: flex;
+}
+
 .card-container-payment {
     .testing-card {
         border: solid;
@@ -5,18 +9,13 @@
         //color: white;
         background-color: rgb(100, 99, 99);
 
-        .wifi-icon {
-            margin-left: -22rem;
-            color: white;
-        }
-
         .number {
             font-size: larger;
             font-weight: 500;
             color: white;
 
             .last {
-                padding-right: 8rem;
+                padding-right: 3rem;
 
             }
 
@@ -60,8 +59,8 @@
             padding-bottom: 0.4rem;
             padding-right: 1rem;
             position: absolute;
-            margin-left: 1rem;
-            margin-top: 1rem;
+            margin-left: 1.2rem;
+            //margin-top: 1rem;
 
             .card-icon {
                 height: 30px;
@@ -114,9 +113,9 @@
         background-color: black;
         color: white;
         justify-content: center;
-        padding-bottom: 2rem;
+        //padding-bottom: 1rem;
 
-        margin-bottom: 1rem;
+        //margin-bottom: 1rem;
         text-align: center;
     }
 
@@ -127,7 +126,7 @@
         background-color: black;
         color: white;
         justify-content: center;
-        margin-top: 6rem;
+        margin-top: 4.5rem;
         text-align: center;
     }
 
@@ -136,7 +135,7 @@
         font-size: larger;
         color: white;
         justify-content: center;
-        padding-bottom: 0.7rem;
+        //padding-bottom: 0.7rem;
         font-weight: 600;
 
     }
@@ -178,27 +177,31 @@
         display: none;
     }
 }
-.singlerow{
+
+.singlerow {
     border: solid;
     border-width: thin;
     border-radius: 17px;
     border-color: #5EB461;
-    
-    .rentername{
+
+    .rentername {
         color: #344767;
         font-size: larger;
         font-weight: 500;
     }
-    .test-data{
+
+    .test-data {
         margin-left: -2rem;
         font-size: small;
         color: #344767;
     }
-    .test-data-top{
+
+    .test-data-top {
         margin-left: -2rem;
 
     }
-    .top-data{
+
+    .top-data {
         color: #7B809A;
         font-size: small;
     }
