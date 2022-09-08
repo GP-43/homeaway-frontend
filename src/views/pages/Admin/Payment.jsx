@@ -26,7 +26,7 @@ function Payment() {
               <AccountCard />
             </Col>
 
-            <Col xs={6}>
+            <Col xs={6} className="payment-small-card">
               <Col xs={4} className="ms-2 me-3">
                 <BookingCard />
               </Col>
