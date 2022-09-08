@@ -19,6 +19,7 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import AddNewPlace from "./views/pages/user/AddNewPlace";
 import Complaints from './views/pages/Admin/Complaints';
+import FAQ from "./views/pages/anons/FAQ";
 function App() {
     return (
         <div>
@@ -27,6 +28,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
+                    <Route path='/faq' element={<FAQ/>} />
                 </Route>
                 <Route path='/user' element={<HomeAwayUser />}>
                     <Route path='/user/' element={<UserHome />} />
