@@ -11,6 +11,7 @@ import PlaceCard from "../place_card/PlaceCard.jsx";
 import axios from "axios";
 import * as Yup from "yup";
 import { useEffect } from "react";
+import {Routes, Route, useNavigate} from 'react-router-dom';
 
 function AddNewRent() {
   const categoryOptions = [
@@ -149,7 +150,10 @@ function AddNewRent() {
     description: "",
   }; 
 
+  const navigate = useNavigate();
+
   const handleOnSubmit = (event) => {
+    navigate('/user/userrentings');
     updateForm();
     event.preventDefault(); 
     const formData = new FormData();
@@ -519,11 +523,11 @@ function AddNewRent() {
               </label>
               <Col lg={5}>
                 <PlaceCard
-                  Title={formState.productName}
+                  Title={title}
                   Src={image}
-                  City={formState.productCity}
-                  Price={formState.productPrice}
-                  Quantity={formState.productQuantity}
+                  City={city}
+                  Price={price}
+                  Quantity={quantity}
                   Rating={productRating}
                 />
               </Col>
