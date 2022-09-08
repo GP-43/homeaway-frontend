@@ -1,25 +1,24 @@
 import React from "react";
-import {Col, Container, Row, Form, Button} from "react-bootstrap";
+import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import NumberFormat from "react-number-format";
 import Select from "react-select";
 import GoogleMap from "./GoogleMap";
 import AddImages from "./AddImages";
-import {useState} from "react";
-import {FaThumbsUp} from "react-icons/fa";
-import {Image} from "react-feather";
+import { useState } from "react";
+import { FaThumbsUp } from "react-icons/fa";
+import { Image } from "react-feather";
 import PlaceCard from "../place_card/PlaceCard.jsx";
 import axios from "axios";
-import {Formik} from "formik";
 import * as Yup from "yup";
 import { useEffect } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
 function AddNewRent() {
-    const categoryOptions = [
-        {value: "meeting-room", label: "Meetings"},
-        {value: "office-room", label: "Office"},
-        {value: "study-room", label: "Study"},
-    ];
+  const categoryOptions = [
+    { value: "meeting-room", label: "Meetings" },
+    { value: "office-room", label: "Office" },
+    { value: "study-room", label: "Study" },
+  ];
 
   const priceTypes = [
     { value: "hour", label: "For an hour" },
@@ -135,6 +134,8 @@ function AddNewRent() {
       event.preventDefault();
       event.stopPropagation();
     }
+    setValidated(true);
+  };
 
   const initialValues = {
     title: "",
