@@ -1,15 +1,15 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 
 function SingleSmallCard(props) {
     return (
-        <Container className='small-cards '>              
+        <Container className='small-cards '>
             <Row className='card-name'>
                 {props.Name}
-            </Row>   
+            </Row>
             <Row className='card-top'>
                 {props.Name2}
-            </Row>       
+            </Row>
 
             <Row className='card-bottom'>
                 {props.Total}
