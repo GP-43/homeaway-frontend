@@ -19,7 +19,7 @@ function PlaceDescription() {
             <PlaceDetails />
           </Row>
         </Col>
-        <Col lg={6}>
+        <Col lg={6}  className='p-5 bg-transparent'>
           <RenterDetails />
           {/*<AddRating/>*/}
         </Col>
