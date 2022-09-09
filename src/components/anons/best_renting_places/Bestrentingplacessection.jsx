@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import PlaceCard from "../../../components/user/place_card/PlaceCard";
 import { Row, Col, Button } from "react-bootstrap";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
+import axois from "axios";
 import ReactPaginate from "react-paginate";
 import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
 import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
@@ -94,7 +95,30 @@ function Bestrentingplacessection() {
   const perPage = 4;
   const off = perPage * currPage;
 
-  const displayPlaces = places.slice(off, off + perPage).map((i) => {
+  const [details, setDetails] = useState({});
+
+  useEffect((event) => {
+    axois
+      .get("http://localhost:4000/anon/bestplaces")
+      .then((data) => {
+        const details = data.data;
+        setDetails({ ...details });
+        //setoccupantData(false)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  // {Object.keys(details).map((key, index) => (
+  //   <SingleUser
+  //     Name={details[index].name}
+  //     Location={details[index].location}
+  //     // Src={i.Src}
+  //   />
+  // ))}
+
+  const displayPlaces = Object.keys(details).slice(off, off + perPage).map((key, index) => {
     return (
       <Col
         lg={3}
@@ -102,12 +126,15 @@ function Bestrentingplacessection() {
         className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2"
       >
         <PlaceCard
-          Title={i.Title}
-          Src={i.Src}
-          City={i.City}
-          Price={i.Price}
-          Quantity={i.Quantity}
-          Rating={i.Rating}
+        
+        Title={details[index].title}
+        City={details[index].city}
+          // Src={i.Src}
+          Price={details[index].price} 
+          Quantity={details[index].quantity} 
+          Rating={details[index].rating} 
+          // Rating={i.Quantity}
+          // Rating={i.Rating}
         />
       </Col>
     );
