@@ -2,13 +2,12 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import RenterRow from "./RenterRow";
 import { useState } from 'react';
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function RenterTable({ details_array, setSelectedUser }) {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
-
-
 
     return (
         <Col className='top-selling-products'>
@@ -42,32 +41,32 @@ function RenterTable({ details_array, setSelectedUser }) {
             <Row className='mx-0 top-selling-products-titles mt-3'>
                 <Col className='px-0 ps-3' xs={1}>
                 </Col>
-                <Col className='px-0 ps-2' xs={2}>
+                <Col className='px-0 text-center' xs={2}>
                     <h6>Name</h6>
                 </Col>
 
-                <Col className='px-0 ps-1' xs={3}>
+                <Col className='px-0 text-center' xs={3}>
                     <h6>Email</h6>
                 </Col>
 
-                <Col className='px-0 ' xs={2}>
+                <Col className='px-0 text-center' xs={2}>
                     <h6>Joined Date</h6>
                 </Col>
 
-                <Col className='px-0 ' xs={1}>
+                <Col className='px-0 text-center ' xs={1}>
                     <h6>Properties</h6>
                 </Col>
             </Row>
 
-            <Row className='mx-0 px-0 data-part'>
+            <Row className='mx-0 px-0 data-part text-center'>
 
-                {details_array.filter((val) => {
-                    // without searching
+                {details_array.filter((val, index) => {
+                    //without searching
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
                     // search by name
-                    else if ((val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
+                    else if ((val.name.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
                     //clear rating search
@@ -88,15 +87,15 @@ function RenterTable({ details_array, setSelectedUser }) {
                         return val
                     }
                     //search by date + rate + name
-                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         return val
                     }
                     // search by date + name
-                    else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         return val
                     }
                     //search by rate + name
-                    else if (dateSearchTerm == "" && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (dateSearchTerm == "" && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         if (rateSearchTerm == val.rate) {
                             return val
                         }
@@ -113,13 +112,13 @@ function RenterTable({ details_array, setSelectedUser }) {
                             return val
                         }
                     }
-                }).map((val, key) => {
+                }).map((val, index) => {
                     return (
-                        <Row className='data mx-0 px-0 ' key={key}>
+                        <Row className='data mx-0 px-0 ' key={index}>
                             <RenterRow
-                                Src={val.Src}
-                                firstName={val.firstName}
-                                lastName={val.lastName}
+                                //Src={val.Src}
+                                name={val.name}
+                                Src={`${base_url}/renters/` + val.image}
                                 email={val.email}
                                 joinedDate={val.joinedDate}
                                 properties={val.properties}
@@ -127,6 +126,8 @@ function RenterTable({ details_array, setSelectedUser }) {
 
                                 rowUserObj={val}
                                 setSelectedUser={setSelectedUser}
+
+
                             />
                         </Row>
                     )
