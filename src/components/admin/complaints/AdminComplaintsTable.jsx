@@ -9,7 +9,6 @@ function AdminComplaintsTable() {
   const [rejectedComplaints, setRejectedComplaints] = useState({});
 
   // refresh table
-
   function fetchComplatints() {
     // get complaints
     axois
@@ -29,7 +28,6 @@ function AdminComplaintsTable() {
       .then((data) => {
         const acceptedComplaints = data.data;
         setAcceptedComplaints({ ...acceptedComplaints });
-        //setoccupantData(false)
       })
       .catch((error) => {
         console.log(error);
@@ -41,7 +39,6 @@ function AdminComplaintsTable() {
       .then((data) => {
         const rejectedComplaints = data.data;
         setRejectedComplaints({ ...rejectedComplaints });
-        //setoccupantData(false)
       })
       .catch((error) => {
         console.log(error);
@@ -56,29 +53,22 @@ function AdminComplaintsTable() {
     <>
       <Container className="admin-complaint-table-container p-2">
         <Row className="ms-1 mb-5">
-          <Row>
-            <h4>Complaints</h4>
-          </Row>
           <Row className="admin-complaints-table-title">
             <Col xs={1} className="px-0">
               <p className="admin-complain-table-row-title">Case No</p>
             </Col>
             <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Subject</p>
-            </Col>
-            <Col xs={1} className="px-0">
-              <p className="admin-complain-table-row-title">Sender ID</p>
+              <p className="admin-complain-table-row-title">Complaint Id</p>
             </Col>
             <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Sender Name</p>
+              <p className="admin-complain-table-row-title">Complainer Id</p>
+            </Col>
+            <Col xs={2} className="px-0">
+              <p className="admin-complain-table-row-title">Complainee Id</p>
             </Col>
             <Col xs={3} className="px-0">
-              <p className="admin-complain-table-row-title">Sender Email</p>
+              <p className="admin-complain-table-row-title">Subject</p>
             </Col>
-            <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Time & Date</p>
-            </Col>
-            <Col xs={1} className="px-0"></Col>
           </Row>
 
           <Row className="admin-complaint-table-data">
@@ -89,6 +79,7 @@ function AdminComplaintsTable() {
                 complainerId={complaints[index].compliner_id}
                 complaineeId={complaints[index].complainee_id}
                 subject={complaints[index].subject}
+                status={complaints[index].status}
                 fetchComplatints={fetchComplatints}
                 // Src={i.Src}
               />
@@ -96,32 +87,29 @@ function AdminComplaintsTable() {
           </Row>
         </Row>
       </Container>
-      // accepted complaints
+
+      {/* accepted complaints */}
+      <Row className="mt-5">
+        <h4 className="accepted-rejected-titles ms-2">Accepted Complaints</h4>
+      </Row>
       <Container className="admin-complaint-table-container p-2">
         <Row className="ms-1 mb-5">
-          <Row>
-            <h4>Accepted Complaints</h4>
-          </Row>
           <Row className="admin-complaints-table-title">
             <Col xs={1} className="px-0">
               <p className="admin-complain-table-row-title">Case No</p>
             </Col>
             <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Subject</p>
-            </Col>
-            <Col xs={1} className="px-0">
-              <p className="admin-complain-table-row-title">Sender ID</p>
+              <p className="admin-complain-table-row-title">Complaint Id</p>
             </Col>
             <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Sender Name</p>
+              <p className="admin-complain-table-row-title">Complainer Id</p>
+            </Col>
+            <Col xs={2} className="px-0">
+              <p className="admin-complain-table-row-title">Complainee Id</p>
             </Col>
             <Col xs={3} className="px-0">
-              <p className="admin-complain-table-row-title">Sender Email</p>
+              <p className="admin-complain-table-row-title">Subject</p>
             </Col>
-            <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Time & Date</p>
-            </Col>
-            <Col xs={1} className="px-0"></Col>
           </Row>
 
           <Row className="admin-complaint-table-data">
@@ -139,32 +127,31 @@ function AdminComplaintsTable() {
           </Row>
         </Row>
       </Container>
-      // rejected complaints
+
+      {/* rejected complaints */}
+
+      <Row className="mt-5">
+        <h4 className="accepted-rejected-titles ms-2">Rejected Complaints</h4>
+      </Row>
+
       <Container className="admin-complaint-table-container p-2">
         <Row className="ms-1 mb-5">
-          <Row>
-            <h4>Rejected Complaints</h4>
-          </Row>
           <Row className="admin-complaints-table-title">
             <Col xs={1} className="px-0">
               <p className="admin-complain-table-row-title">Case No</p>
             </Col>
             <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Subject</p>
-            </Col>
-            <Col xs={1} className="px-0">
-              <p className="admin-complain-table-row-title">Sender ID</p>
+              <p className="admin-complain-table-row-title">Complaint Id</p>
             </Col>
             <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Sender Name</p>
+              <p className="admin-complain-table-row-title">Complainer Id</p>
+            </Col>
+            <Col xs={2} className="px-0">
+              <p className="admin-complain-table-row-title">Complainee Id</p>
             </Col>
             <Col xs={3} className="px-0">
-              <p className="admin-complain-table-row-title">Sender Email</p>
+              <p className="admin-complain-table-row-title">Subject</p>
             </Col>
-            <Col xs={2} className="px-0">
-              <p className="admin-complain-table-row-title">Time & Date</p>
-            </Col>
-            <Col xs={1} className="px-0"></Col>
           </Row>
 
           <Row className="admin-complaint-table-data">
