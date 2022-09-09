@@ -29,13 +29,15 @@ function DeletePopup(props) {
 
 function RenterRow(props) {
 
+
+
     const [modalShow, setModalShow] = React.useState(false);
 
     return (
 
         <Row className='row-top-products mx-0 px-0 mb-2 mt-3'>
             <Col className='px-0 ps-3' xs={1}>
-                <img src={props.Src} className="row-top-products-img" />
+                <img src={props.Src} className="row-top-products-img" alt="renter" />
             </Col>
 
             <Col className='ps-4 pe-0 name' xs={2}>
@@ -47,7 +49,7 @@ function RenterRow(props) {
                 </Row>
             </Col>
 
-            <Col className='px-0 ps-1' xs={3}>
+            <Col className='px-0 ps-1 ms-2' xs={3}>
                 {props.email}
             </Col>
 
@@ -65,7 +67,7 @@ function RenterRow(props) {
                 </button>
             </Col>
 
-            <Col className='px-4 ms-4 ' xs={1}>
+            <Col className='px-4 ms-2 ' xs={1}>
                 <button className='delete-btn px-0 pb-0' variant="primary" onClick={() => setModalShow(true)}>
                     <p>DELETE</p>
                 </button>
