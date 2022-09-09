@@ -61,72 +61,73 @@ function RenterTable({ details_array, setSelectedUser }) {
 
             <Row className='mx-0 px-0 data-part'>
 
-                {details_array.filter((val) => {
+                {details_array.filter((index) => {
                     // without searching
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
-                        return val
+                        return index
                     }
                     // search by name
-                    else if ((val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
-                        return val
+                    else if ((details_array[index].name.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
+                        return index
                     }
                     //clear rating search
                     else if (rateSearchTerm == "none") {
-                        return val
+                        return index
                     }
                     // search by rate
                     else if (nameSearchTerm == "" && dateSearchTerm == "") {
-                        if (rateSearchTerm == val.rate) {
-                            return val
+                        if (rateSearchTerm == details_array[index].rate) {
+                            return index
                         }
-                        else if (rateSearchTerm === '4+' && val.rate > 4) {
-                            return val
+                        else if (rateSearchTerm === '4+' && details_array[index].rate > 4) {
+                            return index
                         }
                     }
                     //search by date
-                    else if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == val.joinedDate) {
-                        return val
+                    else if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == details_array[index].joinedDate) {
+                        return index
                     }
                     //search by date + rate + name
-                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        return val
+                    else if (rateSearchTerm == details_array[index].rate && dateSearchTerm == details_array[index].joinedDate && (details_array[index].name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                        return index
                     }
                     // search by date + name
-                    else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        return val
+                    else if (rateSearchTerm == "" && dateSearchTerm == details_array[index].joinedDate && (details_array[index].name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                        return index
                     }
                     //search by rate + name
-                    else if (dateSearchTerm == "" && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        if (rateSearchTerm == val.rate) {
-                            return val
+                    else if (dateSearchTerm == "" && (details_array[index].name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                        if (rateSearchTerm == details_array[index].rate) {
+                            return index
                         }
-                        else if (rateSearchTerm === '4+' && val.rate > 4) {
-                            return val
+                        else if (rateSearchTerm === '4+' && details_array[index].rate > 4) {
+                            return index
                         }
                     }
                     //search by date + rate
-                    else if (nameSearchTerm == "" && dateSearchTerm == val.joinedDate) {
-                        if (rateSearchTerm == val.rate) {
-                            return val
+                    else if (nameSearchTerm == "" && dateSearchTerm == details_array[index].joinedDate) {
+                        if (rateSearchTerm == details_array[index].rate) {
+                            return index
                         }
-                        else if (rateSearchTerm === '4+' && val.rate > 4) {
-                            return val
+                        else if (rateSearchTerm === '4+' && details_array[index].rate > 4) {
+                            return index
                         }
                     }
-                }).map((val, key) => {
+                }).map((key, index) => {
                     return (
-                        <Row className='data mx-0 px-0 ' key={key}>
+                        <Row className='data mx-0 px-0 ' index={index}>
                             <RenterRow
-                                Src={val.Src}
-                                firstName={val.firstName}
-                                lastName={val.lastName}
-                                email={val.email}
-                                joinedDate={val.joinedDate}
-                                properties={val.properties}
-                                rate={val.rate}
+                                //Src={details_array[index].Src}
+                                name={details_array[index].name}
+                                email={details_array[index].email}
+                                joinedDate={details_array[index].joinedDate}
+                                properties={details_array[index].properties}
+                                rate={details_array[index].rate}
 
-                                rowUserObj={val}
+                                rowUserObj={details_array[index]}
                                 setSelectedUser={setSelectedUser}
+
+
                             />
                         </Row>
                     )

@@ -14,11 +14,11 @@ function UserDetails({ userDetailsObj }) {
     return (
         <Col className='mt-1'>
             <Row className='image-row'>
-                <img src={userDetailsObj.Src} className="user-image" />
+                {/* <img src={userDetailsObj.Src} className="user-image" /> */}
             </Row>
             <Row className='detail-container'>
                 <Row className='name-row'>
-                    {userDetailsObj.firstName} {userDetailsObj.lastName}
+                    {userDetailsObj.name}
                 </Row>
                 <Row className='pb-4 rate-row'>
                     4.3
