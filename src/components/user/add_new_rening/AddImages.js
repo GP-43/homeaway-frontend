@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 
-const AddImages = () => {
+const AddImages = ({setSelectedFiles}) => {
   const [selectedImages, setSelectedImages] = useState([]);
+ 
   const onSelectFile = (event) => {
     const selectedFiles = event.target.files;
     const selectedFilesArray = Array.from(selectedFiles);
+    setSelectedFiles(selectedFilesArray);
 
     const imagesArray = selectedFilesArray.map((file) => {
       return URL.createObjectURL(file);
