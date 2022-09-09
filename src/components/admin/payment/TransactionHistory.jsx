@@ -9,23 +9,6 @@ function TransactionHistory() {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
 
-    // const Transaction_array = [
-    //     {RenterName : "Saman Kumara", RenterEmail : "saman@gmail.com", RentDate : '2022-07-15',
-    //         Amount : '3500', OccupantName : "Sandum Nimal" , OccupantEmail : "saman@gmail.com", Status : "Success"},
-    //     {RenterName : "Namal Perera", RenterEmail : "saman@gmail.com", RentDate : '2022-08-15',
-    //         Amount : '8500', OccupantName : "Sandum Nimal" , OccupantEmail : "saman@gmail.com", Status : "Success"},
-    //     {RenterName : "Amal Saman", RenterEmail : "saman@gmail.com", RentDate : '2022-08-16',
-    //         Amount : '10000', OccupantName : "Sandum Nimal" , OccupantEmail : "saman@gmail.com", Status : "Success"},
-    //     {RenterName : "Ruwan Pushpa", RenterEmail : "saman@gmail.com", RentDate : '2022-08-17',
-    //         Amount : '6800', OccupantName : "Sandum Nimal" , OccupantEmail : "saman@gmail.com", Status : "Success"},
-    //     {RenterName : "Sandum Nimal", RenterEmail : "saman@gmail.com", RentDate : '2022-08-18',
-    //         Amount : '3900', OccupantName : "Sandum Nimal" , OccupantEmail : "saman@gmail.com", Status : "Success"},
-    //     {RenterName : "Pawan Pahan", RenterEmail : "saman@gmail.com", RentDate : '2022-08-19',
-    //         Amount : '1400', OccupantName : "Sandum Nimal" , OccupantEmail : "saman@gmail.com", Status : "Success"},
-    //     {RenterName : "Nilantha Dasun", RenterEmail : "saman@gmail.com", RentDate : '2022-08-18',
-    //         Amount : '6700', OccupantName : "Sandum Nimal" , OccupantEmail : "saman@gmail.com", Status : "Unsuccess"}
-    // ]
-
     const [details, setDetails] = useState({});
 
     useEffect((event) => {
@@ -34,7 +17,7 @@ function TransactionHistory() {
             .then((data) => {
                 const details = data.data;
                 setDetails({ ...details });
-                //setoccupantData(false)
+
             })
             .catch((error) => {
                 console.log(error);
@@ -63,64 +46,6 @@ function TransactionHistory() {
             </Row>
 
             <Row className='mx-0 px-0 data-part'>
-
-                <Row className='data my-4'>
-
-                    {/* {Object.keys(details).map((key, index) => (
-                        <TransactionRow
-                            RenterName={details[index].name}
-                            RenterEmail={details[index].email}
-                            RentDate={details[index].rent_date}
-                            Amount={details[index].amount}
-                            OccupantName={details[index].renter_name}
-                            OccupantEmail={details[index].renter_email}
-                            Status={details[index].status}
-
-                        />
-                    ))} */}
-                </Row>
-
-
-                {/*{Transaction_array.filter((val) => {
-                    // without searching
-                    if (nameSearchTerm == "" && dateSearchTerm == "")
-                    {
-                        return val
-                    } 
-                    // search by name
-                    else if ((val.RenterName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.OccupantName.toLowerCase().includes(nameSearchTerm.toLowerCase()) ) && dateSearchTerm == "")
-                    {
-                        return val
-                    }                    
-                    //search by date
-                    else if (nameSearchTerm == "" && dateSearchTerm == val.RentDate)
-                    {
-                        return val
-                    }
-                    // search by date + name
-                    else if (dateSearchTerm == val.RentDate && (val.RenterName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.OccupantName.toLowerCase().includes(nameSearchTerm.toLowerCase()) ) )
-                    {
-                        return val
-                    }
-                
-                    
-                }).map((val, key) => {
-                    return (
-                        <Row className='data my-4' key={key}>
-                            <TransactionRow
-                                RenterName = {val.RenterName}
-                                RenterEmail= {val.RenterEmail}
-                                RentDate= {val.RentDate}
-                                Amount= {val.Amount}
-                                OccupantName= {val.OccupantName}
-                                OccupantEmail= {val.OccupantEmail}
-                                Status= {val.Status}
-                            />
-                        </Row>
-                    )
-                })}
-             </Row>  */}
-
 
                 {Object.keys(details).filter((index) => {
                     // without searching

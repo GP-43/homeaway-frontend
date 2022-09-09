@@ -7,6 +7,7 @@ import {FaHeart} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function PlaceCard(props) {
+    
     const [show, setShow] = useState(true);
 
     const navigate = useNavigate();
