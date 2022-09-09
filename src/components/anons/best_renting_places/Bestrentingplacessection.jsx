@@ -127,12 +127,13 @@ function Bestrentingplacessection() {
       >
         <PlaceCard
         
-        Title={details[index].title}
-        City={details[index].city}
+          Title={details[index].title}
+          City={details[index].city}
           // Src={i.Src}
           Price={details[index].price} 
           Quantity={details[index].quantity} 
           Rating={details[index].rating} 
+          // Src={details[index].image}
           // Rating={i.Quantity}
           // Rating={i.Rating}
         />
