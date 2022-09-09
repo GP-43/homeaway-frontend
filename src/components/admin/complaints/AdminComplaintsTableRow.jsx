@@ -6,14 +6,13 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 let fetchComplatints;
-
 const deleteComplain = (complaintId, hideModal) =>{
     
     var Id = complaintId;
     console.log("Delete complaint:",Id);
     
     axois
-      .delete("http://localhost:4000/admin/delete/complaint/"+Id)
+      .put("http://localhost:4000/admin/reject/complaint/"+Id)
       .then(() => {
         console.log("Work");
         fetchComplatints();
@@ -25,7 +24,7 @@ const deleteComplain = (complaintId, hideModal) =>{
 
 }
 
-//popup function
+//popup function for reject
 function DeletePopup(props) {
     return (
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
@@ -44,12 +43,15 @@ function DeletePopup(props) {
       </Modal>
     );
   }
+
+// accept complaint
+
 function acceptComplaint(complaintId){
   var Id = complaintId;
   console.log("Accept complaint:",Id);
   
   axois
-    .put("http://localhost:4000/admin/delete/complaint/"+Id)
+    .put("http://localhost:4000/admin/accept/complaint/"+Id)
     .then(() => {
       console.log("Work");
       fetchComplatints();

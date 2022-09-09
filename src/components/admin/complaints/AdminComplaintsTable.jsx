@@ -6,6 +6,8 @@ import AdminComplaintsTableRow from "./AdminComplaintsTableRow";
 function AdminComplaintsTable() {
   const [details, setDetails] = useState({});
 
+  // refresh table 
+  
   function fetchComplatints(){
     axois
       .get("http://localhost:4000/admin/select/complaints")
@@ -23,26 +25,26 @@ function AdminComplaintsTable() {
     fetchComplatints();
   }, []);
 
-  const complaints_data = [
-    {
-      caseNo: 1001,
-      subject: "This is a complaint about the owner of the xxxxxxx. ",
-      senderId: 245,
-      senderName: "Kamal Nishantha",
-      senderEmail: "kamalnishantha@gmail.com",
-      date: "22-06-2022",
-      time: "10:30",
-    },
-    {
-      caseNo: 1001,
-      subject: "This is a complaint about the owner of the xxxxxxx.",
-      senderId: 127,
-      senderName: "Ranil Wikrama",
-      senderEmail: "ranilwikrama@gmail.com",
-      date: "02-06-2022",
-      time: "01:45",
-    },
-  ];
+  // const complaints_data = [
+  //   {
+  //     caseNo: 1001,
+  //     subject: "This is a complaint about the owner of the xxxxxxx. ",
+  //     senderId: 245,
+  //     senderName: "Kamal Nishantha",
+  //     senderEmail: "kamalnishantha@gmail.com",
+  //     date: "22-06-2022",
+  //     time: "10:30",
+  //   },
+  //   {
+  //     caseNo: 1001,
+  //     subject: "This is a complaint about the owner of the xxxxxxx.",
+  //     senderId: 127,
+  //     senderName: "Ranil Wikrama",
+  //     senderEmail: "ranilwikrama@gmail.com",
+  //     date: "02-06-2022",
+  //     time: "01:45",
+  //   },
+  // ];
   return (
     <Container className="admin-complaint-table-container p-2">
       <Row className="ms-1">
