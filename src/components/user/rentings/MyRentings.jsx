@@ -115,7 +115,7 @@ function MyRentings() {
               >
                 <PlaceCard
                   Title={value.title}
-                  Src={`http://localhost:3000/${value.image}`}
+                  Src={"http://localhost:4000/images/"+value.image}
                   City={value.city}
                   Price={value.price}
                   Quantity={value.quantity}

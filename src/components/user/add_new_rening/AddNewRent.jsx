@@ -13,6 +13,8 @@ import * as Yup from "yup";
 import { useEffect } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
+const base_url = process.env.REACT_APP_BASE_URL;
+
 function AddNewRent() {
   const categoryOptions = [
     { value: "meeting-room", label: "Meetings" },
@@ -94,6 +96,7 @@ function AddNewRent() {
   const [productRating, setProductRating] = useState(0);
 
   const [isImageUploaded, setIsImageUploaded] = useState(false);
+  const [selectedFiles, setSelectedFiles] = useState([]);
 
   const [formState, setFormState] = useState({
     productName: "",
@@ -152,12 +155,15 @@ function AddNewRent() {
 
   const navigate = useNavigate();
 
+  // console.log("Ïmages: ", selectedFiles);
+
   const handleOnSubmit = (event) => {
-    navigate('/user/userrentings');
+    // navigate('/user/userrentings');
     updateForm();
     event.preventDefault(); 
     const formData = new FormData();
     formData.append("image", uploadImage);
+    // formData.append("gallery", selectedFiles);
     formData.append("addNewFormData", JSON.stringify(addNewFormData));
 
     for (var key of formData.entries()) {
@@ -165,7 +171,7 @@ function AddNewRent() {
   }
 
     axios
-      .post("http://localhost:4000/addnewrent", formData, {
+      .post(`${base_url}/addnewrent`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -362,7 +368,7 @@ function AddNewRent() {
             >
               <Form.Label className="mb-2">IMAGES</Form.Label>
               <Col>
-                <AddImages />
+                <AddImages setSelectedFiles={setSelectedFiles}/>
               </Col>
             </Form.Group>
           </Col>
