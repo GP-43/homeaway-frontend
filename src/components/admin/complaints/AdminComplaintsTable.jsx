@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axois from "axios";
 import { Col, Row, Container } from "react-bootstrap";
 import AdminComplaintsTableRow from "./AdminComplaintsTableRow";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function AdminComplaintsTable() {
   const [complaints, setComplaints] = useState({});
@@ -12,7 +13,7 @@ function AdminComplaintsTable() {
   function fetchComplatints() {
     // get complaints
     axois
-      .get("http://localhost:4000/admin/select/complaints")
+      .get(`${base_url}/admin/select/complaints`)
       .then((data) => {
         const complaints = data.data;
         setComplaints({ ...complaints });

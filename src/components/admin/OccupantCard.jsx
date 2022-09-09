@@ -10,6 +10,7 @@ import profile5 from "../../assets/images/profileimages/occupants/profile5.jpg";
 import profile6 from "../../assets/images/profileimages/occupants/profile6.jpg";
 
 function OccupantCard() {
+  
   const Profile_Data = [
     {
       Src: profile1,
@@ -50,6 +51,7 @@ function OccupantCard() {
       .then((data) => {
         const details = data.data;
         setDetails({ ...details });
+        console.log(details);
         //setoccupantData(false)
       })
       .catch((error) => {
@@ -67,6 +69,7 @@ function OccupantCard() {
               <SingleUser
                 Name={details[index].name}
                 Location={details[index].location}
+                Src={"http://localhost:4000/renters/" + details[index].image}
                 // Src={i.Src}
               />
             ))}
