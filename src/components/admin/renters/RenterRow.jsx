@@ -40,7 +40,7 @@ function RenterRow(props) {
 
             <Col className='ps-4 pe-0 name' xs={2}>
                 <Row>
-                    {props.firstName} {props.lastName}
+                    {props.name}
                 </Row>
                 <Row className='ps-2 rate'>
                     {props.rate}

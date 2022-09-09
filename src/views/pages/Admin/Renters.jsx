@@ -8,6 +8,8 @@ import RenterDetailCard from "../../../components/admin/renters/RenterDetailCard
 import PlaceDetailCard from "../../../components/admin/renters/PlaceDetailCard";
 import AvailPlaceDetailCard from "../../../components/admin/renters/AvailablePlaceDetailCard";
 import UserDetails from '../../../components/admin/renters/UserDetails';
+const base_url = process.env.REACT_APP_BASE_URL;
+
 //import Places from "../../../components/admin/renters/Places"
 
 //images
@@ -22,25 +24,26 @@ import UserDetails from '../../../components/admin/renters/UserDetails';
 
 function Renters() {
 
-    const [details, setDetails] = useState({});
+    const [details, setDetails] = useState([]);
+
+    const [selectedUser, setSelectedUser] = useState({});
 
     useEffect((event) => {
         axois
-            .get("http://localhost:4000/admin/view/renters")
+            .get(`${base_url}/admin/view/renters`)
             .then((data) => {
-                const details = data.data;
-                setDetails({ ...details });
+                const detail = data.data;
+                setDetails(detail);
+                setSelectedUser(detail[0]);
                 //setoccupantData(false)
-                console.log(details);
+                console.log(detail);
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
 
-    const [selectedUser, setSelectedUser] = useState({
 
-    });
 
 
 
@@ -73,7 +76,7 @@ function Renters() {
 
                     <Row className="mx-0 user-list-card">
                         <Col className="px-0 Renters-top-selling-products-part">
-                            <RenterTable details_array={Object.keys(details)} setSelectedUser={setSelectedUser} />
+                            <RenterTable details_array={details} setSelectedUser={setSelectedUser} />
                         </Col>
                     </Row>
 
