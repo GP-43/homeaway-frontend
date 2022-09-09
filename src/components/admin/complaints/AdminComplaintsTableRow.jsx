@@ -54,13 +54,20 @@ function DeletePopup(props) {
 
 // accept complaint
 
-function acceptComplaint(complaintId, complainerId, complaineeId) {
-  var Id = complaintId;
-  console.log("Accept complaint:", Id, complaineeId, complainerId);
+function acceptComplaint(Id_1, Id_2, Id_3) {
+  // var complaintId = Id_1;
+  // var complainerId = Id_2;
+  // var complaineeId = Id_3;
+  var complaintArray = {
+    complaintId : Id_1,
+    complainerId : Id_2,
+    complaineeId : Id_3
+  }
 
+   console.log("Accept complaint:", complaintArray.complaineeId);
 
   axois
-    .put("http://localhost:4000/admin/accept/complaint/" + Id)
+    .put("http://localhost:4000/admin/accept/complaint/" + Id_1)
     .then(() => {
       console.log("Work");
       fetchComplatints();
