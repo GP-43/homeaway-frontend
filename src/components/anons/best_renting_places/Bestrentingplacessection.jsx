@@ -15,6 +15,7 @@ import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
 import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
 import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function Bestrentingplacessection() {
   const placeData = [
@@ -95,7 +96,7 @@ function Bestrentingplacessection() {
   const perPage = 4;
   const off = perPage * currPage;
 
-  const [details, setDetails] = useState({});
+  const [details, setDetails] = useState([]);
 
   useEffect((event) => {
     axois
@@ -126,14 +127,13 @@ function Bestrentingplacessection() {
         className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2"
       >
         <PlaceCard
-        
+          Src={"https://localhost:4000/images/" + details[index].image}
           Title={details[index].title}
           City={details[index].city}
-          // Src={i.Src}
           Price={details[index].price} 
           Quantity={details[index].quantity} 
           Rating={details[index].rating} 
-          // Src={details[index].image}
+          
           // Rating={i.Quantity}
           // Rating={i.Rating}
         />
