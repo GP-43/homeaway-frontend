@@ -59,15 +59,14 @@ function acceptComplaint(Id_1, Id_2, Id_3) {
   // var complainerId = Id_2;
   // var complaineeId = Id_3;
   var complaintArray = {
-    complaintId : Id_1,
     complainerId : Id_2,
     complaineeId : Id_3
   }
 
-   console.log("Accept complaint:", complaintArray.complaineeId);
+   console.log("Accept complaint:", Id_1, Id_2, Id_3);
 
   axois
-    .put("http://localhost:4000/admin/accept/complaint/" + Id_1)
+    .put("http://localhost:4000/admin/accept/complaint/"+Id_1, complaintArray)
     .then(() => {
       console.log("Work");
       fetchComplatints();
