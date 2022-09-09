@@ -6,12 +6,16 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 let fetchComplatints;
-const deleteComplain = (complaintId, hideModal) => {
-  var Id = complaintId;
+const deleteComplain = (id_1, hideModal, id_2, id_3) => {
+  var Id = id_1;
+  var complaintArray = {
+    complainerId : id_2,
+    complaineeId : id_3
+  }
   console.log("Delete complaint:", Id);
 
   axois
-    .put("http://localhost:4000/admin/reject/complaint/" + Id)
+    .put("http://localhost:4000/admin/reject/complaint/" + Id, complaintArray)
     .then(() => {
       console.log("Work");
       fetchComplatints();
@@ -42,7 +46,7 @@ function DeletePopup(props) {
       <Modal.Footer>
         <Button
           className="confirm-delete btn-danger"
-          onClick={() => deleteComplain(props.complaintId, props.onHide)}
+          onClick={() => deleteComplain(props.complaintId, props.onHide, props.complaineeId, props.complainerId)}
         >
           Reject
         </Button>
@@ -130,6 +134,8 @@ function AdminComplaintsTableRow(props) {
           show={modalShow}
           onHide={() => setModalShow(false)}
           complaintId={Id}
+          complaineeId = {props.complaineeId}
+          complainerId = {props.complainerId}
         />
       </Col>
     </Row>
