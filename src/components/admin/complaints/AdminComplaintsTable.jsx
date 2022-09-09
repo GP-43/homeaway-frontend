@@ -25,7 +25,7 @@ function AdminComplaintsTable() {
 
     //get accepted complaints
     axois
-      .get("http://localhost:4000/admin/select/acceptedComplaints")
+      .get(`${base_url}/admin/select/acceptedComplaints`)
       .then((data) => {
         const acceptedComplaints = data.data;
         setAcceptedComplaints({ ...acceptedComplaints });
@@ -36,7 +36,7 @@ function AdminComplaintsTable() {
 
     //get rejected complaints
     axois
-      .get("http://localhost:4000/admin/select/rejectedComplaints")
+      .get(`${base_url}/admin/select/rejectedComplaints`)
       .then((data) => {
         const rejectedComplaints = data.data;
         setRejectedComplaints({ ...rejectedComplaints });
