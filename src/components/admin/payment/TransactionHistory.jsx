@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import TransactionRow from "./TransactionRow";
 import { useState, useEffect } from 'react';
 import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function TransactionHistory() {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
@@ -12,7 +13,7 @@ function TransactionHistory() {
 
     useEffect((event) => {
         axois
-            .get("http://localhost:4000/admin/view/payment")
+            .get(`${base_url}/admin/view/payment`)
             .then((data) => {
                 const details = data.data;
                 setDetails({ ...details });

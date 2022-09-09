@@ -13,6 +13,8 @@ import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
 
 function MyRentings() {
+
+
   const [listOfMyPlaces, setListOfMyPlaces] = useState([]);
   useEffect(() => {
     axios.get("http://localhost:4000/addnewrent").then((response) => {
@@ -115,7 +117,7 @@ function MyRentings() {
               >
                 <PlaceCard
                   Title={value.title}
-                  Src={"http://localhost:4000/images/"+value.image}
+                  Src={"http://localhost:4000/images/" + value.image}
                   City={value.city}
                   Price={value.price}
                   Quantity={value.quantity}

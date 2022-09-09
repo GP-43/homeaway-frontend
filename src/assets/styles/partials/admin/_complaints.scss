@@ -75,10 +75,12 @@
   height: 30px;
   width: 80px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
 }
 
 .rejected-complaints {
-  color: #6c757d;
+  color: #9b9b9b;
 }
 
 .accepted-rejected-titles {
