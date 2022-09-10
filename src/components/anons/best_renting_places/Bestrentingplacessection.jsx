@@ -100,16 +100,18 @@ function Bestrentingplacessection() {
 
   useEffect((event) => {
     axois
-      .get("http://localhost:4000/anon/bestplaces")
+      .get(`${base_url}/anon/bestplaces`)
       .then((data) => {
-        const details = data.data;
-        setDetails({ ...details });
+        const detail = data.data;
+        setDetails(detail);
         //setoccupantData(false)
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
+
+  console.log(details);
 
   // {Object.keys(details).map((key, index) => (
   //   <SingleUser
@@ -119,7 +121,7 @@ function Bestrentingplacessection() {
   //   />
   // ))}
 
-  const displayPlaces = Object.keys(details).slice(off, off + perPage).map((key, index) => {
+  const displayPlaces = details.slice(off, off + perPage).map((val, index) => {
     return (
       <Col
         lg={3}
@@ -127,15 +129,13 @@ function Bestrentingplacessection() {
         className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2"
       >
         <PlaceCard
-          Src={"https://localhost:4000/images/" + details[index].image}
-          Title={details[index].title}
-          City={details[index].city}
-          Price={details[index].price} 
-          Quantity={details[index].quantity} 
-          Rating={details[index].rating} 
-          
-          // Rating={i.Quantity}
-          // Rating={i.Rating}
+          Src={`${base_url}/images/`  + val.image}
+          Title={val.title}
+          City={val.city}
+          Price={val.price} 
+          Quantity={val.quantity}
+          Rating={val.rating} 
+        
         />
       </Col>
     );
