@@ -12,7 +12,7 @@ const deleteOccupant = (id_1, hideModal) => {
   console.log("Delete occupant:", Id);
 
   axois
-    .put("http://localhost:4000/admin/delete/occupant/" + Id)
+    .put(`${base_url}/admin/delete/occupant/` + Id)
     .then(() => {
       console.log("Work");
       hideModal();
