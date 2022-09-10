@@ -2,55 +2,17 @@ import React, { useState, useEffect } from "react";
 import SingleUser from "./SingleUser";
 import { Row, Col, Container } from "react-bootstrap";
 import axois from "axios";
-import profile1 from "../../assets/images/profileimages/occupants/profile1.jpg";
-import profile2 from "../../assets/images/profileimages/occupants/profile2.jpg";
-import profile3 from "../../assets/images/profileimages/occupants/profile3.jpg";
-import profile4 from "../../assets/images/profileimages/occupants/profile4.jpg";
-import profile5 from "../../assets/images/profileimages/occupants/profile5.jpg";
-import profile6 from "../../assets/images/profileimages/occupants/profile6.jpg";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function OccupantCard() {
-  const Profile_Data = [
-    {
-      Src: profile1,
-      Name: "Senath Dewmin",
-      Location: "Kandy",
-    },
-    {
-      Src: profile2,
-      Name: "Janumi Kavya",
-      Location: "Matara",
-    },
-    {
-      Src: profile3,
-      Name: "Senumi  Himaya",
-      Location: "Kurunegala",
-    },
-    {
-      Src: profile4,
-      Name: "Kaveenn Livera",
-      Location: "Galle",
-    },
-    {
-      Src: profile5,
-      Name: "Sewmi Dehara",
-      Location: "Gampaha",
-    },
-    {
-      Src: profile6,
-      Name: "Lasith Perera",
-      Location: "Colombo",
-    },
-  ];
   const [details, setDetails] = useState({});
-
   useEffect((event) => {
     axois
-      .get("http://localhost:4000/admin/users")
+      .get(`${base_url}/admin/users`)
       .then((data) => {
         const details = data.data;
         setDetails({ ...details });
-        //setoccupantData(false)
+        console.log(details);
       })
       .catch((error) => {
         console.log(error);
@@ -67,7 +29,7 @@ function OccupantCard() {
               <SingleUser
                 Name={details[index].name}
                 Location={details[index].location}
-                // Src={i.Src}
+                Src={"http://localhost:4000/renters/" + details[index].image}
               />
             ))}
           </Col>
@@ -76,5 +38,4 @@ function OccupantCard() {
     </Container>
   );
 }
-
 export default OccupantCard;

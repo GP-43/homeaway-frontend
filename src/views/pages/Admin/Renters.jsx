@@ -43,10 +43,6 @@ function Renters() {
             });
     }, []);
 
-
-
-
-
     return (
         <Container>
 
