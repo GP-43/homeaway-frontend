@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function UserDetails({ userDetailsObj }) {
     // const details_array = [
@@ -14,14 +15,14 @@ function UserDetails({ userDetailsObj }) {
     return (
         <Col className='mt-1'>
             <Row className='image-row'>
-                <img src={userDetailsObj.Src} className="user-image" />
+                <img src={`${base_url}/renters/` + userDetailsObj.image} className="user-image" alt="renter" />
             </Row>
             <Row className='detail-container'>
                 <Row className='name-row'>
-                    {userDetailsObj.firstName} {userDetailsObj.lastName}
+                {userDetailsObj.name}
                 </Row>
                 <Row className='pb-4 rate-row'>
-                    4.3
+                {userDetailsObj.rate}
                 </Row>
                 <Row className='py-4 values'>
                     <Col xs={5}>
@@ -43,7 +44,7 @@ function UserDetails({ userDetailsObj }) {
                 <Row className='py-4 details'>
                     <Col className='details-parts' xs={5}>
                         <Col xs={1}><FaPhoneAlt className='icon' /></Col>
-                        <Col xs={6} className='ps-3 content'>{userDetailsObj.telenumber}</Col>
+                        <Col xs={6} className='ps-3 content'>{userDetailsObj.contact}</Col>
                     </Col>
                     <Col className='details-parts' xs={7}>
                         <Col xs={1}><FaEnvelope className='icon' /></Col>
@@ -53,7 +54,7 @@ function UserDetails({ userDetailsObj }) {
                 <Row className='pt-4 pb-5 details'>
                     <Col className='ms-5 details-parts' xs={12}>
                         <Col xs={1}><FaMapMarkerAlt className='icon' /></Col>
-                        <Col xs={10} className='ps-3 content'>{userDetailsObj.Address}</Col>
+                        <Col xs={10} className='ps-3 content'>{userDetailsObj.location}</Col>
                     </Col>
                 </Row>
 
