@@ -8,7 +8,7 @@ function OccupantCard() {
   const [details, setDetails] = useState({});
   useEffect((event) => {
     axois
-      .get(`${base_url}/admin/select/renters`)
+      .get(`${base_url}/admin/view/renters`)
       .then((data) => {
         const details = data.data;
         setDetails({ ...details });
