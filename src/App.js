@@ -19,6 +19,10 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import AddNewPlace from "./views/pages/user/AddNewPlace";
 import Complaints from './views/pages/Admin/Complaints';
+
+//temporaly imported
+import AddNewRentSelectDateAndTime from "../src/components/user/add_new_rent_date_time_selecter/AddNewRentSelectDateAndTime";
+
 function App() {
     return (
         <div>
@@ -34,6 +38,8 @@ function App() {
                     <Route path='/user/userrentings' element={<UserRentings />} />
                     <Route path='/user/placedescription' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
+                    {/* temporaly imported */}
+                    <Route path='/timeselector' element={<AddNewRentSelectDateAndTime />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
