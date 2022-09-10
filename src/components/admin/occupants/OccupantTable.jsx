@@ -32,7 +32,7 @@ function OccupantTable({ details_array, setSelectedUser, fetchOccupants }) {
                 </Col>
                 <Col className='text-center ps-5 ms-5'>
                     <input className='search-by-name p-2' type="date"
-                        onChange={event => { setDateSearchTerm(event.target.value) }}
+                        onChange={event => { setNameSearchTerm(event.target.value) }}
                     />
                 </Col>
                 <Col className='text-right'></Col>
@@ -57,13 +57,13 @@ function OccupantTable({ details_array, setSelectedUser, fetchOccupants }) {
 
             <Row className='mx-0 px-0 data-part'>
 
-                {details_array.filter((val) => {
-                    // without searching
+            {details_array.filter((val, index) => {
+                    //without searching
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
                     // search by name
-                    else if ((val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
+                    else if ((val.name.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
                     //clear rating search
@@ -84,15 +84,15 @@ function OccupantTable({ details_array, setSelectedUser, fetchOccupants }) {
                         return val
                     }
                     //search by date + rate + name
-                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         return val
                     }
                     // search by date + name
-                    else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         return val
                     }
                     //search by rate + name
-                    else if (dateSearchTerm == "" && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (dateSearchTerm == "" && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         if (rateSearchTerm == val.rate) {
                             return val
                         }
