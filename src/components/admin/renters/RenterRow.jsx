@@ -3,6 +3,26 @@ import { Row, Col } from 'react-bootstrap';
 // for popup
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
+
+let fetchRenters;
+const deleteRenter = (id_1, hideModal) => {
+    var Id = id_1;
+    console.log("Delete renter:", Id);
+
+    axois
+        .put(`${base_url}/admin/delete/renter/` + Id)
+        .then(() => {
+            console.log("Work");
+
+            hideModal();
+            fetchRenters();
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
 
 //popup function
 function DeletePopup(props) {
@@ -17,7 +37,7 @@ function DeletePopup(props) {
                 <p>Do you want delete? This action cannot be undone.</p>
             </Modal.Body>
             <Modal.Footer >
-                <Button className='confirm-delete btn-danger'>Delete</Button>
+                <Button className='confirm-delete btn-danger' onClick={() => deleteRenter(props.renterId, props.onHide)}>Delete</Button>
                 <Button onClick={props.onHide}>Cancel</Button>
             </Modal.Footer>
         </Modal>
@@ -28,10 +48,8 @@ function DeletePopup(props) {
 //data row
 
 function RenterRow(props) {
-
-
-
     const [modalShow, setModalShow] = React.useState(false);
+    fetchRenters = props.fetchRenters
 
     return (
 
@@ -72,7 +90,11 @@ function RenterRow(props) {
                     <p>DELETE</p>
                 </button>
 
-                <DeletePopup show={modalShow} onHide={() => setModalShow(false)} />
+                <DeletePopup
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    renterId={props.id}
+                />
             </Col>
         </Row>
     )
