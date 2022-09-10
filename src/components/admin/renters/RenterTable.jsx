@@ -87,8 +87,13 @@ function RenterTable({ details_array, setSelectedUser }) {
                         return val
                     }
                     //search by date + rate + name
-                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        return val
+                    else if (dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                        if (rateSearchTerm == val.rating) {
+                            return val
+                        }
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
+                            return val
+                        }
                     }
                     // search by date + name
                     else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {

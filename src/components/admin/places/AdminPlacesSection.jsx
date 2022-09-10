@@ -24,14 +24,14 @@ function AdminPlacesSection() {
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
 
-    const [details, setDetails] = useState({});
+    const [details, setDetails] = useState([]);
 
     useEffect((event) => {
         axois
             .get(`${base_url}/admin/view/places`)
             .then((data) => {
-                const details = data.data;
-                setDetails({ ...details });
+                const detail = data.data;
+                setDetails(detail);
 
             })
             .catch((error) => {
@@ -40,8 +40,6 @@ function AdminPlacesSection() {
     }, []);
 
     console.log(details);
-
-
 
     return (
         <Col className='top-selling-products'>
@@ -68,6 +66,7 @@ function AdminPlacesSection() {
                         onChange={event => { setDateSearchTerm(event.target.value) }}
                     />
                 </Col>
+
                 <Col xs={2} className='d-flex justify-content-end px-0'>
                     <Dropdown className="sort-drop-down-btn-admin">
                         <Dropdown.Toggle variant="success" id="dropdown-basic" className='p-md-2 p-0'>
@@ -87,69 +86,78 @@ function AdminPlacesSection() {
                 </Col>
             </Row>
             <Row>
-                {Object.keys(details).filter((index) => {
+                {details.filter((val, index) => {
+                    //without searching
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
-                        return index
+                        return val
                     }
                     // search by name
-                    else if ((details[index].city.toLowerCase().includes(nameSearchTerm.toLowerCase()) || details[index].title.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
-                        return index
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == "" && rateSearchTerm == "") {
+                        return val
                     }
                     //clear rating search
                     else if (rateSearchTerm == "none") {
-                        return index
+                        return val
                     }
-                    // search by rate
+                    // // search by rate
                     else if (nameSearchTerm == "" && dateSearchTerm == "") {
-                        if (rateSearchTerm == details[index].rating) {
-                            return index
+                        if (rateSearchTerm == val.rating) {
+                            return val
                         }
-                        else if (rateSearchTerm === '4+' && details[index].rating > 4) {
-                            return index
-                        }
-                    }
-                    //search by date
-                    else if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == details[index].createDate) {
-                        return index
-                    }
-                    //search by date + rate + name
-                    else if (rateSearchTerm == details[index].rating && dateSearchTerm == details[index].createDate && (details[index].city.toLowerCase().includes(nameSearchTerm.toLowerCase()) || details[index].title.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        return index
-                    }
-                    // search by date + name
-                    else if (rateSearchTerm == "" && dateSearchTerm == details[index].createDate && (details[index].city.toLowerCase().includes(nameSearchTerm.toLowerCase()) || details[index].title.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        return index
-                    }
-                    //search by rate + name
-                    else if (dateSearchTerm == "" && (details[index].city.toLowerCase().includes(nameSearchTerm.toLowerCase()) || details[index].title.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        if (rateSearchTerm == details[index].rating) {
-                            return index
-                        }
-                        else if (rateSearchTerm === '4+' && details[index].rating > 4) {
-                            return index
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
+                            return val
                         }
                     }
-                    //search by date + rate
-                    else if (nameSearchTerm == "" && dateSearchTerm == details[index].createDate) {
-                        if (rateSearchTerm == details[index].rating) {
-                            return index
+                    // //search by date
+                    else if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == val.createDate) {
+                        return val
+                    }
+                    // //search by date + rate + name
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == val.createDate) {
+                        if (rateSearchTerm == val.rating) {
+                            return val
                         }
-                        else if (rateSearchTerm === '4+' && details[index].rating > 4) {
-                            return index
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
+                            return val
+                        }
+                    }
+                    // // search by date + name
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == val.createDate && rateSearchTerm == "") {
+                        return val
+                    }
+                    // //search by rate + name
+
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == "") {
+                        if (rateSearchTerm == val.rating) {
+                            return val
+                        }
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
+                            return val
                         }
                     }
 
-                }).map((key, index) => {
+                    // //search by date + rate
+                    else if (nameSearchTerm == "" && dateSearchTerm == val.createDate) {
+                        if (rateSearchTerm == val.rating) {
+                            return val
+                        }
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
+                            return val
+                        }
+                    }
+
+                }).map((val, index) => {
                     return (
-                        <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2" index={index}>
+                        <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2" key={index}>
                             <PlaceCard
-                                Title={details[index].title}
-                                Src={`${base_url}/images/` + details[index].image}
-                                City={details[index].city}
-                                Price={details[index].price}
-                                Quantity={details[index].quantity}
-                                Rating={details[index].rating}
-                                CreateDate={details[index].createDate}
+                                Title={val.title}
+                                Src={`${base_url}/images/` + val.image}
+                                City={val.city}
+                                Price={val.price}
+                                Quantity={val.quantity}
+                                Rating={val.rating}
+                                CreateDate={val.createDate}
+
                             />
                         </Col>
                     )
