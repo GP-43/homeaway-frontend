@@ -113,14 +113,6 @@ function Bestrentingplacessection() {
 
   console.log(details);
 
-  // {Object.keys(details).map((key, index) => (
-  //   <SingleUser
-  //     Name={details[index].name}
-  //     Location={details[index].location}
-  //     // Src={i.Src}
-  //   />
-  // ))}
-
   const displayPlaces = details.slice(off, off + perPage).map((val, index) => {
     return (
       <Col
@@ -134,8 +126,7 @@ function Bestrentingplacessection() {
           City={val.city}
           Price={val.price} 
           Quantity={val.quantity}
-          Rating={val.rating} 
-        
+          Rating={val.rating}    
         />
       </Col>
     );
