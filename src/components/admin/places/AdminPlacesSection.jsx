@@ -1,20 +1,22 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PlaceCard from "./PlaceCard";
 import { FaExchangeAlt } from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
+import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 
 //images
-import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
-import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
-import place3 from "../../../assets/images/places_image_gallery/place3.jpg";
-import place4 from "../../../assets/images/places_image_gallery/place4.jpg";
-import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
-import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
-import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
-import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
+// import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
+// import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
+// import place3 from "../../../assets/images/places_image_gallery/place3.jpg";
+// import place4 from "../../../assets/images/places_image_gallery/place4.jpg";
+// import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
+// import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
+// import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
+// import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
 
 
 function AdminPlacesSection() {
@@ -22,115 +24,22 @@ function AdminPlacesSection() {
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
 
-    const placeData = [
-        {
-            Src: place1,
-            Title: "Meeting room",
-            City: "Colombo",
-            Price: "Rs.2500",
-            Quantity: 8,
-            Rating: 4.0,
-            CreateDate: "2022-05-21"
-        },
-        {
-            Src: place2,
-            Title: "Study room",
-            City: "Gampaha",
-            Price: "Rs.3000",
-            Quantity: 20,
-            Rating: 4.8,
-            CreateDate: "2022-05-22"
-        },
-        {
-            Src: place3,
-            Title: "Study room",
-            City: "Kurunegala",
-            Price: "Rs.2000",
-            Quantity: 10,
-            Rating: 3.8,
-            CreateDate: "2022-06-23"
-        },
-        {
-            Src: place4,
-            Title: "Meeting room",
-            City: "Jaffna",
-            Price: "Rs.4500",
-            Quantity: 30,
-            Rating: 4.2,
-            CreateDate: "2022-05-24"
-        },
-        {
-            Src: place5,
-            Title: "Meeting room",
-            City: "Maho",
-            Price: "Rs.3500",
-            Quantity: 43,
-            Rating: 1.2,
-            CreateDate: "2022-07-21"
-        },
-        {
-            Src: place6,
-            Title: "Study room",
-            City: "chilaw",
-            Price: "Rs.4000",
-            Quantity: 50,
-            Rating: 4.9,
-            CreateDate: "2022-03-20"
-        },
-        {
-            Src: place7,
-            Title: "Study room",
-            City: "Mount lavinia",
-            Price: "Rs.2500",
-            Quantity: 20,
-            Rating: 3.0,
-            CreateDate: "2022-05-23"
-        },
-        {
-            Src: place8,
-            Title: "Meeting room",
-            City: "Rathmalane",
-            Price: "Rs.5000",
-            Quantity: 12,
-            Rating: 2.8,
-            CreateDate: "2022-05-28"
-        }, {
-            Src: place5,
-            Title: "Meeting room",
-            City: "Maho",
-            Price: "Rs.3500",
-            Quantity: 43,
-            Rating: 1.2,
-            CreateDate: "2022-05-24"
-        },
-        {
-            Src: place6,
-            Title: "Study room",
-            City: "chilaw",
-            Price: "Rs.4000",
-            Quantity: 50,
-            Rating: 4.9,
-            CreateDate: "2022-05-26"
-        },
-        {
-            Src: place7,
-            Title: "Study room",
-            City: "Mount lavinia",
-            Price: "Rs.2500",
-            Quantity: 20,
-            Rating: 3.0,
-            CreateDate: "2022-05-25"
-        },
-        {
-            Src: place8,
-            Title: "Meeting room",
-            City: "Rathmalane",
-            Price: "Rs.5000",
-            Quantity: 12,
-            Rating: 2.8,
-            CreateDate: "2022-05-22"
-        },
-    ];
+    const [details, setDetails] = useState([]);
+
+    useEffect((event) => {
+        axois
+            .get(`${base_url}/admin/view/places`)
+            .then((data) => {
+                const detail = data.data;
+                setDetails(detail);
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
+    console.log(details);
 
     return (
         <Col className='top-selling-products'>
@@ -157,6 +66,7 @@ function AdminPlacesSection() {
                         onChange={event => { setDateSearchTerm(event.target.value) }}
                     />
                 </Col>
+
                 <Col xs={2} className='d-flex justify-content-end px-0'>
                     <Dropdown className="sort-drop-down-btn-admin">
                         <Dropdown.Toggle variant="success" id="dropdown-basic" className='p-md-2 p-0'>
@@ -176,69 +86,78 @@ function AdminPlacesSection() {
                 </Col>
             </Row>
             <Row>
-                {placeData.filter((val) => {
+                {details.filter((val, index) => {
+                    //without searching
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
                     // search by name
-                    else if ((val.City.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.Title.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == "" && rateSearchTerm == "") {
                         return val
                     }
                     //clear rating search
                     else if (rateSearchTerm == "none") {
                         return val
                     }
-                    // search by rate
+                    // // search by rate
                     else if (nameSearchTerm == "" && dateSearchTerm == "") {
-                        if (rateSearchTerm == val.Rating) {
+                        if (rateSearchTerm == val.rating) {
                             return val
                         }
-                        else if (rateSearchTerm === '4+' && val.Rating > 4) {
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
                             return val
                         }
                     }
-                    //search by date
-                    else if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == val.CreateDate) {
+                    // //search by date
+                    else if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == val.createDate) {
                         return val
                     }
-                    //search by date + rate + name
-                    else if (rateSearchTerm == val.Rating && dateSearchTerm == val.CreateDate && (val.City.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.Title.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    // //search by date + rate + name
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == val.createDate) {
+                        if (rateSearchTerm == val.rating) {
+                            return val
+                        }
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
+                            return val
+                        }
+                    }
+                    // // search by date + name
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == val.createDate && rateSearchTerm == "") {
                         return val
                     }
-                    // search by date + name
-                    else if (rateSearchTerm == "" && dateSearchTerm == val.CreateDate && (val.City.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.Title.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        return val
-                    }
-                    //search by rate + name
-                    else if (dateSearchTerm == "" && (val.City.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.Title.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
-                        if (rateSearchTerm == val.Rating) {
+                    // //search by rate + name
+
+                    else if ((val.title.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.city.toLowerCase().includes(nameSearchTerm.toLowerCase())) && dateSearchTerm == "") {
+                        if (rateSearchTerm == val.rating) {
                             return val
                         }
-                        else if (rateSearchTerm === '4+' && val.Rating > 4) {
-                            return val
-                        }
-                    }
-                    //search by date + rate
-                    else if (nameSearchTerm == "" && dateSearchTerm == val.CreateDate) {
-                        if (rateSearchTerm == val.Rating) {
-                            return val
-                        }
-                        else if (rateSearchTerm === '4+' && val.Rating > 4) {
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
                             return val
                         }
                     }
 
-                }).map((val) => {
+                    // //search by date + rate
+                    else if (nameSearchTerm == "" && dateSearchTerm == val.createDate) {
+                        if (rateSearchTerm == val.rating) {
+                            return val
+                        }
+                        else if (rateSearchTerm === '4+' && val.rating > 4) {
+                            return val
+                        }
+                    }
+
+                }).map((val, index) => {
                     return (
-                        <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
+                        <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2" key={index}>
                             <PlaceCard
-                                Title={val.Title}
-                                Src={val.Src}
-                                City={val.City}
-                                Price={val.Price}
-                                Quantity={val.Quantity}
-                                Rating={val.Rating}
-                                CreateDate={val.CreateDate}
+                                Title={val.title}
+                                Src={`${base_url}/images/` + val.image}
+                                City={val.city}
+                                Price={val.price}
+                                Quantity={val.quantity}
+                                Rating={val.rating}
+                                CreateDate={val.createDate}
+
                             />
                         </Col>
                     )
@@ -249,3 +168,113 @@ function AdminPlacesSection() {
 }
 
 export default AdminPlacesSection
+
+// const placeData = [
+//     {
+//         Src: place1,
+//         Title: "Meeting room",
+//         City: "Colombo",
+//         Price: "Rs.2500",
+//         Quantity: 8,
+//         Rating: 4.0,
+//         CreateDate: "2022-05-21"
+//     },
+//     {
+//         Src: place2,
+//         Title: "Study room",
+//         City: "Gampaha",
+//         Price: "Rs.3000",
+//         Quantity: 20,
+//         Rating: 4.8,
+//         CreateDate: "2022-05-22"
+//     },
+//     {
+//         Src: place3,
+//         Title: "Study room",
+//         City: "Kurunegala",
+//         Price: "Rs.2000",
+//         Quantity: 10,
+//         Rating: 3.8,
+//         CreateDate: "2022-06-23"
+//     },
+//     {
+//         Src: place4,
+//         Title: "Meeting room",
+//         City: "Jaffna",
+//         Price: "Rs.4500",
+//         Quantity: 30,
+//         Rating: 4.2,
+//         CreateDate: "2022-05-24"
+//     },
+//     {
+//         Src: place5,
+//         Title: "Meeting room",
+//         City: "Maho",
+//         Price: "Rs.3500",
+//         Quantity: 43,
+//         Rating: 1.2,
+//         CreateDate: "2022-07-21"
+//     },
+//     {
+//         Src: place6,
+//         Title: "Study room",
+//         City: "chilaw",
+//         Price: "Rs.4000",
+//         Quantity: 50,
+//         Rating: 4.9,
+//         CreateDate: "2022-03-20"
+//     },
+//     {
+//         Src: place7,
+//         Title: "Study room",
+//         City: "Mount lavinia",
+//         Price: "Rs.2500",
+//         Quantity: 20,
+//         Rating: 3.0,
+//         CreateDate: "2022-05-23"
+//     },
+//     {
+//         Src: place8,
+//         Title: "Meeting room",
+//         City: "Rathmalane",
+//         Price: "Rs.5000",
+//         Quantity: 12,
+//         Rating: 2.8,
+//         CreateDate: "2022-05-28"
+//     }, {
+//         Src: place5,
+//         Title: "Meeting room",
+//         City: "Maho",
+//         Price: "Rs.3500",
+//         Quantity: 43,
+//         Rating: 1.2,
+//         CreateDate: "2022-05-24"
+//     },
+//     {
+//         Src: place6,
+//         Title: "Study room",
+//         City: "chilaw",
+//         Price: "Rs.4000",
+//         Quantity: 50,
+//         Rating: 4.9,
+//         CreateDate: "2022-05-26"
+//     },
+//     {
+//         Src: place7,
+//         Title: "Study room",
+//         City: "Mount lavinia",
+//         Price: "Rs.2500",
+//         Quantity: 20,
+//         Rating: 3.0,
+//         CreateDate: "2022-05-25"
+//     },
+//     {
+//         Src: place8,
+//         Title: "Meeting room",
+//         City: "Rathmalane",
+//         Price: "Rs.5000",
+//         Quantity: 12,
+//         Rating: 2.8,
+//         CreateDate: "2022-05-22"
+//     },
+// ];
