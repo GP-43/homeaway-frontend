@@ -1,13 +1,11 @@
-import React, {useState} from "react";
-import {Card, Col} from "react-bootstrap";
-import {FaUserFriends} from "react-icons/fa";
-import {FaStar} from "react-icons/fa";
-import {FaRegHeart} from "react-icons/fa";
-import {FaHeart} from "react-icons/fa";
+import React, { useState } from "react";
+import { Card, Col } from "react-bootstrap";
+import { FaUserFriends } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+
 import { useNavigate } from "react-router-dom";
 
 function PlaceCard(props) {
-    const [show, setShow] = useState(true);
 
     const navigate = useNavigate();
 
@@ -22,15 +20,7 @@ function PlaceCard(props) {
                     src={props.Src}
                     alt="place card"
                 />
-                {show ? (
-                    <button className="button" onClick={() => setShow(false)}>
-                        <FaRegHeart className="heart-icon"/>
-                    </button>
-                ) : (
-                    <button className="button" onClick={() => setShow(true)}>
-                        <FaHeart className="heart-icon"/>
-                    </button>
-                )}
+
 
                 <Card.Body className="text-box" onClick={handleOnCardClick}>
                     <Card.Body className="text">
@@ -40,11 +30,11 @@ function PlaceCard(props) {
                         <Card.Text className="createdate">{props.CreateDate}</Card.Text>
                         <Card.Body className="last-row">
                             <Card.Body className="quantity-box">
-                                <FaUserFriends className="people-icon"/>
+                                <FaUserFriends className="people-icon" />
                                 <Card.Text className="quantity">{props.Quantity}</Card.Text>
                             </Card.Body>
                             <Card.Body className="rating-box">
-                                <FaStar className="rating-icon"/>
+                                <FaStar className="rating-icon" />
                                 <Card.Text className="rating">{props.Rating}</Card.Text>
                             </Card.Body>
                         </Card.Body>

@@ -4,7 +4,7 @@ import RenterRow from "./RenterRow";
 import { useState } from 'react';
 const base_url = process.env.REACT_APP_BASE_URL;
 
-function RenterTable({ details_array, setSelectedUser }) {
+function RenterTable({ details_array, setSelectedUser, fetchRenters }) {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
@@ -122,6 +122,7 @@ function RenterTable({ details_array, setSelectedUser }) {
                         <Row className='data mx-0 px-0 ' key={index}>
                             <RenterRow
                                 //Src={val.Src}
+                                id={val.id}
                                 name={val.name}
                                 Src={`${base_url}/renters/` + val.image}
                                 email={val.email}
@@ -131,6 +132,7 @@ function RenterTable({ details_array, setSelectedUser }) {
 
                                 rowUserObj={val}
                                 setSelectedUser={setSelectedUser}
+                                fetchRenters={fetchRenters}
 
 
                             />

@@ -28,7 +28,7 @@ function Renters() {
 
     const [selectedUser, setSelectedUser] = useState({});
 
-    useEffect((event) => {
+    function fetchRenters() {
         axois
             .get(`${base_url}/admin/view/renters`)
             .then((data) => {
@@ -41,11 +41,11 @@ function Renters() {
             .catch((error) => {
                 console.log(error);
             });
+    }
+
+    useEffect((event) => {
+        fetchRenters();
     }, []);
-
-
-
-
 
     return (
         <Container>
@@ -76,7 +76,7 @@ function Renters() {
 
                     <Row className="mx-0 user-list-card">
                         <Col className="px-0 Renters-top-selling-products-part">
-                            <RenterTable details_array={details} setSelectedUser={setSelectedUser} />
+                            <RenterTable details_array={details} setSelectedUser={setSelectedUser} fetchRenters={fetchRenters} />
                         </Col>
                     </Row>
 
