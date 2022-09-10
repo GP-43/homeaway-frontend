@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import OccupantRow from "./OccupantRow";
 import { useState } from 'react';
+const base_url = process.env.REACT_APP_BASE_URL;
 
 
 
@@ -111,15 +112,16 @@ function OccupantTable({ details_array, setSelectedUser }) {
                             return val
                         }
                     }
-                }).map((val, key) => {
+                }).map((val, index) => {
                     return (
-                        <Row className='data mx-0 px-0 ' key={key}>
+                        <Row className='data mx-0 px-0 ' key={index}>
                             <OccupantRow
-                                Src={val.Src}
-                                firstName={val.firstName}
-                                lastName={val.lastName}
+                                //Src={val.Src}
+                                name={val.name}
+                                Src={`${base_url}/renters/` + val.image}
                                 email={val.email}
                                 joinedDate={val.joinedDate}
+                                properties={val.properties}
                                 rate={val.rate}
 
                                 rowUserObj={val}
