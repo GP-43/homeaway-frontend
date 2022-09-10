@@ -1,8 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
-import ReactDOM from "react-dom";
-import AddNewRentTimeComponent from "./AddNewRentTimeComponent";
 
 function AddNewRentSelectDateAndTime() {
   const [rentingDateList, setrentingDateList] = useState([
@@ -62,7 +60,7 @@ function AddNewRentSelectDateAndTime() {
   };
 
   return (
-    <form className="App" autoComplete="off">
+    <>
       <div>
         {rentingDateList.map((singlerentingDate, index) => (
           <div key={index}>
@@ -81,7 +79,7 @@ function AddNewRentSelectDateAndTime() {
                   onClick={handleRentingDateAdd}
                   className="add-btn"
                 >
-                  <span>Add a Service</span>
+                  <span>Add a Date</span>
                 </button>
               )}
             </div>
@@ -96,8 +94,6 @@ function AddNewRentSelectDateAndTime() {
                 </button>
               )}
             </div>
-            {/* <AddNewRentTimeComponent date = {singlerentingDate.rentingDate}/> */}
-            //////////////////////////////////////////////////////////////
             {singlerentingDate.rentingTimes.map((rentingTime, innerIndex) => (
               <div key={index + "-" + innerIndex} className="services">
                 <div className="first-division">
@@ -162,7 +158,18 @@ function AddNewRentSelectDateAndTime() {
               </ul>
             ))}
         </div> */}
-    </form>
+
+      <div className="output">
+        <h2>Date</h2>
+        {
+          rentingDateList.map((singleService, index) => (
+            <ul key={index}>
+              {singleService.rentingDate}
+              {singleService.rentingDate && <li>{singleService.rentingTimes[index].RentingFromTime} to {singleService.rentingTimes[index].RentingToTime}</li>}
+            </ul>
+          ))}
+      </div>
+    </>
   );
 }
 
