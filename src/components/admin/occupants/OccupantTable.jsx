@@ -6,13 +6,10 @@ const base_url = process.env.REACT_APP_BASE_URL;
 
 
 
-function OccupantTable({ details_array, setSelectedUser }) {
+function OccupantTable({ details_array, setSelectedUser, fetchOccupants }) {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
-
-
-
     return (
         <Col className='top-selling-products'>
             <Row className='mx-0 search-part mt-3 pt-3 '>
@@ -117,15 +114,16 @@ function OccupantTable({ details_array, setSelectedUser }) {
                         <Row className='data mx-0 px-0 ' key={index}>
                             <OccupantRow
                                 //Src={val.Src}
+                                id={val.id}
                                 name={val.name}
                                 Src={`${base_url}/renters/` + val.image}
                                 email={val.email}
                                 joinedDate={val.joinedDate}
                                 properties={val.properties}
                                 rate={val.rate}
-
                                 rowUserObj={val}
                                 setSelectedUser={setSelectedUser}
+                                fetchOccupants={fetchOccupants}
                             />
                         </Row>
                     )

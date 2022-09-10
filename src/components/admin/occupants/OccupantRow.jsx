@@ -3,6 +3,25 @@ import { Row, Col } from "react-bootstrap";
 // for popup
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
+
+let fetchOccupants;
+const deleteOccupant = (id_1, hideModal) => {
+  var Id = id_1;
+  console.log("Delete occupant:", Id);
+
+  axois
+    .put("http://localhost:4000/admin/delete/occupant/" + Id)
+    .then(() => {
+      console.log("Work");
+      hideModal();
+      fetchOccupants();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 //popup function
 function DeletePopup(props) {
@@ -22,7 +41,12 @@ function DeletePopup(props) {
         <p>Do you want delete? This action cannot be undone.</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button className="confirm-delete btn-danger">Delete</Button>
+        <Button
+          className="confirm-delete btn-danger"
+          onClick={() => deleteOccupant(props.occupantId, props.onHide)}
+        >
+          Delete
+        </Button>
         <Button onClick={props.onHide}>Cancel</Button>
       </Modal.Footer>
     </Modal>
@@ -33,7 +57,7 @@ function DeletePopup(props) {
 
 function OccupantRow(props) {
   const [modalShow, setModalShow] = React.useState(false);
-
+  fetchOccupants = props.fetchOccupants
   return (
     <Row className="row-top-products mx-0 px-0 mb-2 mt-3">
       <Col className="px-0 ps-3" xs={1}>
@@ -69,12 +93,18 @@ function OccupantRow(props) {
         <button
           className="delete-btn px-0 pb-0"
           variant="primary"
-          onClick={() => setModalShow(true)}
+          onClick={() => {
+            setModalShow(true);
+          }}
         >
           <p>DELETE</p>
         </button>
 
-        <DeletePopup show={modalShow} onHide={() => setModalShow(false)} />
+        <DeletePopup
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          occupantId={props.id}
+        />
       </Col>
     </Row>
   );
