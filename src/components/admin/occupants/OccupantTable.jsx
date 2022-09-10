@@ -2,16 +2,14 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import OccupantRow from "./OccupantRow";
 import { useState } from 'react';
+const base_url = process.env.REACT_APP_BASE_URL;
 
 
 
-function OccupantTable({ details_array, setSelectedUser }) {
+function OccupantTable({ details_array, setSelectedUser, fetchOccupants }) {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
     const [rateSearchTerm, setRateSearchTerm] = useState('')
-
-
-
     return (
         <Col className='top-selling-products'>
             <Row className='mx-0 search-part mt-3 pt-3 '>
@@ -34,7 +32,7 @@ function OccupantTable({ details_array, setSelectedUser }) {
                 </Col>
                 <Col className='text-center ps-5 ms-5'>
                     <input className='search-by-name p-2' type="date"
-                        onChange={event => { setDateSearchTerm(event.target.value) }}
+                        onChange={event => { setNameSearchTerm(event.target.value) }}
                     />
                 </Col>
                 <Col className='text-right'></Col>
@@ -59,13 +57,13 @@ function OccupantTable({ details_array, setSelectedUser }) {
 
             <Row className='mx-0 px-0 data-part'>
 
-                {details_array.filter((val) => {
-                    // without searching
+            {details_array.filter((val, index) => {
+                    //without searching
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
                     // search by name
-                    else if ((val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
+                    else if ((val.name.toLowerCase().includes(nameSearchTerm.toLowerCase())) && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
                     }
                     //clear rating search
@@ -86,15 +84,15 @@ function OccupantTable({ details_array, setSelectedUser }) {
                         return val
                     }
                     //search by date + rate + name
-                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (rateSearchTerm == val.rate && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         return val
                     }
                     // search by date + name
-                    else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (rateSearchTerm == "" && dateSearchTerm == val.joinedDate && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         return val
                     }
                     //search by rate + name
-                    else if (dateSearchTerm == "" && (val.firstName.toLowerCase().includes(nameSearchTerm.toLowerCase()) || val.lastName.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
+                    else if (dateSearchTerm == "" && (val.name.toLowerCase().includes(nameSearchTerm.toLowerCase()))) {
                         if (rateSearchTerm == val.rate) {
                             return val
                         }
@@ -111,19 +109,21 @@ function OccupantTable({ details_array, setSelectedUser }) {
                             return val
                         }
                     }
-                }).map((val, key) => {
+                }).map((val, index) => {
                     return (
-                        <Row className='data mx-0 px-0 ' key={key}>
+                        <Row className='data mx-0 px-0 ' key={index}>
                             <OccupantRow
-                                Src={val.Src}
-                                firstName={val.firstName}
-                                lastName={val.lastName}
+                                //Src={val.Src}
+                                id={val.id}
+                                name={val.name}
+                                Src={`${base_url}/renters/` + val.image}
                                 email={val.email}
                                 joinedDate={val.joinedDate}
+                                properties={val.properties}
                                 rate={val.rate}
-
                                 rowUserObj={val}
                                 setSelectedUser={setSelectedUser}
+                                fetchOccupants={fetchOccupants}
                             />
                         </Row>
                     )
