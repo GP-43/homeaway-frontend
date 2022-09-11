@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
 
 function AddNewRentSelectDateAndTime() {
+  const [checked, setChecked] = useState(false);
   return (
     <>
       <h4>Select Your Available Time</h4>
@@ -13,7 +14,6 @@ function AddNewRentSelectDateAndTime() {
         <Col>
           <input type="date" />
         </Col>
-        
         <Col>
           <select name="" id="">
             <option value="">12.00</option>
@@ -92,6 +92,21 @@ function AddNewRentSelectDateAndTime() {
         <Col>
           <label htmlFor="">mins</label>
         </Col>
+      </Row>
+      <Row>
+        <Col>
+        <label htmlFor="">Recurring</label>
+        </Col>
+        <Col>
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => setChecked(e.target.checked)}
+          />
+        </Col>
+      </Row>
+      <Row className={!checked && "d-none"}>
+            helloo how are you
       </Row>
     </>
   );
