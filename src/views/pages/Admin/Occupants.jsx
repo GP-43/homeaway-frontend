@@ -72,7 +72,7 @@ function Occupants() {
               <OccupantTable
                 details_array={details}
                 setSelectedUser={setSelectedUser}
-				fetchOccupants={fetchOccupants}
+                fetchOccupants={fetchOccupants}
               />
             </Col>
           </Row>

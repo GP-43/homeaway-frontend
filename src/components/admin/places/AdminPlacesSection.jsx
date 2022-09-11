@@ -7,18 +7,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 import axois from "axios";
 const base_url = process.env.REACT_APP_BASE_URL;
 
-
-//images
-// import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
-// import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
-// import place3 from "../../../assets/images/places_image_gallery/place3.jpg";
-// import place4 from "../../../assets/images/places_image_gallery/place4.jpg";
-// import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
-// import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
-// import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
-// import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
-
-
 function AdminPlacesSection() {
     const [nameSearchTerm, setNameSearchTerm] = useState('')
     const [dateSearchTerm, setDateSearchTerm] = useState('')
@@ -78,8 +66,7 @@ function AdminPlacesSection() {
 
                         <Dropdown.Menu className="my-bookings-dropdown">
                             <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Rating</Dropdown.Item>
                             <Dropdown.Item href="#/action-3">Date</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
