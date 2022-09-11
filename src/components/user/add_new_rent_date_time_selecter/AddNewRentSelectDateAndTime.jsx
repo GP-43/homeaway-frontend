@@ -4,9 +4,7 @@ import { useState } from "react";
 
 function AddNewRentSelectDateAndTime() {
   const [recurring, setRecurring] = useState(false);
-  const [daily, setDaily] = useState(false);
-  const [weekly, setWeekly] = useState(false);
-  const [monthly, setMonthly] = useState(false);
+  const [recurringType, setRecurringType] = useState("");
   return (
     <>
       <h4>Select Your Available Time</h4>
@@ -116,35 +114,116 @@ function AddNewRentSelectDateAndTime() {
           <Col>
             <input
               type="radio"
-              value={daily}
+              value="daily"
               id="Daily"
               name="recurring"
-              onChange={(e) => setDaily(e.target.value)}
+              onChange={(e) => setRecurringType(e.target.value)}
             />
             <label htmlFor="">Daily</label>
           </Col>
           <Col>
             <input
               type="radio"
-              value="Weekly"
+              value="weekly"
               id="Weekly"
               name="recurring"
-              onChange={(e) => setWeekly(e.target.value)}
+              onChange={(e) => setRecurringType(e.target.value)}
             />
             <label htmlFor="">Weekly</label>
           </Col>
           <Col>
             <input
               type="radio"
-              value="Monthly"
+              value="monthly"
               id="Monthly"
               name="recurring"
-              onChange={(e) => setMonthly(e.target.value)}
+              onChange={(e) => setRecurringType(e.target.value)}
             />
             <label htmlFor="">Monthly</label>
           </Col>
         </Row>
-        <Row className={!daily && "d-none"}>Good morning</Row>
+        <Row className={!(recurringType === "daily") && "d-none"}>
+          <Row>
+            <h5>Daily</h5>
+          </Row>
+          <Row>
+            <label htmlFor="">End date</label>
+            <input type="date" />
+          </Row>
+        </Row>
+        <Row className={!(recurringType === "weekly") && "d-none"}>
+          <Row>
+            <h5>Weekly</h5>
+          </Row>
+          <Row>
+            <label htmlFor="">End date</label>
+            <input type="date" />
+          </Row>
+          <Row>
+            <Col>
+              <label htmlFor="">Occurs on</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Sunday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Monday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Tuesday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Wednesday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Thursday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Friday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Saturday</label>
+              <input type="checkbox" />
+            </Col>
+          </Row>
+        </Row>
+        <Row className={!(recurringType === "monthly") && "d-none"}>
+          <h5>Monthly</h5>
+          <Row>
+            <label htmlFor="">End date</label>
+            <input type="date" />
+          </Row>
+          <Row>
+            <Col>
+              <select name="" id="">
+                <option value="">First</option>
+                <option value="">Second</option>
+                <option value="">Third</option>
+                <option value="">Fourth</option>
+                <option value="">Last</option>
+              </select>
+            </Col>
+            <Col>
+              <select name="" id="">
+                <option value="">Sunday</option>
+                <option value="">Monday</option>
+                <option value="">Tuesday</option>
+                <option value="">Wednesday</option>
+                <option value="">Thursday</option>
+                <option value="">Friday</option>
+                <option value="">Saturday</option>
+              </select>
+            </Col>
+          </Row>
+        </Row>
+        {console.log(recurringType)}
       </Row>
     </>
   );
