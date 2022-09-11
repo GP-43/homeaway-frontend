@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LatestPlaceCard from "./LatestPlaceCard";
 import Carousel from "react-bootstrap/Carousel";
 import { Row, Col } from "react-bootstrap";
@@ -11,6 +11,8 @@ import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
 import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
 import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
+import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function LatestPlacesCardSection() {
   const latestPlaceData = [
@@ -94,26 +96,42 @@ function LatestPlacesCardSection() {
     setIndex(selectedIndex);
   };
 
+  const [details, setDetails] = useState([]);
+
+  useEffect((event) => {
+    axois
+      .get(`${base_url}/anon/latestplaces`)
+      .then((data) => {
+        const detail = data.data;
+        setDetails(detail);
+        //setoccupantData(false)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
   return (
     <Row>
       <Col>
         <Row>
-          <Carousel activeIndex={index} onSelect={handleSelect}>
 
+          <Carousel activeIndex={index} onSelect={handleSelect}>
+          
             {/* first four items */}
             <Carousel.Item>
             <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
-            {latestPlaceData
+            {details
               .filter((val) => {
-                if (latestPlaceData.indexOf(val) < 4) {
+                if (details.indexOf(val) < 4) {
                   return val;
                 } 
               })
-              .map((i) => (
+              .map((i,index) => (
                   <CarouselItem
-                    description={i.Description}
-                    src={i.Src}
-                    date={i.Date}
+                    description={i.description}
+                    src={`${base_url}/images/`  + i.image}
+                    date={i.createdAt}
                   />
               ))}
 
@@ -126,18 +144,18 @@ function LatestPlacesCardSection() {
 
               <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
 
-              {latestPlaceData
+              {details
               .filter((val) => {
-                if (latestPlaceData.indexOf(val) >= 4 && latestPlaceData.indexOf(val) < 8) {
+                if (details.indexOf(val) >= 4 && details.indexOf(val) < 8) {
                   return val;
                 } 
               })
-              .map((i) => (
-                  <CarouselItem
-                    description={i.Description}
-                    src={i.Src}
-                    date={i.Date}
-                  />
+              .map((i,index) => (
+                <CarouselItem
+                  description={i.description}
+                  src={`${base_url}/images/`  + i.image}
+                  date={i.createdAt}
+                />
               ))}
 
               </Col>
@@ -151,18 +169,18 @@ function LatestPlacesCardSection() {
 
               <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
 
-              {latestPlaceData
+              {details
               .filter((val) => {
-                if (latestPlaceData.indexOf(val) >= 8 && latestPlaceData.indexOf(val) < 12) {
+                if (details.indexOf(val) >= 8 && details.indexOf(val) < 12) {
                   return val;
                 } 
               })
-              .map((i) => (
-                  <CarouselItem
-                    description={i.Description}
-                    src={i.Src}
-                    date={i.Date}
-                  />
+              .map((i,index) => (
+                <CarouselItem
+                  description={i.description}
+                  src={`${base_url}/images/`  + i.image}
+                  date={i.createdAt}
+                />
               ))}
 
               </Col>
