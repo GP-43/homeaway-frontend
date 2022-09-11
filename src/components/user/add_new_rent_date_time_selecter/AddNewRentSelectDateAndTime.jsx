@@ -3,7 +3,10 @@ import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
 
 function AddNewRentSelectDateAndTime() {
-  const [checked, setChecked] = useState(false);
+  const [recurring, setRecurring] = useState(false);
+  const [daily, setDaily] = useState(false);
+  const [weekly, setWeekly] = useState(false);
+  const [monthly, setMonthly] = useState(false);
   return (
     <>
       <h4>Select Your Available Time</h4>
@@ -95,18 +98,53 @@ function AddNewRentSelectDateAndTime() {
       </Row>
       <Row>
         <Col>
-        <label htmlFor="">Recurring</label>
+          <label htmlFor="">Recurring</label>
         </Col>
         <Col>
           <input
             type="checkbox"
-            checked={checked}
-            onChange={(e) => setChecked(e.target.checked)}
+            checked={recurring}
+            onChange={(e) => setRecurring(e.target.checked)}
           />
         </Col>
       </Row>
-      <Row className={!checked && "d-none"}>
-            helloo how are you
+      <Row className={!recurring && "d-none"}>
+        <Row>
+          <label htmlFor="">Reccurance</label>
+        </Row>
+        <Row>
+          <Col>
+            <input
+              type="radio"
+              value={daily}
+              id="Daily"
+              name="recurring"
+              onChange={(e) => setDaily(e.target.value)}
+            />
+            <label htmlFor="">Daily</label>
+          </Col>
+          <Col>
+            <input
+              type="radio"
+              value="Weekly"
+              id="Weekly"
+              name="recurring"
+              onChange={(e) => setWeekly(e.target.value)}
+            />
+            <label htmlFor="">Weekly</label>
+          </Col>
+          <Col>
+            <input
+              type="radio"
+              value="Monthly"
+              id="Monthly"
+              name="recurring"
+              onChange={(e) => setMonthly(e.target.value)}
+            />
+            <label htmlFor="">Monthly</label>
+          </Col>
+        </Row>
+        <Row className={!daily && "d-none"}>Good morning</Row>
       </Row>
     </>
   );
