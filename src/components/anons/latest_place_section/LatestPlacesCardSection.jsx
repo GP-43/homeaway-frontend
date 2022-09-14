@@ -131,7 +131,7 @@ function LatestPlacesCardSection() {
                   <CarouselItem
                     description={i.description}
                     src={`${base_url}/images/`  + i.image}
-                    date={i.createdAt}
+                    date={i.creatDate}
                   />
               ))}
 
@@ -154,7 +154,7 @@ function LatestPlacesCardSection() {
                 <CarouselItem
                   description={i.description}
                   src={`${base_url}/images/`  + i.image}
-                  date={i.createdAt}
+                  date={i.creatDate}
                 />
               ))}
 
@@ -179,7 +179,7 @@ function LatestPlacesCardSection() {
                 <CarouselItem
                   description={i.description}
                   src={`${base_url}/images/`  + i.image}
-                  date={i.createdAt}
+                  date={i.creatDate}
                 />
               ))}
 
