@@ -15,80 +15,6 @@ import axois from "axios";
 const base_url = process.env.REACT_APP_BASE_URL;
 
 function LatestPlacesCardSection() {
-  const latestPlaceData = [
-    {
-      Src: place1,
-      Id: 1,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place2,
-      Id: 2,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place3,
-      Id: 3,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place4,
-      Id: 4,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place5,
-      Id: 5,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place6,
-      Id: 6,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place7,
-      Id: 7,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place8,
-      Id: 8,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place1,
-      Id: 1,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place2,
-      Id: 2,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place3,
-      Id: 3,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-    {
-      Src: place4,
-      Id: 4,
-      Description: "An amazingly different place for a conference",
-      Date: "July 27, 2020",
-    },
-  ];
 
   const [index, setIndex] = useState(0);
 
@@ -111,16 +37,14 @@ function LatestPlacesCardSection() {
       });
   }, []);
 
-  // console.log(details.slice(0,14))
-
   return (
     <Row>
       <Col>
         <Row>
           <Carousel activeIndex={index} onSelect={handleSelect}>
             <Carousel.Item>
-              <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">{
-                details.slice(0, 4).map((i, index) => (
+              <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
+                {details.slice(0, 4).map((i, index) => (
                   <CarouselItem
                     description={i.description}
                     src={`${base_url}/images/` + i.image}
@@ -130,10 +54,10 @@ function LatestPlacesCardSection() {
               </Col>
             </Carousel.Item>
 
-            
+            {details.length > 4 &&
               <Carousel.Item>
-                <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">{
-                  details.slice(4, 8).map((i, index) => (
+                <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
+                  {details.slice(4, 8).map((i, index) => (
                     <CarouselItem
                       description={i.description}
                       src={`${base_url}/images/` + i.image}
@@ -142,12 +66,12 @@ function LatestPlacesCardSection() {
                   ))}
                 </Col>
               </Carousel.Item>
+            }
 
-
-            
+            {details.length > 8 &&
               <Carousel.Item>
-                <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">{
-                  details.slice(8, 12).map((i, index) => (
+                <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
+                  {details.slice(8, 12).map((i, index) => (
                     <CarouselItem
                       description={i.description}
                       src={`${base_url}/images/` + i.image}
@@ -156,7 +80,7 @@ function LatestPlacesCardSection() {
                   ))}
                 </Col>
               </Carousel.Item>
-            
+            }
           </Carousel>
         </Row>
       </Col>
