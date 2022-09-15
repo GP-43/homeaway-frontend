@@ -104,88 +104,59 @@ function LatestPlacesCardSection() {
       .then((data) => {
         const detail = data.data;
         setDetails(detail);
-        //setoccupantData(false)
+        //setoccupantData(false
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  
+
+  // console.log(details.slice(0,14))
+
   return (
     <Row>
       <Col>
         <Row>
-
           <Carousel activeIndex={index} onSelect={handleSelect}>
-          
-            {/* first four items */}
             <Carousel.Item>
-            <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
-            {details
-              .filter((val) => {
-                if (details.indexOf(val) < 4) {
-                  return val;
-                } 
-              })
-              .map((i,index) => (
+              <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">{
+                details.slice(0, 4).map((i, index) => (
                   <CarouselItem
                     description={i.description}
-                    src={`${base_url}/images/`  + i.image}
+                    src={`${base_url}/images/` + i.image}
                     date={i.creatDate}
                   />
-              ))}
-
+                ))}
               </Col>
-              </Carousel.Item>
+            </Carousel.Item>
 
-
-              {/* second four items */}
+            
               <Carousel.Item>
-
-              <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
-
-              {details
-              .filter((val) => {
-                if (details.indexOf(val) >= 4 && details.indexOf(val) < 8) {
-                  return val;
-                } 
-              })
-              .map((i,index) => (
-                <CarouselItem
-                  description={i.description}
-                  src={`${base_url}/images/`  + i.image}
-                  date={i.creatDate}
-                />
-              ))}
-
-              </Col>
-
+                <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">{
+                  details.slice(4, 8).map((i, index) => (
+                    <CarouselItem
+                      description={i.description}
+                      src={`${base_url}/images/` + i.image}
+                      date={i.creatDate}
+                    />
+                  ))}
+                </Col>
               </Carousel.Item>
 
 
-              {/* third four items */}
-
+            
               <Carousel.Item>
-
-              <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">
-
-              {details
-              .filter((val) => {
-                if (details.indexOf(val) >= 8 && details.indexOf(val) < 12) {
-                  return val;
-                } 
-              })
-              .map((i,index) => (
-                <CarouselItem
-                  description={i.description}
-                  src={`${base_url}/images/`  + i.image}
-                  date={i.creatDate}
-                />
-              ))}
-
-              </Col>
-
+                <Col className="latest-card-box d-flex px-lg-4 py-lg-3 px-md-2 py-md-2">{
+                  details.slice(8, 12).map((i, index) => (
+                    <CarouselItem
+                      description={i.description}
+                      src={`${base_url}/images/` + i.image}
+                      date={i.creatDate}
+                    />
+                  ))}
+                </Col>
               </Carousel.Item>
+            
           </Carousel>
         </Row>
       </Col>
