@@ -39,7 +39,7 @@ function App() {
                     <Route path='/user/placedescription' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
                     {/* temporaly imported */}
-                    <Route path='/user/timeselector' element={<AddNewRentSelectDateAndTime />} />
+                    <Route path='cd' element={<AddNewRentSelectDateAndTime />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
