@@ -3,172 +3,228 @@ import { Row, Col } from "react-bootstrap";
 import { useState } from "react";
 
 function AddNewRentSelectDateAndTime() {
-  const [rentingDateList, setrentingDateList] = useState([
-    {
-      rentingDate: "",
-      rentingTimes: [{ RentingFromTime: "", RentingToTime: "" }],
-    },
-  ]);
-
-  const handleRentingDate = (e, index) => {
-    const { name, value } = e.target;
-    const list = [...rentingDateList];
-    list[index][name] = value;
-    setrentingDateList(list);
-  };
-
-  const handleRentingDateRemove = (index) => {
-    const list = [...rentingDateList];
-    list.splice(index, 1);
-    setrentingDateList(list);
-  };
-
-  const handleRentingDateAdd = () => {
-    setrentingDateList([
-      ...rentingDateList,
-      {
-        rentingDate: "",
-        rentingTimes: [{ RentingFromTime: "", RentingToTime: "" }],
-      },
-    ]);
-  };
-
-  const handleRentingFromTimeRemove = (index, innerIndex) => {
-    // const list = [...rentingFromTimeList];
-    // list.splice(index, 1);
-    // setRentingFromTimeList(list);
-    const newRentingDateList = [...rentingDateList];
-    newRentingDateList[index].rentingTimes.splice(innerIndex, 1);
-    setrentingDateList(newRentingDateList);
-  };
-
-  const handleRentingFromTimeAdd = (index) => {
-    const newRentingDateList = [...rentingDateList];
-    newRentingDateList[index].rentingTimes.push({
-      RentingFromTime: "",
-      RentingToTime: "",
-    });
-    setrentingDateList(newRentingDateList);
-  };
-
-  const handleRentingTimeChange = (e, index, innerIndex) => {
-    const { name, value } = e.target;
-    const list = [...rentingDateList];
-    list[index]["rentingTimes"][innerIndex][name] = value;
-    setrentingDateList(list);
-    console.log(rentingDateList);
-  };
-
+  const [recurring, setRecurring] = useState(false);
+  const [recurringType, setRecurringType] = useState("");
   return (
     <>
-      <div>
-        {rentingDateList.map((singlerentingDate, index) => (
-          <div key={index}>
-            <div>
-              <input
-                name="rentingDate"
-                type="date"
-                id="rentingDate"
-                value={singlerentingDate.rentingDate}
-                onChange={(e) => handleRentingDate(e, index)}
-                required
-              />
-              {rentingDateList.length - 1 === index && (
-                <button
-                  type="button"
-                  onClick={handleRentingDateAdd}
-                  className="add-btn"
-                >
-                  <span>Add a Date</span>
-                </button>
-              )}
-            </div>
-            <div className="second-division">
-              {rentingDateList.length !== 1 && (
-                <button
-                  type="button"
-                  onClick={() => handleRentingDateRemove(index)}
-                  className="remove-btn"
-                >
-                  <span>Remove</span>
-                </button>
-              )}
-            </div>
-            {singlerentingDate.rentingTimes.map((rentingTime, innerIndex) => (
-              <div key={index + "-" + innerIndex} className="services">
-                <div className="first-division">
-                  <span> From </span>
-                  <input
-                    name="RentingFromTime"
-                    type="time"
-                    id="RentingFromTime"
-                    value={singlerentingDate.rentingTimes["RentingFromTime"]}
-                    onChange={(e) =>
-                      handleRentingTimeChange(e, index, innerIndex)
-                    }
-                    required
-                  />
-                  <span> To </span>
-                  <input
-                    name="RentingToTime"
-                    type="time"
-                    id="RentingToTime"
-                    value={singlerentingDate.rentingTimes["RentingToTime"]}
-                    onChange={(e) =>
-                      handleRentingTimeChange(e, index, innerIndex)
-                    }
-                    required
-                  />
-                  {rentingDateList[index].rentingTimes.length - 1 ===
-                    innerIndex && (
-                    <button
-                      type="button"
-                      onClick={() => handleRentingFromTimeAdd(index)}
-                      className="add-btn"
-                    >
-                      <span>Add time</span>
-                    </button>
-                  )}
-                </div>
-                <div className="second-division">
-                  {rentingDateList[index].rentingTimes.length !== 1 && (
-                    <button
-                      type="button"
-                      onClick={() =>
-                        handleRentingFromTimeRemove(index, innerIndex)
-                      }
-                      className="remove-btn"
-                    >
-                      <span>Remove</span>
-                    </button>
-                  )}
-                </div>
-              </div>
-            ))}
-            /////////////////////////////////////////////////////////////
-          </div>
-        ))}
-      </div>
-      {/* <div className="output">
-          <h2>Date</h2>
-          {serviceList &&
-            serviceList.map((singleService, index) => (
-              <ul key={index}>
-                {singleService.service && <li>{singleService.service}</li>}
-              </ul>
-            ))}
-        </div> */}
-
-      <div className="output">
-        <h2>Date</h2>
-        {
-          rentingDateList.map((singleService, index) => (
-            <ul key={index}>
-              {singleService.rentingDate}
-              {singleService.rentingDate && <li>{singleService.rentingTimes[index].RentingFromTime} to {singleService.rentingTimes[index].RentingToTime}</li>}
-            </ul>
-          ))}
-      </div>
+      <h4>Select Your Available Time</h4>
+      <Row className="d-flex">
+        <Col>
+          <label>From Date</label>
+        </Col>
+        <Col>
+          <input type="date" />
+        </Col>
+        <Col>
+          <select name="" id="">
+            <option value="">12.00</option>
+            <option value="">12.30</option>
+            <option value="">01.00</option>
+            <option value="">01.30</option>
+            <option value="">02.00</option>
+            <option value="">02.30</option>
+            <option value="">03.00</option>
+            <option value="">03.30</option>
+            <option value="">04.00</option>
+            <option value="">04.30</option>
+            <option value="">05.00</option>
+            <option value="">05.30</option>
+            <option value="">06.00</option>
+            <option value="">06.30</option>
+            <option value="">07.00</option>
+            <option value="">07.30</option>
+            <option value="">08.00</option>
+            <option value="">08.30</option>
+            <option value="">09.00</option>
+            <option value="">09.30</option>
+            <option value="">10.00</option>
+            <option value="">10.30</option>
+            <option value="">11.00</option>
+            <option value="">11.30</option>
+          </select>
+        </Col>
+        <Col>
+          <select>
+            <option value="">AM</option>
+            <option value="">PM</option>
+          </select>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <label htmlFor="">Duration per day</label>
+        </Col>
+        <Col>
+          <select name="" id="">
+            <option value="2">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">7</option>
+            <option value="">8</option>
+            <option value="">9</option>
+            <option value="">10</option>
+            <option value="">11</option>
+            <option value="">12</option>
+            <option value="">13</option>
+            <option value="">14</option>
+            <option value="">15</option>
+            <option value="">16</option>
+            <option value="">17</option>
+            <option value="">18</option>
+            <option value="">19</option>
+            <option value="">20</option>
+            <option value="">21</option>
+            <option value="">22</option>
+            <option value="">23</option>
+            <option value="">24</option>
+          </select>
+        </Col>
+        <Col>
+          <label htmlFor="">hrs</label>
+        </Col>
+        <Col>
+          <select>
+            <option value="30">0</option>
+            <option value="30">30</option>
+          </select>
+        </Col>
+        <Col>
+          <label htmlFor="">mins</label>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <label htmlFor="">Recurring</label>
+        </Col>
+        <Col>
+          <input
+            type="checkbox"
+            checked={recurring}
+            onChange={(e) => setRecurring(e.target.checked)}
+          />
+        </Col>
+      </Row>
+      <Row className={!recurring && "d-none"}>
+        <Row>
+          <label htmlFor="">Reccurance</label>
+        </Row>
+        <Row>
+          <Col>
+            <input
+              type="radio"
+              value="daily"
+              id="Daily"
+              name="recurring"
+              onChange={(e) => setRecurringType(e.target.value)}
+            />
+            <label htmlFor="">Daily</label>
+          </Col>
+          <Col>
+            <input
+              type="radio"
+              value="weekly"
+              id="Weekly"
+              name="recurring"
+              onChange={(e) => setRecurringType(e.target.value)}
+            />
+            <label htmlFor="">Weekly</label>
+          </Col>
+          <Col>
+            <input
+              type="radio"
+              value="monthly"
+              id="Monthly"
+              name="recurring"
+              onChange={(e) => setRecurringType(e.target.value)}
+            />
+            <label htmlFor="">Monthly</label>
+          </Col>
+        </Row>
+        <Row className={!(recurringType === "daily") && "d-none"}>
+          <Row>
+            <h5>Daily</h5>
+          </Row>
+          <Row>
+            <label htmlFor="">End date</label>
+            <input type="date" />
+          </Row>
+        </Row>
+        <Row className={!(recurringType === "weekly") && "d-none"}>
+          <Row>
+            <h5>Weekly</h5>
+          </Row>
+          <Row>
+            <label htmlFor="">End date</label>
+            <input type="date" />
+          </Row>
+          <Row>
+            <Col>
+              <label htmlFor="">Occurs on</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Sunday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Monday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Tuesday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Wednesday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Thursday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Friday</label>
+              <input type="checkbox" />
+            </Col>
+            <Col>
+              <label htmlFor="">Saturday</label>
+              <input type="checkbox" />
+            </Col>
+          </Row>
+        </Row>
+        <Row className={!(recurringType === "monthly") && "d-none"}>
+          <h5>Monthly</h5>
+          <Row>
+            <label htmlFor="">End date</label>
+            <input type="date" />
+          </Row>
+          <Row>
+            <Col>
+              <select name="" id="">
+                <option value="">First</option>
+                <option value="">Second</option>
+                <option value="">Third</option>
+                <option value="">Fourth</option>
+                <option value="">Last</option>
+              </select>
+            </Col>
+            <Col>
+              <select name="" id="">
+                <option value="">Sunday</option>
+                <option value="">Monday</option>
+                <option value="">Tuesday</option>
+                <option value="">Wednesday</option>
+                <option value="">Thursday</option>
+                <option value="">Friday</option>
+                <option value="">Saturday</option>
+              </select>
+            </Col>
+          </Row>
+        </Row>
+        {console.log(recurringType)}
+      </Row>
     </>
   );
 }
