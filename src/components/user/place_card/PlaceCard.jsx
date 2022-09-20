@@ -20,7 +20,7 @@ function PlaceCard(props) {
             <Card className="place-card" >
                 <img
                     className="d-block gallery-image place-image"
-                    src={props.Src}
+                    src={props.src}
                     alt="place card"
                 />
                 {show ? (
@@ -35,17 +35,17 @@ function PlaceCard(props) {
 
                 <Card.Body className="text-box" onClick={handleOnCardClick}>
                     <Card.Body className="text">
-                        <Card.Title className="title">{props.Title}</Card.Title>
-                        <Card.Text className="city">{props.City}</Card.Text>
-                        <Card.Text className="price">{props.Price}</Card.Text>
+                        <Card.Title className="title">{props.title}</Card.Title>
+                        <Card.Text className="city">{props.city}</Card.Text>
+                        <Card.Text className="price">{props.price}</Card.Text>
                         <Card.Body className="last-row">
                             <Card.Body className="quantity-box">
                                 <FaUserFriends className="people-icon"/>
-                                <Card.Text className="quantity">{props.Quantity}</Card.Text>
+                                <Card.Text className="quantity">{props.quantity}</Card.Text>
                             </Card.Body>
                             <Card.Body className="rating-box">
                                 <FaStar className="rating-icon"/>
-                                <Card.Text className="rating">{props.Rating}</Card.Text>
+                                <Card.Text className="rating">{props.rating}</Card.Text>
                             </Card.Body>
                         </Card.Body>
                     </Card.Body>
