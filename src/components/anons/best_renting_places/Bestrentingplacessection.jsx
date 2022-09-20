@@ -121,12 +121,12 @@ function Bestrentingplacessection() {
         className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2"
       >
         <PlaceCard
-          Src={`${base_url}/images/`  + val.image}
-          Title={val.title}
-          City={val.city}
-          Price={val.price} 
-          Quantity={val.quantity}
-          Rating={val.rating}    
+          src={`${base_url}/images/`  + val.image}
+          title={val.title}
+          city={val.city}
+          price={val.price} 
+          quantity={val.quantity}
+          rating={val.rating}    
         />
       </Col>
     );
