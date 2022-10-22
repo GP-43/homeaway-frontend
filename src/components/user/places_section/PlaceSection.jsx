@@ -43,7 +43,7 @@ function PlaceSection() {
             </Col>
             <Col md={12} xs={8} className='place-section px-md-4 px-0'>
                 <Row>
-                    {places.map((value, key) => (
+                    {places.map((value) => (
                             <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                                 <PlaceCard
                                     title={value.title}
