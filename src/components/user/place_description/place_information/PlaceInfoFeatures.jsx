@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+const base_url = process.env.REACT_APP_BASE_URL;
 
-function PlaceInfoFeatures() {
+function PlaceInfoFeatures(placeDetailsObj) {
+    const [show, setShow] = useState(true);
     return (
         <Row>
             <Col xs={12} className='px-0'>
@@ -14,7 +16,7 @@ function PlaceInfoFeatures() {
                         <Card.Text >
                             <Row className='p-3'>
                                 <Col>
-                                    <input type="checkbox" checked></input>
+                                    <input type="checkbox" checked></input>                           
                                     <label className='place-info-features-checkbox-label ms-3' >Internet</label >
                                 </Col>
                                 <Col>
