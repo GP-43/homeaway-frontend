@@ -19,6 +19,7 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import AddNewPlace from "./views/pages/user/AddNewPlace";
 import Complaints from './views/pages/Admin/Complaints';
+import UserProfile from './views/pages/user/UserProfile';
 function App() {
     return (
         <div>
@@ -34,6 +35,7 @@ function App() {
                     <Route path='/user/userrentings' element={<UserRentings />} />
                     <Route path='/user/placedescription' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
+                    <Route path='/user/profile' element={<UserProfile />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
