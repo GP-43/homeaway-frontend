@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.scss';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import UserHome from './views/pages/user/UserHome';
 import UserBookings from "./views/pages/user/UserBookings"
 import HomeAwayUser from './views/HomeAwayUser';
@@ -17,9 +17,23 @@ import Home from './views/pages/anons/Home';
 import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
-import AddNewPlace from "./views/pages/user/AddNewPlace";
 import Complaints from './views/pages/Admin/Complaints';
 function App() {
+
+    // const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
+    //
+    // const [isAuthenticated, setIsAuthenticated] = useState(true);
+    //
+    // useEffect(() => {
+    //     if (userDetails){
+    //         if(userDetails.token){
+    //             setIsAuthenticated(true);
+    //         } else {
+    //             setIsAuthenticated(false);
+    //         }
+    //     }
+    // }, [userDetails]);
+
     return (
         <div>
             <Routes>
@@ -29,6 +43,7 @@ function App() {
                     <Route path='/signup' element={<Signup />} />
                 </Route>
                 <Route path='/user' element={<HomeAwayUser />}>
+                    {/*<Route path='/user/' element={isAuthenticated ? <UserHome /> : <Navigate to='/login'/>} />*/}
                     <Route path='/user/' element={<UserHome />} />
                     <Route path='/user/userbookings' element={<UserBookings />} />
                     <Route path='/user/userrentings' element={<UserRentings />} />
