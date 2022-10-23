@@ -11,7 +11,8 @@ import PlaceCard from "../place_card/PlaceCard.jsx";
 import axios from "axios";
 import * as Yup from "yup";
 import { useEffect } from "react";
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import { Routes, Route, useNavigate } from "react-router-dom";
+import BasicMap from "./basic";
 
 const base_url = process.env.REACT_APP_BASE_URL;
 
@@ -43,13 +44,13 @@ function AddNewRent() {
   const [wifi, setWifi] = useState(0);
   const [parking, setParking] = useState(0);
   const [ac, setAC] = useState(0);
-  const [silent,setSilent] = useState(0);
-  const [food,setFood] = useState(0);
-  const [washroom,setWashroom] = useState(0);
+  const [silent, setSilent] = useState(0);
+  const [food, setFood] = useState(0);
+  const [washroom, setWashroom] = useState(0);
 
   var addNewFormData = {};
 
-  function updateForm(){
+  function updateForm() {
     addNewFormData = {
       title: title,
       quantity: quantity,
@@ -66,7 +67,7 @@ function AddNewRent() {
       ac: ac,
       silent: silent,
       food: food,
-      washroom:washroom,
+      washroom: washroom,
     };
   }
 
@@ -151,7 +152,7 @@ function AddNewRent() {
     city: "",
     postalCode: 0,
     description: "",
-  }; 
+  };
 
   const navigate = useNavigate();
 
@@ -160,15 +161,15 @@ function AddNewRent() {
   const handleOnSubmit = (event) => {
     // navigate('/user/userrentings');
     updateForm();
-    event.preventDefault(); 
+    event.preventDefault();
     const formData = new FormData();
     formData.append("image", uploadImage);
     // formData.append("gallery", selectedFiles);
     formData.append("addNewFormData", JSON.stringify(addNewFormData));
 
     for (var key of formData.entries()) {
-      console.log(key[0] + ', ' + key[1]);
-  }
+      console.log(key[0] + ", " + key[1]);
+    }
 
     axios
       .post(`${base_url}/addnewrent`, formData, {
@@ -362,13 +363,20 @@ function AddNewRent() {
           </Col> */}
 
           <Col lg={12} className="mb-2">
+            <Form.Group className="mb-3">
+              <Form.Label className="mb-2">LOCATION</Form.Label>
+              <BasicMap />
+            </Form.Group>
+          </Col>
+
+          <Col lg={12} className="mb-2">
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label className="mb-2">IMAGES</Form.Label>
               <Col>
-                <AddImages setSelectedFiles={setSelectedFiles}/>
+                <AddImages setSelectedFiles={setSelectedFiles} />
               </Col>
             </Form.Group>
           </Col>
