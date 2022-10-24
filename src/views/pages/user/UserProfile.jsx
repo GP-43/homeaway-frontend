@@ -7,6 +7,7 @@ import { FaStar, FaEdit } from "react-icons/fa";
 
 function UserProfile() {
   const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState("Thushan Dananjaya");
   return (
     <>
       <Row>
@@ -15,7 +16,11 @@ function UserProfile() {
         </Col>
         <Col className="profile-name-rate-container">
           <Row className="profile-name-container">
-            <h1>Thushan Dananjaya <FaEdit className="mb-2 ms-5"/></h1>
+            <h1><input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            /><FaEdit className="mb-2 ms-5"/></h1>
             <hr className="profile-name-underline"/>
           </Row>
           <Row>
@@ -69,7 +74,7 @@ function UserProfile() {
               type="checkbox"
               checked={showPassword}
               onChange={(e) => setShowPassword(e.target.checked)}
-            />{" "}
+            />
             show password
           </Col>
         </Row>
