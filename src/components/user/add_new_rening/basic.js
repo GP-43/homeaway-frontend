@@ -8,6 +8,7 @@ const BasicMap = () => {
     const position = [51.505, -0.09]
 
     return(
+      <dev className="map">
       <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -19,6 +20,7 @@ const BasicMap = () => {
           </Popup>
         </Marker> */}
       </MapContainer>
+      </dev>
     )
 };
 
