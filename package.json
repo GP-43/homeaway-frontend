@@ -23,6 +23,7 @@
         "react-calendar": "^3.7.0",
         "react-calendars": "^1.0.6",
         "react-chartjs-2": "^4.3.1",
+        "react-circular-progressbar": "^2.1.0",
         "react-datepicker": "^4.8.0",
         "react-daypicker": "^3.0.10",
         "react-dom": "^18.2.0",
