@@ -4,10 +4,11 @@ import {Row, Col} from "react-bootstrap";
 import {FaExchangeAlt} from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
+import useLocalStorage from "../../../hooks/useLocalStorage.js";
 
 function PlaceSection() {
 
-    const [places, setPlaces] = useState([]);
+    const [places, setPlaces] = useLocalStorage('places', [])
 
     useEffect(() => {
         axios.get("http://localhost:4000/addnewrent/places").then((response) => {
