@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {FiLock, FiMail, FiPhone, FiUser} from "react-icons/fi";
 import {GrLocation} from "react-icons/gr";
 import axios from "axios";
@@ -10,6 +10,8 @@ import {Formik, ErrorMessage} from 'formik';
 function Signup() {
 
     const phoneRegExp = /\+[0-9]{1,4}-[0-9]{9}/;
+
+    const navigate = useNavigate();
 
     return (
         <Container>
@@ -48,9 +50,9 @@ function Signup() {
                         })}
 
                         onSubmit={(values) => {
-                            axios.post("http://localhost:4000/auth/signup", values).then(() => {
-                                window.location.href="/login"
-
+                            axios.post("http://localhost:4000/auth/signup", values).then((response) => {
+                                console.log(response);
+                                navigate('/login');
                             });
                         }}
                     >

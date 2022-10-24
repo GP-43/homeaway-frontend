@@ -7,6 +7,8 @@ import axios from "axios";
 
 function MyBookingSection() {
 
+    const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
+
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
