@@ -1,10 +1,26 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {Card, Col} from "react-bootstrap";
 import {FaUserFriends} from "react-icons/fa";
 import {FaStar} from "react-icons/fa";
 import {FaRegHeart} from "react-icons/fa";
 import {FaHeart} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+//import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
+
+// const viewDetails = (id) => {
+//     axois
+//       .put(`${base_url}/user/placedescription/` + id)
+//       .then(() => {
+//         console.log("Work");
+//         // const detail = data.data;
+//         // setDetails(detail);
+//         //setoccupantData(false)
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+// };
 
 function PlaceCard(props) {
     
@@ -12,8 +28,8 @@ function PlaceCard(props) {
 
     const navigate = useNavigate();
 
-    const handleOnCardClick = () => {
-        navigate('/user/placedescription')
+    const handleOnCardClick = (id) => {
+        navigate(`/user/placedescription`+ id)
     }
     return (
         <Col className="place-card-cover">
