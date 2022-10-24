@@ -32,15 +32,15 @@ function UserProfile() {
     setIsNameDisabled(true);
   };
 
-  // refresh table
+  // refresh page
   function fetchProfileDetails() {
-    // get complaints
+    // get details
     axois
-      .get("http://localhost:4000/admin/reject/complaint/" + userId)
+      .get("http://localhost:4000/occupant/select/profileDetails/" + userId)
       .then((data) => {
         const profileDetails = data.data;
         setProfileDetails({ ...profileDetails });
-        //setoccupantData(false)
+        console.log(profileDetails);
       })
       .catch((error) => {
         console.log(error);
@@ -50,6 +50,9 @@ function UserProfile() {
   useEffect((event) => {
     fetchProfileDetails();
   }, []);
+
+  const userName = profileDetails.name;
+  console.log(userName)
 
   return (
     <>
