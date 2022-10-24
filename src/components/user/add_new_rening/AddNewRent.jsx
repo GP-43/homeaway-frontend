@@ -359,8 +359,8 @@ function AddNewRent() {
             <Form.Group className="mb-3">
               <Form.Label className="mb-2">LOCATION</Form.Label>
               <GoogleMap className="google-map" />
-            </Form.Group>
-          </Col> */}
+            </Form.Group> 
+          </Col> */} 
 
           {/* <Col lg={12} className="mb-2">
             <Form.Group className="mb-3">

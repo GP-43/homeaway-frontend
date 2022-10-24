@@ -4,6 +4,7 @@ import HeaderCardComplaints from "../../../components/admin/complaints/HeaderCar
 import AdminComplaintsTable from "../../../components/admin/complaints/AdminComplaintsTable";
 
 
+
 function Complaints() {
     return (
         <Container>

@@ -3,6 +3,26 @@ import { Row, Col } from 'react-bootstrap';
 // for popup
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
+
+let fetchRenters;
+const deleteRenter = (id_1, hideModal) => {
+    var Id = id_1;
+    console.log("Delete renter:", Id);
+
+    axois
+        .put(`${base_url}/admin/delete/renter/` + Id)
+        .then(() => {
+            console.log("Work");
+
+            hideModal();
+            fetchRenters();
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
 
 //popup function
 function DeletePopup(props) {
@@ -17,7 +37,7 @@ function DeletePopup(props) {
                 <p>Do you want delete? This action cannot be undone.</p>
             </Modal.Body>
             <Modal.Footer >
-                <Button className='confirm-delete btn-danger'>Delete</Button>
+                <Button className='confirm-delete btn-danger' onClick={() => deleteRenter(props.renterId, props.onHide)}>Delete</Button>
                 <Button onClick={props.onHide}>Cancel</Button>
             </Modal.Footer>
         </Modal>
@@ -28,26 +48,26 @@ function DeletePopup(props) {
 //data row
 
 function RenterRow(props) {
-
     const [modalShow, setModalShow] = React.useState(false);
+    fetchRenters = props.fetchRenters
 
     return (
 
         <Row className='row-top-products mx-0 px-0 mb-2 mt-3'>
             <Col className='px-0 ps-3' xs={1}>
-                <img src={props.Src} className="row-top-products-img" />
+                <img src={props.Src} className="row-top-products-img" alt="renter" />
             </Col>
 
             <Col className='ps-4 pe-0 name' xs={2}>
                 <Row>
-                    {props.firstName} {props.lastName}
+                    {props.name}
                 </Row>
                 <Row className='ps-2 rate'>
                     {props.rate}
                 </Row>
             </Col>
 
-            <Col className='px-0 ps-1' xs={3}>
+            <Col className='px-0 ps-1 ms-2' xs={3}>
                 {props.email}
             </Col>
 
@@ -65,12 +85,16 @@ function RenterRow(props) {
                 </button>
             </Col>
 
-            <Col className='px-4 ms-4 ' xs={1}>
+            <Col className='px-4 ms-2 ' xs={1}>
                 <button className='delete-btn px-0 pb-0' variant="primary" onClick={() => setModalShow(true)}>
                     <p>DELETE</p>
                 </button>
 
-                <DeletePopup show={modalShow} onHide={() => setModalShow(false)} />
+                <DeletePopup
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+                    renterId={props.id}
+                />
             </Col>
         </Row>
     )

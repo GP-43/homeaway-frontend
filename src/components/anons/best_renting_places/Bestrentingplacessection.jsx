@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect  } from "react";
 import PlaceCard from "../../../components/user/place_card/PlaceCard";
 import { Row, Col, Button } from "react-bootstrap";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
+import axois from "axios";
 import ReactPaginate from "react-paginate";
 import place1 from "../../../assets/images/places_image_gallery/place1.jpg";
 import place2 from "../../../assets/images/places_image_gallery/place2.jpg";
@@ -14,6 +15,7 @@ import place5 from "../../../assets/images/places_image_gallery/place5.jpg";
 import place6 from "../../../assets/images/places_image_gallery/place6.jpg";
 import place7 from "../../../assets/images/places_image_gallery/place7.jpg";
 import place8 from "../../../assets/images/places_image_gallery/place8.jpg";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function Bestrentingplacessection() {
   const placeData = [
@@ -94,7 +96,24 @@ function Bestrentingplacessection() {
   const perPage = 4;
   const off = perPage * currPage;
 
-  const displayPlaces = places.slice(off, off + perPage).map((i) => {
+  const [details, setDetails] = useState([]);
+
+  useEffect((event) => {
+    axois
+      .get(`${base_url}/anon/bestplaces`)
+      .then((data) => {
+        const detail = data.data;
+        setDetails(detail);
+        //setoccupantData(false)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  console.log(details);
+
+  const displayPlaces = details.slice(off, off + perPage).map((val, index) => {
     return (
       <Col
         lg={3}
@@ -102,12 +121,12 @@ function Bestrentingplacessection() {
         className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2"
       >
         <PlaceCard
-          Title={i.Title}
-          Src={i.Src}
-          City={i.City}
-          Price={i.Price}
-          Quantity={i.Quantity}
-          Rating={i.Rating}
+          src={`${base_url}/images/`  + val.image}
+          title={val.title}
+          city={val.city}
+          price={val.price} 
+          quantity={val.quantity}
+          rating={val.rating}    
         />
       </Col>
     );
