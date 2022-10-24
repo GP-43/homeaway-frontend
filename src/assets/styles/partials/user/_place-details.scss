@@ -1,5 +1,5 @@
 .place-details-cover {
-//   background-color: #fff;
+  //   background-color: #fff;
   border-radius: 5px;
   margin-left: 0;
   margin-right: 0;
@@ -25,6 +25,23 @@
 
   .place-details-text {
     // background-color: #fff;
+  }
+}
+
+.payment-of-places {
+  width: 100%;
+  margin-bottom: 200px;
+  margin-top: 50px;
+  .place-header-col, .date-header-col, .payment-header-col{
+    background-color: black;
+    color: white;
+    border: solid black;
+  }
+
+  .place-col, .date-col, .payment-col{
+    background-color: white;
+    color: black;
+    border: solid black;
   }
 }
 
