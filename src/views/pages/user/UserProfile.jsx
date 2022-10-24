@@ -66,8 +66,7 @@ function UserProfile() {
                     </Col>
                     <Col lg={8} className="p-0">
                         <Form.Group className="mb-3">
-                            <Form.Control placeholder="" value={email} disabled={isFormDisabled}
-                                          onChange={(e) => setEmail(e.target.value)}/>
+                            <Form.Control placeholder="" value={email} disabled={true}/>
                         </Form.Group>
                     </Col>
                 </Row>
