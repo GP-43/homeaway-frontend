@@ -12,7 +12,7 @@ function MyBookingSection() {
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:4000/auth/bookings").then((response) => {
+        axios.get("http://localhost:4000/occupant/bookings").then((response) => {
             setBookings(response.data);
         });
     }, []);
