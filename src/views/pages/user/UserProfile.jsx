@@ -15,7 +15,7 @@ function UserProfile() {
 
   const [profileDetails, setProfileDetails] = useState({});
   const [showPassword, setShowPassword] = useState(false);
-  const [name, setName] = useState("Thushan Dananjaya");
+  const [name, setName] = useState("userName");
   const [email, setEmail] = useState("Thushan@gmail.com");
   const [location, setLocation] = useState("Gampaha");
   const [contact, setContact] = useState("0716113769");
@@ -46,13 +46,14 @@ function UserProfile() {
         console.log(error);
       });
   }
-
   useEffect((event) => {
     fetchProfileDetails();
   }, []);
 
-  const userName = profileDetails.name;
-  console.log(userName)
+  const userName = profileDetails[0]?.name;
+  const Location = profileDetails[0]?.location;
+  const Contact = profileDetails[0]?.contact;
+  const Email = profileDetails[0]?.email;
 
   return (
     <>
