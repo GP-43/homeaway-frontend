@@ -17,7 +17,7 @@ function PaymentBox() {
           console.log(error);
       });
     }, []);
-
+// console.log(payments[0].total_amount);
 
   // useEffect((event) => {
   //   axois
@@ -38,7 +38,7 @@ function PaymentBox() {
           <h7 xs={10} className="px-2 heading ">
             Total Received
           </h7>
-          <dev className="px-2 received-amount">{console.log(payments[0])}
+          <dev className="px-2 received-amount">
           </dev>
           <dev className="px-2 sen">+10% since last two weeks</dev>
           <h7 xs={10} className="px-2 pt-4 sub-heading ">
