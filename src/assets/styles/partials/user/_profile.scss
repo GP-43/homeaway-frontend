@@ -37,10 +37,16 @@
     margin-left: 5rem;
 }
 
-// .profile-name-container{
-//     border-bottom: solid 1px black;
-// }
+ .profile-name-container{
+   .edit-icon {
+     cursor: pointer;
+   }
+   .done-icon {
+     cursor: pointer;
+   }
+     //border-bottom: solid 1px black;
+ }
 
 .profile-name-underline{
-    width: 50%;
+    width: 90%;
 }
