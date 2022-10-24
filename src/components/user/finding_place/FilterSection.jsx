@@ -2,6 +2,28 @@ import React, {useState} from "react";
 import {Card, Col, Row} from "react-bootstrap";
 
 function FilterSection() {
+    const [internet, setInternet] = useState(false);
+    const [parking, setParking] = useState(false);
+    const [silentArea, setSilentArea] = useState(false);
+    const [acNoNeed, setAcNoNeed] = useState(false);
+    const [foodNeed, setFoodNeed] = useState(false);
+    const [washrooms, setWashrooms] = useState(false);
+    const [meetingRoom, setMeetingRoom] = useState(false);
+    const [studyRoom, setStudyRoom] = useState(false);
+    const [officeRoom, setOfficeRoom] = useState(false);
+    const [cctv, setCctv] = useState(false);
+
+    const filterOption = {Internet : internet, 
+                    Parking : parking, 
+                    SilentArea : silentArea,
+                    AcNoNeed : acNoNeed,
+                    FoodNeed : foodNeed,
+                    Washrooms : washrooms,
+                    MeetingRoom : meetingRoom,
+                    StudyRoom : studyRoom,
+                    OfficeRoom : officeRoom,
+                    Cctv : cctv
+                }
 
     return (
         <Row className='mx-0 filter-section bg-transparent'>
@@ -13,91 +35,80 @@ function FilterSection() {
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-2' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        id="internet" name="internet"
-                                        value="internet"
+                                        checked={internet}
+                                        onChange={(e) => setInternet(e.target.checked)}
                                     />
                                     <label className="radio-label">Internet</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-2' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="parking" name="parking"
-                                        value="parking"
+                                        checked={parking}
+                                        onChange={(e) => setParking(e.target.checked)}
                                     />
                                     <label className="radio-label">Parking</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-2' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="silent_area" name="silent_area"
-                                        value="silent_area"
+                                        checked={silentArea}
+                                        onChange={(e) => setSilentArea(e.target.checked)}
                                     />
                                     <label className="radio-label">Silent Area</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-2' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        //className="filter-radio-button"
-                                        id="acNoNeed"
-                                        name="acType"
-                                        value="acNoNeed"
+                                        checked={acNoNeed}
+                                        onChange={(e) => setAcNoNeed(e.target.checked)}
                                     />
                                     <label className="radio-label">A/C</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-2' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="foodNeed"
-                                        name="foodNeed"
-                                        value="foodNeed"
+                                        checked={foodNeed}
+                                        onChange={(e) => setFoodNeed(e.target.checked)}
                                     />
                                     <label className="radio-label">Cafeteria</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-2' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="washrooms" name="washrooms"
-                                        value="washrooms"
+                                        checked={washrooms}
+                                        onChange={(e) => setWashrooms(e.target.checked)}
                                     />
                                     <label className="radio-label">Washroom</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-1' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="washrooms" name="washrooms"
-                                        value="washrooms"
+                                        checked={cctv}
+                                        onChange={(e) => setCctv(e.target.checked)}
                                     />
                                     <label className="radio-label">CCTV</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-1' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="washrooms" name="washrooms"
-                                        value="washrooms"
+                                        checked={meetingRoom}
+                                        onChange={(e) => setMeetingRoom(e.target.checked)}
                                     />
                                     <label className="radio-label">Meeting room</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-1' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="washrooms" name="washrooms"
-                                        value="washrooms"
+                                        checked={studyRoom}
+                                        onChange={(e) => setStudyRoom(e.target.checked)}
                                     />
                                     <label className="radio-label">Study room</label>
                                 </Col>
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-1' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
-                                        className="filter-radio-button"
-                                        id="washrooms" name="washrooms"
-                                        value="washrooms"
+                                        checked={officeRoom}
+                                        onChange={(e) => setOfficeRoom(e.target.checked)}
                                     />
                                     <label className="radio-label">Office room</label>
                                 </Col>
