@@ -362,12 +362,12 @@ function AddNewRent() {
             </Form.Group>
           </Col> */}
 
-          <Col lg={12} className="mb-2">
+          {/* <Col lg={12} className="mb-2">
             <Form.Group className="mb-3">
               <Form.Label className="mb-2">LOCATION</Form.Label>
               <BasicMap />
             </Form.Group>
-          </Col>
+          </Col> */}
 
           <Col lg={12} className="mb-2">
             <Form.Group
