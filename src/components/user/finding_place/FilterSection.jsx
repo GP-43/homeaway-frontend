@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import {Card, Col, Row} from "react-bootstrap";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 
-function FilterSection() {
+function FilterSection(props) {
     const [internet, setInternet] = useState(false);
     const [parking, setParking] = useState(false);
     const [silentArea, setSilentArea] = useState(false);
@@ -39,6 +39,10 @@ function FilterSection() {
                     OfficeRoom : officeRoom,
                     Cctv : cctv
                 }
+
+                useEffect(() => {
+                    props.filterOptions(filterOption);
+                }, [])
 
     return (
         <Row className='mx-0 filter-section bg-transparent'>
