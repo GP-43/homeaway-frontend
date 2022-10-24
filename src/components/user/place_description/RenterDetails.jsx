@@ -37,7 +37,7 @@ function RenterDetails(props) {
                         </Col>
                     </Col>
                     <Col className="renter-col text-center">
-                        <Col className="renter-no d-flex"><p className="renter-no-box bg-white p-2">+94 71 *** *****</p>
+                        <Col className="renter-no d-flex"><p className="renter-no-box bg-white p-2">+94 7* *** *****</p>
                         </Col>
                         {/* <ButtonMailto className="renter-buttons renter-message mb-2 border-0 ">Message Place Owner</ButtonMailto> */}
                         <ButtonMailto label="E-mail Place Owner" mailto="mailto:no-reply@example.com" />
