@@ -10,7 +10,7 @@ import {BiTimeFive, BiMap} from "react-icons/bi";
 import {MdReviews} from "react-icons/md";
 import {BsFilterCircle} from "react-icons/bs";
 
-function PlaceInformation() {
+function PlaceInformation(props) {
 
     const [isVisibleDescription, setIsVisibleDescription] = useState(true);
     const [isVisibleTime, setIsVisibleTime] = useState(false);
@@ -83,17 +83,26 @@ function PlaceInformation() {
                     </Col>
                 </Row>
             </Col>
-            <Col md={11} xs={10}  className={isVisibleDescription ? 'd-block px-md-4 px-1' : 'd-none'}>
-                <PlaceInfoDescription/>
+            <Col md={11} xs={10} className={isVisibleDescription ? 'd-block px-md-4 px-1' : 'd-none'}>
+                <PlaceInfoDescription description={props.description}/>
             </Col>
             <Col md={11} xs={10} className={isVisibleTime ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
                 <PlaceInfoTime/>
             </Col>
             <Col md={11} xs={10} className={isVisibleFeatures ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
-                <PlaceInfoFeatures/>
+                <PlaceInfoFeatures
+                    wifi={props.wifi}
+                    parking={props.parking}
+                    ac={props.ac}
+                    silent={props.silent}
+                    food={props.food}
+                    washroom={props.washroom}
+                />
             </Col>
             <Col md={11} xs={10} className={isVisibleComment ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
-                <PlaceInfoComment/>
+                <PlaceInfoComment rating={props.rating}
+                                  placeId = {props.placeId}
+                />
             </Col>
             <Col md={11} xs={10} className={isVisibleMap ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
                 <PlaceInfoMap/>
