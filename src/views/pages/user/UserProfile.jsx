@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { FaStar, FaEdit } from "react-icons/fa";
 import { AiOutlineFileDone } from "react-icons/ai";
 import axois from "axios";
+import Alert from 'react-bootstrap/Alert';
 
 function UserProfile() {
   //get id from session
@@ -14,12 +15,14 @@ function UserProfile() {
 
   const [profileDetails, setProfileDetails] = useState({});
 
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword1, setShowPassword1] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [location, setLocation] = useState("");
   const [contact, setContact] = useState("");
-  const [password, setPassword] = useState("");
+  const [password1, setPassword1] = useState("a");
+  const [password2, setPassword2] = useState("s");
 
   const toUpdateDetails = {
       // Name : name,
@@ -31,11 +34,8 @@ function UserProfile() {
     Name : name,
   }
 
-  console.log(toUpdateDetails.Name)
-
   const handleOnSubmit = () => {
     setIsFormDisabled(true);
-
     //methanin data yawamu
     axois
     .put("http://localhost:4000/occupant/update/profile/" + userId, toUpdateDetails)
@@ -46,6 +46,13 @@ function UserProfile() {
     .catch((error) => {
       console.log(error);
     });
+  };
+
+  const handleOnSubmitEditPassword = () => {
+    setIsPasswordDisabled(true);
+    if(password1 === password2){
+      alert("Hello! I am an alert box!!");
+    }
   };
 
   const handleOnNameSubmit = () => {
@@ -77,7 +84,6 @@ function UserProfile() {
         setEmail(data.data[0]?.email)
         setLocation(data.data[0]?.location)
         setContact(data.data[0]?.contact)
-        setPassword(data.data[0]?.password)
       })
       .catch((error) => {
         console.log(error);
@@ -97,6 +103,7 @@ function UserProfile() {
   
   const [isNameDisabled, setIsNameDisabled] = useState(true);
   const [isFormDisabled, setIsFormDisabled] = useState(true);
+  const [isPasswordDisabled, setIsPasswordDisabled] = useState(true);
 
   return (
     <>
@@ -185,28 +192,6 @@ function UserProfile() {
             </Form.Group>
           </Col>
         </Row>
-        <Row className="m-3">
-          <Col lg={4}>
-            <h5>Password :</h5>
-          </Col>
-          <Col lg={8} className="p-0">
-            <Form.Group className="mb-3">
-              <Form.Control
-                placeholder=""
-                value={password}
-                disabled={true}
-                // onChange={(e) => setPassword(e.target.value)}
-                type={showPassword ? "text" : "password"}
-              />
-              {/* <input
-                type="checkbox"
-                checked={showPassword}
-                onChange={(e) => setShowPassword(e.target.checked)}
-              />{" "}
-              show password */}
-            </Form.Group>
-          </Col>
-        </Row>
         <Row className="justify-content-end">
           <Button
             variant="warning"
@@ -220,6 +205,67 @@ function UserProfile() {
             onClick={handleOnSubmit}
           >
             Submit
+          </Button>
+        </Row>
+        <Row className="m-3">
+          <Col lg={4}>
+            <h5>Password :</h5>
+          </Col>
+          <Col lg={8} className="p-0">
+            <Form.Group className="mb-3">
+              <Form.Control
+                placeholder=""
+                value={password1}
+                disabled={isPasswordDisabled}
+                onChange={(e) => setPassword1(e.target.value)}
+                type={showPassword1 ? "text" : "password"}
+              />
+              <input
+                type="checkbox"
+                checked={showPassword1}
+                onChange={(e) => setShowPassword1(e.target.checked)}
+              />{" "}
+              show password
+            </Form.Group>
+          </Col>
+          {/* reEnter password */}
+          
+          <Col lg={4}>
+            <h5>Re Enter Password :</h5>
+          </Col>
+          <Col lg={8} className="p-0">
+            <Form.Group className="mb-3">
+              <Form.Control
+                placeholder=""
+                value={password2}
+                disabled={isPasswordDisabled}
+                onChange={(e) => setPassword2(e.target.value)}
+                type={showPassword2 ? "text" : "password"}
+              />
+              <input
+                type="checkbox"
+                checked={showPassword2}
+                onChange={(e) => setShowPassword2(e.target.checked)}
+              />
+              show password
+            </Form.Group>
+          </Col>
+        </Row>
+
+        {/* password button */}
+        <Row className="justify-content-end">
+          <Button
+            variant="warning"
+            className="profile-edit-password-button m-3"
+            onClick={() => setIsPasswordDisabled(false)}
+          >
+            Edit Password
+          </Button>
+          <Button
+            className="profile-submit-password-button m-3"
+            onClick={handleOnSubmitEditPassword}
+          >
+            Submit Password
           </Button>
         </Row>
       </Col>
