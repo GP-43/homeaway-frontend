@@ -1,9 +1,13 @@
 import React, {useState} from "react";
 import { useEffect } from "react";
 import {Card, Col, Row} from "react-bootstrap";
+import { useHomePagePlaces } from "../../../contexts/HomePagePlacesContext";
 import useLocalStorage from "../../../hooks/useLocalStorage";
 
 function FilterSection(props) {
+
+    const {homePagePlaces, setHomePagePlaces, homePagePlacesStatic} = useHomePagePlaces();
+
     const [internet, setInternet] = useState(false);
     const [parking, setParking] = useState(false);
     const [silentArea, setSilentArea] = useState(false);
@@ -14,22 +18,36 @@ function FilterSection(props) {
     const [studyRoom, setStudyRoom] = useState(false);
     const [officeRoom, setOfficeRoom] = useState(false);
     const [cctv, setCctv] = useState(false);
-    
-    const filterOption = {Internet : internet, 
-                    Parking : parking, 
-                    SilentArea : silentArea,
-                    AcNoNeed : acNoNeed,
-                    FoodNeed : foodNeed,
-                    Washrooms : washrooms,
-                    MeetingRoom : meetingRoom,
-                    StudyRoom : studyRoom,
-                    OfficeRoom : officeRoom,
-                    Cctv : cctv
-                }
 
-                useEffect(() => {
-                    props.filterOptions(filterOption);
-                }, [])
+    console.log("Filere sldjvL", homePagePlaces);
+    
+    // const filterOption = {Internet : internet, 
+    //                 Parking : parking, 
+    //                 SilentArea : silentArea,
+    //                 AcNoNeed : acNoNeed,
+    //                 FoodNeed : foodNeed,
+    //                 Washrooms : washrooms,
+    //                 MeetingRoom : meetingRoom,
+    //                 StudyRoom : studyRoom,
+    //                 OfficeRoom : officeRoom,
+    //                 Cctv : cctv
+    //             }
+
+    useEffect(()=>{
+        setHomePagePlaces(homePagePlacesStatic.filter((place)=> {
+            let ret = true;
+            if(internet) ret = ret && place.wifi;
+            if(parking) ret = ret && place.parking;
+            if(silentArea) ret = ret && place.silent;
+            if(acNoNeed) ret = ret && place.ac;
+            if(foodNeed) ret = ret && place.food;
+            if(washrooms) ret = ret && place.washroom;
+            if(meetingRoom && (place.roomCategory == "meeting-room")) ret = ret && true;
+            if(studyRoom && (place.roomCategory == "study-room")) ret = ret && true;
+
+            return ret;
+        }));
+    },[internet, parking, silentArea, acNoNeed, foodNeed, washrooms, meetingRoom, studyRoom])
 
     return (
         <Row className='mx-0 filter-section bg-transparent'>
@@ -42,11 +60,13 @@ function FilterSection(props) {
                                     <input
                                         type="checkbox"
                                         checked={internet}
-                                        onChange={(e) => setInternet(e.target.checked)}
+                                        onChange={(e) => {setInternet(e.target.checked);
+                                        
+                                        }}
 
                                     />
                                     <label className="radio-label">Internet</label>
-                                </Col>
+                                </Col> 
                                 <Col className='checkbox-col pt-md-0 pb-md-1 py-2' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"

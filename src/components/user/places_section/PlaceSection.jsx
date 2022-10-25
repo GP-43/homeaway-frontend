@@ -5,17 +5,22 @@ import {FaExchangeAlt} from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 import useLocalStorage from "../../../hooks/useLocalStorage.js";
+import { useHomePagePlaces } from "../../../contexts/HomePagePlacesContext.js";
 
 function PlaceSection() {
 
-    const [places, setPlaces] = useLocalStorage('places', [])
-
+    
+    const {homePagePlaces, setHomePagePlaces, setHomePagePlacesStatic} = useHomePagePlaces();
+    
+    
     useEffect(() => {
         axios.get("http://localhost:4000/addnewrent/places").then((response) => {
-            setPlaces(response.data);
+            setHomePagePlaces(response.data);
+            setHomePagePlacesStatic(response.data);
         });
     }, []);
-
+    
+    // const [places, setHomePagePlaces] = useLocalStorage('places', [])
 
     return (
         <Row className="py-3 mx-0">
@@ -44,7 +49,7 @@ function PlaceSection() {
             </Col>
             <Col md={12} xs={8} className='place-section px-md-4 px-0'>
                 <Row>
-                    {places.map((value) => (
+                    {homePagePlaces.map((value) => (
                             <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                                 <PlaceCard
                                     title={value.title}
