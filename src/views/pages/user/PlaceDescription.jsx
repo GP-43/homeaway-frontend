@@ -11,6 +11,9 @@ import axios from "axios";
 
 function PlaceDescription() {
 
+    const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
+    const userId = userDetails.userId;
+
     let {id} = useParams();
     const placeId = id;
 
@@ -19,7 +22,6 @@ function PlaceDescription() {
     useEffect(() => {
         axios.get('http://localhost:4000/addnewrent/place/'+placeId).then((response) => {
             setPlaceDetails(response.data);
-            console.log(response.data);
         });
     }, []);
 
@@ -68,6 +70,8 @@ function PlaceDescription() {
                         food= {placeDetails.food}
                         washroom= {placeDetails.washroom}
                         rating= {placeDetails.rating}
+                        occupantId = {userId}
+                        placeId = {placeId}
                     />
                 </Col>
                 <Col className="px-1">

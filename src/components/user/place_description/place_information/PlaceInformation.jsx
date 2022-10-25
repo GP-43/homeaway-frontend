@@ -101,6 +101,7 @@ function PlaceInformation(props) {
             </Col>
             <Col md={11} xs={10} className={isVisibleComment ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
                 <PlaceInfoComment rating={props.rating}
+                                  placeId = {props.placeId}
                 />
             </Col>
             <Col md={11} xs={10} className={isVisibleMap ? 'd-block px-md-4 px-1' : 'd-none px-4'}>

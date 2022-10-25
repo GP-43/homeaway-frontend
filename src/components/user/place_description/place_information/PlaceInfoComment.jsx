@@ -12,8 +12,12 @@ function PlaceInfoComment(props) {
 
                 <Card className='place-information-description'>
                     <Card.Body>
-                        <PlaceInfoRating rating={props.rating}/>
-                        <PlaceInfoReviews/>
+                        <PlaceInfoRating rating={props.rating}
+                                         placeId={props.placeId}
+                        />
+                        <PlaceInfoReviews
+                            placeId = {props.placeId}
+                        />
                     </Card.Body>
                 </Card>
             </Col>
