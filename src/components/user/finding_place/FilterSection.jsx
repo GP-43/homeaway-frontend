@@ -14,20 +14,7 @@ function FilterSection(props) {
     const [studyRoom, setStudyRoom] = useState(false);
     const [officeRoom, setOfficeRoom] = useState(false);
     const [cctv, setCctv] = useState(false);
-
-    // const [places, setPlaces] = useLocalStorage('places', [])
-
-    // console.log("placed in filter: ", places);
-
-    // useEffect(()=>{
-    //     setPlaces((places)=>{ 
-    //         const filtered = places.filter((place)=>place.ac==="true"); 
-    //         console.log("filtered: ", filtered);
-    //          return filtered})
-    // },[]);
-
-
-
+    
     const filterOption = {Internet : internet, 
                     Parking : parking, 
                     SilentArea : silentArea,
