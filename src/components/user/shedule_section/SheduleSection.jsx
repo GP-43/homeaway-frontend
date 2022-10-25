@@ -5,7 +5,10 @@ import axios from "axios";
 
 function SheduleSection(props) {
   const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+  const curruser = JSON.parse(sessionStorage.getItem("currentuserrole"));
   const userId = userDetails.userId;
+  const curruserrole = curruser.isRenter;
+  console.log(curruserrole);
 
   //console.log(userDetails);
   const [rentings, setRentings] = useState([]);
@@ -57,10 +60,12 @@ function SheduleSection(props) {
     { title: "Meeting Room_01", place: "Gampaha", from: "14.30", to: "16.00" },
   ];
 
+  
+
   return (
     <div className="schedule-section-box ps-2 mt-4">
       <h5 className="schedule-section-title position-sticky">Schedule</h5>
-      <div className={!(user_role == 2) ? "d-none" : "schedule-section mt-4"}>
+      <div className={!(curruserrole == false) ? "d-none" : "schedule-section mt-4"}>
         {Object.keys(rentings).map((key, index) => (
           <SheduleCard
             index={index}
@@ -72,7 +77,7 @@ function SheduleSection(props) {
         ))}
       </div>
 
-      <div className={!(user_role == 3) ? "d-none" : "schedule-section mt-4"}>
+      <div className={!(curruserrole == true) ? "d-none" : "schedule-section mt-4"}>
         {Object.keys(userbookings).map((key, index) => (
           <SheduleCard
             index={index}
