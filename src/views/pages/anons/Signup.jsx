@@ -41,7 +41,7 @@ function Signup() {
                                 .max(50, 'Must be 50 characters or less')
                                 .min(1, 'Must be 1 characters or more'),
                             contact: yup.string().required(),
-                            // .matches(phoneRegExp, 'Phone number format: +{country code}-{number}'),
+                                // .matches(phoneRegExp, 'Phone number format: +{country code}-{number}'),
                             location: yup.string().required(),
                             password: yup.string().required()
                                 .max(25, 'Must be 25 characters or less')
@@ -52,7 +52,12 @@ function Signup() {
                         onSubmit={(values) => {
                             axios.post("http://localhost:4000/auth/signup", values).then((response) => {
                                 console.log(response);
-                                navigate('/login');
+                                if(response.data == "SUCCESS"){
+                                    navigate('/login');
+                                    alert('User Registred successfully!');
+                                }else {
+                                    alert('User already Exists!');
+                                }
                             });
                         }}
                     >
@@ -63,6 +68,7 @@ function Signup() {
                                     <Form.Text className="text-muted">
                                         We'll never share your details with anyone else.
                                     </Form.Text>
+                                    <ErrorMessage name='existEmail' component='div' className='error-msg' />
                                     <InputGroup className="my-3 data-field" id="validationFormik01" hasValidation>
                                         <InputGroup.Text className='data-field-icon'
                                                          id="basic-addon1"><FiMail/></InputGroup.Text>
