@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import { FaStar, FaEdit } from "react-icons/fa";
 import { AiOutlineFileDone } from "react-icons/ai";
 import axois from "axios";
-const base_url = process.env.REACT_APP_BASE_URL;
 
 function UserProfile() {
   //get id from session
@@ -15,8 +14,27 @@ function UserProfile() {
 
   const [profileDetails, setProfileDetails] = useState({});
 
+  const toUpdateDetails = {
+      Name : name,
+      Location : location,
+      Contact : contact,
+  }
+
+  console.log(toUpdateDetails.Name)
+
   const handleOnSubmit = () => {
     setIsFormDisabled(true);
+
+    //methanin data yawamu
+    axois
+    .put("http://localhost:4000/occupant/update/profile/" + userId, toUpdateDetails)
+    .then(() => {
+      console.log("Work");
+      fetchProfileDetails();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   const handleOnNameSubmit = () => {
@@ -25,10 +43,10 @@ function UserProfile() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("Thushan@gmail.com");
-  const [location, setLocation] = useState("Gampaha");
-  const [contact, setContact] = useState("0716113769");
-  const [password, setPassword] = useState("Thushan123#");
+  const [email, setEmail] = useState("");
+  const [location, setLocation] = useState("");
+  const [contact, setContact] = useState("");
+  const [password, setPassword] = useState("");
 
   // refresh page
   function fetchProfileDetails() {
@@ -39,7 +57,12 @@ function UserProfile() {
         const profileDetails = data.data;
         setProfileDetails({ ...profileDetails });
         console.log(profileDetails);
+
         setName(data.data[0]?.name)
+        setEmail(data.data[0]?.email)
+        setLocation(data.data[0]?.location)
+        setContact(data.data[0]?.contact)
+        setPassword(data.data[0]?.password)
       })
       .catch((error) => {
         console.log(error);
@@ -49,17 +72,14 @@ function UserProfile() {
     fetchProfileDetails();
   }, []);
 
-  const userName = profileDetails[0]?.name;
-  const Location = profileDetails[0]?.location;
-  const Contact = profileDetails[0]?.contact;
-  const Email = profileDetails[0]?.email;
+  // const userName = profileDetails[0]?.name;
+  // const Location = profileDetails[0]?.location;
+  // const Contact = profileDetails[0]?.contact;
+  // const Email = profileDetails[0]?.email;
 
-  console.log(userName)
+  // console.log(userName)
 
   
-
-
-
   const [isNameDisabled, setIsNameDisabled] = useState(true);
   const [isFormDisabled, setIsFormDisabled] = useState(true);
 
@@ -159,16 +179,16 @@ function UserProfile() {
               <Form.Control
                 placeholder=""
                 value={password}
-                disabled={isFormDisabled}
-                onChange={(e) => setPassword(e.target.value)}
+                disabled={true}
+                // onChange={(e) => setPassword(e.target.value)}
                 type={showPassword ? "text" : "password"}
               />
-              <input
+              {/* <input
                 type="checkbox"
                 checked={showPassword}
                 onChange={(e) => setShowPassword(e.target.checked)}
               />{" "}
-              show password
+              show password */}
             </Form.Group>
           </Col>
         </Row>
