@@ -55,7 +55,7 @@ function AdminPlacesSection() {
                     />
                 </Col>
 
-                <Col xs={2} className='d-flex justify-content-end px-0'>
+                {/* <Col xs={2} className='d-flex justify-content-end px-0'>
                     <Dropdown className="sort-drop-down-btn-admin">
                         <Dropdown.Toggle variant="success" id="dropdown-basic" className='p-md-2 p-0'>
                             <FaExchangeAlt
@@ -70,7 +70,7 @@ function AdminPlacesSection() {
                             <Dropdown.Item href="#/action-3">Date</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                </Col>
+                </Col> */}
             </Row>
             <Row>
                 {details.filter((val, index) => {

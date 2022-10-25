@@ -1,11 +1,12 @@
-import React, {useState} from "react";
-import {Row,Col} from "react-bootstrap";
-import {BsFillCalendarEventFill} from 'react-icons/bs';
+import React, { useState } from "react";
+import { Row, Col } from "react-bootstrap";
+import { BsFillCalendarEventFill } from 'react-icons/bs';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 function DatePickers() {
     const [startDate, setStartDate] = useState(new Date());
+    console.log(startDate);
 
     return (
         <Row className="date-card bg-white p-1">
