@@ -14,8 +14,8 @@ function FindingPlace() {
                 <HomeGallery/>
             </Col>
             <Col xs={11} className="search-place">
-                <SearchPlace/>
-                <SearchButton filterOptions = {handleonFilterOptions}/>
+                <SearchPlace filterOptions = {handleonFilterOptions}/>
+                <SearchButton />
             </Col>
         </Row>
     );
