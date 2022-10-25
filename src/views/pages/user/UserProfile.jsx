@@ -14,10 +14,21 @@ function UserProfile() {
 
   const [profileDetails, setProfileDetails] = useState({});
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [location, setLocation] = useState("");
+  const [contact, setContact] = useState("");
+  const [password, setPassword] = useState("");
+
   const toUpdateDetails = {
-      Name : name,
+      // Name : name,
       Location : location,
       Contact : contact,
+  }
+
+  const toUpdateName = {
+    Name : name,
   }
 
   console.log(toUpdateDetails.Name)
@@ -39,14 +50,18 @@ function UserProfile() {
 
   const handleOnNameSubmit = () => {
     setIsNameDisabled(true);
+    //nama witharak wenas karamu
+    axois
+    .put("http://localhost:4000/occupant/update/profileUserName/" + userId, toUpdateName)
+    .then(() => {
+      console.log("Work");
+      fetchProfileDetails();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [location, setLocation] = useState("");
-  const [contact, setContact] = useState("");
-  const [password, setPassword] = useState("");
 
   // refresh page
   function fetchProfileDetails() {
