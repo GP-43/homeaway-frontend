@@ -8,6 +8,9 @@ import MakeBooking from "../../../components/user/place_description/make_booking
 import AddRating from "../../../components/user/place_description/AddRating";
 
 function PlaceDescription() {
+    
+    const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+    const userId = userDetails.userId;
 
     const [isRatePlaceClicked, setIsRatePlaceClicked] = useState(false);
 
