@@ -137,16 +137,22 @@ function MakeBooking() {
       </Form>
     );
   }
-  useEffect((event) => {
+
+
+  const handleOnSubmit = (event) => {
     axios
-      .post("http://localhost:4000/admin/reject/complaint/" + userId, DateOption)
+      .post("http://localhost:4000/occupant/makebooking/" + userId, DateOption)
       .then((response) => {
         console.log("it worked");
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  };
+
+  useEffect((event) => {
+    handleOnSubmit();
+  });
 
   return (
     <Row className="make-booking-card1 mx-5 px-3 mt-2 d-flex">
@@ -188,8 +194,8 @@ function MakeBooking() {
         </div>
         <div className="ms-5 ps-5 mt-4">
           {/* <Button >Pay Now</Button> */}
-          <StripeCheckout
-            className="dark button-pay-now btn-lg"
+          <StripeCheckout onSubmit={handleOnSubmit}
+            className="dark button-pay-now btn-lg" type="submit"
             stripeKey="pk_test_51LfqFUSIxyJCNgPZYTW7Jx2LYdeiO8R1R3Bv9Ks6U93UiEPBwWTW5Bf634oubEFbFt615IvxBWnUiUVLNwsHnsPP000Mh2B2BX"
             token={handleToken}
           />
