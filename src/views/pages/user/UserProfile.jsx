@@ -14,15 +14,6 @@ function UserProfile() {
   const userId = userDetails.userId;
 
   const [profileDetails, setProfileDetails] = useState({});
-  const [showPassword, setShowPassword] = useState(false);
-  const [name, setName] = useState("userName");
-  const [email, setEmail] = useState("Thushan@gmail.com");
-  const [location, setLocation] = useState("Gampaha");
-  const [contact, setContact] = useState("0716113769");
-  const [password, setPassword] = useState("Thushan123#");
-
-  const [isNameDisabled, setIsNameDisabled] = useState(true);
-  const [isFormDisabled, setIsFormDisabled] = useState(true);
 
   const handleOnSubmit = () => {
     setIsFormDisabled(true);
@@ -54,6 +45,20 @@ function UserProfile() {
   const Location = profileDetails[0]?.location;
   const Contact = profileDetails[0]?.contact;
   const Email = profileDetails[0]?.email;
+
+  console.log(userName)
+
+  
+
+  const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState(profileDetails[0]?.name);
+  const [email, setEmail] = useState("Thushan@gmail.com");
+  const [location, setLocation] = useState("Gampaha");
+  const [contact, setContact] = useState("0716113769");
+  const [password, setPassword] = useState("Thushan123#");
+
+  const [isNameDisabled, setIsNameDisabled] = useState(true);
+  const [isFormDisabled, setIsFormDisabled] = useState(true);
 
   return (
     <>
