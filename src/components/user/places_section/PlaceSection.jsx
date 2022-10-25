@@ -11,7 +11,7 @@ function PlaceSection() {
 
     useEffect(() => {
         axios.get("http://localhost:4000/addnewrent/places").then((response) => {
-            setPlaces(response.data);
+            setPlaces(response.data.places);
         });
     }, []);
 
@@ -46,6 +46,7 @@ function PlaceSection() {
                     {places.map((value) => (
                             <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                                 <PlaceCard
+                                    placeId = {value.id}
                                     title={value.title}
                                     src={"http://localhost:4000/images/" + value.image}
                                     city={value.city}

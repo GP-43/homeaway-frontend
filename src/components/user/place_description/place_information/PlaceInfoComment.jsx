@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import PlaceInfoRating from './PlaceInfoRating';
 import PlaceInfoReviews from './PlaceInfoReviews';
 
-function PlaceInfoComment() {
+function PlaceInfoComment(props) {
     return (
         <Row>
             <Col xs={12} className='px-0'>
@@ -12,8 +12,12 @@ function PlaceInfoComment() {
 
                 <Card className='place-information-description'>
                     <Card.Body>
-                        <PlaceInfoRating/>
-                        <PlaceInfoReviews/>
+                        <PlaceInfoRating rating={props.rating}
+                                         placeId={props.placeId}
+                        />
+                        <PlaceInfoReviews
+                            placeId = {props.placeId}
+                        />
                     </Card.Body>
                 </Card>
             </Col>
