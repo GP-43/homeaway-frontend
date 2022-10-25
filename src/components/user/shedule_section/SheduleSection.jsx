@@ -43,7 +43,7 @@ function SheduleSection(props) {
       .then((data) => {
         const userbookings = data.data;
         setuserBookings({ ...userbookings });
-        console.log(userbookings);
+        console.log("userbookings",userbookings);
       })
       .catch((error) => {
         console.log(error);
