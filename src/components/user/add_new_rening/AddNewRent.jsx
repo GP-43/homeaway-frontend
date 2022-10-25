@@ -15,6 +15,8 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import BasicMap from "./basic";
 
 const base_url = process.env.REACT_APP_BASE_URL;
+// const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
+// const userId = userDetails.userId;
 
 function AddNewRent() {
   const categoryOptions = [
@@ -68,6 +70,7 @@ function AddNewRent() {
       silent: silent,
       food: food,
       washroom: washroom,
+      // renter_id: userId,
     };
   }
 
