@@ -20,6 +20,7 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import Complaints from './views/pages/Admin/Complaints';
 import PaymentsOfPlaces from './components/user/paymentbox/PaymentsOfPlaces';
+import FAQ from './views/pages/anons/FAQ'; 
 function App() {
 
     // const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
@@ -43,6 +44,7 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
+                    <Route path='/faq' element={<FAQ/>} />
                 </Route>
                 <Route path='/user' element={<HomeAwayUser />}>
                     {/*<Route path='/user/' element={isAuthenticated ? <UserHome /> : <Navigate to='/login'/>} />*/}
