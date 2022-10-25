@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import { FaStar, FaEdit } from "react-icons/fa";
 import { AiOutlineFileDone } from "react-icons/ai";
 import axois from "axios";
-import Alert from 'react-bootstrap/Alert';
 
 function UserProfile() {
   //get id from session
@@ -21,8 +20,8 @@ function UserProfile() {
   const [email, setEmail] = useState("");
   const [location, setLocation] = useState("");
   const [contact, setContact] = useState("");
-  const [password1, setPassword1] = useState("a");
-  const [password2, setPassword2] = useState("s");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
 
   const toUpdateDetails = {
       // Name : name,
@@ -32,6 +31,10 @@ function UserProfile() {
 
   const toUpdateName = {
     Name : name,
+  }
+
+  const toUpdatePassword = {
+    Password : password1,
   }
 
   const handleOnSubmit = () => {
@@ -50,8 +53,34 @@ function UserProfile() {
 
   const handleOnSubmitEditPassword = () => {
     setIsPasswordDisabled(true);
-    if(password1 === password2){
-      alert("Hello! I am an alert box!!");
+    if(!containsSpecialChars(password1)){
+      alert("There is no Symbols in password !");
+    }
+    if(containsWhitespace(password1)){
+      alert("There are whitespaces in password !");
+    }
+    if(!containsNumbers(password1)){
+      alert("There is no numbers in password !");
+    }
+    if(password1.length < 8){
+      alert("password length must grater than 8 !");
+    }
+    if(!(password1 === password2)){
+      alert("Passwords doesn't match !");
+    }
+    if((password1 === password2) && (containsSpecialChars(password1)) && !(containsWhitespace(password1)) 
+    && (containsNumbers(password1)) && (password1.length >= 8) ){
+
+      axois
+      .put("http://localhost:4000/auth/updatePassword/" + userId, toUpdatePassword)
+      .then(() => {
+        console.log("Work");
+        fetchProfileDetails();
+        alert("Password has updated");
+      })
+      .catch((error) => {
+        console.log(error);
+      }); 
     }
   };
 
@@ -104,6 +133,39 @@ function UserProfile() {
   const [isNameDisabled, setIsNameDisabled] = useState(true);
   const [isFormDisabled, setIsFormDisabled] = useState(true);
   const [isPasswordDisabled, setIsPasswordDisabled] = useState(true);
+
+//check special charactors
+
+  function containsSpecialChars(str) {
+    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    return specialChars.test(str);
+  }
+// console.log("hello",containsSpecialChars('hello!')); // 👉️ true
+// console.log(containsSpecialChars('abc')); // 👉️ false
+// console.log(containsSpecialChars('one two'));
+
+//check whitespaces
+function containsWhitespace(str) {
+  return /\s/.test(str);
+}
+
+// console.log("whitespaces",containsWhitespace('  ')); // 👉️ true
+// console.log(containsWhitespace('hello world')); // 👉️ true
+// console.log(containsWhitespace('')); // 👉️ false
+// console.log(containsWhitespace('test')); // 👉️ false
+
+//check number
+function containsNumbers(str) {
+  return /\d/.test(str);
+}
+// console.log("contain numbers",containsNumbers('hello123')); // true
+// console.log(containsNumbers('javascript')); // false
+// console.log(containsNumbers('3 apples')); // true
+
+//check length
+// var myString = "string test";
+// var stringLength = myString.length;
+// console.log("length", stringLength);
 
   return (
     <>
