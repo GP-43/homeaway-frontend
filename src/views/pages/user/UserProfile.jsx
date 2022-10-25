@@ -23,6 +23,13 @@ function UserProfile() {
     setIsNameDisabled(true);
   };
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("Thushan@gmail.com");
+  const [location, setLocation] = useState("Gampaha");
+  const [contact, setContact] = useState("0716113769");
+  const [password, setPassword] = useState("Thushan123#");
+
   // refresh page
   function fetchProfileDetails() {
     // get details
@@ -32,6 +39,7 @@ function UserProfile() {
         const profileDetails = data.data;
         setProfileDetails({ ...profileDetails });
         console.log(profileDetails);
+        setName(data.data[0]?.name)
       })
       .catch((error) => {
         console.log(error);
@@ -50,12 +58,7 @@ function UserProfile() {
 
   
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [name, setName] = useState(profileDetails[0]?.name);
-  const [email, setEmail] = useState("Thushan@gmail.com");
-  const [location, setLocation] = useState("Gampaha");
-  const [contact, setContact] = useState("0716113769");
-  const [password, setPassword] = useState("Thushan123#");
+
 
   const [isNameDisabled, setIsNameDisabled] = useState(true);
   const [isFormDisabled, setIsFormDisabled] = useState(true);
