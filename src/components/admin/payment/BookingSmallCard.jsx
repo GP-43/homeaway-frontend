@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import SingleSmallCard from './SingleSmallCard';
 import { FaRegBuilding } from "react-icons/fa";
+import axois from "axios";
+const base_url = process.env.REACT_APP_BASE_URL;
 
 function BookingSmallCard() {
     const Booking_Data = [
@@ -12,6 +14,22 @@ function BookingSmallCard() {
         },
 
     ];
+
+    const [details, setDetails] = useState({});
+    const [count, setCount] = useState();
+    useEffect((event) => {
+        axois
+            .get(`${base_url}/admin/countBookings`)
+            .then((data) => {
+                const details = data.data;
+                setDetails({ ...details });
+                setCount(details[0]?.booking_count)
+                console.log(count);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
     return (
         <Container xs={2}>
             <Row className='smallcardcontainer'>
@@ -27,7 +45,7 @@ function BookingSmallCard() {
                             <SingleSmallCard
                                 Name={i.Name}
                                 Name2={i.Name2}
-                                Total={i.Total}
+                                Total={count}
                             />
                         ))}
                 </Col>
