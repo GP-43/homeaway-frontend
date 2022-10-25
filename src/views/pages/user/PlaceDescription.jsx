@@ -51,7 +51,7 @@ function PlaceDescription() {
                 </Col>
                 <Col lg={6} className='px-5 pt-2'>
                     {isRatePlaceClicked ?
-                        <AddRating handleOnReviewSubmitClick={handleOnReviewSubmitClick}/>
+                        <AddRating handleOnReviewSubmitClick={handleOnReviewSubmitClick} placeId = {placeId}/>
                         :
                         <RenterDetails handleOnRatePlaceClick={handleOnRatePlaceClick}/>
                     }
