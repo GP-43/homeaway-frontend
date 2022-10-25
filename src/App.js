@@ -19,6 +19,7 @@ import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import Complaints from './views/pages/Admin/Complaints';
+import PaymentsOfPlaces from './components/user/paymentbox/PaymentsOfPlaces';
 function App() {
 
     // const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
@@ -50,6 +51,7 @@ function App() {
                     <Route path='/user/userrentings' element={<UserRentings />} />
                     <Route path='/user/placedescription' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
+                    <Route path='/user/paymentofplaces' element={<PaymentsOfPlaces />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
