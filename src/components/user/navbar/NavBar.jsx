@@ -74,7 +74,7 @@ function NavBar() {
                             </span>
                         </Nav.Link>
                         <NavDropdown title={<BiUserCircle className="user-circle"/>}>
-                            <NavDropdown.Item className="mb-2" href="#action/3.1">Profile</NavDropdown.Item>
+                            <NavDropdown.Item className="mb-2" href="/user/profile">Profile</NavDropdown.Item>
                             <NavDropdown.Item className={isRenter ? 'mb-2 d-none' : 'mb-2 d-block'}
                                               href='/user/userrentings'>
                                 <Button className='bg-transparent border-0 text-dark px-0'
