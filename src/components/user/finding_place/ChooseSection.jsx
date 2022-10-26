@@ -27,7 +27,7 @@ function ChooseSection() {
         if(guestCount <= place.quantity) {
           console.log("Guest count checked")
             ret = true;}
-        if(value === place.city) {
+        if(value.toLowerCase() === place.city.toLowerCase()) {
             console.log("location checked")
             ret = true;}
         return ret;
