@@ -22,14 +22,16 @@ function NavBar() {
     const handleOnSwitchUserClick = () => {
         if (isRenter) {
             setIsRenter(false)
+            sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: false }));
         } else {
             setIsRenter(true)
+            sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: true }));
         }
     }
 
     const navigate = useNavigate();
 
-    const handleOnLogoClick = () => {
+    const handleOnLogoutClick = () => {
         window.location.replace("/");
         sessionStorage.removeItem("accessToken");
     }
@@ -46,7 +48,7 @@ function NavBar() {
         <Navbar expand="lg" className="user-navbar px-0 py-0">
             <Container className="px-0">
                 <Navbar>
-                    <img className="logo" src={logo} alt="LOGO" onClick={handleOnLogoClick}/>
+                    <img className="logo" src={logo} alt="LOGO" onClick={handleOnLogoutClick}/>
                 </Navbar>
                 <Navbar>
                     <Nav className="me-0 mt-0">
@@ -85,7 +87,7 @@ function NavBar() {
                                         onClick={handleOnSwitchUserClick}> Switch User</Button>
                             </NavDropdown.Item>
                             <NavDropdown.Divider/>
-                            <NavDropdown.Item className="mb-1" onClick={handleOnLogoClick}>
+                            <NavDropdown.Item className="mb-1" onClick={handleOnLogoutClick}>
                                 Logout
                             </NavDropdown.Item>
                         </NavDropdown>
