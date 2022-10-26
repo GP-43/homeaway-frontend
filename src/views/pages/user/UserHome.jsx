@@ -4,12 +4,16 @@ import axios from "axios";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import FindingPlace from "../../../components/user/finding_place/FindingPlace.jsx";
 import PlaceSection from "../../../components/user/places_section/PlaceSection";
-import { HomePagePlacesProvider } from '../../../contexts/HomePagePlacesContext.js';
+import { HomePagePlacesProvider } from "../../../contexts/HomePagePlacesContext.js";
 import { useState } from "react";
 
 function UserHome() {
   const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
   const userId = userDetails.userId;
+  const userEmail = JSON.parse(
+    sessionStorage.getItem("currentuseremail")
+  )?.email;
+
   const [occupantdetails, setOccupantdetails] = useState({});
   const [isarenter, setIsarenter] = useState({});
 
@@ -23,6 +27,8 @@ function UserHome() {
   const [properties, setProperties] = useState("");
   const [rate, setRate] = useState(0);
 
+  const [isRenterByEmail, setIsRenterByEmail] = useState(true);
+
   const inserttorenter = {
     rName: name,
     rImage: image,
@@ -35,8 +41,21 @@ function UserHome() {
     rRate: rate,
   };
 
-  const handleClick = async () => {
+  useEffect(()=>{
 
+    axios
+      .get("http://localhost:4000/renter/checkrenterbyemail/" + userEmail)
+      .then((data) => {
+        console.log("Userttyttytytytyty vasjdf", data.data);
+        setIsRenterByEmail(data.data?.length > 0);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+  },[]);
+
+  const handleClick = async () => {
     //check whether already a renter
     axios
       .get("http://localhost:4000/renter/checkwhetherrenter/" + userId)
@@ -83,6 +102,8 @@ function UserHome() {
       .catch((error) => {
         console.log(error);
       });
+
+    
   };
   console.log(inserttorenter);
   return (
@@ -101,9 +122,9 @@ function UserHome() {
         </Row>
         <Row className="mx-5 mt-5 pt-4 pb-4">
           <Col xs={12}>
-            <Button className="become-renter-btn" onClick={handleClick}>
+            {!isRenterByEmail && <Button className="become-renter-btn" onClick={handleClick}>
               Become a renter
-            </Button>
+            </Button>}
           </Col>
         </Row>
       </HomePagePlacesProvider>

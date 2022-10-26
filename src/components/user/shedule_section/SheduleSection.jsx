@@ -11,6 +11,7 @@ function SheduleSection(props) {
   console.log("id", userId);
 
   //console.log(userDetails);
+  const[placesdata, setPlacesdata] = useState([]);
   const [rentings, setRentings] = useState([]);
   const [userRole, setUserRole] = useState([]);
   const [userbookings, setuserBookings] = useState([]);
@@ -23,6 +24,17 @@ function SheduleSection(props) {
         const rentings = data.data;
         setRentings({ ...rentings });
         console.log("rentings", rentings);
+        console.log("shg",curruserrole);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+      axios.get("http://localhost:4000/renter/myrentings/" + userId)
+      .then((data) => {
+        const placesdata = data.data;
+        setPlacesdata([ ...placesdata ]);
+        console.log("places", placesdata);
         console.log("shg",curruserrole);
       })
       .catch((error) => {
@@ -68,15 +80,18 @@ function SheduleSection(props) {
     <div className="schedule-section-box ps-2 mt-4">
       <h5 className="schedule-section-title position-sticky">Schedule</h5>
       <div className={!(curruserrole) ? "d-none" : "schedule-section mt-4"}>
-        {Object.keys(rentings).map((key, index) => (
+        {Object.keys(rentings).map((key, index) => {
+          console.log("Place daaaaaaattaa", placesdata);
+          const place = placesdata?.filter((place)=>place.id === rentings[index].place_id)[0]
+          return (
           <SheduleCard
             index={index}
             Title={rentings[index].booking_id}
-            Place={rentings[index].place_id}
+            Place={place?.title}
             From={rentings[index].start_date}
             To={rentings[index].end_date}
           />
-        ))}
+        )})}
       </div>
 
       <div className={(curruserrole) ? "d-none" : "schedule-section mt-4"}>

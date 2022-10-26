@@ -11,7 +11,7 @@ function Map() {
 
   return (
     <dev>
-      <MapContainer center={[6.895062734823771, 79.9268352549603]} zoom={12} scrollWheelZoom={true}>
+      <MapContainer center={ [6.9370782075830855, 79.98362297611264]} zoom={10} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -192,6 +192,7 @@ function AddNewRent() {
       })
       .then((response) => {
         console.log("it worked");
+        navigate('/user/userrentings');
       });
   };
 
@@ -291,6 +292,7 @@ function AddNewRent() {
                   placeholder="ex: 94766923712"
                   name="contactNo"
                   required
+                  pattern="[0-9]{10}"
                   //onChange={handleOnContactChange}
                   onChange={(event) => {
                     setContactNo(event.target.value);
@@ -374,12 +376,12 @@ function AddNewRent() {
             </Form.Group>
           </Col>
 
-          {/* <Col lg={12} className="mb-2">
+          <Col lg={12} className="mb-2">
             <Form.Group className="mb-3">
               <Form.Label className="mb-2">LOCATION</Form.Label>
               <GoogleMap className="google-map" />
             </Form.Group> 
-          </Col> */}
+          </Col>
 
           <Col lg={12} className="mb-2">
             <Form.Group
