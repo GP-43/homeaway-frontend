@@ -25,6 +25,7 @@ function Login() {
                     window.location.replace("/admin/dashboard");
                 }
             } else {
+
             }
         });
     }
@@ -33,68 +34,67 @@ function Login() {
         <Container>
             <Row className='login-page'>
                 <Col md={7} className='px-0'>
-                    <Formik
-                        initialValues={{
-                            email: "",
-                            password: "",
-                        }}
-                        validationSchema={yup.object().shape({
-                            email: yup.string().email('Invalid email address')
-                                .required(),
 
-                            password: yup.string().email('Invalid email or password').required(),
+                    <Formik
+                        initialValues={{ email: "", password: "" }}
+
+                        validationSchema={yup.object().shape({
+                            email: yup.string()
+                                .email()
+                                .required("Required"),
+                            password: yup.string()
+                                .required("No password provided.")
                         })}
 
-                        onSubmit={(values) => {
-                            axios.post("http://localhost:4000/auth/login", values).then((response) => {
-                                console.log(response);
-                                navigate('/login');
-                            });
+                        onSubmit={(values, { setSubmitting }) => {
+                            setTimeout(() => {
+                                console.log("Logging in", values);
+                                setSubmitting(false);
+                            }, 500);
                         }}
                     >
 
                         {(formik) => (
+                        <Form className='d-flex align-items-center' onSubmit={handleOnLogin}>
+                            <div className='w-100'>
+                                <h3>Sign in to HomeAway</h3>
+                                <Form.Text className="text-muted">
+                                    use your email as username.
+                                </Form.Text>
+                                <InputGroup className="my-3 data-field" id="formUserName" hasValidation>
+                                    <InputGroup.Text className='data-field-icon'
+                                        id="basic-addon1"><FiMail /></InputGroup.Text>
+                                    <Form.Control type="email" placeholder="Email" required
 
-                            <Form className='d-flex align-items-center' onSubmit={handleOnLogin}>
-                                <div className='w-100'>
-                                    <h3>Sign in to HomeAway</h3>
-                                    <Form.Text className="text-muted">
-                                        use your email as username.
-                                    </Form.Text>
-                                    <InputGroup className="my-3 data-field" id="formUserName" hasValidation>
-                                        <InputGroup.Text className='data-field-icon'
-                                            id="basic-addon1"><FiMail /></InputGroup.Text>
-                                        <Form.Control type="email" placeholder="Email" required
-
-                                            onChange={(event) => {
-                                                setEmail(event.target.value)
-                                            }}
-                                            {...formik.getFieldProps("email")}
-                                        />
-                                    </InputGroup>
-                                    <ErrorMessage name='email' component='div' className='error-msg' />
-                                    <InputGroup className="mb-3 data-field" id="formBasicPassword">
-                                        <InputGroup.Text className='data-field-icon'
-                                            id="basic-addon1"><FiLock /></InputGroup.Text>
-                                        <Form.Control type="password" placeholder="Password" required
-                                            onChange={(event) => {
-                                                setPassword(event.target.value)
-                                            }}
-                                            {...formik.getFieldProps("password")}
-                                        />
-                                    </InputGroup>
-                                    <ErrorMessage name='password' component='div' className='error-msg' />
-                                    <Form.Group className="mb-3 text-center" controlId="forgottenPassword">
-                                        <span>
-                                            <Link to={"../ForgotPassWord"} className='forgot-pass-label'>Forgot your password?</Link>
-                                        </span>
-                                    </Form.Group>
-                                    <Button className="sign-in-btn" type="submit">
-                                        SIGN IN
-                                    </Button>
-                                </div>
-                            </Form>
-                        )}
+                                        onChange={(event) => {
+                                            setEmail(event.target.value)
+                                        }}
+                                    //{...formik.getFieldProps("email")}
+                                    />
+                                </InputGroup>
+                                <ErrorMessage name='email' component='div' className='error-msg' />
+                                <InputGroup className="mb-3 data-field" id="formBasicPassword">
+                                    <InputGroup.Text className='data-field-icon'
+                                        id="basic-addon1"><FiLock /></InputGroup.Text>
+                                    <Form.Control type="password" placeholder="Password" required
+                                        onChange={(event) => {
+                                            setPassword(event.target.value)
+                                        }}
+                                    // {...formik.getFieldProps("password")}
+                                    />
+                                </InputGroup>
+                                <ErrorMessage name='password' component='div' className='error-msg' />
+                                <Form.Group className="mb-3 text-center" controlId="forgottenPassword">
+                                    <span>
+                                        <Link to={"../ForgotPassWord"} className='forgot-pass-label'>Forgot your password?</Link>
+                                    </span>
+                                </Form.Group>
+                                <Button className="sign-in-btn" type="submit">
+                                    SIGN IN
+                                </Button>
+                            </div>
+                        </Form>
+)}
                     </Formik>
                 </Col>
                 <Col md={5} className='animation-shield d-flex align-items-center justify-content-center'>
