@@ -23,7 +23,7 @@ function Home() {
                 <Col className='px-0 latest-place-section' xs={12}>
                     <LatestPlaces />
                 </Col>
-                <Col className='px-0 about-section-box' xs={12}>
+                <Col className='px-0 about-section-box' id='about' xs={12}>
                     <AboutSection />
                 </Col>
             </Row>
