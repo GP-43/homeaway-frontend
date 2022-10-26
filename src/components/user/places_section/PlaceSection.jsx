@@ -15,23 +15,24 @@ function PlaceSection() {
         axios.get("http://localhost:4000/addnewrent/places").then((response) => {
             setHomePagePlaces(response.data.places);
             setHomePagePlacesStatic(response.data.places);
+            // const [places, setHomePagePlaces] = useLocalStorage('places', [])
             setPlaces(response.data.places);
         });
     }, []);
 
     //sorting
     const handleOnPriceSortClick = () => {
-        setPlaces([...places].sort((a, b) => b.price - a.price));
+        setPlaces([...places].sort((price1, price2) => price2.price - price1.price))
     }
     const handleOnlocationSortClick = () => {
-        setPlaces([...places].sort((a, b) => a.city > b.city ? 1 : -1,));
+        setPlaces([...places].sort((location1, location2) => location1.city > location2.city ? 1 : -1,))
     }
     const handleOnRatingSortClick = () => {
-        setPlaces([...places].sort((a, b) => a.rating - b.rating));
+        setPlaces([...places].sort((rate1, rate2) => rate1.rating - rate2.rating))
     }
-
+ 
     return (
-        <Row className="py-3 mx-0">
+        <Row className="py-3 mx-0 mt-5">
             <Col md={11} xs={8} className='place-section-head px-0 pb-4'>
                 <Row>
                     <Col md={11} xs={10} className='px-0'>
@@ -57,7 +58,7 @@ function PlaceSection() {
             </Col>
             <Col md={12} xs={8} className='place-section px-md-4 px-0'>
                 <Row>
-                    {homePagePlaces.map((value) => (
+                    {places.map((value) => (
                         <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                             <PlaceCard
                                 placeId={value.id}

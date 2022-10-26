@@ -8,7 +8,7 @@ function SheduleSection(props) {
   const curruser = JSON.parse(sessionStorage.getItem("currentuserrole"));
   const userId = userDetails.userId;
   const curruserrole = curruser.isRenter;
-  console.log("id", userId);
+  //console.log("id", userId);
 
   //console.log(userDetails);
   const [rentings, setRentings] = useState([]);

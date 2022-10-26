@@ -23,7 +23,7 @@ function AnonsNavBar() {
     return (
         <Navbar collapseOnSelect expand="lg" className={url === '/' ? 'anon-navbar px-0 py-0 position-fixed' : 'anon-navbar px-0 py-0 position-static' }>
             <Container className="px-0">
-                <img className="logo" src={logo} alt="LOGO" onClick={handleOnLogoClick}/>
+                <img className="logo" src={logo} alt="LOGO" />
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse className="navbar-coll " id="responsive-navbar-nav">
                     <Nav className="me-0 mt-0">
@@ -33,7 +33,7 @@ function AnonsNavBar() {
                             </span>
                         </Nav.Link>
 
-                        <Nav.Link as={Link} to='/about'>
+                        <Nav.Link as={Link} to='#about'>
                             <span className={url === '/anon/about' ? 'nav-bar-item-active' : 'nav-bar-item mt-1'}>
                                 About
                             </span>
