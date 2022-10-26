@@ -16,6 +16,12 @@
 .time-box-1 {
   width: 54px;
   height: 57px;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
 }
 .time-input {
   width: 52px;
@@ -25,6 +31,8 @@
   outline: none;
   border-style: none;
 }
+
+
 .time-input:focus {
   border-style: solid;
   border-color: rgb(67, 6, 153);
