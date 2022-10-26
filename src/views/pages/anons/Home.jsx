@@ -6,6 +6,17 @@ import HelloSection from "../../../components/anons/hellosection/HelloSection";
 import VacationPlanSection from "../../../components/anons/vacation_plan_section/VacationPlanSection";
 import LatestPlaces from '../../../components/anons/latest_place_section/LatestPlaces';
 
+var Scroll   = require('react-scroll');
+var Element  = Scroll.Element;
+var scroller = Scroll.scroller;
+
+scroller.scrollTo('about_section', {
+    duration: 1500,
+    delay: 100,
+    smooth: true,
+    containerId: 'about_section',
+    offset: 50, // Scrolls to element + 50 pixels down the page
+})
 
 function Home() {
     return (
@@ -23,7 +34,7 @@ function Home() {
                 <Col className='px-0 latest-place-section' xs={12}>
                     <LatestPlaces />
                 </Col>
-                <Col className='px-0 about-section-box' id='about' xs={12}>
+                <Col className='px-0 about-section-box' name='about_section' id='about_section' xs={12}>
                     <AboutSection />
                 </Col>
             </Row>
