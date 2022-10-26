@@ -31,8 +31,8 @@ function Login() {
             } else {
                 // window.alert("Invalid User. Plz register");
                 swal({
-                    title: "Invalid User",
-                    text: "You need to register first",
+                    title: "Invalid User Login",
+                    text: "Check your email and password or register",
                     icon: "warning",
                     buttons: true,
                     dangerMode: true,
