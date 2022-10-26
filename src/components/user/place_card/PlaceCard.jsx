@@ -12,7 +12,7 @@ function PlaceCard(props) {
   const curruser = JSON.parse(sessionStorage.getItem("currentuserrole"));
   const curruserrole = curruser.isRenter;
   //const userId = userDetails.userId;
-  console.log("isren", curruserrole);
+  //console.log("isren", curruserrole);
 
   const [rentings, setRentings] = useState([]);
   const [show, setShow] = useState(true);
