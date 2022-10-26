@@ -18,7 +18,7 @@ function PlaceDescription() {
     const userId = userDetails.userId;
 
     let {id} = useParams();
-    const placeId = id;
+    const placeId = parseInt(id);
 
     const [placeDetails, setPlaceDetails] = useState({});
 
@@ -78,7 +78,13 @@ function PlaceDescription() {
                     />
                 </Col>
                 <Col className="px-1">
-                    <MakeBooking/>
+                    <MakeBooking
+                        priceType= {placeDetails.priceType}
+                        price= {placeDetails.price}
+                        occupantId={userId}
+                        renterId={50}
+                        placeId={placeId}
+                    />
                 </Col>
             </Row>
         </Container>
