@@ -20,6 +20,10 @@
     padding-right: 4rem;
   }
 }
+.leaflet-container {
+  width: 40vw;
+  height: 30vh;
+}
 
 .image-upload-box {
   height: 60vh;
@@ -43,7 +47,7 @@
       width: 4rem;
       stroke-width: 1px !important;
     }
-    
+
     .uploaded-image {
       height: 19rem;
       width: auto;

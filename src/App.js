@@ -23,6 +23,7 @@ import UserProfile from './views/pages/user/UserProfile';
 import PaymentsOfPlaces from './components/user/paymentbox/PaymentsOfPlaces';
 import MyPlaceDescription from './views/pages/user/MyPlaceDescription';
 import FAQ from './views/pages/anons/FAQ'; 
+import Map from './components/user/add_new_rening/Map';
 function App() {
 
     // const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
@@ -58,6 +59,7 @@ function App() {
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
                     <Route path='/user/profile' element={<UserProfile />} />
                     <Route path='/user/paymentofplaces' element={<PaymentsOfPlaces />} />
+                    <Route path='/user/map' element={<Map />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
