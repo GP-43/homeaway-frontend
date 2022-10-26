@@ -1,10 +1,15 @@
 import React from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import Footer from "../components/footer/Footer";
-import { Outlet } from 'react-router-dom';
+import { Outlet,useNavigate } from 'react-router-dom';
 import NavBar from "../components/user/navbar/NavBar";
+import { useEffect } from "react";
 
 function HomeAwayUser() {
+    const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
+    const isAuthenticated = userDetails ? true : false;
+    const navigate = useNavigate();
+
     return (
         <div className='user-home-bg-color'>
             <Container>
