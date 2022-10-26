@@ -1,0 +1,21 @@
+.faq{
+    border-radius: 15px;
+    //width: 1000px;
+    .number{
+      text-align: center;
+    }
+    .icon-section{
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    .question{
+      text-align: center;
+    }
+    .answer{
+      text-align: center;
+    }
+  }
+  .faq:hover, .faq:focus, .faq::after{
+    background-color: #FFFFFF;
+  }
