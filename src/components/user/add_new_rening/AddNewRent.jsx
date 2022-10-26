@@ -16,6 +16,9 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 const base_url = process.env.REACT_APP_BASE_URL;
 
 function AddNewRent() {
+  const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+  const userId = userDetails.userId;
+  
   const categoryOptions = [
     { value: "meeting-room", label: "Meetings" },
     { value: "office-room", label: "Office" },
@@ -67,6 +70,7 @@ function AddNewRent() {
       silent: silent,
       food: food,
       washroom:washroom,
+      renter_id:userId,
     };
   }
 
@@ -91,6 +95,7 @@ function AddNewRent() {
     silent,
     food,
     washroom,
+    userId,
   ]);
 
   const [productRating, setProductRating] = useState(0);
@@ -171,7 +176,7 @@ function AddNewRent() {
   }
 
     axios
-      .post(`${base_url}/addnewrent`, formData, {
+      .post("http://localhost:4000/addnewrent", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -358,8 +363,8 @@ function AddNewRent() {
             <Form.Group className="mb-3">
               <Form.Label className="mb-2">LOCATION</Form.Label>
               <GoogleMap className="google-map" />
-            </Form.Group>
-          </Col> */}
+            </Form.Group> 
+          </Col> */} 
 
           <Col lg={12} className="mb-2">
             <Form.Group
@@ -369,7 +374,7 @@ function AddNewRent() {
               <Form.Label className="mb-2">IMAGES</Form.Label>
               <Col>
                 <AddImages setSelectedFiles={setSelectedFiles}/>
-              </Col>
+              </Col> 
             </Form.Group>
           </Col>
           <p>FEATURES</p>
@@ -529,12 +534,12 @@ function AddNewRent() {
               </label>
               <Col lg={5}>
                 <PlaceCard
-                  Title={title}
-                  Src={image}
-                  City={city}
-                  Price={price}
-                  Quantity={quantity}
-                  Rating={productRating}
+                  title={title}
+                  src={image}
+                  city={city}
+                  price={price}
+                  quantity={quantity}
+                  rating={productRating}
                 />
               </Col>
             </Col>

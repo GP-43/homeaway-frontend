@@ -1,0 +1,71 @@
+.profile-picture {
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+}
+
+.profile-data-fieled {
+  background-color: #e5e5e5;
+  border-radius: 10px;
+}
+
+.profile-data-fieled-input {
+  background-color: #e5e5e5;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+.profile-edit-button {
+  width: 7rem;
+  height: 3rem;
+}
+
+.profile-submit-button {
+  width: 7rem;
+  height: 3rem;
+}
+
+.profile-photo-edit-icon {
+  margin-left: 14rem;
+  margin-top: 16rem;
+}
+
+.profile-name-rate-container{
+    margin-top: 7rem;
+    margin-left: 5rem;
+}
+
+ .profile-name-container{
+   .edit-icon {
+     cursor: pointer;
+   }
+   .done-icon {
+     cursor: pointer;
+   }
+     //border-bottom: solid 1px black;
+ }
+
+.profile-name-underline{
+    width: 90%;
+}
+
+.profile-edit-password-button{
+  width: 8rem;
+  height: 4rem;
+}
+
+.profile-submit-password-button{
+  width: 9rem;
+  height: 4rem;
+}
+
+.profile-thumbnail-container{
+margin-left: 4rem;
+    margin-top: 8rem;
+}
+
+.profile-thumbnail-submit{
+  margin-left: 6rem;
+}

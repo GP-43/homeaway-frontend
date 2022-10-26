@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Button, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
-import {Link, Navigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {FiLock, FiMail} from "react-icons/fi";
 import axios from "axios";
 
@@ -16,8 +16,9 @@ function Login() {
             //console.log(response)
             if (response.data.state === 1) {
                 sessionStorage.setItem("accessToken", JSON.stringify(response.data.data));
+                sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: false }));
                 const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
-                if (userDetails.role == 2) {
+                if (userDetails.role == 2 || userDetails.role == 3) {
                     window.location.replace("/user");
                 } else if (response.data.data.role == 1) {
                     window.location.replace("/admin/dashboard");
