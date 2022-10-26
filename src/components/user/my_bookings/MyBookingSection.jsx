@@ -17,6 +17,12 @@ function MyBookingSection() {
         });
     }, []);
 
+    //sorting
+    const sortOnSuccess = ()=> {
+        setBookings([...bookings].sort((a,b) => b.status - a.status));  
+    }
+    
+    console.log(sortOnSuccess);
     return (
         <Row className="py-3 mx-0">
             <Col md={12} xs={8} className='my-booking-section-head px-0'>
@@ -36,7 +42,7 @@ function MyBookingSection() {
                                 <Dropdown.Menu className="my-bookings-dropdown">
                                     <Dropdown.Item href="#/action-1">paid</Dropdown.Item>
                                     <Dropdown.Item href="#/action-2">saved</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">completed</Dropdown.Item>
+                                    <Dropdown.Item onClick={sortOnSuccess}>completed</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </div>
