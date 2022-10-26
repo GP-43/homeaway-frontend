@@ -32,7 +32,7 @@ function OccupantTable({ details_array, setSelectedUser, fetchOccupants }) {
                 </Col>
                 <Col className='text-center ps-5 ms-5'>
                     <input className='search-by-name p-2' type="date"
-                        onChange={event => { setNameSearchTerm(event.target.value) }}
+                        onChange={event => { setDateSearchTerm(event.target.value) }}
                     />
                 </Col>
                 <Col className='text-right'></Col>
@@ -57,7 +57,7 @@ function OccupantTable({ details_array, setSelectedUser, fetchOccupants }) {
 
             <Row className='mx-0 px-0 data-part'>
 
-            {details_array.filter((val, index) => {
+                {details_array.filter((val, index) => {
                     //without searching
                     if (nameSearchTerm == "" && rateSearchTerm == "" && dateSearchTerm == "") {
                         return val
