@@ -40,7 +40,7 @@ function TimePickers(props) {
             <Row className="bg-white time-base m-2 d-flex">
                 <div className="time-box-1 mt-1 p-0">
                     <input type="number" id="hours" className="time-input" placeholder="00" value={time.getHours()}
-                           max="12" min="00" onChange={(event) => handleOnHourChange(event.target.value)}></input>
+                           max="24" min="00" onChange={(event) => handleOnHourChange(event.target.value)}></input>
                 </div>
                 <span className="time-input-span bg-white px-0"><p
                     className="time-input-span-text bg-white">Hours</p></span>

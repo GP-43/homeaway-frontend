@@ -11,7 +11,7 @@ function MakeBooking(props) {
             "startDate": startDate,
             "endDate": endDate,
             "startTime": startTime,
-            "endTime": endTIme,
+            "endTime": endTime,
             "occupantId": props.occupantId,
             "renterId": props.renterId,
             "placeId": props.placeId,
@@ -27,8 +27,9 @@ function MakeBooking(props) {
     const [validateDate, setValidateDate] = useState(new Date());
 
     const [startTime, setStartTime] = useState(new Date());
-    const [endTIme, setEndTIme] = useState(new Date());
-    // const [needValidation, setNeedValidation] = useState(false);
+    const [endTime, setEndTime] = useState(new Date());
+
+    const [totalAmount, setTotalAmount] = useState(0);
 
     const handleOnStartDate = (date) => {
         setStartDate(date);
@@ -49,28 +50,74 @@ function MakeBooking(props) {
 
     const handleOnEndDate = (date) => {
         setStartDate(date);
-
     }
 
-    Date.prototype.addHours= function(h){
+    Date.prototype.addHours = function (h) {
         var copiedDate = new Date(this.getTime());
-        copiedDate.setHours(copiedDate.getHours()+h);
+        copiedDate.setHours(copiedDate.getHours() + h);
         return copiedDate;
     }
 
     const handleOnStartTime = (time) => {
         //check for start end date\
         if (startDate.toLocaleDateString() == endDate.toLocaleDateString()) {
-            setEndTIme(time.addHours(2))
+            setEndTime(time.addHours(2))
         } else {
-            setEndTIme(time);
+            setEndTime(time);
         }
         setStartTime(time);
     }
 
     const handleOnEndTime = (time) => {
-        setEndTIme(time);
+        setEndTime(time);
     }
+
+    useEffect(() => {
+        if (props.priceType === "day") {
+            const dateCount = Math.round((startDate - endDate) / 86400000);
+            const hourCount = Math.round((endTime - startTime) / 36e5) + 1;
+            if (dateCount === 0) {
+                setTotalAmount(props.price);
+            } else if (dateCount > 0) {
+                if (hourCount <= 0) {
+                    setTotalAmount(dateCount * props.price);
+                } else {
+                    setTotalAmount((dateCount + 1) * props.price);
+                }
+            } else {
+                setTotalAmount(0);
+            }
+        } else if (props.priceType === "week") {
+            const dateCount = Math.round((startDate - endDate) / 86400000);
+            const hourCount = Math.round((endTime - startTime) / 36e5) + 1;
+            if (dateCount <= 7) {
+                if (hourCount <= 1) {
+                    setTotalAmount(props.price);
+                } else {
+                    setTotalAmount(props.price * 2);
+                }
+            } else if (dateCount > 7) {
+                if (dateCount % 7 === 0) {
+                    if (hourCount <= 0) {
+                        setTotalAmount((dateCount / 7) * props.price);
+                    } else {
+                        setTotalAmount(((dateCount / 7) + 1) * props.price);
+                    }
+                } else {
+                    setTotalAmount(((Math.floor(dateCount / 7)) + 1) * props.price);
+                }
+            } else {
+                setTotalAmount(0);
+            }
+        } else {
+            const hourCount = Math.round((endTime - startTime) / 36e5);
+            if (hourCount > 0) {
+                setTotalAmount(hourCount * props.price)
+            }else {
+                setTotalAmount(0)
+            }
+        }
+    }, [startDate, endDate, startTime, endTime])
 
     return (
         <Row className="make-booking-card1 mx-5 px-3 mt-2 d-flex">
@@ -86,7 +133,7 @@ function MakeBooking(props) {
                 </div>
                 <div className="mx-5 ps-4 mt-4">
                     <h1 className="text-rent-fee">
-                        <b>LKR 12,500.00</b>
+                        <b>LKR {totalAmount}.00</b>
                     </h1>
                 </div>
             </Col>
@@ -98,7 +145,7 @@ function MakeBooking(props) {
                 </div>
                 <div className="d-flex m-1 pb-1">
                     <b className="text-time">to:</b>
-                    <TimePickers handleOnTime={handleOnEndTime} endTime={endTIme}/>
+                    <TimePickers handleOnTime={handleOnEndTime} endTime={endTime}/>
                 </div>
                 <div className="ms-5 ps-5 mt-4">
                     {/* <Button >Pay Now</Button> */}
