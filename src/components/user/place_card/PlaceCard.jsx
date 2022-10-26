@@ -8,10 +8,10 @@ import { useNavigate, Navigate } from "react-router-dom";
 import axios from "axios";
 
 function PlaceCard(props) {
-  const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+  //const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
   const curruser = JSON.parse(sessionStorage.getItem("currentuserrole"));
   const curruserrole = curruser.isRenter;
-  const userId = userDetails.userId;
+  //const userId = userDetails.userId;
   console.log("isren", curruserrole);
 
   const [rentings, setRentings] = useState([]);
@@ -22,7 +22,7 @@ function PlaceCard(props) {
     if (curruserrole == false) {
       navigate(`/user/placedescription/${props.placeId}`);
     } else {
-      navigate("/user/myplacedescription");
+      navigate(`/user/myplacedescription/${props.placeId}`);
     }
   };
 
