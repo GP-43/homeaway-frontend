@@ -6,6 +6,12 @@ import Button from "react-bootstrap/Button";
 import { FaStar, FaEdit } from "react-icons/fa";
 import { AiOutlineFileDone } from "react-icons/ai";
 import axois from "axios";
+import { FaThumbsUp } from "react-icons/fa";
+import { Image } from "react-feather";
+
+
+
+
 
 function UserProfile() {
   //get id from session
@@ -167,11 +173,93 @@ function containsNumbers(str) {
 // var stringLength = myString.length;
 // console.log("length", stringLength);
 
+
+const [isImageUploaded, setIsImageUploaded] = useState(false);
+
+const handleImageChange = (event) => {
+  setImage(URL.createObjectURL(event.target.files[0]));
+  setUploadImage(event.target.files[0]);
+  setIsImageUploaded(true);
+};
+
+const handleOnImageRemoveClick = () => {
+  setIsImageUploaded(false);
+  setImage("noImage");
+};
+
+const [image, setImage] = useState("noImage");
+const [uploadImage, setUploadImage] = useState(null);
+
+const passImage = {
+  changedImage: image,
+};
+console.log("passimage", passImage)
+const submitImage = async () => {
+
+  //cancel the booking
+  axois
+    .put(
+      "http://localhost:4000/occupant/addImage/" + userId,
+      passImage
+    )
+    .then(() => {
+      console.log("Work");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+
+
   return (
     <>
       <Row>
         <Col className="profile-picture ms-5 mt-3 mb-3" lg={3}>
-          <img src={icon1} alt="" className="profile-photo-edit-icon" />
+        <Col className="thumbnail-container profile-thumbnail-container">
+                  <label
+                    className={
+                      isImageUploaded
+                        ? "custom-file-upload mt-0 custom-file-upload-active"
+                        : "custom-file-upload mt-0"
+                    }
+                  >
+                    <span className="w-100">
+                      <input
+                        type="file"
+                        className="d-none"
+                        onChange={handleImageChange}
+                        disabled={isImageUploaded}
+                      />
+                      {isImageUploaded ? (
+                        <div>
+                          <FaThumbsUp className="d-flex align-self-center mx-auto image-icon" />
+                          <br />
+                          <div className="d-flex justify-content-center">
+                            <p>Image is uploaded!</p>
+                          </div>
+                          <div className="d-flex justify-content-center">
+                            <Button
+                              variant="warning"
+                              onClick={handleOnImageRemoveClick}
+                            >
+                              Remove Image
+                            </Button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div>
+                          <Image className="d-flex align-self-center mx-auto image-icon" />
+                          <br />
+                          <div className="d-flex justify-content-center">
+                            <p>Click to upload the image</p>
+                          </div>
+                        </div>
+                      )}
+                    </span>
+                  </label>
+                </Col>
+                <input type="submit" value="submit image" onClick={submitImage} className="profile-thumbnail-submit" />
         </Col>
         <Col className="profile-name-rate-container">
           <Row className="profile-name-container">
