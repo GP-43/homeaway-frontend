@@ -11,20 +11,23 @@ function SheduleCard(props) {
   const [visible, setVisible] = useState(true);
 
   const [cancelId, setCancelId] = useState();
+  console.log("props", props);
 
   function handleClickCancel(id1) {
-    setVisible((prev) => !prev);
-    const cancelIds = { Id1: id1 };
+    // setVisible((prev) => !prev);
+    // const cancelIds = { Id1: id1 };
 
-    //cancel the booking
-    axios
-      .put("http://localhost:4000/booking/cancelbooking/" + userId, cancelIds)
-      .then(() => {
-        console.log("Work--");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // //cancel the booking
+    // axios
+    //   .put("http://localhost:4000/booking/cancelbooking/" + userId, cancelIds)
+    //   .then(() => {
+    //     console.log("Work--");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+
   }
 
   return (

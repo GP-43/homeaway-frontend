@@ -83,7 +83,7 @@ function UserHome() {
         console.log(error);
       });
   };
-  console.log(name);
+  console.log(inserttorenter);
   return (
     <Container>
       <Row className="mx-0 mt-2 finding-place">

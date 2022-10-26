@@ -16,12 +16,13 @@ function SheduleSection(props) {
   const [userbookings, setuserBookings] = useState([]);
 
   useEffect((event) => {
+    
     axios
       .get("http://localhost:4000/renter/scheduleofplaces/" + userId)
       .then((data) => {
         const rentings = data.data;
         setRentings({ ...rentings });
-        console.log(rentings);
+        console.log("rentings", rentings);
       })
       .catch((error) => {
         console.log(error);

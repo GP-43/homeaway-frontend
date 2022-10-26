@@ -16,6 +16,9 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 const base_url = process.env.REACT_APP_BASE_URL;
 
 function AddNewRent() {
+  const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+  const userId = userDetails.userId;
+  
   const categoryOptions = [
     { value: "meeting-room", label: "Meetings" },
     { value: "office-room", label: "Office" },
@@ -67,6 +70,7 @@ function AddNewRent() {
       silent: silent,
       food: food,
       washroom:washroom,
+      renter_id:userId,
     };
   }
 
@@ -91,6 +95,7 @@ function AddNewRent() {
     silent,
     food,
     washroom,
+    userId,
   ]);
 
   const [productRating, setProductRating] = useState(0);
