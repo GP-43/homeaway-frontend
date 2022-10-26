@@ -84,7 +84,7 @@ function PlaceInformation(props) {
                 </Row>
             </Col>
             <Col md={11} xs={10} className={isVisibleDescription ? 'd-block px-md-4 px-1' : 'd-none'}>
-                <PlaceInfoDescription description={props.description} />
+                <PlaceInfoDescription placeId={props.placeId} description={props.description} />
             </Col>
             {/* <Col md={11} xs={10} className={isVisibleTime ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
                 <PlaceInfoTime/>

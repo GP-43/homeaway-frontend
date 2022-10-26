@@ -7,54 +7,34 @@ import axios from 'axios';
 
 function PlaceInfoDescription(props) {
 
-    const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
-    const userId = userDetails.userId;
-    const [profileDetails, setProfileDetails] = useState({});
-    const [name, setName] = useState("");
+    // const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+    // const userId = userDetails.userId;
+    const [description, setDescription] = useState(props.description);
+    const [disabled, setDisabled] = useState(true);
 
-    const toUpdateName = {
-        Name: name,
-    };
+    useEffect(() => {
+        setDescription(props.description)
+    }, [props.description])
 
-    const handleOnNameSubmit = () => {
-        setIsNameDisabled(true);
-        //nama witharak wenas karamu
+    function updateProfileDescription() {
+        //Put details
+
+        console.log("NEw desctipsd fsdf :", description, props.placeId);
+
         axios
-            .put(
-                "http://localhost:4000/renter/update/description/" + userId,
-                toUpdateName
-            )
-            .then(() => {
-                console.log("Work");
-                fetchProfileDetails();
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    };
-
-    const [isNameDisabled, setIsNameDisabled] = useState(true);
-
-    function fetchProfileDetails() {
-        // get details
-        axios
-            .get("http://localhost:4000/renter/select/description/" + userId)
+            .put("http://localhost:4000/renter/update/description/" + props.placeId, { description })
             .then((data) => {
-                const profileDetails = data.data;
-                setProfileDetails({ ...profileDetails });
-                //setProfileDescription(profile)
-                console.log("hi", profileDetails[0].? description);
 
-                setName(data.data[0]?.name);
+                console.log("Description updatedddddd");
             })
             .catch((error) => {
                 console.log(error);
             });
     }
 
-    useEffect((event) => {
-        fetchProfileDetails();
-    }, []);
+    // useEffect((event) => {
+    //     fetchProfileDetails();
+    // }, []);
 
     return (
         <Row>
@@ -67,19 +47,18 @@ function PlaceInfoDescription(props) {
                             <Col className='pb-2'>
                                 <FaEdit
                                     className="ms-3 edit-icon profile-button"
-                                    onClick={() => setIsNameDisabled(false)}
+                                    onClick={() => setDisabled((oldDisabled) => !oldDisabled)}
                                 />
                                 <AiOutlineFileDone
                                     className=" ms-2 done-icon profile-button"
-                                    onClick={handleOnNameSubmit}
+                                    onClick={updateProfileDescription}
                                 />
                             </Col>
                         </Row>
                         <Row>
-                            <Card.Text>
-                                {props.description}
+                            <textarea value={description} onChange={(e) => setDescription(e.target.value)} disabled={disabled}>
+                            </textarea>
 
-                            </Card.Text>
                         </Row>
 
                     </Card.Body>
