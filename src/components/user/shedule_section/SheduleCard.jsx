@@ -8,9 +8,12 @@ function SheduleCard(props) {
   const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
   const userId = userDetails.userId;
 
+  const [visible, setVisible] = useState(true);
+
   const [cancelId, setCancelId] = useState();
 
   function handleClickCancel(id1) {
+    setVisible((prev) => !prev);
     const cancelIds = { Id1: id1 };
 
     //cancel the booking

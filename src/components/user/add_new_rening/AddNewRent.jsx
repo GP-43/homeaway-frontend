@@ -171,7 +171,7 @@ function AddNewRent() {
   }
 
     axios
-      .post(`${base_url}/addnewrent`, formData, {
+      .post("http://localhost:4000/addnewrent", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -529,12 +529,12 @@ function AddNewRent() {
               </label>
               <Col lg={5}>
                 <PlaceCard
-                  Title={title}
-                  Src={image}
-                  City={city}
-                  Price={price}
-                  Quantity={quantity}
-                  Rating={productRating}
+                  title={title}
+                  src={image}
+                  city={city}
+                  price={price}
+                  quantity={quantity}
+                  rating={productRating}
                 />
               </Col>
             </Col>
