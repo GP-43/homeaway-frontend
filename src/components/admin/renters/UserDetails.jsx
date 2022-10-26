@@ -8,26 +8,58 @@ const base_url = process.env.REACT_APP_BASE_URL;
 
 function UserDetails({ userDetailsObj }) {
     const user_ID = userDetailsObj.UserId;
-    //console.log(user_ID);
+    console.log(user_ID);
 
-    //totabooking
+    //totalBooking
 
-    const [bookingdetails, setDetails] = useState({});
+    const [bookingdetails, setBookingDetails] = useState({});
     const [userBookingCount, setUserBookingCount] = useState();
 
+    //const [details, setDetails] = useState({});
     useEffect((event) => {
         axios
-            .get("http://localhost:4000/admin/countUserBookings" + user_ID)
+            .get("http://localhost:4000/admin/renterBooking/" + user_ID)
             .then((data) => {
                 const bookingdetails = data.data;
-                setDetails({ ...bookingdetails });
+                setBookingDetails({ ...bookingdetails });
                 setUserBookingCount(bookingdetails[0]?.user_booking_count)
-                console.log(userBookingCount);
+                console.log("hi", bookingdetails);
+                console.log("hi", userBookingCount);
+
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
+    // .get(`${base_url}/admin/countUserBookings/` + user_ID)
+    // .then((data) => {
+    //     const bookingdetails = data.data;
+    //     setBookingDetails({ ...bookingdetails });
+    //     setUserBookingCount(bookingdetails[0]?.user_booking_count)
+    //     console.log(userBookingCount);
+    // })
+    // .catch((error) => {
+    //     console.log(error);
+    // });
+
+    //totalIncome
+
+    // const [incomedetails, setIncomeDetails] = useState({});
+    // const [userTotalIncome, setUserTotalIncome] = useState();
+
+    // useEffect((event) => {
+    //     axios
+    //         .get(`${base_url}/admin/totalUserIncome/` + user_ID)
+    //         .then((data) => {
+    //             const incomedetails = data.data;
+    //             setIncomeDetails({ ...incomedetails });
+    //             setUserTotalIncome(incomedetails[0]?.user_booking_count)
+    //             console.log(userTotalIncome);
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //         });
+    // }, []);
     // const details_array = [
     //     {
     //         Src: p1, firstName: "saman", lastName: "kumara", telenumber: "0112123123", IDno: '992544092V',
@@ -48,7 +80,7 @@ function UserDetails({ userDetailsObj }) {
                 </Row>
                 <Row className='py-4 values'>
                     <Col xs={5}>
-                        <Row className='value'>{userDetailsObj.TotalBookings}</Row>
+                        <Row className='value'>{userBookingCount}</Row>
                         <Row className='value-name'>Total Bookings</Row>
                     </Col>
                     <Col xs={5}>

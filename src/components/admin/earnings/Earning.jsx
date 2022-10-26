@@ -1,39 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ProgressBar from './ProgressBar';
 import { FaCircle } from "react-icons/fa";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import axios from 'axios';
+const base_url = process.env.REACT_APP_BASE_URL;
 
-function WeekEarning() {
+function Earning() {
     const percentage = 66;
+
+    const [details, setDetails] = useState({});
+    const [count, setCount] = useState();
+    useEffect((event) => {
+        axios
+            .get(`${base_url}/admin/totalIncome`)
+            .then((data) => {
+                const details = data.data;
+                setDetails({ ...details });
+                setCount(details[0]?.total_profit)
+                console.log(count);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+
     return (
         <Col className='transaction'>
             <Row className='mx-0 search-part mt-4 pt-4 '>
                 <Col className='ps-4 transaction-heading'>
                     <Row>
-                        This Week
-                    </Row>
-                    <Row >
                         Earnings
                     </Row>
                     <Row>
                         <Col className='earn ps-0 ms-0'>
-                            Rs.64,025.52
-                        </Col>
-                        <Col className='valid'>
-                            <Row >
-                                Valid
-                            </Row>
-                            <Row>
-                                Thru
-                            </Row>
+                            Rs. {count}
                         </Col>
                     </Row>
                     <Row className='py-1 px-0'>
                         <ProgressBar progress='60' />
                     </Row>
                     <Row className='week-heading'>
-                        Weekly Summary
+                        Summary
                     </Row>
                     <Row>
                         <Col className='content-progress'>
@@ -78,4 +86,4 @@ function WeekEarning() {
     )
 }
 
-export default WeekEarning
+export default Earning

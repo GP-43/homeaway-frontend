@@ -5,11 +5,11 @@ import { FaMoneyBill } from "react-icons/fa";
 import axois from "axios";
 const base_url = process.env.REACT_APP_BASE_URL;
 
-function TotalIncomeSmallCard() {
+function TotalPaymentSmallCard() {
     const Income_Data = [
         {
             Name: "Total",
-            Name2: "income",
+            Name2: "payments",
             Total: "Rs. 9455",
         },
 
@@ -19,7 +19,7 @@ function TotalIncomeSmallCard() {
     const [count, setCount] = useState();
     useEffect((event) => {
         axois
-            .get(`${base_url}/admin/totalIncome`)
+            .get(`${base_url}/admin/totalPayment`)
             .then((data) => {
                 const details = data.data;
                 setDetails({ ...details });
@@ -56,4 +56,4 @@ function TotalIncomeSmallCard() {
     )
 }
 
-export default TotalIncomeSmallCard
+export default TotalPaymentSmallCard
