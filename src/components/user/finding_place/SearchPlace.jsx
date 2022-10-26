@@ -8,11 +8,11 @@ function SearchPlace(props) {
         <Tabs
             id="uncontrolled-tab-example"
         >
-            <Tab eventKey="home" title="Choose" defaultActiveKey="profile">
-                <ChooseSection/>
-            </Tab>
             <Tab eventKey="profile" title="Filters" className='filter-button'>
                 <FilterSection filterOptions = {props.filterOptions}/>
+            </Tab>
+            <Tab eventKey="home" title="Choose" defaultActiveKey="profile">
+                <ChooseSection/>
             </Tab>
         </Tabs>
     );

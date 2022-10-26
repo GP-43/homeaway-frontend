@@ -13,19 +13,26 @@ function ChooseSection() {
   const { homePagePlaces, setHomePagePlaces, homePagePlacesStatic } =
     useHomePagePlaces();
   console.log("Choose section", homePagePlaces);
+  const [guestCount, setGuestCount] = useState(0);
+  console.log("Selected Guests awantha", guestCount);
+
+  const [value, setValue] = useState("");
+  console.log("Awantha Location", value);
   
   useEffect(()=>{
     setHomePagePlaces(homePagePlacesStatic.filter((place)=> {
-        let ret = true;
+        let ret = false;
+        console.log("database = ",place.city)
+        console.log("input = ",value)
         if(guestCount <= place.quantity) {
-            console.log("Guest count checked")
-            ret = ret && true;}
-        if(value == place.city) {
+          console.log("Guest count checked")
+            ret = true;}
+        if(value === place.city) {
             console.log("location checked")
-            ret = ret && true;}
+            ret = true;}
         return ret;
     }));
-},[])
+},[guestCount, value])
 
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const month = [
@@ -45,12 +52,6 @@ function ChooseSection() {
 
   const [show, setShow] = useState(false);
   const [isAdGuestButtonDisable, setIsAdGuestButtonDisable] = useState(true);
-
-  const [guestCount, setGuestCount] = useState(0);
-  console.log("Selected Guests awantha", guestCount);
-
-  const [value, setValue] = useState("");
-  console.log("Awantha Location", value);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);

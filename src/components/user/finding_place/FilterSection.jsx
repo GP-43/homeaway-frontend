@@ -32,12 +32,15 @@ function FilterSection(props) {
     useEffect(()=>{
         setHomePagePlaces(homePagePlacesStatic.filter((place)=> {
             let ret = true;
+            // console.log("filter checking => ", internet)
+            // console.log("filter ret => ", ret)
             if(internet) ret = ret && place.wifi;
             if(parking) ret = ret && place.parking;
             if(silentArea) ret = ret && place.silent;
             if(acNoNeed) ret = ret && place.ac;
             if(foodNeed) ret = ret && place.food;
             if(washrooms) ret = ret && place.washroom;
+            // console.log("after filter ret => ", ret)
             return ret;
         }));
     },[internet, parking, silentArea, acNoNeed, foodNeed, washrooms])
