@@ -11,14 +11,15 @@ import PlaceCard from "../place_card/PlaceCard.jsx";
 import axios from "axios";
 import * as Yup from "yup";
 import { useEffect } from "react";
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 const base_url = process.env.REACT_APP_BASE_URL;
 
 function AddNewRent() {
   const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
   const userId = userDetails.userId;
-  
+
+
   const categoryOptions = [
     { value: "meeting-room", label: "Meetings" },
     { value: "office-room", label: "Office" },
@@ -46,13 +47,13 @@ function AddNewRent() {
   const [wifi, setWifi] = useState(0);
   const [parking, setParking] = useState(0);
   const [ac, setAC] = useState(0);
-  const [silent,setSilent] = useState(0);
-  const [food,setFood] = useState(0);
-  const [washroom,setWashroom] = useState(0);
+  const [silent, setSilent] = useState(0);
+  const [food, setFood] = useState(0);
+  const [washroom, setWashroom] = useState(0);
 
   var addNewFormData = {};
 
-  function updateForm(){
+  function updateForm() {
     addNewFormData = {
       title: title,
       quantity: quantity,
@@ -69,8 +70,8 @@ function AddNewRent() {
       ac: ac,
       silent: silent,
       food: food,
-      washroom:washroom,
-      renter_id:userId,
+      washroom: washroom,
+      renter_id: userId,
     };
   }
 
@@ -156,24 +157,32 @@ function AddNewRent() {
     city: "",
     postalCode: 0,
     description: "",
-  }; 
+  };
 
   const navigate = useNavigate();
 
   // console.log("Ïmages: ", selectedFiles);
 
   const handleOnSubmit = (event) => {
+    //validation part
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
     // navigate('/user/userrentings');
     updateForm();
-    event.preventDefault(); 
+    event.preventDefault();
     const formData = new FormData();
     formData.append("image", uploadImage);
     // formData.append("gallery", selectedFiles);
     formData.append("addNewFormData", JSON.stringify(addNewFormData));
 
     for (var key of formData.entries()) {
-      console.log(key[0] + ', ' + key[1]);
-  }
+      console.log(key[0] + ", " + key[1]);
+    }
 
     axios
       .post("http://localhost:4000/addnewrent", formData, {
@@ -192,18 +201,22 @@ function AddNewRent() {
         <Form noValidate validated={validated} onSubmit={handleOnSubmit}>
           <Row>
             <Col lg={6}>
-              <Form.Group className="mb-3 data-field">
+              <Form.Group
+                className="mb-3 data-field"
+                controlId="validationCustom01"
+              >
                 <Form.Label>TITLE</Form.Label>
                 <Form.Control
+                  required
                   type="text"
                   name="title"
                   placeholder="Enter the title"
-                  required
                   value={title}
                   onChange={(event) => {
                     setTitle(event.target.value);
                   }}
                 />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3 data-field">
                 <Form.Label>NO OF PEOPLE</Form.Label>
@@ -284,6 +297,7 @@ function AddNewRent() {
                   }}
                   value={contactNo}
                 />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>PRICE</Form.Label>
@@ -335,6 +349,7 @@ function AddNewRent() {
                   }}
                   value={postalCode}
                 />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
               </Form.Group>
             </Col>
           </Row>
@@ -364,7 +379,7 @@ function AddNewRent() {
               <Form.Label className="mb-2">LOCATION</Form.Label>
               <GoogleMap className="google-map" />
             </Form.Group> 
-          </Col> */} 
+          </Col> */}
 
           <Col lg={12} className="mb-2">
             <Form.Group
@@ -373,8 +388,8 @@ function AddNewRent() {
             >
               <Form.Label className="mb-2">IMAGES</Form.Label>
               <Col>
-                <AddImages setSelectedFiles={setSelectedFiles}/>
-              </Col> 
+                <AddImages setSelectedFiles={setSelectedFiles} />
+              </Col>
             </Form.Group>
           </Col>
           <p>FEATURES</p>

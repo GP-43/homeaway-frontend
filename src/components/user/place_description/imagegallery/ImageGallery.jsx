@@ -8,10 +8,14 @@ import place15 from "../../../../assets/images/places_image_gallery/place15.jpg"
 import place16 from "../../../../assets/images/places_image_gallery/place16.jpg";
 import place17 from "../../../../assets/images/places_image_gallery/place17.jpg";
 import place18 from "../../../../assets/images/places_image_gallery/place18.jpg";
+import place19 from "../../../../assets/images/places_image_gallery/place18.jpg";
 import { Col } from "react-bootstrap";
 
 function ImageGallery() {
   const Place_Data = [
+    {
+      Src: place19,
+    },
     {
       Src: place11,
     },
@@ -36,6 +40,7 @@ function ImageGallery() {
     {
       Src: place18,
     },
+    
   ];
   return (
       <Col className="image-scroll-box px-0">

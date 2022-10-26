@@ -21,7 +21,7 @@ const AddImages = ({setSelectedFiles}) => {
     <div className="container">
       <div className="img-holder form-control">
         <label>
-          Please add atleast 4 images. Images should be landscape &nbsp;
+          Please add atleast 4 landscape images. Make sure to add a <b>360 degree</b> view of the place &nbsp;
           <FaPlus />
           <input
             type="file"
