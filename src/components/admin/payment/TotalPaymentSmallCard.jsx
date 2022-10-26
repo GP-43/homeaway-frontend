@@ -10,7 +10,6 @@ function TotalPaymentSmallCard() {
         {
             Name: "Total",
             Name2: "payments",
-            Total: "Rs. 9455",
         },
 
     ];
