@@ -17,24 +17,13 @@ function PlaceInfoDescription(props) {
     }, [props.description])
 
     function updateProfileDescription() {
-        //Put details
-
-        console.log("NEw desctipsd fsdf :", description, props.placeId);
-
         axios
             .put("http://localhost:4000/renter/update/description/" + props.placeId, { description })
             .then((data) => {
-
-                console.log("Description updatedddddd");
             })
             .catch((error) => {
-                console.log(error);
             });
     }
-
-    // useEffect((event) => {
-    //     fetchProfileDetails();
-    // }, []);
 
     return (
         <Row>

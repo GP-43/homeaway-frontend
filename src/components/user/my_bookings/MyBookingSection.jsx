@@ -8,11 +8,12 @@ import axios from "axios";
 function MyBookingSection() {
 
     const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
+    const userId = userDetails.userId;
 
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:4000/occupant/bookings").then((response) => {
+        axios.get("http://localhost:4000/occupant/bookings" + userId).then((response) => {
             setBookings(response.data);
         });
     }, []);
@@ -49,6 +50,7 @@ function MyBookingSection() {
                         <Col lg={4} md={4}
                              className="place-card-set ps-lg-0 pe-lg-5 py-lg-3 px-md-2 py-md-2 px-0">
                             <PlaceCard
+                                placeId={value.id}
                                 title={value.title}
                                 src={"http://localhost:4000/images/" + value.image}
                                 city={value.city}

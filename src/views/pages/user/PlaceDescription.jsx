@@ -82,7 +82,7 @@ function PlaceDescription() {
                         priceType= {placeDetails.priceType}
                         price= {placeDetails.price}
                         occupantId={userId}
-                        renterId={50}
+                        renterId={placeDetails.renter_id}
                         placeId={placeId}
                     />
                 </Col>
