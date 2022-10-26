@@ -14,10 +14,6 @@ function FilterSection(props) {
     const [acNoNeed, setAcNoNeed] = useState(false);
     const [foodNeed, setFoodNeed] = useState(false);
     const [washrooms, setWashrooms] = useState(false);
-    const [meetingRoom, setMeetingRoom] = useState(false);
-    const [studyRoom, setStudyRoom] = useState(false);
-    const [officeRoom, setOfficeRoom] = useState(false);
-    const [cctv, setCctv] = useState(false);
 
     console.log("Filter section", homePagePlaces);
     
@@ -42,9 +38,6 @@ function FilterSection(props) {
             if(acNoNeed) ret = ret && place.ac;
             if(foodNeed) ret = ret && place.food;
             if(washrooms) ret = ret && place.washroom;
-            // if(meetingRoom && (place.roomCategory == "meeting-room")) ret = ret && true;
-            // if(studyRoom && (place.roomCategory == "study-room")) ret = ret && true;
-
             return ret;
         }));
     },[internet, parking, silentArea, acNoNeed, foodNeed, washrooms])

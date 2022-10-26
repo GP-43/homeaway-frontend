@@ -15,8 +15,9 @@ function PlaceSection() {
     
     useEffect(() => {
         axios.get("http://localhost:4000/addnewrent/places").then((response) => {
-            setHomePagePlaces(response.data);
-            setHomePagePlacesStatic(response.data);
+            setHomePagePlaces(response.data.places);
+            setHomePagePlacesStatic(response.data.places);
+            console.log("ane apoi",response.data.places)
         });
     }, []);
     
