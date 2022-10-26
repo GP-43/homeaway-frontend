@@ -10,6 +10,9 @@ import {useParams} from "react-router-dom";
 import axios from "axios";
 
 function PlaceDescription() {
+    
+    // const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+    // const userId = userDetails.userId;
 
     const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
     const userId = userDetails.userId;

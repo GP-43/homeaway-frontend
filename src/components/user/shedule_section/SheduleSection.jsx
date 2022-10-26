@@ -5,7 +5,10 @@ import axios from "axios";
 
 function SheduleSection(props) {
   const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+  const curruser = JSON.parse(sessionStorage.getItem("currentuserrole"));
   const userId = userDetails.userId;
+  const curruserrole = curruser.isRenter;
+  console.log("id", userId);
 
   //console.log(userDetails);
   const [rentings, setRentings] = useState([]);
@@ -13,12 +16,14 @@ function SheduleSection(props) {
   const [userbookings, setuserBookings] = useState([]);
 
   useEffect((event) => {
+    
     axios
       .get("http://localhost:4000/renter/scheduleofplaces/" + userId)
       .then((data) => {
         const rentings = data.data;
         setRentings({ ...rentings });
-        console.log(rentings);
+        console.log("rentings", rentings);
+        console.log("shg",curruserrole);
       })
       .catch((error) => {
         console.log(error);
@@ -40,7 +45,7 @@ function SheduleSection(props) {
       .then((data) => {
         const userbookings = data.data;
         setuserBookings({ ...userbookings });
-        console.log(userbookings);
+        console.log("userbookings",userbookings);
       })
       .catch((error) => {
         console.log(error);
@@ -57,10 +62,12 @@ function SheduleSection(props) {
     { title: "Meeting Room_01", place: "Gampaha", from: "14.30", to: "16.00" },
   ];
 
+  
+
   return (
     <div className="schedule-section-box ps-2 mt-4">
       <h5 className="schedule-section-title position-sticky">Schedule</h5>
-      <div className={!(user_role == 2) ? "d-none" : "schedule-section mt-4"}>
+      <div className={!(curruserrole) ? "d-none" : "schedule-section mt-4"}>
         {Object.keys(rentings).map((key, index) => (
           <SheduleCard
             index={index}
@@ -72,7 +79,7 @@ function SheduleSection(props) {
         ))}
       </div>
 
-      <div className={!(user_role == 3) ? "d-none" : "schedule-section mt-4"}>
+      <div className={(curruserrole) ? "d-none" : "schedule-section mt-4"}>
         {Object.keys(userbookings).map((key, index) => (
           <SheduleCard
             index={index}

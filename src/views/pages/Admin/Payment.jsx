@@ -6,7 +6,7 @@ import AdminCalendar from "../../../components/admin/adminCalendar/AdminCalendar
 import AccountCard from "../../../components/admin/payment/AccountDetails";
 import BookingCard from "../../../components/admin/payment/BookingSmallCard";
 import CancelledBookingCard from "../../../components/admin/payment/CancelledBookingSmallCard";
-import TotalIncomeCard from "../../../components/admin/payment/TotalIncomeSmallCard";
+import TotalPaymentCard from "../../../components/admin/payment/TotalPaymentSmallCard";
 import TransactionHistory from "../../../components/admin/payment/TransactionHistory";
 
 function Payment() {
@@ -36,7 +36,7 @@ function Payment() {
               </Col>
 
               <Col xs={4} className="ms-3">
-                <TotalIncomeCard />
+                <TotalPaymentCard />
               </Col>
             </Col>
 

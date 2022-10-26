@@ -1,24 +1,56 @@
 import React from "react";
-import {Card, Col, Row} from "react-bootstrap";
+import { useState } from "react";
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { FaTimes } from "react-icons/fa";
+import axios from "axios";
 
 function SheduleCard(props) {
-    return (
-        <Card className="schedule-card ps-4 pb-2 pe-2 pt-2  mb-3">
+  const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+  const userId = userDetails.userId;
 
-            <Col xs={7} className="m-auto ">
-                <Row className="m-auto schedule-card-text">
-                    {props.Title}
-                </Row>
-                <Row className="m-auto schedule-card-text">
-                    {props.Place}
-                </Row>
-            </Col>
-            <Col xs={5} className="m-auto schedule-card-text">
-                {props.From} to {props.To}
-            </Col>
-        </Card>
+  const [visible, setVisible] = useState(true);
 
-    );
+  const [cancelId, setCancelId] = useState();
+  console.log("props", props);
+
+  function handleClickCancel(id1) {
+    // setVisible((prev) => !prev);
+    // const cancelIds = { Id1: id1 };
+
+    // //cancel the booking
+    // axios
+    //   .put("http://localhost:4000/booking/cancelbooking/" + userId, cancelIds)
+    //   .then(() => {
+    //     console.log("Work--");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+
+  }
+
+  return (
+    <Card className="schedule-card ps-4 pb-2 pe-2 pt-2  mb-3">
+      <Col xs={3} className="m-auto ">
+        {/* <Row className="m-auto schedule-card-text">
+                   Booking no: {props.Title}
+                </Row> */}
+        <Row className="m-auto schedule-card-text">Place: {props.Place}</Row>
+      </Col>
+      <Col xs={5} className="m-auto schedule-card-text">
+        Date: {props.From} to {props.To}
+      </Col>
+      <Col xs={4} className="m-auto schedule-card-cancel">
+        <Button
+          onClick={() => handleClickCancel(props.Title)}
+          className="cancel-btn"
+        >
+          Cancel <FaTimes />
+        </Button>
+      </Col>
+    </Card>
+  );
 }
 
 export default SheduleCard;

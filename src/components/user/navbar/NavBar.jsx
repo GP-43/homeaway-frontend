@@ -22,14 +22,16 @@ function NavBar() {
     const handleOnSwitchUserClick = () => {
         if (isRenter) {
             setIsRenter(false)
+            sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: false }));
         } else {
             setIsRenter(true)
+            sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: true }));
         }
     }
 
     const navigate = useNavigate();
 
-    const handleOnLogoClick = () => {
+    const handleOnLogoutClick = () => {
         window.location.replace("/");
         sessionStorage.removeItem("accessToken");
     }
@@ -46,7 +48,7 @@ function NavBar() {
         <Navbar expand="lg" className="user-navbar px-0 py-0">
             <Container className="px-0">
                 <Navbar>
-                    <img className="logo" src={logo} alt="LOGO" onClick={handleOnLogoClick}/>
+                    <img className="logo" src={logo} alt="LOGO" onClick={handleOnLogoutClick}/>
                 </Navbar>
                 <Navbar>
                     <Nav className="me-0 mt-0">
@@ -74,7 +76,7 @@ function NavBar() {
                             </span>
                         </Nav.Link>
                         <NavDropdown title={<BiUserCircle className="user-circle"/>}>
-                            <NavDropdown.Item className="mb-2" href="#action/3.1">Profile</NavDropdown.Item>
+                            <NavDropdown.Item className="mb-2" href="/user/profile">Profile</NavDropdown.Item>
                             <NavDropdown.Item className={isRenter ? 'mb-2 d-none' : 'mb-2 d-block'}
                                               href='/user/userrentings'>
                                 <Button className='bg-transparent border-0 text-dark px-0'
@@ -85,7 +87,7 @@ function NavBar() {
                                         onClick={handleOnSwitchUserClick}> Switch User</Button>
                             </NavDropdown.Item>
                             <NavDropdown.Divider/>
-                            <NavDropdown.Item className="mb-1" onClick={handleOnLogoClick}>
+                            <NavDropdown.Item className="mb-1" onClick={handleOnLogoutClick}>
                                 Logout
                             </NavDropdown.Item>
                         </NavDropdown>
