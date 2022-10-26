@@ -3,6 +3,7 @@ import {Row, Col} from "react-bootstrap";
 import {BsFillCalendarEventFill} from 'react-icons/bs';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import {addDays} from "date-fns";
 
 function DatePickers(props) {
     const [date, setDate] = useState(new Date());
@@ -24,6 +25,8 @@ function DatePickers(props) {
                 <DatePicker
                     className="datePicker m-2 bg-white"
                     selected={date}
+                    minDate={props.validateDate}
+                    maxDate={addDays(props.validateDate, 75)}
                     onChange={(date)=>{
                         props.handleOnDateDetails(new Date(date))
                         setDate(new Date(date))
