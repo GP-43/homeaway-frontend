@@ -77,9 +77,17 @@ function ChooseSection() {
   const [startDate, setStartDate] = useState(1);
   const [startMonth, setStartMonth] = useState("Jan");
 
+  console.log("startDate",startDate)
+  console.log("startMonth",startMonth)
+  
+  
+
   const [endDay, setEndDay] = useState(startDay);
   const [endDate, setEndDate] = useState(startDate);
   const [endMonth, setEndMonth] = useState(startMonth);
+
+  console.log("endDate",endDate)
+  console.log("endDate",endDate)
 
   const handleOnShowStartDate = (date) => {
     setStartDay(days[date.getDay()]);
