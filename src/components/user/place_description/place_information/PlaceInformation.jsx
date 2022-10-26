@@ -13,14 +13,14 @@ import {BsFilterCircle} from "react-icons/bs";
 function PlaceInformation(props) {
 
     const [isVisibleDescription, setIsVisibleDescription] = useState(true);
-    const [isVisibleTime, setIsVisibleTime] = useState(false);
+    //const [isVisibleTime, setIsVisibleTime] = useState(false);
     const [isVisibleComment, setIsVisibleComment] = useState(false);
     const [isVisibleFeatures, setIsVisibleFeatures] = useState(false);
     const [isVisibleMap, setIsVisibleMap] = useState(false);
 
     const disableActiveButton = () => {
         setIsVisibleDescription(false);
-        setIsVisibleTime(false);
+        //setIsVisibleTime(false);
         setIsVisibleFeatures(false);
         setIsVisibleComment(false)
         setIsVisibleMap(false);
@@ -30,10 +30,10 @@ function PlaceInformation(props) {
         disableActiveButton();
         setIsVisibleDescription(true)
     }
-    const handleOnTimeClick = () => {
-        disableActiveButton();
-        setIsVisibleTime(true);
-    }
+    // const handleOnTimeClick = () => {
+    //     disableActiveButton();
+    //     setIsVisibleTime(true);
+    // }
     const handleOnFeaturesClick = () => {
         disableActiveButton();
         setIsVisibleFeatures(true)
@@ -57,12 +57,12 @@ function PlaceInformation(props) {
                     >
                         <GrCircleInformation className='nav-buttons-icon'/>
                     </Col>
-                    <Col xs={12}
+                    {/* <Col xs={12}
                          className={isVisibleTime ? 'nav-buttons-icon-box-active' : 'nav-buttons-icon-box'}
                          onClick={handleOnTimeClick}
                     >
                         <BiTimeFive className='nav-buttons-icon'/>
-                    </Col>
+                    </Col> */}
                     <Col xs={12}
                          className={isVisibleFeatures ? 'nav-buttons-icon-box-active' : 'nav-buttons-icon-box'}
                          onClick={handleOnFeaturesClick}
@@ -86,9 +86,9 @@ function PlaceInformation(props) {
             <Col md={11} xs={10} className={isVisibleDescription ? 'd-block px-md-4 px-1' : 'd-none'}>
                 <PlaceInfoDescription description={props.description}/>
             </Col>
-            <Col md={11} xs={10} className={isVisibleTime ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
+            {/* <Col md={11} xs={10} className={isVisibleTime ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
                 <PlaceInfoTime/>
-            </Col>
+            </Col> */}
             <Col md={11} xs={10} className={isVisibleFeatures ? 'd-block px-md-4 px-1' : 'd-none px-4'}>
                 <PlaceInfoFeatures
                     wifi={props.wifi}

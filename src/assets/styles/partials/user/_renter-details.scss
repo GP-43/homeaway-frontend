@@ -7,16 +7,21 @@
   background-color: #d9d9d9;
   border: none;
 
+  .renter-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   .renter-col {
     .renter-no-box {
       width: 12rem;
-      border-radius: .5rem;
+      border-radius: 0.5rem;
     }
 
     .renter-image {
       border-radius: 50%;
       width: 73%;
-      height: 68%;
+      height: 60%;
     }
 
     .renter-name {
@@ -46,7 +51,7 @@
     background-color: black;
     color: white;
     padding: 8px;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     width: 12rem;
   }
 

@@ -20,6 +20,7 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import Complaints from './views/pages/Admin/Complaints';
 import PaymentsOfPlaces from './components/user/paymentbox/PaymentsOfPlaces';
+import MyPlaceDescription from './views/pages/user/MyPlaceDescription';
 import FAQ from './views/pages/anons/FAQ'; 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
                     <Route path='/user/' element={<UserHome />} />
                     <Route path='/user/userbookings' element={<UserBookings />} />
                     <Route path='/user/userrentings' element={<UserRentings />} />
+                    <Route path='/user/myplacedescription/:id' element={<MyPlaceDescription />} />
                     <Route path='/user/placedescription/:id' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
                     <Route path='/user/paymentofplaces' element={<PaymentsOfPlaces />} />
