@@ -40,9 +40,9 @@ function Login() {
                         }}
                         validationSchema={yup.object().shape({
                             email: yup.string().email('Invalid email address')
-                                .required('Required'),
+                                .required(),
 
-                            password: yup.string().required()
+                            password: yup.string().email('Invalid email or password').required(),
                         })}
 
                         onSubmit={(values) => {
