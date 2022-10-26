@@ -1,20 +1,21 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Card, Col} from "react-bootstrap";
 import {FaUserFriends} from "react-icons/fa";
 import {FaStar} from "react-icons/fa";
 import {FaRegHeart} from "react-icons/fa";
 import {FaHeart} from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Navigate} from "react-router-dom";
+import axios from "axios";
 
 function PlaceCard(props) {
     
     const [show, setShow] = useState(true);
-
     const navigate = useNavigate();
 
     const handleOnCardClick = () => {
-        navigate('/user/placedescription')
+        navigate(`/user/placedescription/${props.placeId}`);
     }
+
     return (
         <Col className="place-card-cover">
             <Card className="place-card" >

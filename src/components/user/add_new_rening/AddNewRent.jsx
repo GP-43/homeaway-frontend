@@ -358,8 +358,8 @@ function AddNewRent() {
             <Form.Group className="mb-3">
               <Form.Label className="mb-2">LOCATION</Form.Label>
               <GoogleMap className="google-map" />
-            </Form.Group>
-          </Col> */}
+            </Form.Group> 
+          </Col> */} 
 
           <Col lg={12} className="mb-2">
             <Form.Group
@@ -369,7 +369,7 @@ function AddNewRent() {
               <Form.Label className="mb-2">IMAGES</Form.Label>
               <Col>
                 <AddImages setSelectedFiles={setSelectedFiles}/>
-              </Col>
+              </Col> 
             </Form.Group>
           </Col>
           <p>FEATURES</p>

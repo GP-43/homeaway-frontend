@@ -11,10 +11,20 @@ function PlaceSection() {
 
     useEffect(() => {
         axios.get("http://localhost:4000/addnewrent/places").then((response) => {
-            setPlaces(response.data);
+            setPlaces(response.data.places);
         });
     }, []);
 
+    //sorting
+    const handleOnPriceSortClick = ()=> {
+        setPlaces([...places].sort((a,b) => b.price - a.price));  
+    }
+    const handleOnlocationSortClick = ()=> {
+        setPlaces([...places].sort((a,b) => a.city > b.city ? 1 : -1,));  
+    }
+    const handleOnRatingSortClick = ()=> {
+        setPlaces([...places].sort((a,b) => a.rating - b.rating));  
+    }
 
     return (
         <Row className="py-3 mx-0">
@@ -33,9 +43,9 @@ function PlaceSection() {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu className="my-bookings-dropdown">
-                                <Dropdown.Item href="#/action-1">Price</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Location</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Rating</Dropdown.Item>
+                                <Dropdown.Item onClick={handleOnPriceSortClick}>Price</Dropdown.Item>
+                                <Dropdown.Item onClick={handleOnlocationSortClick}>Location</Dropdown.Item>
+                                <Dropdown.Item onClick={handleOnRatingSortClick}>Rating</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Col>
@@ -46,6 +56,7 @@ function PlaceSection() {
                     {places.map((value) => (
                             <Col lg={3} md={4} className="place-card-set px-lg-4 py-lg-3 px-md-2 py-md-2">
                                 <PlaceCard
+                                    placeId = {value.id}
                                     title={value.title}
                                     src={"http://localhost:4000/images/" + value.image}
                                     city={value.city}

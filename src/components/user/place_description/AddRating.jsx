@@ -1,14 +1,35 @@
 import ReactStars from "react-rating-stars-component";
-import React from "react";
+import React, {useState} from "react";
 import {Button, Card, Form} from "react-bootstrap";
 import SweetAlert from 'sweetalert2'
+import axios from "axios";
 
 function AddRating(props) {
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
+
+    const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
+    const userId = userDetails.userId;
+
+    const [rate, setRate] = useState(0);
+    const [review, setReview] = useState("");
+
+    const handleOnRatingChanged = (rate) => {
+        setRate(rate);
     };
+    const handleOnReviewChanged = (review) => {
+        setReview(review.target.value);
+    }
 
     const handleOnSubmitClick = () => {
+        const reviewDetails = {
+            rate: rate,
+            review: review,
+            placeId: props.placeId,
+            occupantId: userId,
+        }
+
+        axios.post("http://localhost:4000/addnewrent/review", reviewDetails).then((response) => {
+            console.log(response);
+        });
 
         const Toast = SweetAlert.mixin({
             toast: true,
@@ -35,7 +56,7 @@ function AddRating(props) {
             <h3>PLACE RATING</h3>
             <ReactStars
                 count={5}
-                onChange={ratingChanged}
+                onChange={handleOnRatingChanged}
                 size={48}
                 activeColor="#db9c04"
             />
@@ -43,7 +64,9 @@ function AddRating(props) {
                 <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Give Your Feedback</Form.Label>
                     <Form.Control as="textarea" rows={3}
-                                  className='bg-transparent border border-1 border-dark feedback-textarea'/>
+                                  className='bg-transparent border border-1 border-dark feedback-textarea'
+                                  onChange={handleOnReviewChanged}
+                    />
                 </Form.Group>
                 <Button className='py-1 px-3 float-end border-0' onClick={handleOnSubmitClick}>POST</Button>
             </Form>

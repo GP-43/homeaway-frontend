@@ -20,6 +20,8 @@ import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import Complaints from './views/pages/Admin/Complaints';
 import UserProfile from './views/pages/user/UserProfile';
+import PaymentsOfPlaces from './components/user/paymentbox/PaymentsOfPlaces';
+import FAQ from './views/pages/anons/FAQ'; 
 function App() {
 
     // const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
@@ -43,15 +45,17 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
                     <Route path='/signup' element={<Signup />} />
+                    <Route path='/faq' element={<FAQ/>} />
                 </Route>
                 <Route path='/user' element={<HomeAwayUser />}>
                     {/*<Route path='/user/' element={isAuthenticated ? <UserHome /> : <Navigate to='/login'/>} />*/}
                     <Route path='/user/' element={<UserHome />} />
                     <Route path='/user/userbookings' element={<UserBookings />} />
                     <Route path='/user/userrentings' element={<UserRentings />} />
-                    <Route path='/user/placedescription' element={<PlaceDescription />} />
+                    <Route path='/user/placedescription/:id' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
                     <Route path='/user/profile' element={<UserProfile />} />
+                    <Route path='/user/paymentofplaces' element={<PaymentsOfPlaces />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
                     <Route path='/admin/dashboard' element={<Dashboard />} />
