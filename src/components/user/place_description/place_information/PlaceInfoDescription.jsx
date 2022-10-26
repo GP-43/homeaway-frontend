@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 
-function PlaceInfoDescription() {
+function PlaceInfoDescription(props) {
     return (
         <Row>
             <Col xs={12} className='px-0'>
@@ -11,8 +11,7 @@ function PlaceInfoDescription() {
                 <Card className='place-information-description'>
                     <Card.Body>
                         <Card.Text>
-                            Silent Area that covered by a wall. Can buy foods infront of the shop. Two vehicles can
-                            park at same time. Safety is 100% sure. Don't make much noise. Book and enjoy the place.
+                            {props.description}
                         </Card.Text>
                     </Card.Body>
                 </Card>
