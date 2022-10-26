@@ -3,6 +3,9 @@ import {Button, Col, Container, Form, InputGroup, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {FiLock, FiMail} from "react-icons/fi";
 import axios from "axios";
+import { Formik, ErrorMessage } from 'formik';
+import * as yup from 'yup';
+import swal from 'sweetalert';
 
 function Login() {
 
@@ -19,11 +22,21 @@ function Login() {
                 sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: false }));
                 const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
                 if (userDetails.role == 2 || userDetails.role == 3) {
+                    swal("Good job!", "Welcome to HomeAway", "success");
                     window.location.replace("/user");
                 } else if (response.data.data.role == 1) {
+                    swal("Good job!", "Welcome to HomeAway", "success");
                     window.location.replace("/admin/dashboard");
                 }
             } else {
+                // window.alert("Invalid User. Plz register");
+                swal({
+                    title: "Invalid User",
+                    text: "You need to register first",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                  })
             }
         });
     }
@@ -32,6 +45,25 @@ function Login() {
         <Container>
             <Row className='login-page'>
                 <Col md={7} className='px-0'>
+                <Formik
+                        initialValues={{ email: "", password: "" }}
+
+                        validationSchema={yup.object().shape({
+                            email: yup.string()
+                                .email()
+                                .required("Required"),
+                            password: yup.string()
+                                .required("No password provided.")
+                        })}
+
+                        onSubmit={(values, { setSubmitting }) => {
+                            setTimeout(() => {
+                                //console.log("Logging in", values);
+                                setSubmitting(false);
+                            }, 500);
+                        }}
+                    >
+                    {(formik) => (
                     <Form className='d-flex align-items-center' onSubmit={handleOnLogin}>
                         <div className='w-100'>
                             <h3>Sign in to HomeAway</h3>
@@ -45,6 +77,7 @@ function Login() {
                                               onChange={(event) => {
                                                   setEmail(event.target.value)
                                               }}
+                                    //{...formik.getFieldProps("email")}
                                 />
                             </InputGroup>
                             <InputGroup className="mb-3 data-field" id="formBasicPassword">
@@ -54,6 +87,7 @@ function Login() {
                                               onChange={(event) => {
                                                   setPassword(event.target.value)
                                               }}
+                                    //{...formik.getFieldProps("password")}
                                 />
                             </InputGroup>
                             <Form.Group className="mb-3 text-center" controlId="forgottenPassword">
@@ -66,6 +100,8 @@ function Login() {
                             </Button>
                         </div>
                     </Form>
+                    )}
+                    </Formik>
                 </Col>
                 <Col md={5} className='animation-shield d-flex align-items-center justify-content-center'>
                     <div>
