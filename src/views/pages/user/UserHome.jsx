@@ -4,6 +4,7 @@ import axios from "axios";
 import { Col, Container, Row, Button } from "react-bootstrap";
 import FindingPlace from "../../../components/user/finding_place/FindingPlace.jsx";
 import PlaceSection from "../../../components/user/places_section/PlaceSection";
+import { HomePagePlacesProvider } from '../../../contexts/HomePagePlacesContext.js';
 import { useState } from "react";
 
 function UserHome() {
@@ -86,24 +87,26 @@ function UserHome() {
   console.log(inserttorenter);
   return (
     <Container>
-      <Row className="mx-0 mt-2 finding-place">
-        <Col>
-          <FindingPlace />
-        </Col>
-      </Row>
+      <HomePagePlacesProvider>
+        <Row className="mx-0 mt-2 finding-place">
+          <Col>
+            <FindingPlace />
+          </Col>
+        </Row>
 
-      <Row className="mx-0 mt-5 pt-3">
-        <Col>
-          <PlaceSection />
-        </Col>
-      </Row>
-      <Row className="mx-5 mt-5 pt-4 pb-4">
-        <Col xs={12}>
-          <Button className="become-renter-btn" onClick={handleClick}>
-            Become a renter
-          </Button>
-        </Col>
-      </Row>
+        <Row className="mx-0 mt-5 pt-3">
+          <Col>
+            <PlaceSection />
+          </Col>
+        </Row>
+        <Row className="mx-5 mt-5 pt-4 pb-4">
+          <Col xs={12}>
+            <Button className="become-renter-btn" onClick={handleClick}>
+              Become a renter
+            </Button>
+          </Col>
+        </Row>
+      </HomePagePlacesProvider>
     </Container>
   );
 }
