@@ -14,17 +14,11 @@
   border-radius: 10px;
 }
 .time-box-1 {
-  width: 54px;
+  width: 70px !important;
   height: 57px;
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-  }
 }
 .time-input {
-  width: 52px;
+  width: 70px !important;
   height: 55px;
   font-size: 36px;
   text-align: center;
