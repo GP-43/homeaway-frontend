@@ -26,7 +26,7 @@ function Login() {
                     window.location.replace("/admin/dashboard");
                 }
             } else {
-
+                window.alert("Invalid User. Plz register");
             }
         });
     }
