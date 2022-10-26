@@ -80,6 +80,17 @@
   display: flex;
   flex-direction: row;
   text-align: center;
+
+  .schedule-card-cancel{
+    color: red;
+    font-size: 13px;
+    font-weight: 500;
+    .cancel-btn{
+      background-color: white;
+    color: red;
+    border: none;
+    }
+  }
 }
 
 // Scedule section css
