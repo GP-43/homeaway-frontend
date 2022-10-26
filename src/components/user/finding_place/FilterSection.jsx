@@ -19,7 +19,7 @@ function FilterSection(props) {
     const [officeRoom, setOfficeRoom] = useState(false);
     const [cctv, setCctv] = useState(false);
 
-    console.log("Filere sldjvL", homePagePlaces);
+    console.log("Filter section", homePagePlaces);
     
     // const filterOption = {Internet : internet, 
     //                 Parking : parking, 
@@ -42,12 +42,12 @@ function FilterSection(props) {
             if(acNoNeed) ret = ret && place.ac;
             if(foodNeed) ret = ret && place.food;
             if(washrooms) ret = ret && place.washroom;
-            if(meetingRoom && (place.roomCategory == "meeting-room")) ret = ret && true;
-            if(studyRoom && (place.roomCategory == "study-room")) ret = ret && true;
+            // if(meetingRoom && (place.roomCategory == "meeting-room")) ret = ret && true;
+            // if(studyRoom && (place.roomCategory == "study-room")) ret = ret && true;
 
             return ret;
         }));
-    },[internet, parking, silentArea, acNoNeed, foodNeed, washrooms, meetingRoom, studyRoom])
+    },[internet, parking, silentArea, acNoNeed, foodNeed, washrooms])
 
     return (
         <Row className='mx-0 filter-section bg-transparent'>
@@ -107,7 +107,7 @@ function FilterSection(props) {
                                     />
                                     <label className="radio-label">Washroom</label>
                                 </Col>
-                                <Col className='checkbox-col pt-md-0 pb-md-1 py-1' lg={3} md={4} xs={6}>
+                                {/* <Col className='checkbox-col pt-md-0 pb-md-1 py-1' lg={3} md={4} xs={6}>
                                     <input
                                         type="checkbox"
                                         checked={cctv}
@@ -138,7 +138,7 @@ function FilterSection(props) {
                                         onChange={(e) => setOfficeRoom(e.target.checked)}
                                     />
                                     <label className="radio-label">Office room</label>
-                                </Col>
+                                </Col> */}
                             </Row>
                         </Card.Text>
                     </Card.Body>
