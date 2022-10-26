@@ -5,14 +5,12 @@ import { useState, useEffect } from 'react';
 import axois from "axios";
 
 function MostEarnings() {
-    const [nameSearchTerm, setNameSearchTerm] = useState('')
-    const [dateSearchTerm, setDateSearchTerm] = useState('')
 
     const [details, setDetails] = useState({});
 
     useEffect((event) => {
         axois
-            .get("http://localhost:4000/admin/view/payment")
+            .get("http://localhost:4000/admin/view/sortpayment")
             .then((data) => {
                 const details = data.data;
                 setDetails({ ...details });

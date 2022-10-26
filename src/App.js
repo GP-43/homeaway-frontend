@@ -19,6 +19,7 @@ import Login from "./views/pages/anons/Login";
 import Signup from "./views/pages/anons/Signup";
 import AddNewRent from './components/user/add_new_rening/AddNewRent';
 import Complaints from './views/pages/Admin/Complaints';
+import UserProfile from './views/pages/user/UserProfile';
 import PaymentsOfPlaces from './components/user/paymentbox/PaymentsOfPlaces';
 import MyPlaceDescription from './views/pages/user/MyPlaceDescription';
 import FAQ from './views/pages/anons/FAQ'; 
@@ -55,6 +56,7 @@ function App() {
                     <Route path='/user/myplacedescription/:id' element={<MyPlaceDescription />} />
                     <Route path='/user/placedescription/:id' element={<PlaceDescription />} />
                     <Route path='/user/addnewrent' element={<AddNewRent />} />
+                    <Route path='/user/profile' element={<UserProfile />} />
                     <Route path='/user/paymentofplaces' element={<PaymentsOfPlaces />} />
                 </Route>
                 <Route path='/admin' element={<HomeAwayAdmin />}>
