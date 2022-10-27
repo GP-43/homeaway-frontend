@@ -12,6 +12,7 @@ import axios from "axios";
 import * as Yup from "yup";
 import { useEffect } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
+import swal from 'sweetalert';
 
 const base_url = process.env.REACT_APP_BASE_URL;
 
@@ -182,9 +183,12 @@ function AddNewRent() {
         },
       })
       .then((response) => {
-        console.log("it worked");
+        swal("Good job!", "Added Successfully", "success");
+        window.location.replace("/user/userrentings");
+        //console.log("it worked");
       });
   };
+
 
   return (
     <Container className="mb-5 bg-white p-5 add-new-rent-container">
