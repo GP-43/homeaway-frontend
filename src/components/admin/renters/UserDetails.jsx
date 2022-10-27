@@ -44,22 +44,22 @@ function UserDetails({ userDetailsObj }) {
 
     //totalIncome
 
-    // const [incomedetails, setIncomeDetails] = useState({});
-    // const [userTotalIncome, setUserTotalIncome] = useState();
+    const [incomedetails, setIncomeDetails] = useState({});
+    const [userTotalIncome, setUserTotalIncome] = useState();
 
-    // useEffect((event) => {
-    //     axios
-    //         .get(`${base_url}/admin/totalUserIncome/` + user_ID)
-    //         .then((data) => {
-    //             const incomedetails = data.data;
-    //             setIncomeDetails({ ...incomedetails });
-    //             setUserTotalIncome(incomedetails[0]?.user_booking_count)
-    //             console.log(userTotalIncome);
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }, []);
+    useEffect((event) => {
+        axios
+            .get(`${base_url}/admin/totalUserIncome/` + user_ID)
+            .then((data) => {
+                const incomedetails = data.data;
+                setIncomeDetails({ ...incomedetails });
+                setUserTotalIncome(incomedetails[0]?.user_booking_count)
+                console.log(userTotalIncome);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
     // const details_array = [
     //     {
     //         Src: p1, firstName: "saman", lastName: "kumara", telenumber: "0112123123", IDno: '992544092V',
@@ -84,7 +84,7 @@ function UserDetails({ userDetailsObj }) {
                         <Row className='value-name'>Total Bookings</Row>
                     </Col>
                     <Col xs={5}>
-                        <Row className='value'>{userDetailsObj.TotalIncome}</Row>
+                        <Row className='value'>{userTotalIncome}</Row>
                         <Row className='value-name'>Total Income</Row>
                     </Col>
                 </Row>
