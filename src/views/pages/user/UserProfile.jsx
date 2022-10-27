@@ -41,6 +41,20 @@ function UserProfile() {
 
   const handleOnSubmit = () => {
     setIsFormDisabled(true);
+    if (containsSpecialChars(toUpdateDetails.Contact)) {
+      alert("There is Symbols in contact number !");
+    }
+    if (containsWhitespace(toUpdateDetails.Contact)) {
+      alert("There are whitespaces in contactnumber !");
+    }
+    if (containsAnyLetters(toUpdateDetails.Contact)) {
+      alert("There are characters in password !");
+    }
+    if (!(toUpdateDetails.Contact.length == 10)) {
+      alert("contact length must be 10 !");
+    }
+    if(!(containsSpecialChars(toUpdateDetails.Contact)) && !(containsWhitespace(toUpdateDetails.Contact)) &&
+    !(containsAnyLetters(toUpdateDetails.Contact)) && (toUpdateDetails.Contact.length == 10) ){
     //methanin data yawamu
     axois
       .put(
@@ -54,6 +68,8 @@ function UserProfile() {
       .catch((error) => {
         console.log(error);
       });
+
+    }
   };
 
   const handleOnSubmitEditPassword = () => {
@@ -179,6 +195,11 @@ function UserProfile() {
   // var myString = "string test";
   // var stringLength = myString.length;
   // console.log("length", stringLength);
+
+  //check char in contact number
+  function containsAnyLetters(str) {
+    return /[a-zA-Z]/.test(str);
+  }
 
   const [isImageUploaded, setIsImageUploaded] = useState(false);
 
