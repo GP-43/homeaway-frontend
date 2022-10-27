@@ -15,7 +15,6 @@ function UserDetails({ userDetailsObj }) {
     const [bookingdetails, setBookingDetails] = useState({});
     const [userBookingCount, setUserBookingCount] = useState();
 
-    //const [details, setDetails] = useState({});
     useEffect((event) => {
         axios
             .get("http://localhost:4000/admin/renterBooking/" + user_ID)
@@ -24,23 +23,13 @@ function UserDetails({ userDetailsObj }) {
                 setBookingDetails({ ...bookingdetails });
                 setUserBookingCount(bookingdetails[0]?.user_booking_count)
                 console.log("hi", bookingdetails);
-                console.log("hi", userBookingCount);
+                console.log("helo", bookingdetails[0]?.user_booking_count);
 
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, []);
-    // .get(`${base_url}/admin/countUserBookings/` + user_ID)
-    // .then((data) => {
-    //     const bookingdetails = data.data;
-    //     setBookingDetails({ ...bookingdetails });
-    //     setUserBookingCount(bookingdetails[0]?.user_booking_count)
-    //     console.log(userBookingCount);
-    // })
-    // .catch((error) => {
-    //     console.log(error);
-    // });
+    }, [user_ID]);
 
     //totalIncome
 
@@ -66,6 +55,26 @@ function UserDetails({ userDetailsObj }) {
     //         Address: 'No. 78, samanala Mawatha, Malabe.'
     //     }
     // ]
+    const [userTotalAmount, setUserIncomeCount] = useState();
+    const [ourProfit, setProfitCount] = useState();
+
+    useEffect((event) => {
+        axios
+            .get("http://localhost:4000/admin/renterIncome/" + user_ID)
+            .then((data) => {
+                const incomedetails = data.data;
+                setIncomeDetails({ ...incomedetails });
+                setUserIncomeCount(incomedetails[0]?.user_total_amount)
+                setProfitCount(incomedetails[0]?.our_profit)
+                console.log("hi", incomedetails);
+                console.log("helo", incomedetails[0]?.user_total_income);
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [user_ID]);
+
     return (
         <Col className='mt-1'>
             <Row className='image-row'>
@@ -84,14 +93,14 @@ function UserDetails({ userDetailsObj }) {
                         <Row className='value-name'>Total Bookings</Row>
                     </Col>
                     <Col xs={5}>
-                        <Row className='value'>{userTotalIncome}</Row>
-                        <Row className='value-name'>Total Income</Row>
+                        <Row className='value'>{userTotalAmount}</Row>
+                        <Row className='value-name'>Total Recieved</Row>
                     </Col>
                 </Row>
                 <Row className='py-4 values'>
                     <Col xs={5}>
-                        <Row className='value'>{userDetailsObj.TotalRecieved}</Row>
-                        <Row className='value-name'>Total Recieved</Row>
+                        <Row className='value'>{userTotalAmount - ourProfit}</Row>
+                        <Row className='value-name'>Total Income</Row>
                     </Col>
                 </Row>
 

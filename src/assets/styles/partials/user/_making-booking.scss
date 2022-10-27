@@ -14,17 +14,19 @@
   border-radius: 10px;
 }
 .time-box-1 {
-  width: 54px;
+  width: 70px !important;
   height: 57px;
 }
 .time-input {
-  width: 52px;
+  width: 70px !important;
   height: 55px;
   font-size: 36px;
   text-align: center;
   outline: none;
   border-style: none;
 }
+
+
 .time-input:focus {
   border-style: solid;
   border-color: rgb(67, 6, 153);

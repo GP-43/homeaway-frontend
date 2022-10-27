@@ -12,10 +12,14 @@ import axios from "axios";
 import * as Yup from "yup";
 import { useEffect } from "react";
 import {Routes, Route, useNavigate} from 'react-router-dom';
+import swal from 'sweetalert';
 
 const base_url = process.env.REACT_APP_BASE_URL;
 
 function AddNewRent() {
+  const userDetails = JSON.parse(sessionStorage.getItem("accessToken"));
+  const userId = userDetails.userId;
+  
   const categoryOptions = [
     { value: "meeting-room", label: "Meetings" },
     { value: "office-room", label: "Office" },
@@ -67,6 +71,7 @@ function AddNewRent() {
       silent: silent,
       food: food,
       washroom:washroom,
+      renter_id:userId,
     };
   }
 
@@ -91,6 +96,7 @@ function AddNewRent() {
     silent,
     food,
     washroom,
+    userId,
   ]);
 
   const [productRating, setProductRating] = useState(0);
@@ -171,15 +177,18 @@ function AddNewRent() {
   }
 
     axios
-      .post(`${base_url}/addnewrent`, formData, {
+      .post("http://localhost:4000/addnewrent", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
       })
       .then((response) => {
-        console.log("it worked");
+        swal("Good job!", "Added Successfully", "success");
+        window.location.replace("/user/userrentings");
+        //console.log("it worked");
       });
   };
+
 
   return (
     <Container className="mb-5 bg-white p-5 add-new-rent-container">
@@ -529,12 +538,12 @@ function AddNewRent() {
               </label>
               <Col lg={5}>
                 <PlaceCard
-                  Title={title}
-                  Src={image}
-                  City={city}
-                  Price={price}
-                  Quantity={quantity}
-                  Rating={productRating}
+                  title={title}
+                  src={image}
+                  city={city}
+                  price={price}
+                  quantity={quantity}
+                  rating={productRating}
                 />
               </Col>
             </Col>
