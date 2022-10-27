@@ -22,10 +22,10 @@ function Login() {
                 sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: false }));
                 const userDetails = JSON.parse(sessionStorage.getItem('accessToken'));
                 if (userDetails.role == 2 || userDetails.role == 3) {
-                    swal("Good job!", "Welcome to HomeAway", "success");
+                    // swal("Good job!", "Welcome to HomeAway", "success");
                     window.location.replace("/user");
                 } else if (response.data.data.role == 1) {
-                    swal("Good job!", "Welcome to HomeAway", "success");
+                    //swal("Good job!", "Welcome to HomeAway", "success");
                     window.location.replace("/admin/dashboard");
                 }
             } else {
@@ -34,7 +34,7 @@ function Login() {
                     title: "Invalid User Login",
                     text: "Check your email and password or register",
                     icon: "warning",
-                    buttons: true,
+                    buttons: "Close",
                     dangerMode: true,
                 })
             }
