@@ -34,6 +34,7 @@ function MyRentings() {
                 className="place-card-set ps-lg-0 pe-lg-5 py-lg-3 px-md-2 py-md-2 px-0"
               >
                 <PlaceCard
+                placeId={value.id}
                   title={value.title}
                   src={"http://localhost:4000/images/" + value.image}
                   city={value.city}
