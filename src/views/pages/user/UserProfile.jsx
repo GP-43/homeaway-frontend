@@ -8,6 +8,7 @@ import { AiOutlineFileDone } from "react-icons/ai";
 import axois from "axios";
 import { FaThumbsUp } from "react-icons/fa";
 import { Image } from "react-feather";
+import swal from 'sweetalert';
 
 function UserProfile() {
   //get id from session
@@ -42,16 +43,36 @@ function UserProfile() {
   const handleOnSubmit = () => {
     setIsFormDisabled(true);
     if (containsSpecialChars(toUpdateDetails.Contact)) {
-      alert("There is Symbols in contact number !");
+      swal({
+        text: "There are symbols in contact number !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (containsWhitespace(toUpdateDetails.Contact)) {
-      alert("There are whitespaces in contactnumber !");
+      swal({
+        text: "There are whitespaces in contactnumber !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (containsAnyLetters(toUpdateDetails.Contact)) {
-      alert("There are characters in password !");
+      swal({
+        text: "There are characters in password !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (!(toUpdateDetails.Contact.length == 10)) {
-      alert("contact length must be 10 !");
+      swal({
+        text: "contact length must be 10 !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if(!(containsSpecialChars(toUpdateDetails.Contact)) && !(containsWhitespace(toUpdateDetails.Contact)) &&
     !(containsAnyLetters(toUpdateDetails.Contact)) && (toUpdateDetails.Contact.length == 10) ){
@@ -75,19 +96,44 @@ function UserProfile() {
   const handleOnSubmitEditPassword = () => {
     setIsPasswordDisabled(true);
     if (!containsSpecialChars(password1)) {
-      alert("There is no Symbols in password !");
+      swal({
+        text: "There is no Symbols in password !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (containsWhitespace(password1)) {
-      alert("There are whitespaces in password !");
+      swal({
+        text: "There are whitespaces in password !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (!containsNumbers(password1)) {
-      alert("There is no numbers in password !");
+      swal({
+        text: "There is no numbers in password !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (password1.length < 8) {
-      alert("password length must grater than 8 !");
+      swal({
+        text: "password length must grater than 8 !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (!(password1 === password2)) {
-      alert("Passwords doesn't match !");
+      swal({
+        text: "Passwords doesn't match !",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
     }
     if (
       password1 === password2 &&
@@ -104,7 +150,7 @@ function UserProfile() {
         .then(() => {
           console.log("Work");
           fetchProfileDetails();
-          alert("Password has updated");
+          swal("Password has updated");
         })
         .catch((error) => {
           console.log(error);
