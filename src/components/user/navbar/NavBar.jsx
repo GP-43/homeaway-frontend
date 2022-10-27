@@ -13,18 +13,22 @@ function NavBar() {
     const location = useLocation();
     const [url, setURL] = useState('');
 
+    const userState = JSON.parse(sessionStorage.getItem("currentuserrole"));
+    const isRenter = userState.isRenter;
+ 
+
     useEffect(() => {
         setURL(location.pathname);
     }, [location]);
 
-    const [isRenter, setIsRenter] = useState(true);
+    // const [isRenter, setIsRenter] = useState(true);
 
     const handleOnSwitchUserClick = () => {
         if (isRenter) {
-            setIsRenter(false)
+            // setIsRenter(false)
             sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: false }));
         } else {
-            setIsRenter(true)
+            // setIsRenter(true)
             sessionStorage.setItem("currentuserrole", JSON.stringify({ isRenter: true }));
         }
     }
@@ -36,13 +40,13 @@ function NavBar() {
         sessionStorage.removeItem("accessToken");
     }
 
-    useEffect(() => {
-        if (url === '/user' | url === '/user/userbookings' | url === '/user/placedescription') {
-            setIsRenter(false);
-        } else {
-            setIsRenter(true);
-        }
-    }, [url]);
+    // useEffect(() => {
+    //     if (url === '/user' | url === '/user/userbookings' | url === '/user/placedescription') {
+    //         setIsRenter(false);
+    //     } else {
+    //         setIsRenter(true);
+    //     }
+    // }, [url]);
 
     return (
         <Navbar expand="lg" className="user-navbar px-0 py-0">
