@@ -65,7 +65,7 @@ function Earning() {
                                     Total Transaction Amount
                                 </Col>
                                 <Col xs={2}>
-                                    {percentage}%
+                                    {percentage.toFixed(2)}%
                                 </Col>
 
                             </Row>
@@ -77,7 +77,7 @@ function Earning() {
                                     Our Amount
                                 </Col>
                                 <Col xs={2}>
-                                    {100 - percentage}%
+                                    {(100 - percentage).toFixed(2)}%
                                 </Col>
 
                             </Row>
